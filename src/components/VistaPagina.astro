@@ -1,0 +1,41 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Migas from './Migas.astro';
+import PanelEditorial from './PanelEditorial.astro';
+import { esAprobado, type Pagina } from '../lib/contenido';
+import { fecha, fechaIso } from '../lib/formato';
+
+interface Props {
+  pagina: Pagina;
+}
+const { pagina } = Astro.props;
+const { data } = pagina;
+const { Content } = await render(pagina);
+---
+
+<Base titulo={data.titulo} descripcion={data.descripcion} indexable={esAprobado(pagina)}>
+  <div class="estrecho">
+    <Migas items={[{ nombre: data.titulo, href: `/${pagina.id}/` }]} />
+    <h1>{data.titulo}</h1>
+    <PanelEditorial estado={data.estado} pendientes={data.pendientes} />
+    <div class="prosa">
+      <Content />
+    </div>
+    {
+      data.fechaActualizacion && (
+        <p class="actualizado">
+          Última actualización: <time datetime={fechaIso(data.fechaActualizacion)}>{fecha(data.fechaActualizacion)}</time>
+        </p>
+      )
+    }
+  </div>
+</Base>
+
+<style>
+  .actualizado {
+    margin-top: var(--e-4);
+    font-size: var(--t-s);
+    color: var(--tinta-suave);
+  }
+</style>

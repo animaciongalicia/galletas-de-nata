@@ -1,0 +1,52 @@
+---
+import type { MarkdownHeading } from 'astro';
+
+interface Props {
+  titulos: MarkdownHeading[];
+}
+const titulos = Astro.props.titulos.filter((t) => t.depth === 2 || t.depth === 3);
+---
+
+{
+  titulos.length >= 2 && (
+    <nav class="indice no-imprimir" aria-labelledby="indice-titulo">
+      <p id="indice-titulo" class="antetitulo">En esta página</p>
+      <ol>
+        {titulos.map((t) => (
+          <li class={`n${t.depth}`}>
+            <a href={`#${t.slug}`}>{t.text}</a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
+}
+
+<style>
+  .indice {
+    font-size: var(--t-s);
+    padding: var(--e-2) var(--e-3);
+    background: var(--papel);
+    border: 1px solid var(--linea);
+    border-radius: var(--radio);
+  }
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    margin: 0.3rem 0;
+  }
+  .n3 {
+    padding-left: 1rem;
+    font-size: var(--t-xs);
+  }
+  a {
+    color: var(--tinta);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>

@@ -1,0 +1,176 @@
+---
+import Base from '../layouts/Base.astro';
+import Figura from '../components/Figura.astro';
+import Rejilla from '../components/Rejilla.astro';
+import Vacio from '../components/Vacio.astro';
+import { LISTA_SECCIONES } from '../data/secciones';
+import { SITIO } from '../data/sitio';
+import { getPiezas, urlPaginaVisible } from '../lib/contenido';
+import portada from '../assets/provisional/portada.jpg';
+
+const piezas = await getPiezas();
+const destacadas = [...piezas.filter((p) => p.data.destacado), ...piezas.filter((p) => !p.data.destacado)].slice(0, 6);
+const sobre = await urlPaginaVisible('sobre-el-proyecto');
+const cuenta = (id: string) => piezas.filter((p) => p.data.seccion === id).length;
+
+// Sustituye por una fotografía propia: importa el archivo de src/assets/fotos/ y pon provisional: false.
+const imagenPortada = {
+  src: portada,
+  alt: 'Galletas de nata redondas sobre un fondo claro',
+  provisional: true,
+};
+
+const site = Astro.site!;
+const esquemas = [
+  { '@type': 'WebSite', name: SITIO.nombre, url: site.href, inLanguage: SITIO.idioma, description: SITIO.lema },
+];
+---
+
+<Base
+  titulo="Galletas de Nata: recetas caseras, postres y todo sobre la nata"
+  tituloCompleto
+  descripcion="Portal sobre la galleta de nata gallega: qué la caracteriza, recetas caseras probadas, postres con galletas y cómo influye la nata en el resultado."
+  esquemas={esquemas}
+>
+  <section class="envoltorio heroe">
+    <div class="heroe-texto">
+      <p class="antetitulo">Galicia · horno · nata</p>
+      <h1>Galletas de Nata</h1>
+      <p class="entradilla">
+        Cómo es una buena galleta de nata, cómo se hace en casa y todo lo que puedes preparar con ella. Explicado por
+        un antiguo fabricante de galletas de nata.
+      </p>
+      <div class="acciones">
+        <a class="boton" href="/recetas/">Ver recetas</a>
+        <a class="boton boton--claro" href="/postres-con-galletas/">Descubrir postres</a>
+        <a class="boton boton--claro" href="/nata-y-elaboracion/">Aprender sobre la nata</a>
+      </div>
+    </div>
+    <Figura imagen={imagenPortada} prioridad proporcion="8 / 5" tamanos="(max-width: 62rem) 100vw, 40rem" anchos={[480, 800, 1200, 1600]} />
+  </section>
+
+  <section class="envoltorio bloque" aria-labelledby="destacado-titulo">
+    <h2 id="destacado-titulo">Para empezar</h2>
+    {destacadas.length > 0 ? <Rejilla piezas={destacadas} /> : <Vacio mensaje="Los primeros contenidos se publicarán muy pronto." />}
+  </section>
+
+  <section class="envoltorio bloque" aria-labelledby="secciones-titulo">
+    <h2 id="secciones-titulo">Secciones</h2>
+    <ul class="secciones">
+      {
+        LISTA_SECCIONES.map((s) => (
+          <li>
+            <a href={`/${s.slug}/`}>
+              <span class="nombre">{s.nombre}</span>
+              <span class="desc">{s.descripcion}</span>
+              {cuenta(s.id) > 0 && <span class="cuenta">{cuenta(s.id)} {cuenta(s.id) === 1 ? 'contenido' : 'contenidos'}</span>}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="envoltorio bloque proyecto" aria-labelledby="proyecto-titulo">
+    <div class="estrecho-izq">
+      <p class="antetitulo">El proyecto</p>
+      <h2 id="proyecto-titulo">Hecho por alguien que las fabricó</h2>
+      <p>
+        Detrás de este portal hay un antiguo fabricante de galletas de nata que dedicó más de dos años a probar
+        ingredientes, procesos y resultados. Aquí comparte lo que funciona en una cocina normal: recetas caseras
+        completas, explicaciones claras y solo resultados que se han comprobado.
+      </p>
+      {sobre && <a href={sobre}>Conoce el proyecto y su criterio editorial</a>}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .heroe {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: var(--e-4);
+    align-items: center;
+    padding: var(--e-4) 0 var(--e-3);
+  }
+  .heroe h1 {
+    font-size: clamp(2.8rem, 1.8rem + 4.5vw, 5.2rem);
+    line-height: 1;
+    margin-bottom: var(--e-3);
+  }
+  .acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--e-1);
+    margin-top: var(--e-3);
+  }
+  /* Sin imagen (producción mientras no haya foto propia): una sola columna. */
+  .heroe:not(:has(figure)) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  @media (max-width: 62rem) {
+    .heroe {
+      grid-template-columns: 1fr;
+      gap: var(--e-3);
+      padding-top: var(--e-3);
+    }
+  }
+  .bloque {
+    margin-top: var(--e-5);
+  }
+  .bloque > h2 {
+    margin-top: 0;
+    margin-bottom: var(--e-3);
+  }
+  .secciones {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--e-2);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  }
+  .secciones a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    height: 100%;
+    padding: var(--e-3);
+    background: var(--papel);
+    border: 1px solid var(--linea);
+    border-top: 5px solid var(--galleta);
+    border-radius: var(--radio);
+    color: var(--tinta);
+    text-decoration: none;
+  }
+  .secciones a:hover {
+    border-top-color: var(--oliva);
+    box-shadow: var(--sombra);
+  }
+  .nombre {
+    font-family: var(--f-titulo);
+    font-size: var(--t-l);
+    font-weight: 600;
+  }
+  .desc {
+    font-size: var(--t-s);
+    color: var(--tinta-suave);
+  }
+  .cuenta {
+    margin-top: auto;
+    font-size: var(--t-xs);
+    font-weight: 700;
+    color: var(--oliva);
+  }
+  .proyecto {
+    background: var(--oliva-claro);
+    border-radius: calc(var(--radio) * 2);
+    padding: var(--e-4) var(--e-3);
+  }
+  .estrecho-izq {
+    max-width: var(--ancho-texto);
+  }
+  .proyecto h2 {
+    margin-top: 0;
+  }
+</style>

@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import Migas from './Migas.astro';
+import Rejilla from './Rejilla.astro';
+import Vacio from './Vacio.astro';
+import type { Seccion } from '../data/secciones';
+import { getPiezas, esAprobado } from '../lib/contenido';
+
+interface Props {
+  seccion: Seccion;
+}
+const { seccion } = Astro.props;
+const piezas = await getPiezas(seccion.id);
+// Una sección sin nada publicado no se indexa (evita páginas vacías en buscadores).
+const indexable = piezas.some(esAprobado);
+---
+
+<Base titulo={seccion.tituloSeo} descripcion={seccion.descripcion} indexable={indexable}>
+  <div class="envoltorio">
+    <Migas items={[{ nombre: seccion.nombre, href: `/${seccion.slug}/` }]} />
+    <header class="cabecera-seccion">
+      <h1>{seccion.nombre}</h1>
+      <p class="entradilla">{seccion.descripcion}</p>
+    </header>
+    {piezas.length > 0 ? <Rejilla piezas={piezas} nivel="h2" /> : <Vacio mensaje={seccion.vacio} excluir={seccion.id} />}
+  </div>
+</Base>
+
+<style>
+  .cabecera-seccion {
+    margin-bottom: var(--e-4);
+    padding-bottom: var(--e-3);
+    border-bottom: 1px solid var(--linea);
+  }
+</style>

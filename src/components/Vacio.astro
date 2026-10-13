@@ -1,0 +1,42 @@
+---
+import { LISTA_SECCIONES } from '../data/secciones';
+
+interface Props {
+  mensaje: string;
+  /** Sección actual, para no enlazarla. */
+  excluir?: string;
+}
+const { mensaje, excluir } = Astro.props;
+const otras = LISTA_SECCIONES.filter((s) => s.id !== excluir);
+---
+
+<div class="vacio" role="status">
+  <p class="mensaje">{mensaje}</p>
+  <p>Mientras tanto, puedes visitar:</p>
+  <ul>
+    {otras.map((s) => <li><a href={`/${s.slug}/`}>{s.nombre}</a></li>)}
+  </ul>
+</div>
+
+<style>
+  .vacio {
+    padding: var(--e-4) var(--e-3);
+    background: var(--papel);
+    border: 1px dashed var(--linea);
+    border-radius: var(--radio);
+    text-align: center;
+  }
+  .mensaje {
+    font-family: var(--f-titulo);
+    font-size: var(--t-l);
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--e-1) var(--e-3);
+    margin: 0;
+  }
+</style>

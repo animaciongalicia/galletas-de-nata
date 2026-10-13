@@ -1,0 +1,83 @@
+---
+import Migas from './Migas.astro';
+import Figura from './Figura.astro';
+import PanelEditorial from './PanelEditorial.astro';
+import { SECCIONES } from '../data/secciones';
+import { AUTOR } from '../data/sitio';
+import { ES_PRODUCCION, url, urlSeccion, esReceta, urlPaginaVisible, type Pieza } from '../lib/contenido';
+import { fecha, fechaIso } from '../lib/formato';
+
+interface Props {
+  pieza: Pieza;
+}
+const { pieza } = Astro.props;
+const { data } = pieza;
+const seccion = SECCIONES[data.seccion];
+const sobre = await urlPaginaVisible('sobre-el-proyecto');
+const actualizada =
+  data.fechaActualizacion && data.fechaPublicacion && data.fechaActualizacion > data.fechaPublicacion
+    ? data.fechaActualizacion
+    : undefined;
+---
+
+<header class="envoltorio cabecera-pieza">
+  <Migas items={[{ nombre: seccion.nombre, href: urlSeccion(data.seccion) }, { nombre: data.titulo, href: url(pieza.id) }]} />
+  <div class="texto">
+    <p class="antetitulo">{seccion.nombre}{esReceta(pieza) && ' · Receta casera'}</p>
+    <h1>{data.titulo}</h1>
+    <p class="entradilla">{data.descripcion}</p>
+    <p class="firma">
+      {
+        AUTOR.nombre ? (
+          <span>
+            Por {sobre ? <a href={sobre}>{AUTOR.nombre}</a> : AUTOR.nombre}
+          </span>
+        ) : (
+          !ES_PRODUCCION && <span class="falta">Autor: pendiente</span>
+        )
+      }
+      {
+        data.fechaPublicacion ? (
+          <span>
+            Publicado el <time datetime={fechaIso(data.fechaPublicacion)}>{fecha(data.fechaPublicacion)}</time>
+          </span>
+        ) : (
+          !ES_PRODUCCION && <span class="falta">Fecha de publicación: pendiente</span>
+        )
+      }
+      {
+        actualizada && (
+          <span>
+            Actualizado el <time datetime={fechaIso(actualizada)}>{fecha(actualizada)}</time>
+          </span>
+        )
+      }
+    </p>
+    <PanelEditorial estado={data.estado} pendientes={data.pendientes} intencion={data.intencion} />
+  </div>
+  <Figura imagen={data.imagen} prioridad pie proporcion="16 / 9" clase="principal" />
+</header>
+
+<style>
+  .texto {
+    max-width: var(--ancho-texto);
+  }
+  h1 {
+    margin-bottom: var(--e-2);
+  }
+  .firma {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+    font-size: var(--t-s);
+    color: var(--tinta-suave);
+    margin: var(--e-2) 0 var(--e-3);
+  }
+  .falta {
+    color: var(--aviso);
+    font-weight: 600;
+  }
+  .cabecera-pieza :global(.principal) {
+    margin-top: var(--e-2);
+  }
+</style>

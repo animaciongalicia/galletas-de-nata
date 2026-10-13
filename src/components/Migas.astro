@@ -1,0 +1,55 @@
+---
+import JsonLd from './JsonLd.astro';
+
+interface Props {
+  /** Sin la portada: se añade sola. El último elemento es la página actual. */
+  items: { nombre: string; href: string }[];
+}
+const lista = [{ nombre: 'Inicio', href: '/' }, ...Astro.props.items];
+const site = Astro.site!;
+const esquema = {
+  '@type': 'BreadcrumbList',
+  itemListElement: lista.map((m, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: m.nombre,
+    item: new URL(m.href, site).href,
+  })),
+};
+---
+
+<nav class="migas" aria-label="Migas de pan">
+  <ol>
+    {
+      lista.map((m, i) =>
+        i === lista.length - 1 ? (
+          <li aria-current="page">{m.nombre}</li>
+        ) : (
+          <li><a href={m.href}>{m.nombre}</a></li>
+        ),
+      )
+    }
+  </ol>
+</nav>
+<JsonLd datos={esquema} />
+
+<style>
+  .migas ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem;
+    padding: 0;
+    margin: var(--e-3) 0 var(--e-2);
+    font-size: var(--t-xs);
+    color: var(--tinta-suave);
+  }
+  li + li::before {
+    content: '›';
+    margin-right: 0.5rem;
+    color: var(--galleta);
+  }
+  a {
+    color: var(--tinta-suave);
+  }
+</style>

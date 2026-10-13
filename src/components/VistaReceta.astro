@@ -1,0 +1,272 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import CabeceraPieza from './CabeceraPieza.astro';
+import Fuentes from './Fuentes.astro';
+import Relacionados from './Relacionados.astro';
+import { esAprobado, type Receta } from '../lib/contenido';
+import { esquemaPieza } from '../lib/esquemas';
+import { duracion, fecha } from '../lib/formato';
+
+interface Props {
+  pieza: Receta;
+}
+const { pieza } = Astro.props;
+const r = pieza.data;
+const { Content } = await render(pieza);
+const esquemas = await esquemaPieza(pieza, Astro.site!, Astro.url.pathname);
+
+const datos = [
+  { nombre: 'Rendimiento', valor: r.rendimiento },
+  { nombre: 'Preparación', valor: r.tiempos.preparacion && duracion(r.tiempos.preparacion) },
+  { nombre: 'Reposo', valor: r.tiempos.reposo && duracion(r.tiempos.reposo) },
+  { nombre: 'Horno o cocción', valor: r.tiempos.coccion && duracion(r.tiempos.coccion) },
+  { nombre: 'Tiempo total', valor: r.tiempos.total && duracion(r.tiempos.total) },
+  { nombre: 'Dificultad', valor: r.dificultad },
+];
+// En borradores se muestran los huecos para que el propietario vea qué falta.
+const visibles = esAprobado(pieza) ? datos.filter((d) => d.valor) : datos;
+---
+
+<Base
+  titulo={r.titulo}
+  descripcion={r.descripcion}
+  imagen={r.imagen.src}
+  imagenAlt={r.imagen.alt}
+  tipo="article"
+  indexable={esAprobado(pieza)}
+  esquemas={esquemas}
+>
+  <article class="receta">
+    <CabeceraPieza pieza={pieza} />
+
+    <div class="estrecho">
+      <section class="ficha" aria-labelledby="ficha-titulo">
+        <div class="ficha-cabecera">
+          <h2 id="ficha-titulo">La receta</h2>
+          <button type="button" class="boton boton--claro no-imprimir" data-imprimir hidden>Imprimir receta</button>
+        </div>
+        <dl class="datos">
+          {
+            visibles.map((d) => (
+              <div>
+                <dt>{d.nombre}</dt>
+                <dd class:list={{ falta: !d.valor }}>{d.valor || 'Pendiente'}</dd>
+              </div>
+            ))
+          }
+        </dl>
+        <p class="aviso">
+          Receta casera, pensada para horno y utensilios domésticos. No reproduce ninguna formulación industrial.
+          {r.verificacion && <> Probada el {fecha(r.verificacion.fecha)}.</>}
+        </p>
+
+        <div class="columnas">
+          <section aria-labelledby="ing-titulo">
+            <h3 id="ing-titulo">Ingredientes</h3>
+            {
+              r.ingredientes.length === 0 ? (
+                <p class="falta">Ingredientes pendientes.</p>
+              ) : (
+                r.ingredientes.map((g) => (
+                  <>
+                    {g.grupo && <h4>{g.grupo}</h4>}
+                    <ul class="ingredientes">
+                      {g.items.map((i) => (
+                        <li>
+                          {i.cantidad === null ? (
+                            <span class="cantidad falta">cantidad pendiente</span>
+                          ) : (
+                            <span class="cantidad">
+                              {i.cantidad}
+                              {i.unidad && ` ${i.unidad}`}
+                            </span>
+                          )}{' '}
+                          {i.nombre}
+                          {i.nota && <span class="nota"> ({i.nota})</span>}
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ))
+              )
+            }
+          </section>
+
+          <section aria-labelledby="pasos-titulo">
+            <h3 id="pasos-titulo">Paso a paso</h3>
+            {
+              r.pasos.length === 0 ? (
+                <p class="falta">Pasos pendientes.</p>
+              ) : (
+                <ol class="pasos">
+                  {r.pasos.map((p) => (
+                    <li>{p}</li>
+                  ))}
+                </ol>
+              )
+            }
+          </section>
+        </div>
+
+        {
+          r.consejos.length > 0 && (
+            <section aria-labelledby="consejos-titulo" class="consejos">
+              <h3 id="consejos-titulo">Consejos</h3>
+              <ul>
+                {r.consejos.map((c) => (
+                  <li>{c}</li>
+                ))}
+              </ul>
+            </section>
+          )
+        }
+      </section>
+
+      <div class="prosa explicacion">
+        <Content />
+        <Fuentes pieza={pieza} />
+      </div>
+    </div>
+  </article>
+  <Relacionados pieza={pieza} />
+</Base>
+
+<script>
+  // El botón solo aparece si JavaScript está disponible: nunca un botón que no funciona.
+  document.querySelectorAll<HTMLButtonElement>('[data-imprimir]').forEach((b) => {
+    b.hidden = false;
+    b.addEventListener('click', () => window.print());
+  });
+</script>
+
+<style>
+  .ficha {
+    margin-top: var(--e-4);
+    background: var(--papel);
+    border: 1px solid var(--linea);
+    border-radius: calc(var(--radio) + 4px);
+    padding: var(--e-3);
+  }
+  .ficha-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--e-2);
+    flex-wrap: wrap;
+  }
+  .ficha h2 {
+    margin: 0;
+  }
+  .datos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: var(--e-2);
+    margin: var(--e-3) 0;
+    padding: var(--e-2) 0;
+    border-block: 1px solid var(--linea);
+  }
+  dt {
+    font-size: var(--t-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--oliva);
+    font-weight: 700;
+  }
+  dd {
+    margin: 0;
+    font-family: var(--f-titulo);
+    font-size: 1.15rem;
+  }
+  .falta {
+    color: var(--aviso);
+    font-style: italic;
+  }
+  .aviso {
+    font-size: var(--t-s);
+    color: var(--tinta-suave);
+  }
+  .columnas {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: var(--e-4);
+  }
+  @media (max-width: 48rem) {
+    .columnas {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .ficha {
+      padding: var(--e-2);
+    }
+  }
+  h4 {
+    font-size: var(--t-m);
+    margin: var(--e-2) 0 var(--e-1);
+  }
+  .ingredientes {
+    list-style: none;
+    padding: 0;
+  }
+  .ingredientes li {
+    padding: 0.45rem 0;
+    border-bottom: 1px dotted var(--linea);
+  }
+  .cantidad {
+    font-weight: 700;
+  }
+  .nota {
+    color: var(--tinta-suave);
+  }
+  .pasos {
+    counter-reset: paso;
+    list-style: none;
+    padding: 0;
+  }
+  .pasos li {
+    counter-increment: paso;
+    position: relative;
+    padding-left: 2.75rem;
+    margin-bottom: var(--e-2);
+  }
+  .pasos li::before {
+    content: counter(paso);
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--oliva);
+    color: #fff;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+    font-size: var(--t-s);
+  }
+  .consejos {
+    background: var(--oliva-claro);
+    border-radius: var(--radio);
+    padding: var(--e-2) var(--e-3);
+  }
+  .consejos h3 {
+    margin-top: 0;
+  }
+  .explicacion {
+    margin-top: var(--e-4);
+  }
+  @media print {
+    .ficha {
+      border: none;
+      padding: 0;
+    }
+    .explicacion {
+      display: none;
+    }
+    .pasos li::before {
+      background: none;
+      color: #000;
+      border: 1px solid #000;
+    }
+  }
+</style>

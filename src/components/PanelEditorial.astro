@@ -1,0 +1,63 @@
+---
+// Panel para el propietario: estado y datos que faltan. Nunca se genera en producción.
+import { ES_PRODUCCION, ETIQUETA_ESTADO } from '../lib/contenido';
+
+interface Props {
+  estado: keyof typeof ETIQUETA_ESTADO;
+  pendientes: string[];
+  intencion?: string;
+}
+const { estado, pendientes, intencion } = Astro.props;
+const mostrar = !ES_PRODUCCION && (estado !== 'aprobado' || pendientes.length > 0);
+---
+
+{
+  mostrar && (
+    <aside class="panel no-imprimir" aria-label="Notas editoriales">
+      <p class="titulo">
+        Estado editorial: <strong>{ETIQUETA_ESTADO[estado]}</strong>
+        {estado !== 'aprobado' && ' — no se publica en producción'}
+      </p>
+      {intencion && (
+        <p>
+          <strong>Intención de búsqueda:</strong> {intencion}
+        </p>
+      )}
+      {pendientes.length > 0 && (
+        <>
+          <p>
+            <strong>Falta para aprobar:</strong>
+          </p>
+          <ul>
+            {pendientes.map((p) => (
+              <li>{p}</li>
+            ))}
+          </ul>
+        </>
+      )}
+    </aside>
+  )
+}
+
+<style>
+  .panel {
+    margin: var(--e-3) 0;
+    padding: var(--e-2) var(--e-3);
+    border: 2px dashed var(--aviso);
+    border-radius: var(--radio);
+    background: var(--aviso-fondo);
+    color: #5a2a0c;
+    font-size: var(--t-s);
+  }
+  .titulo {
+    font-weight: 600;
+  }
+  ul {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+  p:last-child,
+  ul:last-child {
+    margin-bottom: 0;
+  }
+</style>

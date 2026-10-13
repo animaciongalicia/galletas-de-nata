@@ -1,0 +1,169 @@
+---
+import Base from '../layouts/Base.astro';
+import Migas from '../components/Migas.astro';
+import Rejilla from '../components/Rejilla.astro';
+import Vacio from '../components/Vacio.astro';
+import { LISTA_SECCIONES } from '../data/secciones';
+import { getPiezas } from '../lib/contenido';
+
+const piezas = await getPiezas();
+---
+
+<Base
+  titulo="Buscar recetas y artículos"
+  descripcion="Busca entre todas las recetas, postres y artículos sobre galletas de nata por título o filtra por sección."
+  indexable={false}
+>
+  <div class="envoltorio">
+    <Migas items={[{ nombre: 'Buscar', href: '/buscar/' }]} />
+    <h1>Buscar</h1>
+
+    <!-- Sin JavaScript: navegación por secciones y listado completo. -->
+    <nav class="por-seccion" aria-label="Contenidos por sección">
+      <p>Ver por sección:</p>
+      <ul>
+        {LISTA_SECCIONES.map((s) => <li><a href={`/${s.slug}/`}>{s.nombre}</a></li>)}
+      </ul>
+    </nav>
+
+    <!-- Con JavaScript: búsqueda por título y filtro por sección en la propia página. -->
+    <form class="buscador" role="search" data-buscador hidden>
+      <label for="q">Buscar por título</label>
+      <input id="q" name="q" type="search" autocomplete="off" placeholder="Ej.: tarta, nata, conservar…" />
+      <fieldset>
+        <legend>Sección</legend>
+        <label><input type="radio" name="seccion" value="" checked /> Todas</label>
+        {LISTA_SECCIONES.map((s) => <label><input type="radio" name="seccion" value={s.id} /> {s.corto}</label>)}
+      </fieldset>
+    </form>
+
+    <p class="resultado" aria-live="polite" data-resultado>{piezas.length} contenidos</p>
+
+    {piezas.length > 0 ? <Rejilla piezas={piezas} nivel="h2" /> : <Vacio mensaje="Todavía no hay contenidos publicados." />}
+    <p class="sin-resultados" data-sin-resultados hidden>
+      No hay contenidos con ese título. Prueba con otra palabra o elige «Todas».
+    </p>
+  </div>
+</Base>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-buscador]');
+  const tarjetas = [...document.querySelectorAll<HTMLElement>('.tarjeta')];
+  const resultado = document.querySelector<HTMLElement>('[data-resultado]')!;
+  const vacio = document.querySelector<HTMLElement>('[data-sin-resultados]')!;
+
+  const normalizar = (t: string) => t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+
+  if (form && tarjetas.length) {
+    form.hidden = false;
+    document.querySelector<HTMLElement>('.por-seccion')!.hidden = true;
+    const input = form.querySelector<HTMLInputElement>('#q')!;
+    const params = new URLSearchParams(location.search);
+    input.value = params.get('q') ?? '';
+    const sec = params.get('seccion');
+    if (sec) form.querySelector<HTMLInputElement>(`input[name=seccion][value="${CSS.escape(sec)}"]`)?.click();
+
+    const filtrar = () => {
+      const q = normalizar(input.value.trim());
+      const s = new FormData(form).get('seccion') as string;
+      let n = 0;
+      for (const t of tarjetas) {
+        const ok = (!s || t.dataset.seccion === s) && normalizar(t.dataset.titulo ?? '').includes(q);
+        t.hidden = !ok;
+        if (ok) n++;
+      }
+      resultado.textContent = `${n} ${n === 1 ? 'contenido' : 'contenidos'}`;
+      vacio.hidden = n > 0;
+      const url = new URL(location.href);
+      q ? url.searchParams.set('q', input.value.trim()) : url.searchParams.delete('q');
+      s ? url.searchParams.set('seccion', s) : url.searchParams.delete('seccion');
+      history.replaceState(null, '', url);
+    };
+    form.addEventListener('input', filtrar);
+    form.addEventListener('submit', (e) => e.preventDefault());
+    filtrar();
+  }
+</script>
+
+<style>
+  .por-seccion ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--e-1);
+    list-style: none;
+    padding: 0;
+  }
+  .por-seccion a {
+    display: inline-block;
+    padding: 0.45rem 0.9rem;
+    border: 1px solid var(--linea);
+    border-radius: 999px;
+    background: var(--papel);
+  }
+  .buscador {
+    display: grid;
+    gap: var(--e-2);
+    max-width: 44rem;
+    margin-bottom: var(--e-2);
+  }
+  .buscador > label {
+    font-weight: 700;
+  }
+  input[type='search'] {
+    font: inherit;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--linea);
+    border-radius: 10px;
+    background: var(--papel);
+    color: var(--tinta);
+    min-height: 48px;
+  }
+  input[type='search']:focus {
+    border-color: var(--oliva);
+    outline: none;
+  }
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--e-1);
+  }
+  legend {
+    font-weight: 700;
+    margin-bottom: var(--e-1);
+  }
+  fieldset label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.9rem;
+    border: 1px solid var(--linea);
+    border-radius: 999px;
+    background: var(--papel);
+    cursor: pointer;
+    min-height: 44px;
+  }
+  fieldset label:has(input:checked) {
+    background: var(--oliva);
+    color: #fff;
+    border-color: var(--oliva);
+  }
+  fieldset label:has(input:focus-visible) {
+    outline: 3px solid var(--galleta);
+    outline-offset: 2px;
+  }
+  .resultado {
+    color: var(--tinta-suave);
+    font-size: var(--t-s);
+  }
+  .sin-resultados {
+    font-family: var(--f-titulo);
+    font-size: var(--t-l);
+    margin-top: var(--e-3);
+  }
+  :global(.tarjeta[hidden]) {
+    display: none;
+  }
+</style>

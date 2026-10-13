@@ -1,0 +1,288 @@
+@import '@fontsource-variable/fraunces';
+@import '@fontsource-variable/source-sans-3';
+
+/* ===== Variables de diseño ===== */
+:root {
+  /* Color */
+  --marfil: #f8f3e8;
+  --marfil-hondo: #efe6d3;
+  --papel: #fffcf5;
+  --tinta: #2a2219;
+  --tinta-suave: #5b4e40;
+  --oliva: #56632c;
+  --oliva-hondo: #3f4a1f;
+  --oliva-claro: #e5e8d2;
+  --galleta: #c98b4a;
+  --galleta-claro: #ecd3a8;
+  --tostado: #8a5526;
+  --linea: #ddd0b8;
+  --aviso: #8a3d12;
+  --aviso-fondo: #fbe9d7;
+
+  /* Tipografía */
+  --f-titulo: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
+  --f-texto: 'Source Sans 3 Variable', 'Segoe UI', system-ui, sans-serif;
+  --t-xs: 0.85rem;
+  --t-s: 0.95rem;
+  --t-m: 1.125rem;
+  --t-l: clamp(1.3rem, 1.1rem + 0.8vw, 1.6rem);
+  --t-xl: clamp(1.7rem, 1.3rem + 1.6vw, 2.4rem);
+  --t-xxl: clamp(2.3rem, 1.6rem + 3.2vw, 4rem);
+
+  /* Espacio y forma */
+  --e-1: 0.5rem;
+  --e-2: 1rem;
+  --e-3: 1.5rem;
+  --e-4: 2.5rem;
+  --e-5: 4rem;
+  --ancho: 72rem;
+  --ancho-texto: 42rem;
+  --radio: 14px;
+  --sombra: 0 1px 2px rgb(60 40 20 / 6%), 0 8px 24px rgb(60 40 20 / 7%);
+}
+
+/* ===== Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--marfil);
+  color: var(--tinta);
+  font-family: var(--f-texto);
+  font-size: var(--t-m);
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--f-titulo);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--e-2);
+  text-wrap: balance;
+}
+h1 { font-size: var(--t-xxl); font-weight: 650; }
+h2 { font-size: var(--t-xl); margin-top: var(--e-4); }
+h3 { font-size: var(--t-l); margin-top: var(--e-3); }
+
+p,
+ul,
+ol {
+  margin: 0 0 var(--e-2);
+}
+
+a {
+  color: var(--oliva-hondo);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+a:hover {
+  color: var(--tostado);
+}
+
+:focus-visible {
+  outline: 3px solid var(--galleta);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* "hidden" siempre gana: los controles que dependen de JavaScript nacen ocultos. */
+[hidden] {
+  display: none !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.envoltorio {
+  width: min(100% - 2 * var(--e-2), var(--ancho));
+  margin-inline: auto;
+}
+
+.estrecho {
+  width: min(100% - 2 * var(--e-2), var(--ancho-texto));
+  margin-inline: auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.saltar {
+  position: absolute;
+  left: var(--e-2);
+  top: -4rem;
+  z-index: 10;
+  background: var(--tinta);
+  color: var(--papel);
+  padding: var(--e-1) var(--e-2);
+  border-radius: 6px;
+}
+.saltar:focus {
+  top: var(--e-1);
+  color: var(--papel);
+}
+
+.antetitulo {
+  font-family: var(--f-texto);
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--oliva);
+  margin: 0 0 var(--e-1);
+}
+
+.entradilla {
+  font-size: var(--t-l);
+  line-height: 1.5;
+  color: var(--tinta-suave);
+  max-width: 38rem;
+}
+
+/* ===== Botones ===== */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  min-height: 48px;
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  border: 2px solid var(--oliva);
+  background: var(--oliva);
+  color: #fff;
+  font: 600 var(--t-s) / 1.2 var(--f-texto);
+  text-decoration: none;
+  cursor: pointer;
+}
+.boton:hover {
+  background: var(--oliva-hondo);
+  border-color: var(--oliva-hondo);
+  color: #fff;
+}
+.boton--claro {
+  background: transparent;
+  color: var(--oliva-hondo);
+}
+.boton--claro:hover {
+  background: var(--oliva-claro);
+  color: var(--oliva-hondo);
+}
+
+/* ===== Prosa de artículos ===== */
+.prosa > * + * {
+  margin-top: 0;
+}
+.prosa h2 {
+  scroll-margin-top: var(--e-3);
+}
+.prosa h3 {
+  scroll-margin-top: var(--e-3);
+}
+.prosa li + li {
+  margin-top: 0.35em;
+}
+.prosa blockquote {
+  margin: var(--e-3) 0;
+  padding: var(--e-1) var(--e-3);
+  border-left: 4px solid var(--galleta);
+  font-family: var(--f-titulo);
+  font-size: var(--t-l);
+  color: var(--tinta-suave);
+}
+.prosa table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--e-3) 0;
+  font-size: var(--t-s);
+  display: block;
+  overflow-x: auto;
+}
+.prosa th,
+.prosa td {
+  text-align: left;
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--linea);
+  vertical-align: top;
+}
+.prosa th {
+  background: var(--marfil-hondo);
+}
+.prosa img {
+  border-radius: var(--radio);
+  margin: var(--e-3) 0;
+}
+
+/* Marca de dato pendiente en borradores (nunca llega a producción). */
+.pendiente {
+  margin: var(--e-2) 0;
+  padding: var(--e-2);
+  border: 2px dashed var(--aviso);
+  background: var(--aviso-fondo);
+  color: var(--aviso);
+  border-radius: 8px;
+  font-size: var(--t-s);
+}
+.pendiente::before {
+  content: 'Pendiente del autor · ';
+  font-weight: 700;
+}
+
+/* ===== Impresión ===== */
+@media print {
+  :root {
+    --marfil: #fff;
+  }
+  body {
+    font-size: 11pt;
+    background: #fff;
+  }
+  .no-imprimir,
+  .receta .principal,
+  .cabecera,
+  .pie,
+  .aviso-preview,
+  .migas,
+  .relacionados {
+    display: none !important;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  h1 {
+    font-size: 22pt;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}

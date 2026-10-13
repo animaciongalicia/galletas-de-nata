@@ -1,0 +1,146 @@
+---
+import { LISTA_SECCIONES } from '../data/secciones';
+import Marca from './Marca.astro';
+import { urlPaginaVisible } from '../lib/contenido';
+
+const sobre = await urlPaginaVisible('sobre-el-proyecto');
+const enlaces = [
+  ...LISTA_SECCIONES.map((s) => ({ href: `/${s.slug}/`, texto: s.nombre })),
+  ...(sobre ? [{ href: sobre, texto: 'Sobre el proyecto' }] : []),
+];
+const ruta = Astro.url.pathname;
+const actual = (href: string) => (ruta.startsWith(href) ? 'page' : undefined);
+---
+
+<header class="cabecera">
+  <div class="envoltorio barra">
+    <a href="/" class="logo" aria-label="Galletas de Nata, ir a la portada">
+      <Marca />
+      <span>Galletas de Nata</span>
+    </a>
+
+    <!-- Escritorio -->
+    <nav class="nav-ancha" aria-label="Principal">
+      <ul>
+        {enlaces.map((e) => <li><a href={e.href} aria-current={actual(e.href)}>{e.texto}</a></li>)}
+        <li><a href="/buscar/" class="buscar" aria-current={actual('/buscar/')}>Buscar</a></li>
+      </ul>
+    </nav>
+
+    <!-- Móvil: <details> funciona con teclado y lector de pantalla, sin JavaScript. -->
+    <details class="nav-movil">
+      <summary>Menú</summary>
+      <nav aria-label="Principal">
+        <ul>
+          {enlaces.map((e) => <li><a href={e.href} aria-current={actual(e.href)}>{e.texto}</a></li>)}
+          <li><a href="/buscar/" aria-current={actual('/buscar/')}>Buscar</a></li>
+        </ul>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<style>
+  .cabecera {
+    border-bottom: 1px solid var(--linea);
+    background: var(--marfil);
+  }
+  .barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--e-2);
+    min-height: 4.25rem;
+    position: relative;
+  }
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--tinta);
+    text-decoration: none;
+    font-family: var(--f-titulo);
+    font-weight: 650;
+    font-size: 1.35rem;
+    letter-spacing: -0.01em;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-ancha ul {
+    display: flex;
+    gap: 0.25rem;
+  }
+  .nav-ancha a,
+  .nav-movil a {
+    display: block;
+    padding: 0.55rem 0.75rem;
+    border-radius: 8px;
+    color: var(--tinta);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--t-s);
+  }
+  .nav-ancha a:hover,
+  .nav-movil a:hover {
+    background: var(--marfil-hondo);
+    color: var(--tinta);
+  }
+  a[aria-current='page'] {
+    color: var(--oliva-hondo);
+    box-shadow: inset 0 -2px 0 var(--oliva);
+  }
+  .buscar {
+    border: 1px solid var(--linea);
+  }
+
+  .nav-movil {
+    display: none;
+  }
+  summary {
+    list-style: none;
+    cursor: pointer;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 1rem;
+    border: 2px solid var(--oliva);
+    border-radius: 999px;
+    font-weight: 700;
+    color: var(--oliva-hondo);
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  .nav-movil[open] summary {
+    background: var(--oliva);
+    color: #fff;
+  }
+  .nav-movil nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: 5;
+    background: var(--papel);
+    border: 1px solid var(--linea);
+    border-radius: 0 0 var(--radio) var(--radio);
+    box-shadow: var(--sombra);
+    padding: var(--e-1);
+  }
+  .nav-movil a {
+    padding: 0.85rem 1rem;
+    font-size: var(--t-m);
+  }
+
+  @media (max-width: 62rem) {
+    .nav-ancha {
+      display: none;
+    }
+    .nav-movil {
+      display: block;
+    }
+  }
+</style>

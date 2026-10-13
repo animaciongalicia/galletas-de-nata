@@ -1,0 +1,80 @@
+---
+import Figura from './Figura.astro';
+import Estado from './Estado.astro';
+import { SECCIONES } from '../data/secciones';
+import { url, esReceta, type Pieza } from '../lib/contenido';
+import { duracion } from '../lib/formato';
+
+interface Props {
+  pieza: Pieza;
+  nivel?: 'h2' | 'h3';
+}
+const { pieza, nivel = 'h3' } = Astro.props;
+const { data } = pieza;
+const Titulo = nivel;
+const total = esReceta(pieza) ? pieza.data.tiempos.total : undefined;
+---
+
+<article class="tarjeta" data-seccion={data.seccion} data-titulo={data.titulo.toLowerCase()}>
+  <Figura imagen={data.imagen} anchos={[400, 640, 800]} tamanos="(max-width: 40rem) 100vw, (max-width: 72rem) 50vw, 23rem" />
+  <div class="cuerpo">
+    <p class="antetitulo">
+      {SECCIONES[data.seccion].corto}{esReceta(pieza) && ' · Receta'}{total && ` · ${duracion(total)}`}
+    </p>
+    <Titulo class="titulo"><a href={url(pieza.id)}>{data.titulo}</a></Titulo>
+    <p class="descripcion">{data.descripcion}</p>
+    <Estado estado={data.estado} />
+  </div>
+</article>
+
+<style>
+  .tarjeta {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--papel);
+    border: 1px solid var(--linea);
+    border-radius: calc(var(--radio) + 4px);
+    padding: 0.5rem;
+    transition: box-shadow 0.15s ease;
+  }
+  .tarjeta:hover {
+    box-shadow: var(--sombra);
+  }
+  .tarjeta :global(.figura img) {
+    border-radius: var(--radio);
+  }
+  .cuerpo {
+    padding: var(--e-2) 0.6rem 0.6rem;
+  }
+  .titulo {
+    font-size: 1.3rem;
+    margin: 0 0 0.5rem;
+  }
+  .titulo a {
+    color: var(--tinta);
+    text-decoration: none;
+  }
+  /* Toda la tarjeta es clicable, con un único enlace accesible. */
+  .titulo a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+  }
+  .titulo a:focus-visible {
+    outline: none;
+  }
+  .tarjeta:has(a:focus-visible) {
+    outline: 3px solid var(--galleta);
+    outline-offset: 3px;
+  }
+  .tarjeta:hover .titulo a {
+    color: var(--oliva-hondo);
+  }
+  .descripcion {
+    color: var(--tinta-suave);
+    font-size: var(--t-s);
+    margin: 0;
+  }
+</style>

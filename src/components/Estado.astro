@@ -1,0 +1,35 @@
+---
+// Etiqueta de estado editorial. Solo aparece en la preview y en contenidos no aprobados.
+import { ES_PRODUCCION, ETIQUETA_ESTADO } from '../lib/contenido';
+
+interface Props {
+  estado: keyof typeof ETIQUETA_ESTADO;
+}
+const { estado } = Astro.props;
+---
+
+{
+  !ES_PRODUCCION && estado !== 'aprobado' && (
+    <p class:list={['estado', `estado--${estado}`]}>{ETIQUETA_ESTADO[estado]} · no publicado</p>
+  )
+}
+
+<style>
+  .estado {
+    display: inline-block;
+    margin: 0.75rem 0 0;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    background: var(--aviso-fondo);
+    color: var(--aviso);
+    border: 1px dashed var(--aviso);
+  }
+  .estado--revision {
+    background: var(--oliva-claro);
+    color: var(--oliva-hondo);
+    border-color: var(--oliva);
+  }
+</style>

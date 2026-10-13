@@ -1,0 +1,26 @@
+---
+// Todas las URL de primer nivel: secciones, artículos, recetas y páginas.
+// URL planas (/<archivo>/) para conservar las direcciones históricas del sitio.
+import type { GetStaticPaths } from 'astro';
+import { LISTA_SECCIONES } from '../data/secciones';
+import { getPiezas, getPaginas, esReceta } from '../lib/contenido';
+import VistaSeccion from '../components/VistaSeccion.astro';
+import VistaArticulo from '../components/VistaArticulo.astro';
+import VistaReceta from '../components/VistaReceta.astro';
+import VistaPagina from '../components/VistaPagina.astro';
+
+export const getStaticPaths = (async () => {
+  const [piezas, paginas] = await Promise.all([getPiezas(), getPaginas()]);
+  return [
+    ...LISTA_SECCIONES.map((seccion) => ({ params: { slug: seccion.slug }, props: { tipo: 'seccion' as const, seccion } })),
+    ...piezas.map((pieza) => ({ params: { slug: pieza.id }, props: { tipo: 'pieza' as const, pieza } })),
+    ...paginas.map((pagina) => ({ params: { slug: pagina.id }, props: { tipo: 'pagina' as const, pagina } })),
+  ];
+}) satisfies GetStaticPaths;
+
+const p = Astro.props;
+---
+
+{p.tipo === 'seccion' && <VistaSeccion seccion={p.seccion} />}
+{p.tipo === 'pieza' && (esReceta(p.pieza) ? <VistaReceta pieza={p.pieza} /> : <VistaArticulo pieza={p.pieza} />)}
+{p.tipo === 'pagina' && <VistaPagina pagina={p.pagina} />}

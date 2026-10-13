@@ -1,0 +1,17 @@
+# build
+dist/
+.astro/
+.vercel/
+node_modules/
+
+# entorno y credenciales: nunca al repositorio
+.env
+.env.*
+!.env.example
+
+# material reservado del propietario (fórmula industrial, proveedores, parámetros)
+reservado/
+privado/
+
+.DS_Store
+npm-debug.log*

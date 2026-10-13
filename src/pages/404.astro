@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+import { LISTA_SECCIONES } from '../data/secciones';
+---
+
+<Base
+  titulo="Página no encontrada"
+  descripcion="La página que buscas no existe o ha cambiado de dirección. Desde aquí puedes ir a las recetas, los postres o la sección sobre la nata."
+  indexable={false}
+>
+  <div class="estrecho error">
+    <p class="antetitulo">Error 404</p>
+    <h1>Esta galleta se ha quedado en la lata</h1>
+    <p class="entradilla">
+      La página que buscas no existe o ha cambiado de dirección. Si llegaste desde un enlace antiguo, es posible que el
+      contenido esté en una de estas secciones:
+    </p>
+    <ul class="destinos">
+      {LISTA_SECCIONES.map((s) => <li><a href={`/${s.slug}/`}><strong>{s.nombre}</strong><span>{s.descripcion}</span></a></li>)}
+    </ul>
+    <p class="mas">
+      También puedes <a href="/buscar/">ver todos los contenidos</a> o <a href="/">volver a la portada</a>.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .error {
+    padding-top: var(--e-4);
+  }
+  .destinos {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--e-1);
+    margin: var(--e-3) 0;
+  }
+  .destinos a {
+    display: grid;
+    gap: 0.2rem;
+    padding: var(--e-2);
+    background: var(--papel);
+    border: 1px solid var(--linea);
+    border-radius: var(--radio);
+    text-decoration: none;
+    color: var(--tinta);
+  }
+  .destinos a:hover {
+    border-color: var(--oliva);
+  }
+  .destinos strong {
+    font-family: var(--f-titulo);
+    font-size: 1.2rem;
+  }
+  .destinos span {
+    font-size: var(--t-s);
+    color: var(--tinta-suave);
+  }
+</style>

@@ -1,0 +1,34 @@
+# Calendario editorial inicial (12 piezas)
+
+Todas las piezas existen como **borrador** en `src/content/`. Las fechas son una propuesta de orden: la fecha real de publicación se pone al aprobar. Ninguna receta está verificada todavía.
+
+Prioridad: primero las URL históricas (★), porque conservan el posible tráfico del WordPress actual y conviene tenerlas aprobadas **antes** de cambiar el dominio.
+
+| # | Semana | Título | URL | Sección | Intención de búsqueda | Qué debe aportar el propietario |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 1 | Cómo hacer galletas de nata caseras: receta probada paso a paso ★ | `/como-hacer-las-mejores-galletas-de-nata/` | Recetas | «cómo hacer galletas de nata», «receta galletas de nata» | Receta casera completa en gramos, rendimiento, tiempos y temperatura medidos en horno doméstico, fecha de la prueba, fotos del proceso |
+| 2 | 1 | Galletas de nata gallegas auténticas: qué las caracteriza ★ | `/galletas-de-nata-autenticas/` | Galletas de nata | «galletas de nata gallegas», «galletas de nata auténticas» | Definición propia, origen documentado con fuente, rasgos sensoriales, fotos de la galleta entera y partida |
+| 3 | 2 | Nata de vaca: tipos, materia grasa y cuál usar en galletas ★ | `/autentica-nata-de-vaca/` | Nata | «nata de vaca», «tipos de nata» | Verificar norma vigente en el BOE; aclarar qué significaba «70 % de pureza»; nata recomendada; foto |
+| 4 | 2 | Chocolate caliente con galletas de nata ★ | `/chocolate-caliente-con-galletas-de-nata/` | Postres | «chocolate caliente con galletas» | Receta del chocolate con cantidades por taza, tiempos, galleta que mejor aguanta, foto |
+| 5 | 3 | Cómo hacer nata casera a partir de leche ★ | `/como-hacer-nata-casera/` | Nata | «cómo hacer nata casera» | Método probado, leche usada y nata obtenida, tiempos, conservación, nota de seguridad si es leche cruda, fotos |
+| 6 | 3 | Ingredientes de las galletas de nata: qué aporta cada uno | `/ingredientes-galletas-de-nata/` | Galletas de nata | «ingredientes galletas de nata» | Función de cada ingrediente según tus pruebas, sustituciones probadas, foto |
+| 7 | 4 | Por qué tus galletas de nata quedan duras, blandas o se deforman | `/errores-textura-galletas-de-nata/` | Galletas de nata | «galletas de nata duras/blandas» | Problemas reales, causa y corrección probada, fotos de antes y después |
+| 8 | 4 | Tarta de galletas de nata: receta fácil con base de galletas | `/tarta-de-galletas-de-nata/` | Postres | «tarta de galletas de nata» | Tipo de tarta, receta completa, molde, raciones, tiempos, fotos |
+| 9 | 5 | Cómo conservar las galletas de nata para que no se ablanden | `/como-conservar-galletas-de-nata/` | Galletas de nata | «cómo conservar galletas de nata», «cuánto duran» | Recipiente y duración según tus pruebas; congelación solo si se ha probado |
+| 10 | 5 | Copa de yogur, fruta y galletas de nata | `/copa-de-yogur-fruta-y-galletas-de-nata/` | Postres | «postre con galletas y yogur» | Cantidades por copa, fruta y yogur probados, tiempo, foto |
+| 11 | 6 | Pruebas con distintas natas: cómo cambia una galleta de nata | `/pruebas-nata-en-galletas/` | Nata | «qué nata usar para galletas» | Pruebas publicables (no confidenciales) con nata, % m. g. según etiqueta, resultado y fotos homogéneas |
+| 12 | 6 | Postre de limón con galletas de nata | `/postre-de-limon-con-galletas-de-nata/` | Postres | «postre de limón con galletas» | Versión elegida, receta completa, reposo, foto |
+
+## Reserva (después de las 12)
+
+Ideas que encajan sin canibalizar: helado con galletas de nata, crumble con galletas de nata, galletas de nata bañadas en chocolate (receta casera), cómo leer la etiqueta de unas galletas de nata. Requieren revisión antes de planificarse.
+
+## Páginas del proyecto
+
+| Página | Qué falta |
+| --- | --- |
+| Sobre el proyecto | Nombre del autor, trayectoria verificable, foto opcional, aprobar criterio editorial |
+| Contacto editorial | Correo editorial real |
+| Aviso legal | Titular, NIF/CIF, domicilio, correo (LSSI art. 10) |
+| Privacidad | Responsable, proveedor de alojamiento, analítica si se activa |
+| Cookies | Confirmar que no se ha activado nada que instale cookies |

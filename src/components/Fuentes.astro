@@ -1,0 +1,60 @@
+---
+import type { Pieza } from '../lib/contenido';
+
+interface Props {
+  pieza: Pieza;
+}
+const { fuentes, enlacesCompra } = Astro.props.pieza.data;
+---
+
+{
+  fuentes.length > 0 && (
+    <section class="bloque" aria-labelledby="fuentes-titulo">
+      <h2 id="fuentes-titulo">Fuentes</h2>
+      <ul>
+        {fuentes.map((f) => (
+          <li>
+            {f.url ? (
+              <a href={f.url} rel="noopener">
+                {f.titulo}
+              </a>
+            ) : (
+              f.titulo
+            )}
+            {f.nota && <span class="nota"> — {f.nota}</span>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+{
+  enlacesCompra.length > 0 && (
+    <section class="bloque" aria-labelledby="compra-titulo">
+      <h2 id="compra-titulo">Dónde encontrarlas</h2>
+      <ul>
+        {enlacesCompra.map((e) => (
+          // data-evento: punto de medición de clics hacia puntos de compra (ver README, "Analítica").
+          <li>
+            <a href={e.url} rel="noopener" data-evento="clic-compra" data-destino={e.nombre}>
+              {e.nombre}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+<style>
+  .bloque {
+    margin-top: var(--e-4);
+    font-size: var(--t-s);
+  }
+  h2 {
+    font-size: var(--t-l);
+  }
+  .nota {
+    color: var(--tinta-suave);
+  }
+</style>
