@@ -24,14 +24,14 @@ fuentes:
     url: 'https://www.fao.org/fao-who-codexalimentarius/codex-texts/list-standards/es/'
 pendientes:
   - 'Abrir el texto consolidado del BOE y confirmar el apartado 5.2 del anejo 1 (los datos vienen de extractos; el BOE no era accesible desde el entorno de trabajo).'
-  - 'Aclarar el dato "70 % de pureza" de la web antigua: qué se medía, sobre qué base y con qué método. Sin esa precisión no se publica.'
-  - 'Qué nata recomiendas para galletas caseras y por qué (tipo y materia grasa en % sobre masa, según etiqueta).'
+  - 'Indicar cómo se conocía el porcentaje de materia grasa de la nata de las pruebas (ficha del proveedor, análisis o etiqueta).'
+  - 'Recomendación práctica para el lector doméstico: qué nata comprar si no encuentra doble nata.'
   - 'Fotografía propia de la nata usada en las pruebas.'
 ---
 
 La nata es la parte grasa de la leche. La de vaca es la que se usa tradicionalmente en las galletas de nata, y la cantidad de grasa que contiene cambia por completo el resultado.
 
-<div class="pendiente">Respuesta directa: qué nata conviene para galletas caseras, en una frase.</div>
+Respuesta corta: para galletas, cuanta más grasa tenga la nata, mejor. En mis pruebas, los mejores resultados salieron con nata de más de un 70 % de materia grasa.
 
 ## Qué significa el porcentaje de materia grasa
 
@@ -39,7 +39,7 @@ El porcentaje que aparece en la etiqueta indica cuántos gramos de grasa hay por
 
 Ese porcentaje no mide la «pureza» de la nata, sino su contenido en grasa. Son conceptos distintos y conviene no mezclarlos.
 
-<div class="pendiente">La web antigua hablaba de una nata con «70 % de pureza». La normativa no tiene ninguna categoría con ese nombre. Si se refería a un 70 % de materia grasa (muy por encima del 50 % de la doble nata), debe escribirse así y respaldarse con la ficha del proveedor. Si no se puede precisar, se elimina.</div>
+Por eso, cuando en este portal se habla de una nata del 70 %, se habla de materia grasa: unos 70 g de grasa por cada 100 g de nata. No de «pureza».
 
 ## Tipos de nata según la norma
 
@@ -65,4 +65,10 @@ La capa que aparece al hervir la leche no es grasa pura. Con el calor, las prote
 
 ## Cuál usar para hacer galletas
 
-<div class="pendiente">Tu recomendación, apoyada en las pruebas de la página «Pruebas con nata».</div>
+En las pruebas que hice para crear mis galletas, la conclusión fue clara: **cuanto más grado de grasa tenía la nata, mejor salían**. Los mejores resultados llegaron con nata de más de un 70 % de materia grasa, es decir, doble nata, muy por encima del mínimo del 50 % que marca la norma.
+
+El problema es encontrarla. La nata de la tienda suele rondar el 35 %, y una nata tan grasa no se consigue con una desnatadora corriente. Además, casi toda la grasa de la leche la aprovecha la propia industria láctea para mantequillas, quesos y otros productos.
+
+<div class="pendiente">Qué recomiendas a quien no encuentre doble nata: ¿la nata más grasa del lineal?, ¿la nata de leche hervida?</div>
+
+Lo cuento con más detalle en [las pruebas con distintas natas](/pruebas-nata-en-galletas/).

@@ -21,7 +21,7 @@ pendientes:
 
 La forma más honesta de saber qué nata funciona es probarla. Aquí se recogen pruebas reales: la misma receta casera, el mismo horno y una sola variable cada vez.
 
-<div class="pendiente">Respuesta directa: la conclusión principal de las pruebas, en una frase.</div>
+La conclusión principal de mis pruebas: **cuanto más grasa tiene la nata, mejor sale la galleta**. Los mejores resultados llegaron con nata de más de un 70 % de materia grasa.
 
 ## Cómo se hicieron las pruebas
 

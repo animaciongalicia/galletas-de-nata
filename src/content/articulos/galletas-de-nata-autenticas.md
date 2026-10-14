@@ -23,9 +23,7 @@ fuentes:
     url: 'https://www.mapa.gob.es/ministerio/pags/biblioteca/fondo/pdf/9953_17.pdf'
     nota: 'Centrales lecheras (decreto de 1952).'
 pendientes:
-  - 'Revisar la sección de origen redactada a partir de fuentes secundarias (ver docs/investigacion-fuentes.md) y añadir tu testimonio.'
   - 'Definir en una frase qué es, para ti, una galleta de nata gallega auténtica (respuesta directa para el primer párrafo).'
-  - 'Origen: aportar solo datos documentados (zona, época, fuentes). Si no hay fuente, se omite.'
   - 'Rasgos sensoriales que usas para reconocer una buena galleta (color, rotura, aroma, sabor).'
   - 'Fotografías propias: galleta entera, galleta partida (miga) y detalle del dorado.'
   - 'Revisar URL histórica: confirmar qué decía la página antigua y si hay algo que conservar.'
@@ -37,13 +35,17 @@ Una galleta de nata es una galleta cuya grasa principal es la nata de leche de v
 
 ## De dónde vienen
 
-La galleta de nata gallega nació en las casas como una receta de aprovechamiento. Durante generaciones, la leche recién ordeñada se hervía antes de tomarla. Al enfriarse, en la superficie se formaba una capa espesa de nata que se apartaba y se guardaba. Cuando había suficiente, se mezclaba con azúcar y harina y se horneaba.
+Soy de Ferrol, y en Ferrol estas galletas se hacían en casa. Las hacían mis abuelas.
 
-Se medía a ojo o por vasos, no por gramos, y cada casa tenía su punto. Algunas crónicas gastronómicas la sitúan en la comarca de Ferrol, aunque no hay documentación histórica que fije un lugar o una fecha de origen. Tampoco es exclusiva de Galicia: en otras zonas de tradición lechera, y también en Portugal y Brasil, se hacen galletas parecidas con la nata de la leche hervida.
+El proceso era siempre el mismo. Se ordeñaba la vaca y la leche se hervía. Al hervirla, duraba más; al dejarla enfriar, se formaba encima una capa de nata. Esa capa se recogía con cuidado y se guardaba en el frigorífico, o en el sitio más fresco de la casa para que no se perdiera.
 
-La costumbre fue desapareciendo cuando llegó la leche tratada. En 1952 un decreto ordenó crear centrales lecheras en las ciudades, y la leche pasteurizada se fue extendiendo en las décadas siguientes. Sin leche que hervir en casa, ya no había nata que guardar. En los últimos años, obradores artesanos gallegos han recuperado la galleta con nata de alto contenido graso, que es la clave para acercarse al sabor de la receta casera.
+Así, día a día, durante una semana o diez días, se iba juntando nata hasta tener 200, 500 gramos o más. Entonces tocaba hornear.
 
-<div class="pendiente">Tu testimonio: cómo se hacían en tu casa o en tu entorno, y qué recuerdas de su sabor. Es lo que ninguna otra web puede contar.</div>
+Cada abuela tenía su receta. Las de unas salían más duras y las de otras, más tiernas, pero todas tenían algo en común: la grasa era solo nata, sin mantequilla ni aceite.
+
+Era una receta de aprovechamiento. Con lo que sobraba de la leche, las abuelas hacían galletas para los niños. Por eso se hicieron tan populares en Galicia, una tierra de vacas y de leche. No es una receta exclusiva de aquí: en otras zonas lecheras, y también en Portugal y Brasil, se hacen galletas parecidas con la nata de la leche hervida.
+
+La costumbre fue desapareciendo cuando llegó la leche tratada. En 1952 un decreto ordenó crear centrales lecheras en las ciudades, y la leche pasteurizada se fue extendiendo en las décadas siguientes. Sin leche que hervir en casa, ya no había nata que guardar.
 
 ## Qué la hace distinta
 

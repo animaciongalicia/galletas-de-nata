@@ -58,7 +58,7 @@ Nivel de confianza:
 - La nata que se forma al hervir la leche **no es grasa pura**. Al calentar la leche por encima de unos 60 °C, las proteínas (sobre todo la caseína, según divulgación) cambian de estructura y se agrupan en la superficie, atrapando parte de la grasa mientras se evapora agua. Confianza **B/C**: fuentes de divulgación. Si se publica, mejor con una fuente académica.
 - Galicia no tiene una denominación oficial de «nata de leche cruda de alta grasa». Existe el **Decreto 125/2014** de la Xunta sobre venta directa de productos primarios desde las explotaciones. **No se ha confirmado** si cubre la leche o la nata cruda: consultar el texto en el DOG o a la Consellería do Medio Rural antes de afirmar nada.
 
-**«70 % de pureza» (web antigua):** la normativa española no contiene ninguna categoría con ese nombre. Una nata con un 70 % de materia grasa superaría con mucho el mínimo de la doble nata (50 %). Si el dato se refería a la materia grasa, debe escribirse «70 % de materia grasa (en masa)» y respaldarse con la ficha del proveedor. Si se refería a otra cosa, hay que explicarlo o retirarlo. **Decisión del autor.**
+**«70 % de pureza» (web antigua), resuelto en el apartado 7:** la normativa española no contiene ninguna categoría con ese nombre. Una nata con un 70 % de materia grasa superaría con mucho el mínimo de la doble nata (50 %). Si el dato se refería a la materia grasa, debe escribirse «70 % de materia grasa (en masa)» y respaldarse con la ficha del proveedor. Si se refería a otra cosa, hay que explicarlo o retirarlo. **Decisión del autor.**
 
 ## 4. Técnica: por qué importa la grasa de la nata
 
@@ -83,7 +83,20 @@ Idea de pieza futura, si no compite con el foco: «La nata en la repostería gal
 - Conclusión útil: el estándar artesano actual son **cuatro ingredientes** con nata de **alta materia grasa**. Coincide con la tradición doméstica de tres ingredientes más sal.
 - La palabra clave «maruxas de nata receta» tiene mucha demanda, pero es una marca. **No se ataca** para no generar conflictos: el portal trabaja «galletas de nata gallegas», «galletas de nata caseras» y «receta galletas de nata».
 
-## 7. Huecos que solo puede cubrir el autor
+## 7. Testimonio del autor (14-10-2026)
+
+Confirmado por el propietario, que es de Ferrol. Se publica como **experiencia propia**, en primera persona:
+
+- En Ferrol sus abuelas hacían galletas de nata. Se ordeñaba la vaca, se hervía la leche (así duraba más) y, al enfriarse, se recogía la capa de nata de la superficie.
+- La nata se guardaba en el frigorífico o en un sitio fresco durante una semana o diez días, hasta juntar 200 o 500 gramos o más.
+- Cada abuela tenía su receta: unas salían más duras y otras más tiernas. La grasa era solo nata.
+- Era una receta de aprovechamiento para los niños, con el sobrante de la leche, y por eso se hizo popular en Galicia, aunque no es exclusiva de aquí.
+- **Conclusión de sus pruebas:** cuanta más materia grasa tiene la nata, mejor sale la galleta. Los mejores resultados se obtuvieron con **más de un 70 % de materia grasa** (doble nata, que según la norma es la de un 50 % o más). Una nata así es difícil de encontrar: no sale de una desnatadora corriente.
+- **«70 % de pureza» queda resuelto:** significa más de un 70 % de **materia grasa**. En el portal se escribe así.
+
+**Afirmación que no se ha publicado tal cual:** que las grandes lecheras «no quieren» que el particular desnate la leche. Es una opinión sobre la intención de terceros y no está respaldada. En su lugar se ha escrito un hecho general: la grasa de la leche se aprovecha en la industria para mantequillas, quesos y otros productos.
+
+## 8. Huecos que solo puede cubrir el autor
 
 - Testimonio propio: cómo se hacían en su casa o en su entorno.
 - Qué nata funciona y cuál no (sus más de dos años de pruebas).

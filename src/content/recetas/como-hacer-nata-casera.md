@@ -16,7 +16,7 @@ relacionados:
   - autentica-nata-de-vaca
   - como-hacer-las-mejores-galletas-de-nata
 pendientes:
-  - 'Método que has probado (por ejemplo, hervir la leche y recoger la capa de nata, o separar en frío) y tipo de leche que funciona.'
+  - 'Confirmar si el método tradicional (hervir y recoger la capa) es el que recomiendas hoy, o si hay otro probado.'
   - 'Cantidades reales: leche usada y nata obtenida en tu prueba.'
   - 'Tiempos medidos y conservación de la nata obtenida.'
   - 'Indicaciones de seguridad alimentaria si se usa leche cruda (consultar fuente oficial antes de publicar).'
@@ -26,7 +26,7 @@ pendientes:
 
 La nata casera se obtiene de la propia leche. Es un proceso lento, pero sencillo, y da una nata distinta a la del supermercado.
 
-Así se conseguía la nata para las galletas en las casas gallegas: se hervía la leche fresca de vaca y, al enfriarse, se recogía la capa que se formaba en la superficie. Se guardaba en frío y se iba juntando hasta tener suficiente para una hornada.
+Así lo hacían mis abuelas en Ferrol. Se ordeñaba la vaca y la leche se hervía. Al enfriarse, se formaba encima una capa de nata que se recogía y se guardaba en el frigorífico. Durante una semana o diez días se iba juntando hasta tener 200, 500 gramos o más, lo justo para una hornada de galletas.
 
 <div class="pendiente">Introducción: para qué sirve esta nata y qué diferencias tiene con la comprada, según tu experiencia.</div>
 
