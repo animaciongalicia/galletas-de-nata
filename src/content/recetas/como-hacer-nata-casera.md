@@ -26,6 +26,8 @@ pendientes:
 
 La nata casera se obtiene de la propia leche. Es un proceso lento, pero sencillo, y da una nata distinta a la del supermercado.
 
+Así se conseguía la nata para las galletas en las casas gallegas: se hervía la leche fresca de vaca y, al enfriarse, se recogía la capa que se formaba en la superficie. Se guardaba en frío y se iba juntando hasta tener suficiente para una hornada.
+
 <div class="pendiente">Introducción: para qué sirve esta nata y qué diferencias tiene con la comprada, según tu experiencia.</div>
 
 ## Qué leche sirve
@@ -35,3 +37,9 @@ La nata casera se obtiene de la propia leche. Es un proceso lento, pero sencillo
 ## Cómo usarla en galletas
 
 <div class="pendiente">Si la nata casera sirve para la receta de galletas y qué cambia en el resultado.</div>
+
+## Seguridad
+
+Si usas leche cruda, recién ordeñada, hiérvela siempre antes de consumirla o de usar su nata. La leche que se vende envasada ya está tratada.
+
+<div class="pendiente">Confirmar con una fuente oficial (AESAN o Consellería de Sanidade) la recomendación sobre la leche cruda antes de publicar.</div>
