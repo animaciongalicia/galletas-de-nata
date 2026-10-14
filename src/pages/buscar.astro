@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import Migas from '../components/Migas.astro';
+import CabeceraPagina from '../components/CabeceraPagina.astro';
 import Rejilla from '../components/Rejilla.astro';
 import Vacio from '../components/Vacio.astro';
 import { LISTA_SECCIONES } from '../data/secciones';
@@ -14,9 +14,13 @@ const piezas = await getPiezas();
   descripcion="Busca entre todas las recetas, postres y artículos sobre galletas de nata por título o filtra por sección."
   indexable={false}
 >
-  <div class="envoltorio">
-    <Migas items={[{ nombre: 'Buscar', href: '/buscar/' }]} />
-    <h1>Buscar</h1>
+  <CabeceraPagina
+    migas={[{ nombre: 'Buscar', href: '/buscar/' }]}
+    antetitulo="Todos los contenidos"
+    titulo="Buscar"
+    entradilla="Historia, recetas, postres y nata: busca por título o filtra por sección."
+  />
+  <div class="ancho-pieza">
 
     <!-- Sin JavaScript: navegación por secciones y listado completo. -->
     <nav class="por-seccion" aria-label="Contenidos por sección">

@@ -10,7 +10,7 @@ const relacionadas = await getRelacionadas(Astro.props.pieza);
 
 {
   relacionadas.length > 0 && (
-    <section class="envoltorio relacionados banda banda--crema" aria-labelledby="rel-titulo">
+    <section class="ancho-pieza relacionados banda banda--crema" aria-labelledby="rel-titulo">
       <h2 id="rel-titulo">Sigue leyendo</h2>
       <Rejilla piezas={relacionadas} />
     </section>

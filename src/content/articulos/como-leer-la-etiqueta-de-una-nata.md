@@ -6,9 +6,9 @@ estado: aprobado
 fechaPublicacion: 2026-10-14
 intencion: 'Informativa: «etiqueta nata», «nata UHT o pasteurizada», «tipos de nata». Complementa la guía central de nata.'
 imagen:
-  src: ../../assets/provisional/como-leer-la-etiqueta-de-una-nata.jpg
-  alt: 'Envase de nata con la etiqueta de ingredientes a la vista'
-  provisional: true
+  src: ../../assets/fotos/cuenco-de-nata-espesa.jpg
+  alt: 'Cuenco con nata espesa'
+  provisional: false
 relacionados:
   - autentica-nata-de-vaca
   - nata-para-montar-o-para-cocinar

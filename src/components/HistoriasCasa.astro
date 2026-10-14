@@ -6,7 +6,7 @@ import foto from '../assets/fotos/nata-casera-con-pan.jpg';
 
 <section class="envoltorio banda banda--verde historias" aria-labelledby="historias-titulo">
   <div class="historias-foto">
-    <Figura imagen={{ src: foto, alt: 'Tarrinas de nata casera junto a un pan con nata untada', provisional: false }} proporcion="4 / 5" tamanos="(max-width: 62rem) 18rem, 22rem" anchos={[400, 640]} />
+    <Figura imagen={{ src: foto, alt: 'Tarrinas de nata casera junto a un pan con nata untada', provisional: false }} proporcion="4 / 3" tamanos="(max-width: 62rem) 18rem, 20rem" anchos={[400, 640]} />
   </div>
   <div>
     <p class="antetitulo">Historias de casa</p>
@@ -24,7 +24,7 @@ import foto from '../assets/fotos/nata-casera-con-pan.jpg';
 <style>
   .historias {
     display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr) minmax(0, 1.2fr);
+    grid-template-columns: 18rem minmax(0, 1fr) minmax(0, 1.2fr);
     gap: var(--e-4);
     align-items: center;
     padding-block: var(--e-5);

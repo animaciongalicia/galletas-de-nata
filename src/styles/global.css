@@ -36,6 +36,8 @@
   --e-3: 1.5rem;
   --e-4: 2.5rem;
   --e-5: 4rem;
+  /* Tres medidas para toda la web:
+     72rem marco (cabecera, pie, portada) · 60rem páginas de lectura · 42rem línea de texto. */
   --ancho: 72rem;
   --ancho-texto: 42rem;
   /* Columna de una pieza: texto + índice lateral. Cabecera, foto y cuerpo comparten este ancho. */
@@ -369,8 +371,8 @@ img {
 }
 .prosa img {
   border-radius: var(--radio);
-  margin: var(--e-4) auto;
-  max-height: 34rem;
+  margin: var(--e-4) 0;
+  max-height: 24rem;
   width: auto;
   object-fit: cover;
   box-shadow: 0 18px 40px -24px rgb(27 25 22 / 45%);

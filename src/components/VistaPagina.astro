@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import Migas from './Migas.astro';
+import CabeceraPagina from './CabeceraPagina.astro';
 import PanelEditorial from './PanelEditorial.astro';
 import { esAprobado, htmlPublicable, type Pagina } from '../lib/contenido';
 import { fecha, fechaIso } from '../lib/formato';
@@ -14,11 +14,11 @@ const { html } = await htmlPublicable(pagina);
 ---
 
 <Base titulo={data.titulo} descripcion={data.descripcion} indexable={esAprobado(pagina)}>
-  <div class="estrecho">
-    <Migas items={[{ nombre: data.titulo, href: `/${pagina.id}/` }]} />
-    <h1>{data.titulo}</h1>
+  <CabeceraPagina migas={[{ nombre: data.titulo, href: `/${pagina.id}/` }]} titulo={data.titulo} entradilla={data.descripcion}>
     <PanelEditorial estado={data.estado} pendientes={data.pendientes} />
-    <div class="prosa">
+  </CabeceraPagina>
+  <div class="ancho-pieza">
+    <div class="prosa texto">
       <Fragment set:html={html} />
     </div>
     {
@@ -32,6 +32,9 @@ const { html } = await htmlPublicable(pagina);
 </Base>
 
 <style>
+  .texto {
+    max-width: var(--ancho-texto);
+  }
   .actualizado {
     margin-top: var(--e-4);
     font-size: var(--t-s);

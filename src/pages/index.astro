@@ -1,6 +1,4 @@
 ---
-import { Image } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
 import Base from '../layouts/Base.astro';
 import Figura from '../components/Figura.astro';
 import Rejilla from '../components/Rejilla.astro';
@@ -8,7 +6,8 @@ import Vacio from '../components/Vacio.astro';
 import HistoriasCasa from '../components/HistoriasCasa.astro';
 import { SITIO } from '../data/sitio';
 import { getPiezas, url } from '../lib/contenido';
-import fotoApertura from '../assets/fotos/galletas-de-nata-finas-en-lata-antigua.jpg';
+import fotoApertura from '../assets/fotos/ordeno-de-la-vaca-y-ninos-bebiendo-leche.jpg';
+import fotoVacas from '../assets/fotos/vacas-frisonas-en-un-prado-gallego.jpg';
 import fotoLeche from '../assets/fotos/leche-recien-ordenada-en-el-fuego.jpg';
 import fotoCapa from '../assets/fotos/capa-de-nata-sobre-la-leche-hervida.jpg';
 import fotoGuardar from '../assets/fotos/sacar-la-nata-de-la-leche-cocida.jpg';
@@ -18,11 +17,6 @@ const piezas = await getPiezas();
 const destacadas = [...piezas.filter((p) => p.data.destacado), ...piezas.filter((p) => !p.data.destacado)].slice(0, 6);
 const historia = piezas.find((p) => p.id === 'como-se-hacian-las-galletas-de-nata');
 const guiaNata = piezas.find((p) => p.id === 'autentica-nata-de-vaca');
-
-// Foto de vacas: aparece sola cuando se sube a src/assets/fotos/ un archivo que empiece por «vacas».
-const vacas = Object.values(
-  import.meta.glob<{ default: ImageMetadata }>('../assets/fotos/vacas*.{jpg,jpeg,png,webp}', { eager: true }),
-)[0]?.default;
 
 const pasos = [
   {
@@ -64,35 +58,35 @@ const esquemas = [
   esquemas={esquemas}
 >
   <!-- 1. Apertura -->
-  <section class="apertura">
-    <Image
-      src={fotoApertura}
-      alt="Galletas de nata finas en una lata antigua, junto a un molinillo de hierro"
-      widths={[800, 1280, 1600, 2000]}
-      sizes="100vw"
-      width={2000}
-      height={Math.round((2000 * fotoApertura.height) / fotoApertura.width)}
-      priority
-      layout="none"
-      format="webp"
-      class="apertura-foto"
-    />
-    <div class="envoltorio apertura-texto">
+  <section class="envoltorio apertura">
+    <div class="apertura-texto">
       <p class="antetitulo">La galleta de nata gallega</p>
       <h1>No se compraban. <em>Salían de la leche de casa.</em></h1>
-      <p class="apertura-entradilla">
+      <p class="entradilla">
         Leche recién ordeñada, nata guardada día a día y una lata de galletas para los niños. Su historia, la nata que
         necesitan y cómo volver a hacerlas.
       </p>
       <div class="acciones">
-        {historia && <a class="boton boton--claro-sobre-oscuro" href={url(historia.id)}>Lee la historia</a>}
+        {historia && <a class="boton" href={url(historia.id)}>Lee la historia</a>}
         <a class="enlace-flecha" href="/recetas/">Ver recetas →</a>
       </div>
+    </div>
+    <div class="apertura-foto">
+      <Figura
+        imagen={{ src: fotoApertura, alt: 'Foto antigua en blanco y negro: una mujer ordeña una vaca mientras unos niños beben leche', provisional: false }}
+        prioridad
+        proporcion="4 / 3"
+        tamanos="(max-width: 62rem) 100vw, 30rem"
+        anchos={[480, 676]}
+      />
     </div>
   </section>
 
   <!-- 2. Tierra de vacas -->
   <section class="envoltorio banda banda--crema tierra" aria-labelledby="tierra-titulo">
+    <div class="tierra-foto">
+      <Figura imagen={{ src: fotoVacas, alt: 'Vacas frisonas pastando en un prado gallego', provisional: false }} proporcion="3 / 2" tamanos="(max-width: 62rem) 100vw, 30rem" anchos={[480, 750]} />
+    </div>
     <div class="tierra-texto">
       <p class="antetitulo">Galicia</p>
       <h2 id="tierra-titulo">Tierra de vacas y de leche</h2>
@@ -100,18 +94,17 @@ const esquemas = [
         En una casa con vacas siempre había leche que hervir y nata que aprovechar. En casi toda la Galicia rural, y
         mucho en la comarca de Ferrol, las galletas de nata formaban parte de la infancia.
       </p>
-    </div>
-    <div class="tierra-cifra">
-      <p class="cifra">≈&nbsp;41&nbsp;%</p>
-      <p class="cifra-texto">de la leche de vaca de España sale hoy de Galicia.</p>
-    </div>
-    {
-      vacas && (
-        <div class="tierra-foto">
-          <Image src={vacas} alt="Vacas en Galicia" widths={[480, 800, 1200]} sizes="(max-width: 62rem) 100vw, 30rem" layout="none" format="webp" />
+      <dl class="cifras">
+        <div>
+          <dt>≈&nbsp;41&nbsp;%</dt>
+          <dd>de la leche de vaca de España sale hoy de Galicia.</dd>
         </div>
-      )
-    }
+        <div>
+          <dt>56&nbsp;%</dt>
+          <dd>de las explotaciones lecheras del país están aquí.</dd>
+        </div>
+      </dl>
+    </div>
   </section>
 
   <!-- 3. Del cazo a la lata -->
@@ -153,26 +146,39 @@ const esquemas = [
     </div>
   </section>
 
-  <!-- 5. La nata de antes -->
-  <section class="envoltorio bloque datos" aria-labelledby="datos-titulo">
-    <div class="bloque-cabecera">
-      <p class="antetitulo">La nata</p>
-      <h2 id="datos-titulo">La nata de antes daba otra galleta</h2>
+  <!-- 5. Dos natas, dos galletas -->
+  <section class="envoltorio bloque natas" aria-labelledby="natas-titulo">
+    <div class="bloque-cabecera natas-cabecera">
+      <div>
+        <p class="antetitulo">La nata</p>
+        <h2 id="natas-titulo">Dos natas, dos galletas</h2>
+      </div>
+      <p class="natas-intro">
+        La receta lleva tres ingredientes: nata, azúcar y harina. Toda la grasa sale de la nata, así que{' '}
+        <strong>la nata decide la galleta</strong>.
+      </p>
     </div>
-    <dl>
-      <div>
-        <dt>3</dt>
-        <dd><strong>ingredientes</strong> en la receta tradicional: nata, azúcar y harina.</dd>
-      </div>
-      <div>
-        <dt>70-80&nbsp;%</dt>
-        <dd>de <strong>materia grasa</strong> en la nata que dio la galleta de siempre en las pruebas del proyecto.</dd>
-      </div>
-      <div>
-        <dt>≈&nbsp;50&nbsp;%</dt>
-        <dd>de <strong>grasa en la galleta horneada</strong> con esa nata, frente al ≈&nbsp;20&nbsp;% con una nata del 35&nbsp;%.</dd>
-      </div>
-    </dl>
+    <div class="comparacion">
+      <article>
+        <p class="antetitulo">La nata de antes</p>
+        <h3>Muy grasa, desnatada en la lechería</h3>
+        <dl>
+          <div><dt>70-80&nbsp;%</dt><dd>de materia grasa en la nata</dd></div>
+          <div><dt>≈&nbsp;50&nbsp;%</dt><dd>de grasa en la galleta horneada</dd></div>
+        </dl>
+        <p class="resultado">Sabe a nata. Es la galleta de siempre.</p>
+      </article>
+      <article>
+        <p class="antetitulo">La nata de hoy</p>
+        <h3>La de montar, en brik</h3>
+        <dl>
+          <div><dt>35&nbsp;%</dt><dd>de materia grasa en la nata</dd></div>
+          <div><dt>≈&nbsp;20&nbsp;%</dt><dd>de grasa en la galleta horneada</dd></div>
+        </dl>
+        <p class="resultado">Sale rica, pero se parece a una galleta de mantequilla.</p>
+      </article>
+    </div>
+    <p class="nota">Porcentajes en masa. La grasa de la galleta es la que quedó en las pruebas hechas para esta web.</p>
     {guiaNata && <p class="mas"><a class="enlace-flecha" href={url(guiaNata.id)}>Por qué la nata lo cambia todo →</a></p>}
   </section>
 
@@ -193,78 +199,37 @@ const esquemas = [
 <style>
   /* 1. Apertura */
   .apertura {
-    position: relative;
-    min-height: min(86vh, 52rem);
     display: grid;
-    align-items: end;
-    color: var(--marfil);
-    overflow: hidden;
-    background: var(--tinta);
-  }
-  .apertura :global(.apertura-foto) {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .apertura::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgb(27 25 22 / 25%) 0%, rgb(27 25 22 / 55%) 45%, rgb(27 25 22 / 90%) 100%);
-  }
-  .apertura-texto {
-    position: relative;
-    z-index: 1;
-    padding: var(--e-5) 0;
-  }
-  .apertura .antetitulo {
-    color: var(--galleta-claro);
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: var(--e-5);
+    align-items: center;
+    padding-block: var(--e-5);
   }
   .apertura h1 {
-    font-size: clamp(2.6rem, 1.3rem + 5vw, 5.8rem);
+    font-size: clamp(2.6rem, 1.4rem + 4.2vw, 5rem);
     font-weight: 350;
-    line-height: 1;
+    line-height: 1.02;
     letter-spacing: -0.03em;
-    max-width: 16ch;
+    max-width: 14ch;
     margin: 0 0 var(--e-3);
-    color: var(--marfil);
   }
   .apertura h1 em {
     display: block;
     font-style: italic;
     font-weight: 300;
-    color: var(--galleta-claro);
+    color: var(--tostado);
   }
-  .apertura-entradilla {
-    font-family: var(--f-titulo);
-    font-size: var(--t-l);
-    font-weight: 350;
-    line-height: 1.45;
-    max-width: 34rem;
-    color: rgb(246 243 236 / 88%);
+  .apertura .entradilla {
     margin: 0 0 var(--e-4);
+  }
+  .apertura-foto :global(img) {
+    box-shadow: 18px 18px 0 var(--marfil-hondo);
   }
   .acciones {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: var(--e-3);
-  }
-  .boton--claro-sobre-oscuro {
-    background: var(--marfil);
-    border-color: var(--marfil);
-    color: var(--tinta);
-  }
-  .boton--claro-sobre-oscuro:hover {
-    background: transparent;
-    color: var(--marfil);
-    border-color: var(--marfil);
-  }
-  .apertura .enlace-flecha {
-    color: var(--marfil);
-    border-color: var(--marfil);
   }
 
   /* Bloques comunes */
@@ -287,45 +252,39 @@ const esquemas = [
   /* 2. Tierra de vacas */
   .tierra {
     display: grid;
-    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-    gap: var(--e-4) var(--e-5);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: var(--e-5);
     align-items: center;
     padding-block: var(--e-5);
   }
-  .tierra-texto p:last-child {
+  .tierra-texto > p:not(.antetitulo) {
     font-family: var(--f-titulo);
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 350;
     line-height: 1.55;
-    margin: var(--e-3) 0 0;
-    max-width: 34rem;
+    margin: var(--e-3) 0;
   }
-  .tierra-cifra {
-    border-left: 1px solid var(--tinta);
-    padding-left: var(--e-4);
+  .cifras {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--e-3);
+    margin: 0;
+    padding-top: var(--e-3);
+    border-top: 1px solid var(--tinta);
   }
-  .cifra {
+  .cifras dt {
     font-family: var(--f-titulo);
-    font-size: clamp(4rem, 2.5rem + 6vw, 8rem);
+    font-size: clamp(2.4rem, 1.8rem + 2vw, 3.4rem);
     font-weight: 300;
-    line-height: 0.9;
-    letter-spacing: -0.04em;
+    line-height: 1;
+    letter-spacing: -0.03em;
     color: var(--oliva);
-    margin: 0 0 var(--e-2);
+    margin-bottom: var(--e-1);
   }
-  .cifra-texto {
+  .cifras dd {
+    margin: 0;
     font-size: var(--t-s);
     color: var(--tinta-suave);
-    max-width: 16rem;
-    margin: 0;
-  }
-  .tierra-foto {
-    grid-column: 1 / -1;
-  }
-  .tierra-foto :global(img) {
-    width: 100%;
-    aspect-ratio: 21 / 9;
-    object-fit: cover;
   }
 
   /* 3. Del cazo a la lata */
@@ -387,39 +346,70 @@ const esquemas = [
     margin-bottom: 0;
   }
 
-  /* 5. La nata de antes */
-  .datos dl {
+  /* 5. Dos natas, dos galletas */
+  .natas-cabecera {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    margin: 0;
-    border-top: 1px solid var(--tinta);
-    padding-top: var(--e-3);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--e-4);
+    align-items: end;
   }
-  .datos dl > div {
-    padding: 0 var(--e-3);
+  .natas-intro {
+    margin: 0;
+    font-family: var(--f-titulo);
+    font-size: 1.25rem;
+    font-weight: 350;
+    line-height: 1.5;
+    color: var(--tinta-suave);
+  }
+  .comparacion {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid var(--tinta);
+  }
+  .comparacion article {
+    padding: var(--e-4) var(--e-4) var(--e-3) 0;
+  }
+  .comparacion article + article {
+    padding-left: var(--e-4);
     border-left: 1px solid var(--linea);
   }
-  .datos dl > div:first-child {
-    padding-left: 0;
-    border-left: 0;
+  .comparacion h3 {
+    font-size: 1.45rem;
+    font-weight: 450;
+    margin: 0 0 var(--e-3);
   }
-  .datos dt {
+  .comparacion dl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--e-3);
+    margin: 0 0 var(--e-3);
+  }
+  .comparacion dt {
     font-family: var(--f-titulo);
-    font-size: clamp(2.6rem, 1.8rem + 2.4vw, 3.8rem);
+    font-size: clamp(2.4rem, 1.8rem + 2vw, 3.4rem);
     font-weight: 300;
     line-height: 1;
     letter-spacing: -0.03em;
-    margin-bottom: var(--e-2);
+    margin-bottom: var(--e-1);
   }
-  .datos dd {
+  .comparacion article:first-child dt {
+    color: var(--tostado);
+  }
+  .comparacion dd {
     margin: 0;
-    color: var(--tinta-suave);
     font-size: var(--t-s);
-    max-width: 18rem;
+    color: var(--tinta-suave);
   }
-  .datos dd strong {
-    color: var(--tinta);
-    font-weight: 600;
+  .resultado {
+    margin: 0;
+    font-family: var(--f-titulo);
+    font-style: italic;
+    font-size: 1.2rem;
+  }
+  .nota {
+    margin: var(--e-2) 0 0;
+    font-size: var(--t-xs);
+    color: var(--tinta-suave);
   }
 
   /* 6. Hazlas tú */
@@ -428,15 +418,22 @@ const esquemas = [
   }
 
   @media (max-width: 62rem) {
+    .apertura,
     .tierra,
-    .aprovechamiento {
+    .aprovechamiento,
+    .natas-cabecera {
       grid-template-columns: 1fr;
       gap: var(--e-3);
     }
-    .tierra-cifra {
-      border-left: 0;
-      border-top: 1px solid var(--tinta);
-      padding: var(--e-3) 0 0;
+    .apertura {
+      padding-top: var(--e-4);
+    }
+    .apertura-foto,
+    .tierra-foto {
+      max-width: 34rem;
+    }
+    .apertura-foto :global(img) {
+      box-shadow: 10px 10px 0 var(--marfil-hondo);
     }
     .pasos {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -444,24 +441,33 @@ const esquemas = [
     }
   }
   @media (max-width: 40rem) {
-    .apertura {
-      min-height: 80vh;
+    .comparacion {
+      grid-template-columns: 1fr;
     }
+    /* Pasos en filas: miniatura a la izquierda, texto a la derecha. */
     .pasos {
       grid-template-columns: 1fr;
+      row-gap: var(--e-3);
     }
-    .datos dl {
-      grid-template-columns: 1fr;
-      gap: var(--e-3);
+    .pasos li {
+      display: grid;
+      grid-template-columns: 6.5rem minmax(0, 1fr);
+      column-gap: var(--e-2);
+      align-items: start;
     }
-    .datos dl > div {
-      padding: var(--e-3) 0 0;
+    .pasos li > :global(.figura) {
+      grid-row: span 3;
+    }
+    .paso-num {
+      margin-top: 0;
+    }
+    .comparacion article,
+    .comparacion article + article {
+      padding: var(--e-3) 0;
       border-left: 0;
-      border-top: 1px solid var(--linea);
     }
-    .datos dl > div:first-child {
-      padding-top: 0;
-      border-top: 0;
+    .comparacion article + article {
+      border-top: 1px solid var(--linea);
     }
   }
 </style>

@@ -1,7 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import Migas from './Migas.astro';
-import Figura from './Figura.astro';
+import CabeceraPagina from './CabeceraPagina.astro';
 import Rejilla from './Rejilla.astro';
 import Vacio from './Vacio.astro';
 import Fuentes from './Fuentes.astro';
@@ -26,22 +25,20 @@ const [citaA, citaB] = (texto?.data.cita ?? '').split(/:\s/);
 ---
 
 <Base titulo={seccion.tituloSeo} descripcion={seccion.descripcion} indexable={indexable} imagen={texto?.data.imagen?.src} imagenAlt={texto?.data.imagen?.alt}>
-  <header class="envoltorio banda banda--crema cabecera-seccion">
-    <Migas items={[{ nombre: seccion.nombre, href: `/${seccion.slug}/` }]} />
-    <div class:list={['cabecera-rejilla', { 'con-foto': texto?.data.imagen }]}>
-      <div>
-        <p class="antetitulo">{seccion.nombre}</p>
-        <h1>{titular}</h1>
-        <p class="entradilla">{tipografia(entradilla)}</p>
-      </div>
-      {texto?.data.imagen && <Figura imagen={texto.data.imagen} prioridad proporcion="4 / 5" tamanos="(max-width: 62rem) 100vw, 26rem" anchos={[400, 640, 900]} />}
-    </div>
-  </header>
+  <CabeceraPagina
+    migas={[{ nombre: seccion.nombre, href: `/${seccion.slug}/` }]}
+    antetitulo={seccion.nombre}
+    titulo={titular}
+    entradilla={entradilla}
+    imagen={texto?.data.imagen}
+  />
 
   {
     historia && (
-      <div class="estrecho prosa historia">
-        <Fragment set:html={historia.html} />
+      <div class="ancho-pieza">
+        <div class="prosa historia">
+          <Fragment set:html={historia.html} />
+        </div>
       </div>
     )
   }
@@ -56,51 +53,20 @@ const [citaA, citaB] = (texto?.data.cita ?? '').split(/:\s/);
     )
   }
 
-  <section class="envoltorio piezas" aria-labelledby="piezas-titulo">
+  <section class="ancho-pieza piezas" aria-labelledby="piezas-titulo">
     <p class="antetitulo">Para leer</p>
     <h2 id="piezas-titulo">En esta sección</h2>
     {piezas.length > 0 ? <Rejilla piezas={piezas} nivel="h3" /> : <Vacio mensaje={seccion.vacio} excluir={seccion.id} />}
+    {texto && texto.data.fuentes.length > 0 && <div class="fuentes-seccion"><Fuentes lista={texto.data.fuentes} /></div>}
   </section>
-
-  {
-    texto && texto.data.fuentes.length > 0 && (
-      <div class="estrecho fuentes-seccion">
-        <Fuentes lista={texto.data.fuentes} />
-      </div>
-    )
-  }
 
   <HistoriasCasa />
 </Base>
 
 <style>
-  .cabecera-seccion {
-    display: flow-root; /* evita que el margen de las migas se salga de la banda */
-    padding-bottom: var(--e-5);
-  }
-  .cabecera-rejilla {
-    margin-top: var(--e-3);
-  }
-  .cabecera-rejilla.con-foto {
-    display: grid;
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-    gap: var(--e-5);
-    align-items: center;
-  }
-  h1 {
-    font-size: clamp(2.3rem, 1.3rem + 3.6vw, 4.4rem);
-    font-weight: 350;
-    line-height: 1.04;
-    letter-spacing: -0.025em;
-    max-width: 18ch;
-  }
-  .cabecera-seccion :global(.figura) {
-    max-width: 26rem;
-    width: 100%;
-    justify-self: end;
-  }
   .historia {
-    padding-block: var(--e-5);
+    max-width: var(--ancho-texto);
+    padding-bottom: var(--e-5);
   }
   /* Letra capital en el primer párrafo de la historia. */
   .historia :global(> p:first-child::first-letter) {
@@ -136,19 +102,6 @@ const [citaA, citaB] = (texto?.data.cita ?? '').split(/:\s/);
     font-weight: 400;
   }
   .fuentes-seccion {
-    padding-bottom: var(--e-5);
-  }
-  .fuentes-seccion :global(.fuentes) {
-    margin-top: 0;
-  }
-  @media (max-width: 62rem) {
-    .cabecera-rejilla.con-foto {
-      grid-template-columns: 1fr;
-      gap: var(--e-3);
-    }
-    .cabecera-seccion :global(.figura) {
-      justify-self: start;
-      max-width: 20rem;
-    }
+    max-width: var(--ancho-texto);
   }
 </style>

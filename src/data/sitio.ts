@@ -9,7 +9,7 @@ export const SITIO = {
   idioma: 'es-ES',
   locale: 'es_ES',
   /** Correo editorial público. null hasta que el propietario lo confirme. */
-  correoEditorial: null as string | null,
+  correoEditorial: 'info@galletasdenata.com' as string | null,
 };
 
 export const AUTOR = {

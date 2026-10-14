@@ -1,14 +1,15 @@
 ---
 titulo: 'Contacto editorial'
-descripcion: 'Cómo escribir al autor de Galletas de Nata para correcciones, sugerencias de recetas o consultas sobre el contenido publicado.'
-estado: borrador
+descripcion: 'Cómo escribir a Galletas de Nata para enviar una historia de familia, proponer una corrección o sugerir una receta con galletas de nata.'
+estado: aprobado
 enPie: true
-pendientes:
-  - 'Correo editorial real (se añade también en src/data/sitio.ts). No se publica un formulario hasta que exista un servicio que lo reciba.'
+fechaActualizacion: 2026-10-15
 ---
 
-Puedes escribir para proponer una corrección, sugerir una receta o hacer una consulta sobre lo publicado.
+Puedes escribir para contar cómo se hacían las galletas de nata en tu casa, proponer una corrección o sugerir una receta.
 
-<div class="pendiente">Correo electrónico editorial y plazo orientativo de respuesta.</div>
+**Correo:** [info@galletasdenata.com](mailto:info@galletasdenata.com)
+
+Si quieres compartir la historia de tu familia, en [Historias de casa](/historias-de-casa/) tienes qué contar y cómo se publica.
 
 Este portal no vende productos ni gestiona pedidos. Para consultas sobre una marca concreta de galletas, dirígete directamente a su fabricante.

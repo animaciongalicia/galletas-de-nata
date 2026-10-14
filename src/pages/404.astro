@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import CabeceraPagina from '../components/CabeceraPagina.astro';
 import { LISTA_SECCIONES } from '../data/secciones';
 ---
 
@@ -8,13 +9,13 @@ import { LISTA_SECCIONES } from '../data/secciones';
   descripcion="La página que buscas no existe o ha cambiado de dirección. Desde aquí puedes ir a las recetas, los postres o la sección sobre la nata."
   indexable={false}
 >
-  <div class="estrecho error">
-    <p class="antetitulo">Error 404</p>
-    <h1>Esta galleta se ha quedado en la lata</h1>
-    <p class="entradilla">
-      La página que buscas no existe o ha cambiado de dirección. Si llegaste desde un enlace antiguo, es posible que el
-      contenido esté en una de estas secciones:
-    </p>
+  <CabeceraPagina
+    antetitulo="Error 404"
+    titulo="Esta galleta se ha quedado"
+    cursiva="en la lata"
+    entradilla="La página que buscas no existe o ha cambiado de dirección. Si llegaste desde un enlace antiguo, es posible que el contenido esté en una de estas secciones:"
+  />
+  <div class="ancho-pieza error">
     <ul class="destinos">
       {LISTA_SECCIONES.map((s) => <li><a href={`/${s.slug}/`}><strong>{s.nombre}</strong><span>{s.descripcion}</span></a></li>)}
     </ul>
@@ -26,7 +27,7 @@ import { LISTA_SECCIONES } from '../data/secciones';
 
 <style>
   .error {
-    padding-top: var(--e-4);
+    padding-bottom: var(--e-5);
   }
   .destinos {
     list-style: none;

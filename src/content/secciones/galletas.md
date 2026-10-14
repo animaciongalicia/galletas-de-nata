@@ -31,6 +31,8 @@ El resultado cambiaba de una cocina a otra. En unas casas salían más duras; en
 
 Galicia es tierra de vacas y de leche: hoy produce en torno al 41 % de la leche de vaca de España. En una casa con vacas siempre había leche que hervir y nata que aprovechar. En casi toda la Galicia rural, y mucho en la comarca de Ferrol, las galletas de nata formaban parte de la infancia.
 
+![Foto antigua en blanco y negro: una mujer ordeña una vaca mientras unos niños beben leche](../../assets/fotos/ordeno-de-la-vaca-y-ninos-bebiendo-leche.jpg)
+
 No son exclusivas de aquí. En otras zonas lecheras, y también en Portugal y Brasil, se hacen galletas parecidas con la nata de la leche hervida. Pero en Galicia se convirtieron en un dulce de casa muy reconocible.
 
 ## Por qué casi desaparecieron

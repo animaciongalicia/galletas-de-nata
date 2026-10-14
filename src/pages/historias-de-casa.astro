@@ -1,10 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
-import Migas from '../components/Migas.astro';
-import Figura from '../components/Figura.astro';
+import CabeceraPagina from '../components/CabeceraPagina.astro';
 import { SITIO } from '../data/sitio';
 import { ES_PRODUCCION } from '../lib/contenido';
-import fotoCabecera from '../assets/fotos/leche-recien-ordenada-en-el-fuego.jpg';
+import fotoCabecera from '../assets/fotos/ordeno-de-la-vaca-y-ninos-bebiendo-leche.jpg';
 
 const correo = SITIO.correoEditorial;
 const asunto = encodeURIComponent('Mi historia de galletas de nata');
@@ -18,22 +17,16 @@ const mailto = correo ? `mailto:${correo}?subject=${asunto}&body=${cuerpo}` : un
   titulo="Historias de casa: cómo se hacían las galletas de nata en cada familia"
   descripcion="En Galicia casi cada familia tiene su manera de hacer galletas de nata. Cuenta cómo se hacían en tu casa: la nata, la receta, quién las hacía."
 >
-  <header class="envoltorio banda banda--crema cabecera">
-    <Migas items={[{ nombre: 'Historias de casa', href: '/historias-de-casa/' }]} />
-    <div class="cabecera-rejilla">
-      <div>
-        <p class="antetitulo">Historias de casa</p>
-        <h1>Cada casa, <em>su receta</em></h1>
-        <p class="entradilla">
-          En Galicia casi cada familia tiene su manera de hacer galletas de nata. Aquí caben todas: la de tu madre, la
-          de tu abuela, la de tu pueblo.
-        </p>
-      </div>
-      <Figura imagen={{ src: fotoCabecera, alt: 'Cazos con leche recién ordeñada calentándose en la cocina', provisional: false }} prioridad proporcion="4 / 5" tamanos="(max-width: 62rem) 100vw, 26rem" anchos={[400, 480]} />
-    </div>
-  </header>
+  <CabeceraPagina
+    migas={[{ nombre: 'Historias de casa', href: '/historias-de-casa/' }]}
+    antetitulo="Historias de casa"
+    titulo="Cada casa,"
+    cursiva="su receta"
+    entradilla="En Galicia casi cada familia tiene su manera de hacer galletas de nata. Aquí caben todas: la de tu madre, la de tu abuela, la de tu pueblo."
+    imagen={{ src: fotoCabecera, alt: 'Foto antigua en blanco y negro: una mujer ordeña una vaca mientras unos niños beben leche', provisional: false }}
+  />
 
-  <div class="estrecho prosa cuerpo">
+  <div class="ancho-pieza"><div class="prosa cuerpo">
     <h2>Por qué en Galicia se sabe tanto de esto</h2>
     <p>
       No hace falta haber trabajado en un obrador para saber de galletas de nata. En Galicia basta con haber crecido
@@ -48,13 +41,13 @@ const mailto = correo ? `mailto:${correo}?subject=${asunto}&body=${cuerpo}` : un
       Ese saber casi nunca se escribió. Se medía a ojo o por vasos y pasaba de unas manos a otras. Por eso vale tanto
       contarlo.
     </p>
-  </div>
+  </div></div>
 
   <section class="envoltorio banda banda--tinta cita-banda" aria-label="Cita">
     <p class="cita">«Un vaso de nata, uno de azúcar <em>y la harina que admita.</em>»</p>
   </section>
 
-  <div class="estrecho prosa cuerpo">
+  <div class="ancho-pieza"><div class="prosa cuerpo">
     <h2>Qué puedes contar</h2>
     <ul>
       <li><strong>Cómo se hacían en tu casa:</strong> de dónde salía la nata, cuántos días se juntaba, dónde se horneaban.</li>
@@ -88,39 +81,13 @@ const mailto = correo ? `mailto:${correo}?subject=${asunto}&body=${cuerpo}` : un
         )
       }
     </div>
-  </div>
+  </div></div>
 </Base>
 
 <style>
-  .cabecera {
-    display: flow-root;
-    padding-bottom: var(--e-5);
-  }
-  .cabecera-rejilla {
-    display: grid;
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-    gap: var(--e-5);
-    align-items: center;
-    margin-top: var(--e-3);
-  }
-  h1 {
-    font-size: clamp(2.6rem, 1.4rem + 4.6vw, 5.2rem);
-    font-weight: 350;
-    line-height: 1;
-    letter-spacing: -0.03em;
-  }
-  h1 em {
-    font-style: italic;
-    font-weight: 300;
-    color: var(--tostado);
-  }
-  .cabecera :global(.figura) {
-    max-width: 26rem;
-    justify-self: end;
-    width: 100%;
-  }
   .cuerpo {
-    padding-block: var(--e-5);
+    max-width: var(--ancho-texto);
+    padding-block: var(--e-2) var(--e-5);
   }
   .cuerpo > h2:first-child {
     margin-top: 0;
@@ -151,15 +118,5 @@ const mailto = correo ? `mailto:${correo}?subject=${asunto}&body=${cuerpo}` : un
     font-size: 1.3rem;
     color: var(--tinta-suave);
     margin: 0;
-  }
-  @media (max-width: 62rem) {
-    .cabecera-rejilla {
-      grid-template-columns: 1fr;
-      gap: var(--e-3);
-    }
-    .cabecera :global(.figura) {
-      justify-self: start;
-      max-width: 20rem;
-    }
   }
 </style>
