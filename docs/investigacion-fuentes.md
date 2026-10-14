@@ -183,3 +183,17 @@ Estudio aportado por el propietario. Resumen de lo incorporado al portal y de lo
 El estudio aconseja usar nata comercial en las recetas domésticas. El autor ha decidido mantener el consejo de comprar leche cruda del día; se publica con la advertencia de seguridad de la EFSA.
 
 - **Porcentaje (aclaración del autor):** la nata de las pruebas indicaba en su envase un 70-80 % de materia grasa; la vendía una lechería que la desnataba con una desnatadora especial. Las tablas de cálculo del 70 % y el 75 % se mantienen como ejemplos.
+
+## 10. Investigación histórica y plan editorial (15-10-2026)
+
+Documento aportado por el propietario. Incorporado al portal en «Historia de las galletas de nata» y «Galletas de nata fuera de Galicia».
+
+| Hecho | Confianza | Fuente |
+| --- | --- | --- |
+| El Atlas Etnográfico de Vasconia describe usos domésticos de la nata, incluida su incorporación a galletas. | A (etnografía) | https://atlasetnografico.labayru.eus/index.php/La_nata |
+| «Por los fogones bercianos» (Instituto de Estudios Bercianos) publica una receta de galletas de nata de una cocinera de Ponferrada (p. 204 impresa, p. 205 del PDF). El manuscrito familiar de la página anterior **no** fecha esa receta. | A | https://www.ieb.org.es/images/publicaciones/digitales/FogonesBercianos/PorLosFogonesBercianos.pdf |
+| El diccionario de Larousse Cocina menciona galletas de nata en la entrada «pan de nata» (México). No prueba un origen común. | B | https://laroussecocina.mx/palabra/pan-de-nata/ |
+| Galiciana (prensa histórica gallega desde 1800) es la vía para buscar testimonios fechados. Términos: galletas de nata, galletas de natas, pastas de nata, biscoitos de nata, bolachas de nata, con y sin tildes. | Ruta de investigación | https://prensahistorica.galiciana.gal/es |
+| **No documentado:** primera receta gallega, inventor, localidad o convento de origen, antigüedad «de siglos», receta única, conexión probada entre variantes. | — | — |
+
+**Solo referencia interna (no publicar sin permiso expreso del propietario):** un reportaje de prensa gallega de 2022 sobre la receta de dos vecinas de Covas (Ferrol), ligado al origen de una marca actual, y una entrevista del CRAEGA que fecha otra marca en 2010. Nombran a personas y marcas: el portal no los cita. La fecha de una empresa no fecha el origen de la galleta.

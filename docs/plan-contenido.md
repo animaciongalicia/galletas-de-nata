@@ -4,7 +4,7 @@
 
 | Sección | Publicado | En espera | Qué lo desbloquea |
 | --- | --- | --- | --- |
-| Galletas de nata | 5 (cómo se hacían, nata o mantequilla, ecológicas, historia de la leche, preguntas frecuentes) | auténticas, ingredientes, conservar, errores de textura | Experiencia del autor: rasgos de una buena galleta, plazos de conservación, fallos y su corrección |
+| Galletas de nata | 7 (cómo se hacían, historia documentada, fuera de Galicia, historia de la leche, nata o mantequilla, ecológicas, preguntas frecuentes) | auténticas, ingredientes, conservar, errores de textura | Experiencia del autor: rasgos de una buena galleta, plazos de conservación, fallos y su corrección |
 | Recetas | 1 (tipos de galletas) | **la receta tradicional** | Fecha de la prueba, número de galletas y peso horneado, tiempos reales |
 | Postres | 0 | 11 postres | Prepararlos y medirlos uno a uno |
 | Nata | 5 (nata de vaca, pruebas, montar o cocinar, etiqueta, glosario) | leche cruda, nata casera | Dónde se compra la leche, rendimiento de la nata casera |
@@ -67,4 +67,4 @@ Basta con dictarlo o grabar un audio: la redacción se hace después.
 - **Cada quincena:** una historia de casa o una pieza de historia.
 - **Cada mes:** revisión de lo publicado y fotos nuevas.
 
-En tres meses, la web pasaría de 11 piezas a unas 25. Y las historias de casa seguirían sumando sin depender del horno.
+En tres meses, la web pasaría de 13 piezas a unas 25. Y las historias de casa seguirían sumando sin depender del horno.
