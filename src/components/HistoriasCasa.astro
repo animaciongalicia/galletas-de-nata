@@ -1,0 +1,57 @@
+---
+// Banda de invitación: cada familia puede contar cómo se hacían en su casa.
+import Figura from './Figura.astro';
+import foto from '../assets/fotos/nata-casera-con-pan.jpg';
+---
+
+<section class="envoltorio banda banda--verde historias" aria-labelledby="historias-titulo">
+  <div class="historias-foto">
+    <Figura imagen={{ src: foto, alt: 'Tarrinas de nata casera junto a un pan con nata untada', provisional: false }} proporcion="4 / 5" tamanos="(max-width: 62rem) 18rem, 22rem" anchos={[400, 640]} />
+  </div>
+  <div>
+    <p class="antetitulo">Historias de casa</p>
+    <h2 id="historias-titulo">¿Cómo se hacían en tu casa?</h2>
+  </div>
+  <div class="historias-texto">
+    <p>
+      En Galicia, casi cada familia tiene su manera de hacerlas: la nata que se juntaba, el vaso que servía de medida,
+      la lata donde se guardaban. Si tu madre o tu abuela las hacía, esa historia también es parte de esta.
+    </p>
+    <a class="enlace-flecha" href="/historias-de-casa/">Cuéntala →</a>
+  </div>
+</section>
+
+<style>
+  .historias {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: var(--e-4);
+    align-items: center;
+    padding-block: var(--e-5);
+  }
+  h2 {
+    margin: 0;
+    font-size: clamp(2rem, 1.5rem + 1.8vw, 3rem);
+    font-weight: 400;
+    color: var(--marfil);
+  }
+  .historias-foto :global(img) {
+    box-shadow: 14px 14px 0 rgb(246 243 236 / 14%);
+  }
+  .historias-texto p {
+    font-family: var(--f-titulo);
+    font-size: 1.3rem;
+    font-weight: 350;
+    line-height: 1.55;
+    margin-bottom: var(--e-3);
+  }
+  @media (max-width: 62rem) {
+    .historias {
+      grid-template-columns: 1fr;
+      gap: var(--e-3);
+    }
+    .historias-foto {
+      max-width: 18rem;
+    }
+  }
+</style>

@@ -1,35 +1,154 @@
 ---
 import Base from '../layouts/Base.astro';
 import Migas from './Migas.astro';
+import Figura from './Figura.astro';
 import Rejilla from './Rejilla.astro';
 import Vacio from './Vacio.astro';
+import Fuentes from './Fuentes.astro';
+import HistoriasCasa from './HistoriasCasa.astro';
 import type { Seccion } from '../data/secciones';
-import { getPiezas, esAprobado } from '../lib/contenido';
+import { getPiezas, esAprobado, getTextoSeccion, htmlPublicable } from '../lib/contenido';
+import { tipografia } from '../lib/formato';
 
 interface Props {
   seccion: Seccion;
 }
 const { seccion } = Astro.props;
 const piezas = await getPiezas(seccion.id);
-// Una sección sin nada publicado no se indexa (evita páginas vacías en buscadores).
-const indexable = piezas.some(esAprobado);
+const texto = await getTextoSeccion(seccion.id);
+const historia = texto ? await htmlPublicable(texto) : undefined;
+// Con historia propia, la sección tiene contenido aunque aún no haya piezas publicadas.
+const indexable = Boolean(texto) || piezas.some(esAprobado);
+const titular = texto?.data.titular ?? seccion.nombre;
+const entradilla = texto?.data.entradilla ?? seccion.descripcion;
+// Si la cita tiene una parte tras los dos puntos, esa parte va en cursiva.
+const [citaA, citaB] = (texto?.data.cita ?? '').split(/:\s/);
 ---
 
-<Base titulo={seccion.tituloSeo} descripcion={seccion.descripcion} indexable={indexable}>
-  <div class="envoltorio">
-    <header class="cabecera-seccion banda banda--crema">
-      <Migas items={[{ nombre: seccion.nombre, href: `/${seccion.slug}/` }]} />
-      <h1>{seccion.nombre}</h1>
-      <p class="entradilla">{seccion.descripcion}</p>
-    </header>
-    {piezas.length > 0 ? <Rejilla piezas={piezas} nivel="h2" /> : <Vacio mensaje={seccion.vacio} excluir={seccion.id} />}
-  </div>
+<Base titulo={seccion.tituloSeo} descripcion={seccion.descripcion} indexable={indexable} imagen={texto?.data.imagen?.src} imagenAlt={texto?.data.imagen?.alt}>
+  <header class="envoltorio banda banda--crema cabecera-seccion">
+    <Migas items={[{ nombre: seccion.nombre, href: `/${seccion.slug}/` }]} />
+    <div class:list={['cabecera-rejilla', { 'con-foto': texto?.data.imagen }]}>
+      <div>
+        <p class="antetitulo">{seccion.nombre}</p>
+        <h1>{titular}</h1>
+        <p class="entradilla">{tipografia(entradilla)}</p>
+      </div>
+      {texto?.data.imagen && <Figura imagen={texto.data.imagen} prioridad proporcion="4 / 5" tamanos="(max-width: 62rem) 100vw, 26rem" anchos={[400, 640, 900]} />}
+    </div>
+  </header>
+
+  {
+    historia && (
+      <div class="estrecho prosa historia">
+        <Fragment set:html={historia.html} />
+      </div>
+    )
+  }
+
+  {
+    texto?.data.cita && (
+      <section class="envoltorio banda banda--tinta cita-banda" aria-label="Cita">
+        <p class="cita">
+          «{citaB ? <>{citaA}: <em>{citaB}</em></> : citaA}»
+        </p>
+      </section>
+    )
+  }
+
+  <section class="envoltorio piezas" aria-labelledby="piezas-titulo">
+    <p class="antetitulo">Para leer</p>
+    <h2 id="piezas-titulo">En esta sección</h2>
+    {piezas.length > 0 ? <Rejilla piezas={piezas} nivel="h3" /> : <Vacio mensaje={seccion.vacio} excluir={seccion.id} />}
+  </section>
+
+  {
+    texto && texto.data.fuentes.length > 0 && (
+      <div class="estrecho fuentes-seccion">
+        <Fuentes lista={texto.data.fuentes} />
+      </div>
+    )
+  }
+
+  <HistoriasCasa />
 </Base>
 
 <style>
   .cabecera-seccion {
     display: flow-root; /* evita que el margen de las migas se salga de la banda */
-    margin-bottom: var(--e-4);
-    padding-bottom: var(--e-4);
+    padding-bottom: var(--e-5);
+  }
+  .cabecera-rejilla {
+    margin-top: var(--e-3);
+  }
+  .cabecera-rejilla.con-foto {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: var(--e-5);
+    align-items: center;
+  }
+  h1 {
+    font-size: clamp(2.3rem, 1.3rem + 3.6vw, 4.4rem);
+    font-weight: 350;
+    line-height: 1.04;
+    letter-spacing: -0.025em;
+    max-width: 18ch;
+  }
+  .cabecera-seccion :global(.figura) {
+    max-width: 26rem;
+    width: 100%;
+    justify-self: end;
+  }
+  .historia {
+    padding-block: var(--e-5);
+  }
+  /* Letra capital en el primer párrafo de la historia. */
+  .historia :global(> p:first-child::first-letter) {
+    float: left;
+    font-family: var(--f-titulo);
+    font-size: 4.4em;
+    line-height: 0.82;
+    font-weight: 400;
+    padding: 0.08em 0.1em 0 0;
+    color: var(--tostado);
+  }
+  .cita-banda {
+    padding-block: var(--e-5);
+  }
+  .cita {
+    font-family: var(--f-titulo);
+    font-size: clamp(1.8rem, 1.2rem + 2.4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    max-width: 26ch;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .cita em {
+    color: var(--galleta-claro);
+  }
+  .piezas {
+    padding-block: var(--e-5);
+  }
+  .piezas h2 {
+    margin: 0 0 var(--e-4);
+    font-size: clamp(2rem, 1.5rem + 1.8vw, 3rem);
+    font-weight: 400;
+  }
+  .fuentes-seccion {
+    padding-bottom: var(--e-5);
+  }
+  .fuentes-seccion :global(.fuentes) {
+    margin-top: 0;
+  }
+  @media (max-width: 62rem) {
+    .cabecera-rejilla.con-foto {
+      grid-template-columns: 1fr;
+      gap: var(--e-3);
+    }
+    .cabecera-seccion :global(.figura) {
+      justify-self: start;
+      max-width: 20rem;
+    }
   }
 </style>

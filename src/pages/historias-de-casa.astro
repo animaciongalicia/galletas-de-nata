@@ -1,0 +1,165 @@
+---
+import Base from '../layouts/Base.astro';
+import Migas from '../components/Migas.astro';
+import Figura from '../components/Figura.astro';
+import { SITIO } from '../data/sitio';
+import { ES_PRODUCCION } from '../lib/contenido';
+import fotoCabecera from '../assets/fotos/leche-recien-ordenada-en-el-fuego.jpg';
+
+const correo = SITIO.correoEditorial;
+const asunto = encodeURIComponent('Mi historia de galletas de nata');
+const cuerpo = encodeURIComponent(
+  'Cómo se hacían en mi casa:\n\nQuién las hacía:\n\nDe dónde (pueblo, parroquia o comarca):\n\nLa receta tal como la recuerdo:\n\nUn recuerdo:\n\n¿Puede publicarse con mi nombre? (sí / no / solo las iniciales):\n',
+);
+const mailto = correo ? `mailto:${correo}?subject=${asunto}&body=${cuerpo}` : undefined;
+---
+
+<Base
+  titulo="Historias de casa: cómo se hacían las galletas de nata en cada familia"
+  descripcion="En Galicia casi cada familia tiene su manera de hacer galletas de nata. Cuenta cómo se hacían en tu casa: la nata, la receta, quién las hacía."
+>
+  <header class="envoltorio banda banda--crema cabecera">
+    <Migas items={[{ nombre: 'Historias de casa', href: '/historias-de-casa/' }]} />
+    <div class="cabecera-rejilla">
+      <div>
+        <p class="antetitulo">Historias de casa</p>
+        <h1>Cada casa, <em>su receta</em></h1>
+        <p class="entradilla">
+          En Galicia casi cada familia tiene su manera de hacer galletas de nata. Aquí caben todas: la de tu madre, la
+          de tu abuela, la de tu pueblo.
+        </p>
+      </div>
+      <Figura imagen={{ src: fotoCabecera, alt: 'Cazos con leche recién ordeñada calentándose en la cocina', provisional: false }} prioridad proporcion="4 / 5" tamanos="(max-width: 62rem) 100vw, 26rem" anchos={[400, 480]} />
+    </div>
+  </header>
+
+  <div class="estrecho prosa cuerpo">
+    <h2>Por qué en Galicia se sabe tanto de esto</h2>
+    <p>
+      No hace falta haber trabajado en un obrador para saber de galletas de nata. En Galicia basta con haber crecido
+      cerca de una cocina con leche de la cuadra.
+    </p>
+    <p>
+      Galicia reúne más de la mitad de las explotaciones lecheras de España. Durante generaciones, en muchas casas se
+      ordeñaba, se hervía la leche y se guardaba la nata que flotaba encima. Quien lo vio de niño sabe cuántos días
+      tardaba en juntarse, cómo se trabajaba la masa y en qué lata se guardaban las galletas.
+    </p>
+    <p>
+      Ese saber casi nunca se escribió. Se medía a ojo o por vasos y pasaba de unas manos a otras. Por eso vale tanto
+      contarlo.
+    </p>
+  </div>
+
+  <section class="envoltorio banda banda--tinta cita-banda" aria-label="Cita">
+    <p class="cita">«Un vaso de nata, uno de azúcar <em>y la harina que admita.</em>»</p>
+  </section>
+
+  <div class="estrecho prosa cuerpo">
+    <h2>Qué puedes contar</h2>
+    <ul>
+      <li><strong>Cómo se hacían en tu casa:</strong> de dónde salía la nata, cuántos días se juntaba, dónde se horneaban.</li>
+      <li><strong>Quién las hacía:</strong> tu madre, tu abuela, una tía, una vecina.</li>
+      <li><strong>De dónde:</strong> el pueblo, la parroquia o la comarca.</li>
+      <li><strong>La receta tal como la recuerdas.</strong> Vale por vasos, a ojo o con «la harina que admita».</li>
+      <li><strong>Una foto, si la tienes:</strong> de las galletas, de la lata, del cazo o de la cocina de entonces.</li>
+      <li><strong>Un recuerdo:</strong> cuándo se hacían, para quién, cómo se comían.</li>
+    </ul>
+
+
+    <h2>Cómo se publican</h2>
+    <ul>
+      <li>Se leen todas. Nada se publica sin tu permiso.</li>
+      <li>Van con tu nombre, con tus iniciales o sin nombre, como prefieras, y con el lugar.</li>
+      <li>
+        Las recetas de familia se publican como lo que son: el recuerdo de una casa, contado tal cual. Se distinguen
+        de las recetas probadas de la web.
+      </li>
+      <li>Las fotos, solo si son tuyas o tienes permiso para compartirlas.</li>
+    </ul>
+
+    <div class="enviar">
+      {
+        mailto ? (
+          <a class="boton" href={mailto}>Enviar mi historia</a>
+        ) : ES_PRODUCCION ? (
+          <p class="pronto">El buzón para enviar historias se abrirá muy pronto.</p>
+        ) : (
+          <div class="pendiente">Correo editorial para recibir las historias (SITIO.correoEditorial en src/data/sitio.ts).</div>
+        )
+      }
+    </div>
+  </div>
+</Base>
+
+<style>
+  .cabecera {
+    display: flow-root;
+    padding-bottom: var(--e-5);
+  }
+  .cabecera-rejilla {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: var(--e-5);
+    align-items: center;
+    margin-top: var(--e-3);
+  }
+  h1 {
+    font-size: clamp(2.6rem, 1.4rem + 4.6vw, 5.2rem);
+    font-weight: 350;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--tostado);
+  }
+  .cabecera :global(.figura) {
+    max-width: 26rem;
+    justify-self: end;
+    width: 100%;
+  }
+  .cuerpo {
+    padding-block: var(--e-5);
+  }
+  .cuerpo > h2:first-child {
+    margin-top: 0;
+  }
+  .cita-banda {
+    padding-block: var(--e-5);
+  }
+  .cita {
+    font-family: var(--f-titulo);
+    font-size: clamp(1.8rem, 1.2rem + 2.4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    max-width: 24ch;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .cita em {
+    color: var(--galleta-claro);
+  }
+  .enviar {
+    margin-top: var(--e-4);
+    padding-top: var(--e-3);
+    border-top: 1px solid var(--tinta);
+  }
+  .pronto {
+    font-family: var(--f-titulo);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--tinta-suave);
+    margin: 0;
+  }
+  @media (max-width: 62rem) {
+    .cabecera-rejilla {
+      grid-template-columns: 1fr;
+      gap: var(--e-3);
+    }
+    .cabecera :global(.figura) {
+      justify-self: start;
+      max-width: 20rem;
+    }
+  }
+</style>

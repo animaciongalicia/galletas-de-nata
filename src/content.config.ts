@@ -131,4 +131,29 @@ const paginas = defineCollection({
   }),
 });
 
-export const collections = { articulos, recetas, paginas };
+/**
+ * Texto de cada sección: la historia que cuenta la página de sección antes de sus piezas.
+ * Un archivo por sección (galletas.md, recetas.md…). Sin estados: se publica siempre,
+ * así que solo lleva contenido completo y verificado.
+ */
+const secciones = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/secciones' }),
+  schema: (ctx) =>
+    z
+      .object({
+        seccion: z.enum(SECCION_IDS),
+        /** Titular grande de la cabecera (el H1). */
+        titular: z.string().min(10).max(110),
+        entradilla: z.string().min(40).max(260),
+        imagen: imagen(ctx).optional(),
+        /** Frase destacada en banda oscura. */
+        cita: z.string().max(160).optional(),
+        fuentes: z.array(z.object({ titulo: z.string(), nota: z.string().optional() })).default([]),
+      })
+      .superRefine((data, c) => {
+        if (data.imagen?.provisional)
+          c.addIssue({ code: 'custom', message: 'La cabecera de sección necesita una foto propia (provisional: false).' });
+      }),
+});
+
+export const collections = { articulos, recetas, paginas, secciones };

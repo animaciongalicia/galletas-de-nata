@@ -4,9 +4,10 @@
 import type { Pieza } from '../lib/contenido';
 
 interface Props {
-  pieza: Pieza;
+  pieza?: Pieza;
+  lista?: { titulo: string; nota?: string }[];
 }
-const { fuentes } = Astro.props.pieza.data;
+const fuentes = Astro.props.lista ?? Astro.props.pieza?.data.fuentes ?? [];
 ---
 
 {

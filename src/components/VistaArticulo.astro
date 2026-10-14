@@ -26,7 +26,7 @@ const esquemas = await esquemaPieza(pieza, Astro.site!, Astro.url.pathname);
 >
   <article>
     <CabeceraPieza pieza={pieza} />
-    <div class="envoltorio cuerpo">
+    <div class="ancho-pieza cuerpo">
       <aside class="lateral"><Indice titulos={headings} /></aside>
       <div class="prosa">
         <Fragment set:html={html} />
@@ -41,9 +41,19 @@ const esquemas = await esquemaPieza(pieza, Astro.site!, Astro.url.pathname);
   .cuerpo {
     display: grid;
     gap: var(--e-4);
-    grid-template-columns: minmax(0, var(--ancho-texto)) 16rem;
+    grid-template-columns: minmax(0, var(--ancho-texto)) 14rem;
     justify-content: space-between;
     margin-top: var(--e-4);
+  }
+  /* Letra capital al empezar el texto. */
+  .prosa :global(> p:first-child::first-letter) {
+    float: left;
+    font-family: var(--f-titulo);
+    font-size: 3.9em;
+    line-height: 0.82;
+    font-weight: 400;
+    padding: 0.08em 0.1em 0 0;
+    color: var(--tostado);
   }
   .lateral {
     order: 2;

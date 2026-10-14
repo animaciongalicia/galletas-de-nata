@@ -38,6 +38,8 @@
   --e-5: 4rem;
   --ancho: 72rem;
   --ancho-texto: 42rem;
+  /* Columna de una pieza: texto + índice lateral. Cabecera, foto y cuerpo comparten este ancho. */
+  --ancho-pieza: 60rem;
   --radio: 2px;
   --sombra: 0 1px 2px rgb(27 25 22 / 6%);
 }
@@ -113,6 +115,11 @@ img {
 
 .envoltorio {
   width: min(100% - 2 * var(--e-2), var(--ancho));
+  margin-inline: auto;
+}
+
+.ancho-pieza {
+  width: min(100% - 2 * var(--e-2), var(--ancho-pieza));
   margin-inline: auto;
 }
 

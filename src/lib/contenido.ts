@@ -131,7 +131,14 @@ async function resolverImagenes(html: string) {
   return html;
 }
 
-export async function htmlPublicable(e: Pieza | Pagina) {
+export type TextoSeccion = CollectionEntry<'secciones'>;
+
+/** Historia de una sección (src/content/secciones/<id>.md), si existe. */
+export async function getTextoSeccion(id: SeccionId) {
+  return (await getCollection('secciones')).find((t) => t.data.seccion === id);
+}
+
+export async function htmlPublicable(e: Pieza | Pagina | TextoSeccion) {
   const html = tipografia(await resolverImagenes(e.rendered?.html ?? ''));
   const titulos = (e.rendered?.metadata?.headings ?? []) as MarkdownHeading[];
   if (!ES_PRODUCCION) return { html, titulos };

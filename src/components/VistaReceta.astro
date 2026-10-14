@@ -39,7 +39,7 @@ const visibles = esAprobado(pieza) ? datos.filter((d) => d.valor) : datos;
   <article class="receta">
     <CabeceraPieza pieza={pieza} />
 
-    <div class="estrecho">
+    <div class="ancho-pieza">
       <section class="ficha" aria-labelledby="ficha-titulo">
         <div class="ficha-cabecera">
           <h2 id="ficha-titulo">La receta</h2>
@@ -250,6 +250,7 @@ const visibles = esAprobado(pieza) ? datos.filter((d) => d.valor) : datos;
   }
   .explicacion {
     margin-top: var(--e-4);
+    max-width: var(--ancho-texto);
   }
   @media print {
     .ficha {

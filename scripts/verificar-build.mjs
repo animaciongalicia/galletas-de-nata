@@ -37,7 +37,8 @@ async function rutaExiste(pathname) {
 // Estado editorial de cada contenido según su frontmatter.
 const estados = new Map();
 for (const archivo of await recorrer(CONTENIDO)) {
-  if (!archivo.endsWith('.md')) continue;
+  // Los textos de sección (src/content/secciones) no son piezas con estado editorial.
+  if (!archivo.endsWith('.md') || archivo.includes('/content/secciones/')) continue;
   const texto = await readFile(archivo, 'utf8');
   const id = archivo.split('/').pop().replace(/\.md$/, '');
   estados.set(id, texto.match(/^estado:\s*(\w+)/m)?.[1] ?? 'borrador');

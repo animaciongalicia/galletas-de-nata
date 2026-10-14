@@ -5,18 +5,17 @@ import Base from '../layouts/Base.astro';
 import Figura from '../components/Figura.astro';
 import Rejilla from '../components/Rejilla.astro';
 import Vacio from '../components/Vacio.astro';
+import HistoriasCasa from '../components/HistoriasCasa.astro';
 import { SITIO } from '../data/sitio';
-import { getPiezas, urlPaginaVisible, url } from '../lib/contenido';
+import { getPiezas, url } from '../lib/contenido';
 import fotoApertura from '../assets/fotos/galletas-de-nata-finas-en-lata-antigua.jpg';
 import fotoLeche from '../assets/fotos/leche-recien-ordenada-en-el-fuego.jpg';
 import fotoCapa from '../assets/fotos/capa-de-nata-sobre-la-leche-hervida.jpg';
 import fotoGuardar from '../assets/fotos/sacar-la-nata-de-la-leche-cocida.jpg';
 import fotoHorno from '../assets/fotos/galletas-de-nata-en-la-rejilla.jpg';
-import fotoProyecto from '../assets/fotos/galletas-de-nata-caseras-apiladas.jpg';
 
 const piezas = await getPiezas();
 const destacadas = [...piezas.filter((p) => p.data.destacado), ...piezas.filter((p) => !p.data.destacado)].slice(0, 6);
-const sobre = await urlPaginaVisible('sobre-el-proyecto');
 const historia = piezas.find((p) => p.id === 'como-se-hacian-las-galletas-de-nata');
 const guiaNata = piezas.find((p) => p.id === 'autentica-nata-de-vaca');
 
@@ -187,24 +186,8 @@ const esquemas = [
     <p class="mas"><a class="enlace-flecha" href="/buscar/">Ver todos los contenidos →</a></p>
   </section>
 
-  <!-- 7. El proyecto -->
-  <section class="envoltorio banda banda--verde proyecto" aria-labelledby="proyecto-titulo">
-    <div class="proyecto-foto">
-      <Figura imagen={{ src: fotoProyecto, alt: 'Galletas de nata caseras apiladas sobre un paño de arpillera', provisional: false }} proporcion="4 / 5" tamanos="(max-width: 62rem) 18rem, 22rem" anchos={[400, 640]} />
-    </div>
-    <div>
-      <p class="antetitulo">El proyecto</p>
-      <h2 id="proyecto-titulo">Contado por alguien que las fabricó</h2>
-    </div>
-    <div class="proyecto-texto">
-      <p>
-        Detrás de este portal hay un antiguo fabricante de galletas de nata que lleva desde 2012 probando
-        ingredientes, procesos y resultados. Aquí comparte lo que funciona en una cocina normal: recetas caseras
-        completas, explicaciones claras y solo resultados que se han comprobado.
-      </p>
-      {sobre && <a class="enlace-flecha" href={sobre}>Conoce el proyecto →</a>}
-    </div>
-  </section>
+  <!-- 7. Historias de casa -->
+  <HistoriasCasa />
 </Base>
 
 <style>
@@ -292,8 +275,7 @@ const esquemas = [
     margin-bottom: var(--e-4);
   }
   .bloque-cabecera h2,
-  .tierra h2,
-  .proyecto h2 {
+  .tierra h2 {
     margin: 0;
     font-size: clamp(2rem, 1.5rem + 1.8vw, 3rem);
     font-weight: 400;
@@ -445,29 +427,9 @@ const esquemas = [
     padding-block: var(--e-5);
   }
 
-  /* 7. El proyecto */
-  .proyecto {
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr) minmax(0, 1.2fr);
-    gap: var(--e-4);
-    align-items: center;
-    padding-block: var(--e-5);
-  }
-  .proyecto-foto :global(img) {
-    box-shadow: 14px 14px 0 rgb(246 243 236 / 14%);
-  }
-  .proyecto-texto p {
-    font-family: var(--f-titulo);
-    font-size: 1.3rem;
-    font-weight: 350;
-    line-height: 1.55;
-    margin-bottom: var(--e-3);
-  }
-
   @media (max-width: 62rem) {
     .tierra,
-    .aprovechamiento,
-    .proyecto {
+    .aprovechamiento {
       grid-template-columns: 1fr;
       gap: var(--e-3);
     }
@@ -479,9 +441,6 @@ const esquemas = [
     .pasos {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       row-gap: var(--e-4);
-    }
-    .proyecto-foto {
-      max-width: 18rem;
     }
   }
   @media (max-width: 40rem) {

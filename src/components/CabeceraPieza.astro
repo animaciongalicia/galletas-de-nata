@@ -3,8 +3,7 @@ import Migas from './Migas.astro';
 import Figura from './Figura.astro';
 import PanelEditorial from './PanelEditorial.astro';
 import { SECCIONES } from '../data/secciones';
-import { AUTOR } from '../data/sitio';
-import { ES_PRODUCCION, url, urlSeccion, esReceta, urlPaginaVisible, type Pieza } from '../lib/contenido';
+import { ES_PRODUCCION, url, urlSeccion, esReceta, type Pieza } from '../lib/contenido';
 import { fecha, fechaIso, tipografia } from '../lib/formato';
 
 interface Props {
@@ -13,7 +12,6 @@ interface Props {
 const { pieza } = Astro.props;
 const { data } = pieza;
 const seccion = SECCIONES[data.seccion];
-const sobre = await urlPaginaVisible('sobre-el-proyecto');
 // Minutos de lectura, calculados a partir del texto (unas 200 palabras por minuto).
 const palabras = (pieza.body ?? '').replace(/<[^>]+>|[#*|>\-`\[\]()]/g, ' ').split(/\s+/).filter(Boolean).length;
 const lectura = Math.max(1, Math.round(palabras / 200));
@@ -23,18 +21,14 @@ const actualizada =
     : undefined;
 ---
 
-<header class="envoltorio cabecera-pieza banda banda--crema">
+<header class="cabecera-pieza banda banda--crema">
+  <div class="ancho-pieza">
   <Migas items={[{ nombre: seccion.nombre, href: urlSeccion(data.seccion) }, { nombre: data.titulo, href: url(pieza.id) }]} />
   <div class="texto">
     <p class="antetitulo">{seccion.nombre}{esReceta(pieza) && ' · Receta casera'}</p>
     <h1>{data.titulo}</h1>
     <p class="entradilla">{tipografia(data.descripcion)}</p>
     <p class="firma">
-      {
-        <span>
-          Por {sobre ? <a href={sobre}>{AUTOR.nombre ?? 'el autor de Galletas de Nata'}</a> : (AUTOR.nombre ?? 'el autor de Galletas de Nata')}
-        </span>
-      }
       {
         data.fechaPublicacion ? (
           <span>
@@ -55,7 +49,8 @@ const actualizada =
     </p>
     <PanelEditorial estado={data.estado} pendientes={data.pendientes} intencion={data.intencion} />
   </div>
-  <Figura imagen={data.imagen} prioridad pie proporcion="16 / 9" clase="principal" />
+  <Figura imagen={data.imagen} prioridad pie proporcion="16 / 9" clase="principal" tamanos="(max-width: 62rem) 100vw, 60rem" />
+  </div>
 </header>
 
 <style>

@@ -23,9 +23,10 @@ const paginas = (await getPaginas()).filter((p) => p.data.enPie);
         <li><a href="/buscar/">Todos los contenidos</a></li>
       </ul>
     </nav>
-    <nav aria-label="El proyecto">
-      <h2>El proyecto</h2>
+    <nav aria-label="La web">
+      <h2>La web</h2>
       <ul>
+        <li><a href="/historias-de-casa/">Historias de casa</a></li>
         {paginas.map((p) => <li><a href={`/${p.id}/`}>{p.data.titulo}</a></li>)}
         <li><a href="/rss.xml">RSS</a></li>
       </ul>

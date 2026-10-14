@@ -1,12 +1,10 @@
 ---
 import { LISTA_SECCIONES } from '../data/secciones';
 import Marca from './Marca.astro';
-import { urlPaginaVisible } from '../lib/contenido';
 
-const sobre = await urlPaginaVisible('sobre-el-proyecto');
 const enlaces = [
   ...LISTA_SECCIONES.map((s) => ({ href: `/${s.slug}/`, texto: s.nombre })),
-  ...(sobre ? [{ href: sobre, texto: 'Sobre el proyecto' }] : []),
+  { href: '/historias-de-casa/', texto: 'Historias de casa' },
 ];
 const ruta = Astro.url.pathname;
 const actual = (href: string) => (ruta.startsWith(href) ? 'page' : undefined);
