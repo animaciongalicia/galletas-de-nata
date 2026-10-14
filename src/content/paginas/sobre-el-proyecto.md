@@ -1,11 +1,9 @@
 ---
 titulo: 'Sobre el proyecto'
 descripcion: 'Quién está detrás de Galletas de Nata, de dónde sale lo que se publica aquí y qué criterio se sigue para probar y revisar cada receta.'
-estado: borrador
+estado: aprobado
+fechaActualizacion: 2026-10-14
 enPie: true
-pendientes:
-  - 'Foto del autor (opcional) con derechos.'
-  - 'Revisar y aprobar el criterio editorial.'
 ---
 
 ## Quién escribe

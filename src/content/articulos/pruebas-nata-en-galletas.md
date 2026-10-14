@@ -2,7 +2,8 @@
 titulo: 'Pruebas con distintas natas: cómo cambia una galleta de nata'
 descripcion: 'Resultados de hornear la misma receta casera con natas distintas: qué cambia en textura, sabor y color, con fotografías de cada prueba.'
 seccion: nata
-estado: borrador
+estado: aprobado
+fechaPublicacion: 2026-10-14
 intencion: 'Comparativa: "qué nata usar para galletas", "nata para montar o para cocinar en galletas".'
 imagen:
   src: ../../assets/provisional/pruebas-nata-en-galletas.jpg
@@ -12,9 +13,6 @@ relacionados:
   - autentica-nata-de-vaca
   - errores-textura-galletas-de-nata
   - como-hacer-las-mejores-galletas-de-nata
-pendientes:
-  - 'Fotografías propias de cada resultado, con la misma luz y el mismo encuadre.'
-  - 'Conclusiones limitadas a lo probado. Sin afirmar que otras recetas o métodos sean falsos.'
 ---
 
 La forma más honesta de saber qué nata funciona es probarla. Desde 2012-2013, este proyecto ha probado muchos tipos de nata, ingredientes y procesos para recuperar la galleta de nata que se hacía en las casas gallegas. Esta es la parte de esas pruebas que tiene que ver con la nata.
@@ -33,8 +31,6 @@ Después se probaron natas de distinto contenido graso, compradas o servidas por
 | --- | --- | --- | --- |
 | Nata comercial o de lechera | 30-40 % | en torno al 20 % | Sabor a galleta de mantequilla; no llegaba al punto buscado |
 | Nata de desnatadora especial (medida) | 70-75 % | en torno al 50 % | La galleta de nata tradicional |
-
-<div class="pendiente">Si se quiere, describir también la textura y el color de cada prueba.</div>
 
 ## Qué conclusiones se pueden sacar
 

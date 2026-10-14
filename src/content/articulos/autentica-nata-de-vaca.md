@@ -2,7 +2,8 @@
 titulo: 'Nata de vaca: tipos, materia grasa y cuál usar en galletas'
 descripcion: 'Qué es la nata de vaca, qué significa su porcentaje de materia grasa, qué tipos encontrarás en la tienda y cuál conviene para hacer galletas.'
 seccion: nata
-estado: borrador
+estado: aprobado
+fechaPublicacion: 2026-10-14
 intencion: 'Informativa: "nata de vaca", "tipos de nata", "materia grasa de la nata".'
 destacado: true
 imagen:
@@ -22,9 +23,6 @@ fuentes:
     nota: 'Deroga otros apartados de la Orden de 1983; la clasificación por materia grasa no figura entre ellos.'
   - titulo: 'Codex Alimentarius CXS 288-1976, norma para las natas (FAO/OMS)'
     url: 'https://www.fao.org/fao-who-codexalimentarius/codex-texts/list-standards/es/'
-pendientes:
-  - 'Abrir el texto consolidado del BOE y confirmar el apartado 5.2 del anejo 1 (los datos vienen de extractos; el BOE no era accesible desde el entorno de trabajo).'
-  - 'Fotografía propia de la nata usada en las pruebas.'
 ---
 
 La nata es la parte grasa de la leche. La de vaca es la que se usa tradicionalmente en las galletas de nata, y la cantidad de grasa que contiene cambia por completo el resultado.
@@ -56,10 +54,6 @@ En 2013 se derogaron otros apartados de esa orden, pero no esta clasificación. 
 La capa que aparece al hervir la leche no es grasa pura. Con el calor, las proteínas de la leche cambian de estructura y se agrupan en la superficie, y al hacerlo atrapan parte de la grasa mientras se evapora el agua. Es la nata con la que se hacían las galletas en las casas gallegas antes de la leche envasada: espesa, con mucho sabor y con una composición distinta a la de la nata comercial.
 
 
-
-## Qué encontrarás en la tienda
-
-<div class="pendiente">Tipos habituales en el lineal (nata para montar, nata para cocinar, nata fresca o de leche cruda si la hay) y para qué sirve cada una en repostería. Basado en etiquetas reales.</div>
 
 ## Cuál usar para hacer galletas
 
@@ -94,7 +88,5 @@ Por eso mucha gente acaba haciendo «galletas de nata» con mantequilla buena: l
 - **Compra leche cruda del día.** Hay leche cruda a la venta que sirve perfectamente para desnatarla y conseguir nata. Cuanto más fresca y entera, mejor.
 - **Sácale la nata.** Con una desnatadora obtendrás más nata y más grasa; si no tienes, puedes hervirla como hacían las abuelas. Tienes el paso a paso en [cómo hacer nata casera a partir de leche](/como-hacer-nata-casera/).
 - **Si compras la nata hecha, busca la que más grasa tenga.** Lee la etiqueta: una doble nata (50 % o más) es mejor punto de partida que una nata para montar del 35 %, que dará una galleta más parecida a una de mantequilla.
-
-<div class="pendiente">Recomendaciones concretas de natas probadas (el autor las publicará más adelante).</div>
 
 Los resultados de cada prueba están en [pruebas con distintas natas](/pruebas-nata-en-galletas/).
