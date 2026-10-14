@@ -11,6 +11,7 @@ Portal editorial estático (Astro 7 + TypeScript) sobre galletas de nata gallega
 - No afirmes que otras recetas son falsas ni que solo sirve un método o máquina sin evidencia.
 - No presentes imágenes provisionales o generadas como fotos reales. Las fotos propias van en `src/assets/fotos/`.
 - El portal no representa a Maruxas, Gallegas de Nata ni a ninguna marca. No es una tienda. En los textos no se nombran marcas ni fundadores, ni se usa «maruxas» como nombre genérico: se dice «galleta de nata gallega». Fuentes y datos verificados en `docs/investigacion-fuentes.md`.
+- **Voz:** los textos del portal van en tercera persona («el autor», «el proyecto», «en las pruebas del proyecto») o en segunda persona al lector («tú»). Nunca en primera persona («yo», «mis abuelas», «hice»), aunque el autor lo cuente así.
 - Mantén el foco en la galleta de nata y evita piezas que compitan con otra ya existente (`docs/calendario-editorial.md`).
 
 ## Aprobar contenido

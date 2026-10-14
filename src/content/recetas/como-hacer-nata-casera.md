@@ -10,36 +10,47 @@ imagen:
   provisional: true
 ingredientes:
   - items:
-      - nombre: 'leche'
-        nota: 'tipo de leche por confirmar'
+      - nombre: 'leche cruda de vaca, del día y sin pasteurizar'
+        cantidad: 10
+        unidad: 'l'
+        nota: 'repartida en 3 o 4 días'
+pasos:
+  - 'Hierve la leche cruda del día.'
+  - 'Déjala enfriar sin moverla hasta que se forme una capa de nata en la superficie.'
+  - 'Recoge la capa de nata con una cuchara o espumadera y guárdala en un recipiente cerrado en el frigorífico.'
+  - 'Vuelve a hervir la misma leche, deja que se enfríe y recoge la segunda capa de nata.'
+  - 'Repite con la leche de cada día y ve juntando la nata en frío hasta tener suficiente para una hornada.'
 relacionados:
   - autentica-nata-de-vaca
   - como-hacer-las-mejores-galletas-de-nata
 pendientes:
-  - 'Confirmar si el método tradicional (hervir y recoger la capa) es el que recomiendas hoy, o si hay otro probado.'
-  - 'Cantidades reales: leche usada y nata obtenida en tu prueba.'
-  - 'Tiempos medidos y conservación de la nata obtenida.'
-  - 'Indicaciones de seguridad alimentaria si se usa leche cruda (consultar fuente oficial antes de publicar).'
+  - 'Rendimiento real: cuánta nata se obtiene de 10 litros de leche.'
+  - 'Tiempos: cuánto hervir y cuánto dejar enfriar cada vez.'
+  - 'Cuántos días como máximo se puede guardar la nata en el frigorífico (confirmar con una fuente sanitaria).'
+  - 'Indicaciones de seguridad alimentaria sobre la leche cruda (consultar fuente oficial antes de publicar).'
   - 'Fotos propias del proceso.'
   - 'Hacer la receta completa y anotar la fecha de la prueba (campo verificacion).'
+
 ---
 
-La nata casera se obtiene de la propia leche. Es un proceso lento, pero sencillo, y da una nata distinta a la del supermercado.
+La nata casera se obtiene de la propia leche. Es un proceso lento, pero sencillo, y es la forma más parecida a como se conseguía la nata para las galletas en las casas gallegas.
 
-Así lo hacían mis abuelas en Ferrol. Se ordeñaba la vaca y la leche se hervía. Al enfriarse, se formaba encima una capa de nata que se recogía y se guardaba en el frigorífico. Durante una semana o diez días se iba juntando hasta tener 200, 500 gramos o más, lo justo para una hornada de galletas.
-
-<div class="pendiente">Introducción: para qué sirve esta nata y qué diferencias tiene con la comprada, según tu experiencia.</div>
+Así se hacía: se ordeñaba la vaca, la leche se hervía y, al enfriarse, se formaba encima una capa de nata que se recogía y se guardaba en frío. Durante una semana o diez días se iba juntando hasta tener 200, 500 gramos o más, lo justo para una hornada de galletas.
 
 ## Qué leche sirve
 
-<div class="pendiente">Tipo de leche con la que funciona y con la que no, según tus pruebas.</div>
+Necesitas **leche lo más entera y fresca posible**: leche cruda del día, sin pasteurizar ni desnatar. La leche envasada del supermercado ya está tratada y, en muchos casos, desnatada en parte, así que apenas forma nata.
+
+Como referencia, en las primeras pruebas del proyecto se usaban unos 10 litros de leche cruda en 3 o 4 días para reunir nata suficiente. Hervir la misma leche un par de veces permite sacar más de una capa.
 
 ## Cómo usarla en galletas
 
-<div class="pendiente">Si la nata casera sirve para la receta de galletas y qué cambia en el resultado.</div>
+La nata de leche hervida es la de la receta tradicional. Si quieres comparar, en [la guía sobre la nata de vaca](/autentica-nata-de-vaca/) se explica por qué la cantidad de grasa cambia tanto el resultado.
+
+<div class="pendiente">Qué diferencias tiene la galleta hecha con esta nata frente a la hecha con nata de desnatadora del 70-75 %.</div>
 
 ## Seguridad
 
-Si usas leche cruda, recién ordeñada, hiérvela siempre antes de consumirla o de usar su nata. La leche que se vende envasada ya está tratada.
+La leche cruda debe hervirse siempre antes de consumirla o de usar su nata. Guarda la nata en un recipiente cerrado, en el frigorífico.
 
-<div class="pendiente">Confirmar con una fuente oficial (AESAN o Consellería de Sanidade) la recomendación sobre la leche cruda antes de publicar.</div>
+<div class="pendiente">Confirmar con una fuente oficial (AESAN o Consellería de Sanidade) las recomendaciones sobre leche cruda y conservación antes de publicar.</div>

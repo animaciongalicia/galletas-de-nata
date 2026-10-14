@@ -10,6 +10,7 @@ imagen:
   alt: 'Galletas de nata redondas y doradas apiladas'
   provisional: true
 relacionados:
+  - como-se-hacian-las-galletas-de-nata
   - ingredientes-galletas-de-nata
   - autentica-nata-de-vaca
   - como-hacer-las-mejores-galletas-de-nata
@@ -17,53 +18,37 @@ fuentes:
   - titulo: 'Trendencias: receta tradicional de la galleta de nata gallega'
     url: 'https://www.trendencias.com/gourmet/receta-maruxas-nata-galleta-tradicional-gallega-que-se-hace-solo-cuatro-ingredientes'
     nota: 'Origen como receta de aprovechamiento y desaparición con la leche pasteurizada.'
-  - titulo: 'Directo al Paladar: la galleta de nata gallega'
-    url: 'https://www.directoalpaladar.com/postres/maruxas-nata-receta-casera-galleta-solo-cuatro-ingredientes-que-ha-conquistado-paladar-gallegos'
-  - titulo: 'Ministerio de Agricultura: historia de las industrias lácteas en España'
-    url: 'https://www.mapa.gob.es/ministerio/pags/biblioteca/fondo/pdf/9953_17.pdf'
-    nota: 'Centrales lecheras (decreto de 1952).'
 pendientes:
-  - 'Definir en una frase qué es, para ti, una galleta de nata gallega auténtica (respuesta directa para el primer párrafo).'
-  - 'Rasgos sensoriales que usas para reconocer una buena galleta (color, rotura, aroma, sabor).'
+  - 'Rasgos sensoriales para reconocer una buena galleta (color, rotura, aroma, sabor), según la experiencia del autor.'
   - 'Fotografías propias: galleta entera, galleta partida (miga) y detalle del dorado.'
   - 'Revisar URL histórica: confirmar qué decía la página antigua y si hay algo que conservar.'
 ---
 
-Una galleta de nata es una galleta cuya grasa principal es la nata de leche de vaca, no la mantequilla ni un aceite vegetal. La versión tradicional gallega se reduce a tres ingredientes: nata, azúcar y harina, a veces con una pizca de sal. Ese cambio, que parece pequeño, se nota en el sabor, en el aroma y en cómo se deshace al morderla.
+Una galleta de nata gallega auténtica es la que usa **solo nata de vaca como grasa**: ni mantequilla ni aceite. La receta tradicional se reduce a nata, azúcar y harina, a veces con una pizca de sal. Y el secreto está en la nata: cuanta más materia grasa tiene, más se acerca la galleta a la que se hacía en las casas gallegas.
 
-<div class="pendiente">Respuesta directa en dos o tres frases: qué es una galleta de nata gallega y qué la hace reconocible. Es el párrafo que leerán buscadores y asistentes, así que debe ser exacto.</div>
+## De dónde viene
 
-## De dónde vienen
-
-Soy de Ferrol, y en Ferrol estas galletas se hacían en casa. Las hacían mis abuelas.
-
-El proceso era siempre el mismo. Se ordeñaba la vaca y la leche se hervía. Al hervirla, duraba más; al dejarla enfriar, se formaba encima una capa de nata. Esa capa se recogía con cuidado y se guardaba en el frigorífico, o en el sitio más fresco de la casa para que no se perdiera.
-
-Así, día a día, durante una semana o diez días, se iba juntando nata hasta tener 200, 500 gramos o más. Entonces tocaba hornear.
-
-Cada abuela tenía su receta. Las de unas salían más duras y las de otras, más tiernas, pero todas tenían algo en común: la grasa era solo nata, sin mantequilla ni aceite.
-
-Era una receta de aprovechamiento. Con lo que sobraba de la leche, las abuelas hacían galletas para los niños. Por eso se hicieron tan populares en Galicia, una tierra de vacas y de leche. No es una receta exclusiva de aquí: en otras zonas lecheras, y también en Portugal y Brasil, se hacen galletas parecidas con la nata de la leche hervida.
-
-La costumbre fue desapareciendo cuando llegó la leche tratada. En 1952 un decreto ordenó crear centrales lecheras en las ciudades, y la leche pasteurizada se fue extendiendo en las décadas siguientes. Sin leche que hervir en casa, ya no había nata que guardar.
+Nació como receta de aprovechamiento. Se hervía la leche recién ordeñada, se recogía la capa de nata que se formaba al enfriarse y se guardaba hasta tener suficiente para hornear. Lo contamos en detalle en [cómo se hacían las galletas de nata gallegas en casa](/como-se-hacian-las-galletas-de-nata/).
 
 ## Qué la hace distinta
 
-Lo que define a una galleta de nata es la grasa que lleva. Estos son los rasgos que conviene explicar, uno por uno:
+- **La grasa es nata.** No lleva mantequilla ni aceite. Toda la grasa sale de la nata de vaca.
+- **Pocos ingredientes.** Nata, azúcar y harina. Las versiones con huevo, levadura, mantequilla o limón son variantes modernas.
+- **Nata con mucha grasa.** En las pruebas del proyecto, las natas comerciales del 30, 35 y 40 % no daban el resultado buscado. El punto llegó con nata de un 70-75 % de materia grasa. Más detalles en [la guía sobre la nata de vaca](/autentica-nata-de-vaca/).
+- **No hay una única textura.** En las casas, cada familia tenía su punto: unas galletas salían más duras y otras más tiernas.
 
-- **La grasa:** nata de leche de vaca como ingrediente principal.
-- **La textura:** cómo es la rotura y la miga.
-- **El sabor y el aroma:** qué aporta la nata frente a otras grasas.
-- **El color y el horneado:** qué indica el dorado.
+<div class="pendiente">Rasgos que permiten reconocer una buena galleta de nata al verla y al probarla: color, rotura, miga, aroma y sabor.</div>
 
-<div class="pendiente">Desarrollar cada rasgo con tu experiencia como fabricante. Indicar qué es observación propia y qué es dato contrastado.</div>
+## Cómo reconocer una galleta de nata auténtica en la tienda
 
-## Cómo reconocer una buena galleta de nata
+Mira la lista de ingredientes. Aparecen ordenados de mayor a menor cantidad.
 
-<div class="pendiente">Lista práctica para el lector: qué mirar en la etiqueta (orden de ingredientes, tipo de grasa) y qué notar al probarla.</div>
+- La **nata** debe estar entre los primeros ingredientes, y debe ser la única grasa.
+- Si aparecen **mantequilla, margarina o aceites vegetales**, ya no es una galleta de nata tradicional.
+- Cuantos **menos ingredientes**, más cerca de la receta original.
 
 ## Galleta casera y galleta de obrador
 
-Una receta casera y una fabricación profesional no se hacen igual: cambian las cantidades, el amasado, el horno y los tiempos. En este portal las recetas son siempre caseras y reproducibles en una cocina normal. La formulación industrial no se publica.
+Una receta casera y una elaboración profesional no se hacen igual: cambian las cantidades, el amasado, el horno y los tiempos. En este portal las recetas son siempre caseras y reproducibles en una cocina normal.
 
-<div class="pendiente">Explicar en dos o tres frases, sin revelar nada reservado, qué diferencias notará el lector entre una galleta casera y una de obrador.</div>
+<div class="pendiente">Dos o tres frases sobre las diferencias que notará el lector entre una galleta casera y una de obrador, sin revelar nada reservado.</div>

@@ -11,6 +11,7 @@ const SALIDA = new URL('../src/assets/provisional/', import.meta.url);
 const PIEZAS = [
   ['portada', 'Portada', 2000, 1250],
   ['galletas-de-nata-autenticas', 'Galletas de nata'],
+  ['como-se-hacian-las-galletas-de-nata', 'Cómo se hacían'],
   ['ingredientes-galletas-de-nata', 'Ingredientes'],
   ['como-conservar-galletas-de-nata', 'Conservación'],
   ['errores-textura-galletas-de-nata', 'Textura'],

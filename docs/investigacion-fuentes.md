@@ -96,6 +96,15 @@ Confirmado por el propietario, que es de Ferrol. Se publica como **experiencia p
 
 **Afirmación que no se ha publicado tal cual:** que las grandes lecheras «no quieren» que el particular desnate la leche. Es una opinión sobre la intención de terceros y no está respaldada. En su lugar se ha escrito un hecho general: la grasa de la leche se aprovecha en la industria para mantequillas, quesos y otros productos.
 
+### Aclaraciones del autor (segunda ronda)
+
+- **Voz:** todo el portal en tercera persona («el autor», «el proyecto») o en segunda persona al lector. Nada en primera persona.
+- **Pruebas:** natas del 30, 35 y 40 % (comerciales y de lechera, algunas desnatadas de fábrica) no daban el resultado. El punto llegó con nata de un **70-75 % de materia grasa, medida**, de una lechera con una desnatadora especial de alta velocidad de centrifugado.
+- **Primeras pruebas:** leche cruda del día, sin pasteurizar, cocida un par de veces para sacar la nata; unos 10 litros en 3 o 4 días.
+- **Alternativa para el lector:** comprar leche lo más entera y fresca posible y sacar la nata en casa.
+- **Lecheras:** se publica la versión neutra (la industria aprovecha la grasa para mantequillas y quesos). El autor la ha aprobado.
+- **Pendiente de aclarar antes de publicar:** «cuando se cuecen baja al 50 % una vez que entran en el horno». No está claro si se refiere a la grasa de la nata, a la de la masa o a la de la galleta horneada.
+
 ## 8. Huecos que solo puede cubrir el autor
 
 - Testimonio propio: cómo se hacían en su casa o en su entorno.

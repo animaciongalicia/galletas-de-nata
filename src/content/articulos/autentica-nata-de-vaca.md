@@ -24,14 +24,13 @@ fuentes:
     url: 'https://www.fao.org/fao-who-codexalimentarius/codex-texts/list-standards/es/'
 pendientes:
   - 'Abrir el texto consolidado del BOE y confirmar el apartado 5.2 del anejo 1 (los datos vienen de extractos; el BOE no era accesible desde el entorno de trabajo).'
-  - 'Indicar cómo se conocía el porcentaje de materia grasa de la nata de las pruebas (ficha del proveedor, análisis o etiqueta).'
-  - 'Recomendación práctica para el lector doméstico: qué nata comprar si no encuentra doble nata.'
+  - 'Aclarar qué significa que «al cocerse baja al 50 %» (¿la grasa de la nata, la de la masa o la de la galleta horneada?) antes de publicarlo.'
   - 'Fotografía propia de la nata usada en las pruebas.'
 ---
 
 La nata es la parte grasa de la leche. La de vaca es la que se usa tradicionalmente en las galletas de nata, y la cantidad de grasa que contiene cambia por completo el resultado.
 
-Respuesta corta: para galletas, cuanta más grasa tenga la nata, mejor. En mis pruebas, los mejores resultados salieron con nata de más de un 70 % de materia grasa.
+Respuesta corta: para galletas de nata, **cuanta más grasa tenga la nata, mejor**. En las pruebas del proyecto, las natas del 30 al 40 % no dieron el resultado buscado; el punto llegó con nata de un 70-75 % de materia grasa.
 
 ## Qué significa el porcentaje de materia grasa
 
@@ -57,7 +56,7 @@ En 2013 se derogaron otros apartados de esa orden, pero no esta clasificación. 
 
 La capa que aparece al hervir la leche no es grasa pura. Con el calor, las proteínas de la leche cambian de estructura y se agrupan en la superficie, y al hacerlo atrapan parte de la grasa mientras se evapora el agua. Es la nata con la que se hacían las galletas en las casas gallegas antes de la leche envasada: espesa, con mucho sabor y con una composición distinta a la de la nata comercial.
 
-<div class="pendiente">Si has medido o comparado esta nata con la comercial, añade aquí tu experiencia. Si no, se deja solo la explicación general.</div>
+
 
 ## Qué encontrarás en la tienda
 
@@ -65,10 +64,20 @@ La capa que aparece al hervir la leche no es grasa pura. Con el calor, las prote
 
 ## Cuál usar para hacer galletas
 
-En las pruebas que hice para crear mis galletas, la conclusión fue clara: **cuanto más grado de grasa tenía la nata, mejor salían**. Los mejores resultados llegaron con nata de más de un 70 % de materia grasa, es decir, doble nata, muy por encima del mínimo del 50 % que marca la norma.
+El proyecto probó primero con las natas que se encuentran en la tienda o que venden las lecheras: del 30 %, del 35 % y del 40 % de materia grasa, algunas ya desnatadas de fábrica. Ninguna llegaba al punto buscado: las galletas no salían como las de antes.
 
-El problema es encontrarla. La nata de la tienda suele rondar el 35 %, y una nata tan grasa no se consigue con una desnatadora corriente. Además, casi toda la grasa de la leche la aprovecha la propia industria láctea para mantequillas, quesos y otros productos.
+El resultado cambió con una nata de **entre un 70 y un 75 % de materia grasa**, medida, obtenida en una lechera con una desnatadora especial que centrifuga a mucha más velocidad que las corrientes. Es una doble nata muy por encima del mínimo del 50 % que marca la norma.
 
-<div class="pendiente">Qué recomiendas a quien no encuentre doble nata: ¿la nata más grasa del lineal?, ¿la nata de leche hervida?</div>
+El problema es encontrarla. La nata del supermercado suele rondar el 35 %, una nata tan grasa no sale de una desnatadora corriente y la mayor parte de la grasa de la leche la aprovecha la propia industria láctea para mantequillas, quesos y otros productos.
 
-Lo cuento con más detalle en [las pruebas con distintas natas](/pruebas-nata-en-galletas/).
+## Si no encuentras una nata tan grasa
+
+La alternativa más fiel es volver al método de las abuelas: compra **leche lo más entera y fresca posible**, mejor leche cruda del día, sin pasteurizar, y saca tú la nata.
+
+1. Hierve la leche y déjala enfriar hasta que se forme la capa de nata.
+2. Recoge la nata y vuelve a hervir la misma leche para sacar una segunda capa.
+3. Guarda la nata en frío y ve juntándola durante varios días.
+
+Como referencia, en las primeras pruebas del proyecto se usaban unos 10 litros de leche cruda en 3 o 4 días para reunir nata suficiente. Tienes el paso a paso en [cómo hacer nata casera a partir de leche](/como-hacer-nata-casera/).
+
+Los resultados de cada prueba están en [pruebas con distintas natas](/pruebas-nata-en-galletas/).
