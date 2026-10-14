@@ -32,6 +32,7 @@ Sube aquí tus fotografías (solo fotos propias o con derechos comprobados).
 | --- | --- |
 | `portada` | 1 foto principal de galletas de nata |
 | `como-hacer-las-mejores-galletas-de-nata` | ingredientes, masa, antes del horno, después del horno |
+| `como-se-hacian-las-galletas-de-nata` | cazo con leche hervida, capa de nata, lata de galletas (fotos antiguas si las hay) |
 | `galletas-de-nata-autenticas` | galleta entera, galleta partida (miga), detalle del dorado |
 | `autentica-nata-de-vaca` | la nata usada en las pruebas |
 | `chocolate-caliente-con-galletas-de-nata` | taza con galletas |

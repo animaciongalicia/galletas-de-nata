@@ -2,7 +2,8 @@
 titulo: 'Cómo se hacían las galletas de nata gallegas en casa'
 descripcion: 'La receta de aprovechamiento de las abuelas gallegas: leche recién ordeñada, hervida, y la nata de la superficie guardada día a día hasta tener para hornear.'
 seccion: galletas
-estado: borrador
+estado: aprobado
+fechaPublicacion: 2026-10-14
 intencion: 'Informativa-tradición: "cómo se hacían las galletas de nata", "galletas de nata de la abuela", "historia galletas de nata gallegas".'
 destacado: true
 imagen:
@@ -23,8 +24,6 @@ fuentes:
   - titulo: 'EY: informe del sector lácteo en Galicia 2026'
     url: 'https://www.ey.com/content/dam/ey-unified-site/ey-com/es-es/insights/government-public-sector/documents/ey-informe-sector-lacteo-galicia2026.pdf'
     nota: 'Galicia, el 41 % de la leche de vaca de España en 2024.'
-pendientes:
-  - 'Fotografías antiguas o actuales del proceso (cazo, leche, capa de nata, lata de galletas), si las hay.'
 ---
 
 Antes de que existiera la leche en cartón, la galleta de nata gallega no se compraba: salía de la propia leche de casa. Era una receta de aprovechamiento, hecha por las abuelas para los niños con lo que sobraba de la leche.

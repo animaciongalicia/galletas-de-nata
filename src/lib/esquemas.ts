@@ -1,7 +1,8 @@
 import { getImage } from 'astro:assets';
 import { AUTOR, SITIO } from '../data/sitio';
 import { SECCIONES } from '../data/secciones';
-import { esAprobado, esReceta, type Pieza } from './contenido';
+import { esAprobado, esReceta, imagenPublicable, type Pieza } from './contenido';
+import imagenMarca from '../assets/marca/og-galletas-de-nata.jpg';
 import { duracionIso, fechaIso, textoIngrediente } from './formato';
 
 /**
@@ -11,7 +12,7 @@ import { duracionIso, fechaIso, textoIngrediente } from './formato';
 export async function esquemaPieza(pieza: Pieza, site: URL, ruta: string): Promise<object[]> {
   if (!esAprobado(pieza)) return [];
   const { data } = pieza;
-  const img = await getImage({ src: data.imagen.src, width: 1200, format: 'jpg' });
+  const img = await getImage({ src: imagenPublicable(data.imagen)?.src ?? imagenMarca, width: 1200, format: 'jpg' });
   const comun = {
     headline: data.titulo,
     name: data.titulo,

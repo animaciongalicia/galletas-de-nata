@@ -1,26 +1,25 @@
 ---
-import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import CabeceraPieza from './CabeceraPieza.astro';
 import Indice from './Indice.astro';
 import Fuentes from './Fuentes.astro';
 import Relacionados from './Relacionados.astro';
-import { esAprobado, type Articulo } from '../lib/contenido';
+import { esAprobado, htmlPublicable, imagenPublicable, type Articulo } from '../lib/contenido';
 import { esquemaPieza } from '../lib/esquemas';
 
 interface Props {
   pieza: Articulo;
 }
 const { pieza } = Astro.props;
-const { Content, headings } = await render(pieza);
+const { html, titulos: headings } = await htmlPublicable(pieza);
 const esquemas = await esquemaPieza(pieza, Astro.site!, Astro.url.pathname);
 ---
 
 <Base
   titulo={pieza.data.titulo}
   descripcion={pieza.data.descripcion}
-  imagen={pieza.data.imagen.src}
-  imagenAlt={pieza.data.imagen.alt}
+  imagen={imagenPublicable(pieza.data.imagen)?.src}
+  imagenAlt={imagenPublicable(pieza.data.imagen)?.alt}
   tipo="article"
   indexable={esAprobado(pieza)}
   esquemas={esquemas}
@@ -30,7 +29,7 @@ const esquemas = await esquemaPieza(pieza, Astro.site!, Astro.url.pathname);
     <div class="envoltorio cuerpo">
       <aside class="lateral"><Indice titulos={headings} /></aside>
       <div class="prosa">
-        <Content />
+        <Fragment set:html={html} />
         <Fuentes pieza={pieza} />
       </div>
     </div>

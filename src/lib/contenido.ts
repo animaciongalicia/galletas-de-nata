@@ -1,3 +1,4 @@
+import type { MarkdownHeading } from 'astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { SECCIONES, type SeccionId } from '../data/secciones';
 
@@ -97,3 +98,25 @@ export const ETIQUETA_ESTADO = {
   revision: 'En revisión',
   aprobado: 'Aprobado',
 } as const;
+
+/**
+ * HTML del cuerpo de un contenido. En producción, los enlaces internos a contenidos
+ * que aún no se han publicado se convierten en texto normal: así cada pieza se puede
+ * publicar sola sin dejar enlaces rotos. Cuando la otra pieza se publique, el enlace vuelve.
+ */
+export async function htmlPublicable(e: Pieza | Pagina) {
+  const html = e.rendered?.html ?? '';
+  const titulos = (e.rendered?.metadata?.headings ?? []) as MarkdownHeading[];
+  if (!ES_PRODUCCION) return { html, titulos };
+  const { piezas, paginas } = await cargarTodo();
+  const publicadas = new Set<string>([...piezas, ...paginas].map((p) => `/${p.id}/`));
+  Object.values(SECCIONES).forEach((s) => publicadas.add(`/${s.slug}/`));
+  const limpio = html.replace(/<a href="(\/[^"#?]*)"[^>]*>(.*?)<\/a>/gs, (todo, ruta: string, texto: string) =>
+    ruta === '/' || publicadas.has(ruta) || ruta.includes('.') ? todo : texto,
+  );
+  return { html: limpio, titulos };
+}
+
+/** Imagen apta para la página: en producción, una provisional se sustituye por la de marca. */
+export const imagenPublicable = <T extends { provisional: boolean }>(imagen: T) =>
+  ES_PRODUCCION && imagen.provisional ? undefined : imagen;

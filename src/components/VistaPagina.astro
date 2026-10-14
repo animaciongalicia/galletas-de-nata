@@ -1,9 +1,8 @@
 ---
-import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Migas from './Migas.astro';
 import PanelEditorial from './PanelEditorial.astro';
-import { esAprobado, type Pagina } from '../lib/contenido';
+import { esAprobado, htmlPublicable, type Pagina } from '../lib/contenido';
 import { fecha, fechaIso } from '../lib/formato';
 
 interface Props {
@@ -11,7 +10,7 @@ interface Props {
 }
 const { pagina } = Astro.props;
 const { data } = pagina;
-const { Content } = await render(pagina);
+const { html } = await htmlPublicable(pagina);
 ---
 
 <Base titulo={data.titulo} descripcion={data.descripcion} indexable={esAprobado(pagina)}>
@@ -20,7 +19,7 @@ const { Content } = await render(pagina);
     <h1>{data.titulo}</h1>
     <PanelEditorial estado={data.estado} pendientes={data.pendientes} />
     <div class="prosa">
-      <Content />
+      <Fragment set:html={html} />
     </div>
     {
       data.fechaActualizacion && (

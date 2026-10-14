@@ -1,10 +1,9 @@
 ---
-import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import CabeceraPieza from './CabeceraPieza.astro';
 import Fuentes from './Fuentes.astro';
 import Relacionados from './Relacionados.astro';
-import { esAprobado, type Receta } from '../lib/contenido';
+import { esAprobado, htmlPublicable, imagenPublicable, type Receta } from '../lib/contenido';
 import { esquemaPieza } from '../lib/esquemas';
 import { duracion, fecha } from '../lib/formato';
 
@@ -13,7 +12,7 @@ interface Props {
 }
 const { pieza } = Astro.props;
 const r = pieza.data;
-const { Content } = await render(pieza);
+const { html } = await htmlPublicable(pieza);
 const esquemas = await esquemaPieza(pieza, Astro.site!, Astro.url.pathname);
 
 const datos = [
@@ -31,8 +30,8 @@ const visibles = esAprobado(pieza) ? datos.filter((d) => d.valor) : datos;
 <Base
   titulo={r.titulo}
   descripcion={r.descripcion}
-  imagen={r.imagen.src}
-  imagenAlt={r.imagen.alt}
+  imagen={imagenPublicable(r.imagen)?.src}
+  imagenAlt={imagenPublicable(r.imagen)?.alt}
   tipo="article"
   indexable={esAprobado(pieza)}
   esquemas={esquemas}
@@ -124,7 +123,7 @@ const visibles = esAprobado(pieza) ? datos.filter((d) => d.valor) : datos;
       </section>
 
       <div class="prosa explicacion">
-        <Content />
+        <Fragment set:html={html} />
         <Fuentes pieza={pieza} />
       </div>
     </div>

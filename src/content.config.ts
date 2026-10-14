@@ -18,7 +18,7 @@ const imagen = ({ image }: SchemaContext) =>
   z.object({
     src: image(),
     alt: z.string().min(1, 'Describe la imagen en "alt".'),
-    /** true = recurso provisional, no es fotografía propia. Se marca en pantalla. */
+    /** true = recurso provisional, no es fotografía propia. Se marca en la preview y nunca se muestra en producción. */
     provisional: z.boolean().default(false),
     /** Autoría o licencia de la fotografía. */
     credito: z.string().optional(),
@@ -61,8 +61,6 @@ function exigirSiAprobado(
   if (data.estado !== 'aprobado') return;
   if (!data.fechaPublicacion)
     ctx.addIssue({ code: 'custom', message: 'Un contenido aprobado necesita fechaPublicacion real.' });
-  if (data.imagen.provisional)
-    ctx.addIssue({ code: 'custom', message: 'Un contenido aprobado no puede usar una imagen provisional.' });
   if (data.pendientes.length > 0)
     ctx.addIssue({ code: 'custom', message: 'Resuelve y vacía "pendientes" antes de aprobar.' });
 }
