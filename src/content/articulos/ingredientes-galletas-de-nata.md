@@ -38,7 +38,7 @@ Es el ingrediente que da nombre a la galleta y su principal fuente de grasa. Su 
 
 La nata lleva más agua que la mantequilla. En repostería se sabe que el agua, al amasar, desarrolla el gluten y endurece la masa, mientras que la grasa lo frena y da ternura. Por eso, cuanto más grasa tenga la nata, más tierna y quebradiza puede salir la galleta. También por eso amasar de más estropea la textura, aunque haya mucha grasa.
 
-Las pruebas del proyecto lo confirman: cuanta más grasa tiene la nata, mejor sale la galleta. Las natas del 30 al 40 % se quedaron cortas; el mejor resultado llegó con nata de un 70-75 % de materia grasa. Lo explico en [la guía sobre la nata de vaca](/autentica-nata-de-vaca/).
+Las pruebas del proyecto lo confirman: cuanta más grasa tiene la nata, mejor sale la galleta. Con natas del 30 al 40 %, la galleta horneada queda en torno a un 20 % de grasa y sabe a galleta de mantequilla; con nata de un 70-75 %, queda en torno a un 50 %. Lo explico en [la guía sobre la nata de vaca](/autentica-nata-de-vaca/).
 
 ## La harina
 

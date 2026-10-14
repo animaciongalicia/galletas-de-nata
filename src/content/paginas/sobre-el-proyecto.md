@@ -5,7 +5,6 @@ estado: borrador
 enPie: true
 pendientes:
   - 'Nombre con el que firma el autor (se añade también en src/data/sitio.ts).'
-  - 'Confirmar que la historia del autor (Ferrol, abuelas, pruebas) puede publicarse tal como está.'
   - 'Foto del autor (opcional) con derechos.'
   - 'Revisar y aprobar el criterio editorial.'
 ---
@@ -14,7 +13,7 @@ pendientes:
 
 Este portal lo escribe un antiguo fabricante de galletas de nata de la comarca de Ferrol. Creció con las galletas que hacían sus abuelas con la nata de la leche hervida, y quiso recuperarlas.
 
-Para conseguirlo dedicó más de dos años a probar ingredientes, procesos y resultados. Empezó como se hacía en casa: comprando leche cruda del día, hirviéndola y juntando la nata durante días. Después probó natas comerciales y de lechera del 30, 35 y 40 % de materia grasa, sin llegar al punto buscado. La galleta que recordaba llegó con una nata de un 70-75 % de materia grasa, obtenida con una desnatadora especial.
+Para conseguirlo dedicó más de dos años a probar ingredientes, procesos y resultados. Empezó como se hacía en casa: comprando leche cruda del día, hirviéndola y juntando la nata durante días. Después probó natas comerciales y de lechera del 30, 35 y 40 % de materia grasa: las galletas salían con sabor a galleta de mantequilla. La galleta que recordaba llegó con una nata de un 70-75 % de materia grasa, obtenida con una desnatadora especial.
 
 Todo lo que se publica aquí sale de esa experiencia.
 

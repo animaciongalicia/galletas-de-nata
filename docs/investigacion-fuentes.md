@@ -103,7 +103,10 @@ Confirmado por el propietario, que es de Ferrol. Se publica como **experiencia p
 - **Primeras pruebas:** leche cruda del día, sin pasteurizar, cocida un par de veces para sacar la nata; unos 10 litros en 3 o 4 días.
 - **Alternativa para el lector:** comprar leche lo más entera y fresca posible y sacar la nata en casa.
 - **Lecheras:** se publica la versión neutra (la industria aprovecha la grasa para mantequillas y quesos). El autor la ha aprobado.
-- **Pendiente de aclarar antes de publicar:** «cuando se cuecen baja al 50 % una vez que entran en el horno». No está claro si se refiere a la grasa de la nata, a la de la masa o a la de la galleta horneada.
+- **Grasa en la galleta horneada (aclarado):** con nata del 70-75 %, la galleta horneada queda en torno a un 50 % de materia grasa. Con nata del 30-40 %, en torno a un 20 %, y sabe como una galleta de mantequilla. Por eso mucha gente las hace con mantequilla buena.
+- **Zona:** se hacían en casi toda la Galicia rural, y mucho en la comarca de Ferrol.
+- **Cocción:** la nata buena es la de la primera cocción; una segunda da algo más, pero poca.
+- **Leche cruda (verificado en parte):** el Real Decreto 1086/2020 permite la venta directa de leche cruda al consumidor con requisitos (https://www.boe.es/diario_boe/txt.php?id=BOE-A-2020-15872). En Galicia, según la Consellería do Medio Rural en 2021, no está permitida (https://hipertextual.com/ciencia/leche-cruda-venta-directa-galicia/). Coincide con lo que dice el autor: hoy solo quien usa la leche de su propio ordeño puede hacerlas como antes. **Confirmar la situación actual con la Consellería antes de aprobar.**
 
 ## 8. Huecos que solo puede cubrir el autor
 

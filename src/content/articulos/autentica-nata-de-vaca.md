@@ -20,11 +20,17 @@ fuentes:
   - titulo: 'Real Decreto 176/2013, que deroga parcialmente normas de calidad de productos alimenticios'
     url: 'https://www.iberley.es/legislacion/real-decreto-176-2013-8-mar-deroga-total-parcialmente-reglamentaciones-tecnico-sanitarias-normas-calidad-referidas-productos-alimenticios-10889215'
     nota: 'Deroga otros apartados de la Orden de 1983; la clasificación por materia grasa no figura entre ellos.'
+  - titulo: 'Real Decreto 1086/2020, venta directa de leche cruda al consumidor (BOE)'
+    url: 'https://www.boe.es/diario_boe/txt.php?id=BOE-A-2020-15872'
+    nota: 'Permite la venta directa con requisitos (registro sanitario, envasado, etiquetado de tratamiento térmico).'
+  - titulo: 'Hipertextual: Galicia no permite la venta directa de leche cruda (2021)'
+    url: 'https://hipertextual.com/ciencia/leche-cruda-venta-directa-galicia/'
+    nota: 'Según la Consellería do Medio Rural. Verificar la situación actual.'
   - titulo: 'Codex Alimentarius CXS 288-1976, norma para las natas (FAO/OMS)'
     url: 'https://www.fao.org/fao-who-codexalimentarius/codex-texts/list-standards/es/'
 pendientes:
   - 'Abrir el texto consolidado del BOE y confirmar el apartado 5.2 del anejo 1 (los datos vienen de extractos; el BOE no era accesible desde el entorno de trabajo).'
-  - 'Aclarar qué significa que «al cocerse baja al 50 %» (¿la grasa de la nata, la de la masa o la de la galleta horneada?) antes de publicarlo.'
+  - 'Confirmar con la Consellería do Medio Rural si la venta directa de leche cruda sigue sin estar permitida en Galicia.'
   - 'Fotografía propia de la nata usada en las pruebas.'
 ---
 
@@ -64,20 +70,32 @@ La capa que aparece al hervir la leche no es grasa pura. Con el calor, las prote
 
 ## Cuál usar para hacer galletas
 
-El proyecto probó primero con las natas que se encuentran en la tienda o que venden las lecheras: del 30 %, del 35 % y del 40 % de materia grasa, algunas ya desnatadas de fábrica. Ninguna llegaba al punto buscado: las galletas no salían como las de antes.
+El proyecto probó primero con las natas que se encuentran en la tienda o que venden las lecheras: del 30 %, del 35 % y del 40 % de materia grasa, algunas ya desnatadas de fábrica. Ninguna llegaba al punto buscado.
 
 El resultado cambió con una nata de **entre un 70 y un 75 % de materia grasa**, medida, obtenida en una lechera con una desnatadora especial que centrifuga a mucha más velocidad que las corrientes. Es una doble nata muy por encima del mínimo del 50 % que marca la norma.
 
-El problema es encontrarla. La nata del supermercado suele rondar el 35 %, una nata tan grasa no sale de una desnatadora corriente y la mayor parte de la grasa de la leche la aprovecha la propia industria láctea para mantequillas, quesos y otros productos.
+## Lo que queda en la galleta después del horno
 
-## Si no encuentras una nata tan grasa
+Al hornear, la galleta pierde agua y la grasa de la nata se reparte en la masa con la harina y el azúcar. Según la experiencia del proyecto:
 
-La alternativa más fiel es volver al método de las abuelas: compra **leche lo más entera y fresca posible**, mejor leche cruda del día, sin pasteurizar, y saca tú la nata.
+| Nata usada | Grasa aproximada en la galleta horneada | Resultado |
+| --- | --- | --- |
+| 30-40 % de materia grasa | en torno al 20 % | Sabe como una galleta de mantequilla |
+| 70-75 % de materia grasa | en torno al 50 % | La galleta de nata de siempre |
 
-1. Hierve la leche y déjala enfriar hasta que se forme la capa de nata.
-2. Recoge la nata y vuelve a hervir la misma leche para sacar una segunda capa.
-3. Guarda la nata en frío y ve juntándola durante varios días.
+Por eso mucha gente acaba haciendo «galletas de nata» con mantequilla buena: la nata tan grasa es muy difícil de conseguir. El resultado puede estar rico, pero es otra galleta.
 
-Como referencia, en las primeras pruebas del proyecto se usaban unos 10 litros de leche cruda en 3 o 4 días para reunir nata suficiente. Tienes el paso a paso en [cómo hacer nata casera a partir de leche](/como-hacer-nata-casera/).
+## Por qué es tan difícil encontrar esta nata
+
+- La nata del supermercado suele rondar el 35 %.
+- Una nata del 70 % no sale de una desnatadora corriente.
+- La mayor parte de la grasa de la leche la aprovecha la propia industria láctea para mantequillas, quesos y otros productos.
+- La vía tradicional, hervir la leche cruda en casa, está hoy muy limitada. La norma estatal permite vender leche cruda al consumidor con requisitos, pero en Galicia, según la Consellería do Medio Rural, la venta directa de leche cruda no está permitida. En la práctica, solo quien tiene vacas y usa la leche de su propio ordeño puede hacer estas galletas como se hacían antes.
+
+## Si quieres acercarte en casa
+
+- **Busca la nata con más grasa que encuentres.** Lee la etiqueta: cuanto más alto el porcentaje, más cerca estarás. Una doble nata (50 % o más) es mejor punto de partida que una nata para montar del 35 %.
+- **Si tienes acceso legal a leche cruda**, con el envase y el etiquetado que exige la norma, puedes sacar tú la nata con el método de las abuelas. Tienes el paso a paso en [cómo hacer nata casera a partir de leche](/como-hacer-nata-casera/).
+- **Asume la diferencia.** Con una nata del 35 % la galleta se parecerá más a una de mantequilla que a la tradicional.
 
 Los resultados de cada prueba están en [pruebas con distintas natas](/pruebas-nata-en-galletas/).

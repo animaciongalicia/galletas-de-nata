@@ -34,7 +34,7 @@ Nació como receta de aprovechamiento. Se hervía la leche recién ordeñada, se
 
 - **La grasa es nata.** No lleva mantequilla ni aceite. Toda la grasa sale de la nata de vaca.
 - **Pocos ingredientes.** Nata, azúcar y harina. Las versiones con huevo, levadura, mantequilla o limón son variantes modernas.
-- **Nata con mucha grasa.** En las pruebas del proyecto, las natas comerciales del 30, 35 y 40 % no daban el resultado buscado. El punto llegó con nata de un 70-75 % de materia grasa. Más detalles en [la guía sobre la nata de vaca](/autentica-nata-de-vaca/).
+- **Nata con mucha grasa.** En las pruebas del proyecto, con natas del 30 al 40 % la galleta horneada quedaba en torno a un 20 % de grasa y sabía a galleta de mantequilla. Con nata de un 70-75 % de materia grasa quedaba en torno a un 50 %: la galleta de nata de siempre. Más detalles en [la guía sobre la nata de vaca](/autentica-nata-de-vaca/).
 - **No hay una única textura.** En las casas, cada familia tenía su punto: unas galletas salían más duras y otras más tiernas.
 
 <div class="pendiente">Rasgos que permiten reconocer una buena galleta de nata al verla y al probarla: color, rotura, miga, aroma y sabor.</div>
