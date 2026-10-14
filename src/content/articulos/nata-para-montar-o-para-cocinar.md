@@ -6,9 +6,9 @@ estado: aprobado
 fechaPublicacion: 2026-10-14
 intencion: 'Informativa: «diferencia entre nata para montar y nata para cocinar» (210 búsquedas/mes en España, dificultad baja).'
 imagen:
-  src: ../../assets/provisional/nata-para-montar-o-para-cocinar.jpg
-  alt: 'Dos envases de nata, una para montar y otra para cocinar'
-  provisional: true
+  src: ../../assets/fotos/nata-espesa-en-cuchara-de-madera.jpg
+  alt: 'Nata espesa sobre una cuchara de madera'
+  provisional: false
 relacionados:
   - autentica-nata-de-vaca
   - como-leer-la-etiqueta-de-una-nata

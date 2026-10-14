@@ -5,9 +5,9 @@ seccion: galletas
 estado: borrador
 intencion: 'Informativa-práctica: "cómo conservar galletas de nata", "cuánto duran las galletas de nata".'
 imagen:
-  src: ../../assets/provisional/como-conservar-galletas-de-nata.jpg
-  alt: 'Galletas de nata guardadas en una lata metálica'
-  provisional: true
+  src: ../../assets/fotos/galletas-de-nata-en-cesta.jpg
+  alt: 'Galletas de nata en una cesta de mimbre forrada con papel'
+  provisional: false
 relacionados:
   - errores-textura-galletas-de-nata
   - galletas-de-nata-autenticas

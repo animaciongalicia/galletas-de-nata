@@ -6,9 +6,9 @@ estado: borrador
 intencion: 'Informativa: "galletas de nata gallegas", "galletas de nata auténticas", "qué son las galletas de nata".'
 destacado: true
 imagen:
-  src: ../../assets/provisional/galletas-de-nata-autenticas.jpg
-  alt: 'Galletas de nata redondas y doradas apiladas'
-  provisional: true
+  src: ../../assets/fotos/galletas-de-nata-caseras-apiladas.jpg
+  alt: 'Galletas de nata caseras apiladas sobre un paño de arpillera'
+  provisional: false
 relacionados:
   - como-se-hacian-las-galletas-de-nata
   - ingredientes-galletas-de-nata

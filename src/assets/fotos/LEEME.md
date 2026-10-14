@@ -76,4 +76,13 @@ No subas fotos de la fabricación industrial, equipos o proveedores que quieras 
 | `tarrina-de-nata.jpg` | Cómo leer la etiqueta |
 | `galletas-de-nata-en-forma-de-corazon.jpg` | Tipos de galletas |
 
-Siguen faltando fotos de **galletas horneadas** con buena resolución (mínimo 1600 px): son las que más necesita la web, sobre todo para la receta principal.
+
+| `galletas-de-nata-caseras-apiladas.jpg` | Portada; principal de «Galletas de nata auténticas» (borrador) |
+| `galletas-de-nata-con-vaso-de-leche.jpg` | Principal de la receta |
+| `bolitas-de-masa-antes-de-hornear.jpg`, `galletas-de-nata-en-la-rejilla.jpg` | Receta (en el texto) |
+| `galletas-de-nata-finas-en-lata-antigua.jpg` | Principal de «Tipos de galletas» |
+| `galletas-de-nata-agrietadas-de-cerca.jpg` | Principal de «Nata o mantequilla» |
+| `galletas-de-nata-en-cesta.jpg` | Principal de «Cómo conservar» (borrador) |
+| `pastas-con-botella-de-leche.jpg` | Sin usar: son pastas altas tipo magdalena, no galletas de nata |
+
+Siguen faltando: **una galleta partida** (para ver la miga), las **pruebas con cada nata** con la misma luz y encuadre, y fotos de los **postres** según se vayan probando.

@@ -7,9 +7,9 @@ fechaPublicacion: 2026-10-15
 intencion: 'Informativa-comparativa: «galletas de nata con huevo», «galletas de nata con levadura», «galletas de nata sin lactosa», «tipos de galletas de nata».'
 destacado: true
 imagen:
-  src: ../../assets/provisional/tipos-de-galletas-de-nata.jpg
-  alt: 'Varias galletas de nata de formas y grosores distintos'
-  provisional: true
+  src: ../../assets/fotos/galletas-de-nata-finas-en-lata-antigua.jpg
+  alt: 'Galletas de nata finas y doradas en una lata, junto a un molinillo antiguo'
+  provisional: false
 relacionados:
   - como-hacer-las-mejores-galletas-de-nata
   - galletas-de-nata-o-de-mantequilla

@@ -6,9 +6,9 @@ estado: revision
 intencion: 'Receta: «galletas de nata receta» (140/mes), «receta de galletas de nata» (140/mes), «receta galletas de nata» (70/mes), «galletas de nata receta tradicional» (50/mes). Pieza principal de la sección.'
 destacado: true
 imagen:
-  src: ../../assets/provisional/como-hacer-las-mejores-galletas-de-nata.jpg
-  alt: 'Galletas de nata caseras recién horneadas en la bandeja'
-  provisional: true
+  src: ../../assets/fotos/galletas-de-nata-con-vaso-de-leche.jpg
+  alt: 'Galletas de nata caseras en un plato y en la rejilla, junto a un vaso de leche'
+  provisional: false
 tiempos:
   reposo: 30
   coccion: 20
@@ -66,7 +66,6 @@ pendientes:
   - 'Hornear la receta tal cual y anotar la fecha de la prueba (campo verificacion), con tiempo de preparación y total.'
   - 'Trucos de las abuelas: los aporta el autor.'
   - 'Versión con nata de más del 70 %: receta propia, por el autor.'
-  - 'Fotos propias: masa, galletas antes y después del horno.'
 ---
 
 La galleta de nata gallega de siempre lleva solo tres ingredientes: **nata, azúcar y harina**, y una pizca de sal. En esta receta van a partes casi iguales: 250 ml de nata, 250 g de harina y algo más de la mitad de azúcar.
@@ -81,6 +80,8 @@ La receta no tiene secretos. **La diferencia la marca la nata**: aquí se usa un
 4. Hornea a 180 °C durante 20 minutos y deja enfriar.
 5. Sirve las galletas de nata una vez frías.
 
+![Porciones de masa de galletas de nata sobre papel de horno, antes de hornear](../../assets/fotos/bolitas-de-masa-antes-de-hornear.jpg)
+
 ## Antes de empezar
 
 - Ten los ingredientes pesados y la nata fría de la nevera.
@@ -90,6 +91,8 @@ La receta no tiene secretos. **La diferencia la marca la nata**: aquí se usa un
 ## Por qué la nata lo cambia todo
 
 En las pruebas del proyecto, con natas del 30 al 40 % de materia grasa la galleta horneada quedaba en torno a un 20 % de grasa y sabía a galleta de mantequilla. Con nata del 70-80 % quedaba en torno a un 50 %: la galleta de nata de siempre.
+
+![Galletas de nata recién horneadas enfriándose en una rejilla](../../assets/fotos/galletas-de-nata-en-la-rejilla.jpg)
 
 La nata de más del 70 % sería la ideal, pero es muy difícil de encontrar. Y ojo: **con ella la galleta es totalmente diferente** y no se hace con esta receta. Esta es la típica, la que puedes preparar con nata del supermercado.
 

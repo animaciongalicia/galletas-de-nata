@@ -6,7 +6,7 @@ import Vacio from '../components/Vacio.astro';
 import { LISTA_SECCIONES } from '../data/secciones';
 import { SITIO } from '../data/sitio';
 import { getPiezas, urlPaginaVisible, url } from '../lib/contenido';
-import portada from '../assets/fotos/nata-espesa-en-cuchara-de-madera.jpg';
+import portada from '../assets/fotos/galletas-de-nata-caseras-apiladas.jpg';
 import fotoProyecto from '../assets/fotos/leche-recien-ordenada-en-el-fuego.jpg';
 
 const piezas = await getPiezas();
@@ -17,7 +17,7 @@ const cuenta = (id: string) => piezas.filter((p) => p.data.seccion === id).lengt
 
 const imagenPortada = {
   src: portada,
-  alt: 'Nata espesa sobre una cuchara de madera',
+  alt: 'Galletas de nata caseras apiladas sobre un paño de arpillera',
   provisional: false,
 };
 const imagenProyecto = {

@@ -6,9 +6,9 @@ estado: aprobado
 fechaPublicacion: 2026-10-14
 intencion: 'Comparativa: «galletas de nata y mantequilla», «galletas de mantequilla y nata», «diferencia galletas de nata y de mantequilla».'
 imagen:
-  src: ../../assets/provisional/galletas-de-nata-o-de-mantequilla.jpg
-  alt: 'Dos montones de galletas doradas, unas de nata y otras de mantequilla'
-  provisional: true
+  src: ../../assets/fotos/galletas-de-nata-agrietadas-de-cerca.jpg
+  alt: 'Galletas de nata de superficie agrietada, vistas de cerca'
+  provisional: false
 fuentes:
   - titulo: 'Codex Alimentarius CXS 279-1971, Standard for Butter (FAO/OMS)'
     url: 'https://www.fao.org/input/download/standards/170/CXS_279e.pdf'
