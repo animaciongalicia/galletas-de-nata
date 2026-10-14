@@ -1,30 +1,56 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import Base from '../layouts/Base.astro';
 import Figura from '../components/Figura.astro';
 import Rejilla from '../components/Rejilla.astro';
 import Vacio from '../components/Vacio.astro';
-import { LISTA_SECCIONES } from '../data/secciones';
 import { SITIO } from '../data/sitio';
 import { getPiezas, urlPaginaVisible, url } from '../lib/contenido';
-import portada from '../assets/fotos/galletas-de-nata-caseras-apiladas.jpg';
-import fotoProyecto from '../assets/fotos/leche-recien-ordenada-en-el-fuego.jpg';
+import fotoApertura from '../assets/fotos/galletas-de-nata-finas-en-lata-antigua.jpg';
+import fotoLeche from '../assets/fotos/leche-recien-ordenada-en-el-fuego.jpg';
+import fotoCapa from '../assets/fotos/capa-de-nata-sobre-la-leche-hervida.jpg';
+import fotoGuardar from '../assets/fotos/sacar-la-nata-de-la-leche-cocida.jpg';
+import fotoHorno from '../assets/fotos/galletas-de-nata-en-la-rejilla.jpg';
+import fotoProyecto from '../assets/fotos/galletas-de-nata-caseras-apiladas.jpg';
 
 const piezas = await getPiezas();
 const destacadas = [...piezas.filter((p) => p.data.destacado), ...piezas.filter((p) => !p.data.destacado)].slice(0, 6);
 const sobre = await urlPaginaVisible('sobre-el-proyecto');
+const historia = piezas.find((p) => p.id === 'como-se-hacian-las-galletas-de-nata');
 const guiaNata = piezas.find((p) => p.id === 'autentica-nata-de-vaca');
-const cuenta = (id: string) => piezas.filter((p) => p.data.seccion === id).length;
 
-const imagenPortada = {
-  src: portada,
-  alt: 'Galletas de nata caseras apiladas sobre un paño de arpillera',
-  provisional: false,
-};
-const imagenProyecto = {
-  src: fotoProyecto,
-  alt: 'Cazos con leche recién ordeñada calentándose en la cocina',
-  provisional: false,
-};
+// Foto de vacas: aparece sola cuando se sube a src/assets/fotos/ un archivo que empiece por «vacas».
+const vacas = Object.values(
+  import.meta.glob<{ default: ImageMetadata }>('../assets/fotos/vacas*.{jpg,jpeg,png,webp}', { eager: true }),
+)[0]?.default;
+
+const pasos = [
+  {
+    foto: fotoLeche,
+    alt: 'Cazos con leche recién ordeñada calentándose en la cocina',
+    titulo: 'La leche',
+    texto: 'Se ordeñaba la vaca y la leche se hervía. Así duraba más.',
+  },
+  {
+    foto: fotoCapa,
+    alt: 'Capa de nata sobre la leche hervida, separada con un cuchillo',
+    titulo: 'La capa de nata',
+    texto: 'Al enfriar, en la superficie se formaba una capa de nata. Se recogía con cuidado y se apartaba.',
+  },
+  {
+    foto: fotoGuardar,
+    alt: 'Nata recogida con un cucharón de la leche cocida',
+    titulo: 'Juntar nata',
+    texto: 'Se iba guardando una semana o diez días, hasta reunir 200, 500 gramos o más.',
+  },
+  {
+    foto: fotoHorno,
+    alt: 'Galletas de nata recién horneadas enfriándose en una rejilla',
+    titulo: 'Al horno',
+    texto: 'Con azúcar y harina, al horno. Cada casa, su punto: unas más duras, otras más tiernas.',
+  },
+];
 
 const site = Astro.site!;
 const esquemas = [
@@ -33,33 +59,107 @@ const esquemas = [
 ---
 
 <Base
-  titulo="Galletas de Nata: recetas caseras, postres y todo sobre la nata"
+  titulo="Galletas de Nata: historia, recetas caseras y todo sobre la nata"
   tituloCompleto
-  descripcion="Portal sobre la galleta de nata gallega: qué la caracteriza, recetas caseras probadas, postres con galletas y cómo influye la nata en el resultado."
+  descripcion="La galleta de nata gallega: cómo se hacía en casa con la nata de la leche hervida, qué nata necesita y recetas caseras para volver a hacerla."
   esquemas={esquemas}
 >
-  <section class="envoltorio heroe">
-    <div class="heroe-texto">
-    <p class="antetitulo">Historia, recetas y técnica</p>
-    <h1>La galleta <em>de nata</em> gallega</h1>
-    <div class="heroe-pie">
-      <p class="entradilla">
-        Cómo se hacía en casa, qué nata necesita y todo lo que puedes preparar con ella. Explicado por un antiguo
-        fabricante de galletas de nata.
+  <!-- 1. Apertura -->
+  <section class="apertura">
+    <Image
+      src={fotoApertura}
+      alt="Galletas de nata finas en una lata antigua, junto a un molinillo de hierro"
+      widths={[800, 1280, 1600, 2000]}
+      sizes="100vw"
+      width={2000}
+      height={Math.round((2000 * fotoApertura.height) / fotoApertura.width)}
+      priority
+      layout="none"
+      format="webp"
+      class="apertura-foto"
+    />
+    <div class="envoltorio apertura-texto">
+      <p class="antetitulo">La galleta de nata gallega</p>
+      <h1>No se compraban. <em>Salían de la leche de casa.</em></h1>
+      <p class="apertura-entradilla">
+        Leche recién ordeñada, nata guardada día a día y una lata de galletas para los niños. Su historia, la nata que
+        necesitan y cómo volver a hacerlas.
       </p>
       <div class="acciones">
-        <a class="boton" href="/recetas/">Ver recetas</a>
-        <a class="enlace-flecha" href="/nata-y-elaboracion/">Entender la nata →</a>
+        {historia && <a class="boton boton--claro-sobre-oscuro" href={url(historia.id)}>Lee la historia</a>}
+        <a class="enlace-flecha" href="/recetas/">Ver recetas →</a>
       </div>
-    </div>
-    </div>
-    <div class="heroe-imagen">
-      <Figura imagen={imagenPortada} prioridad proporcion="4 / 5" tamanos="(max-width: 62rem) 100vw, 30rem" anchos={[480, 800, 1200]} />
     </div>
   </section>
 
-  <section class="envoltorio datos banda banda--tinta" aria-labelledby="datos-titulo">
-    <h2 id="datos-titulo" class="sr-only">La galleta de nata en tres datos</h2>
+  <!-- 2. Tierra de vacas -->
+  <section class="envoltorio banda banda--crema tierra" aria-labelledby="tierra-titulo">
+    <div class="tierra-texto">
+      <p class="antetitulo">Galicia</p>
+      <h2 id="tierra-titulo">Tierra de vacas y de leche</h2>
+      <p>
+        En una casa con vacas siempre había leche que hervir y nata que aprovechar. En casi toda la Galicia rural, y
+        mucho en la comarca de Ferrol, las galletas de nata formaban parte de la infancia.
+      </p>
+    </div>
+    <div class="tierra-cifra">
+      <p class="cifra">≈&nbsp;41&nbsp;%</p>
+      <p class="cifra-texto">de la leche de vaca de España sale hoy de Galicia.</p>
+    </div>
+    {
+      vacas && (
+        <div class="tierra-foto">
+          <Image src={vacas} alt="Vacas en Galicia" widths={[480, 800, 1200]} sizes="(max-width: 62rem) 100vw, 30rem" layout="none" format="webp" />
+        </div>
+      )
+    }
+  </section>
+
+  <!-- 3. Del cazo a la lata -->
+  <section class="envoltorio bloque proceso" aria-labelledby="proceso-titulo">
+    <div class="bloque-cabecera">
+      <p class="antetitulo">Cómo se hacían</p>
+      <h2 id="proceso-titulo">Del cazo a la lata</h2>
+    </div>
+    <ol class="pasos">
+      {
+        pasos.map((p, i) => (
+          <li>
+            <Figura imagen={{ src: p.foto, alt: p.alt, provisional: false }} proporcion="4 / 5" anchos={[320, 480, 640]} tamanos="(max-width: 40rem) 100vw, (max-width: 62rem) 50vw, 17rem" />
+            <p class="paso-num">{['I', 'II', 'III', 'IV'][i]}</p>
+            <h3>{p.titulo}</h3>
+            <p>{p.texto}</p>
+          </li>
+        ))
+      }
+    </ol>
+    {historia && <p class="mas"><a class="enlace-flecha" href={url(historia.id)}>La historia completa →</a></p>}
+  </section>
+
+  <!-- 4. Aprovechamiento -->
+  <section class="envoltorio banda banda--tinta aprovechamiento" aria-labelledby="aprov-titulo">
+    <div>
+      <p class="antetitulo">Aprovechamiento</p>
+      <h2 id="aprov-titulo" class="cita">
+        Con lo que sobraba de la leche, las abuelas hacían <em>el dulce de los niños</em>.
+      </h2>
+    </div>
+    <div class="aprov-texto">
+      <p class="antetitulo">Por qué se perdió</p>
+      <p>
+        En 1952 un decreto ordenó crear centrales lecheras en las ciudades. En las décadas siguientes, la leche
+        pasteurizada y envasada llegó a casi todas las casas.
+      </p>
+      <p>Ya no hacía falta hervir la leche. Y sin leche hervida, no había capa de nata que guardar.</p>
+    </div>
+  </section>
+
+  <!-- 5. La nata de antes -->
+  <section class="envoltorio bloque datos" aria-labelledby="datos-titulo">
+    <div class="bloque-cabecera">
+      <p class="antetitulo">La nata</p>
+      <h2 id="datos-titulo">La nata de antes daba otra galleta</h2>
+    </div>
     <dl>
       <div>
         <dt>3</dt>
@@ -74,48 +174,27 @@ const esquemas = [
         <dd>de <strong>grasa en la galleta horneada</strong> con esa nata, frente al ≈&nbsp;20&nbsp;% con una nata del 35&nbsp;%.</dd>
       </div>
     </dl>
-    {guiaNata && <p class="datos-mas"><a class="enlace-flecha" href={url(guiaNata.id)}>Por qué la nata lo cambia todo →</a></p>}
+    {guiaNata && <p class="mas"><a class="enlace-flecha" href={url(guiaNata.id)}>Por qué la nata lo cambia todo →</a></p>}
   </section>
 
-  <section class="envoltorio bloque" aria-labelledby="destacado-titulo">
+  <!-- 6. Hazlas tú -->
+  <section class="envoltorio banda banda--crema guias" aria-labelledby="guias-titulo">
     <div class="bloque-cabecera">
-      <p class="antetitulo">Guías esenciales</p>
-      <h2 id="destacado-titulo">Para empezar</h2>
+      <p class="antetitulo">Hazlas tú</p>
+      <h2 id="guias-titulo">Recetas, nata y postres</h2>
     </div>
     {destacadas.length > 0 ? <Rejilla piezas={destacadas} /> : <Vacio mensaje="Los primeros contenidos se publicarán muy pronto." />}
-    <p class="ver-todo"><a class="enlace-flecha" href="/buscar/">Ver todos los contenidos →</a></p>
+    <p class="mas"><a class="enlace-flecha" href="/buscar/">Ver todos los contenidos →</a></p>
   </section>
 
-  <section class="envoltorio bloque secciones-bloque banda banda--crema" aria-labelledby="secciones-titulo">
-    <div class="bloque-cabecera">
-      <p class="antetitulo">Índice</p>
-      <h2 id="secciones-titulo">Secciones</h2>
-    </div>
-    <ul class="secciones">
-      {
-        LISTA_SECCIONES.map((s, i) => (
-          <li>
-            <a href={`/${s.slug}/`}>
-              <span class="num">{String(i + 1).padStart(2, '0')}</span>
-              <span class="nombre">{s.nombre}</span>
-              <span class="desc">{s.descripcion}</span>
-              <span class="cuenta">
-                {cuenta(s.id) > 0 ? `${cuenta(s.id)} ${cuenta(s.id) === 1 ? 'contenido' : 'contenidos'}` : 'Próximamente'}
-              </span>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
-
-  <section class="envoltorio bloque proyecto banda banda--verde" aria-labelledby="proyecto-titulo">
+  <!-- 7. El proyecto -->
+  <section class="envoltorio banda banda--verde proyecto" aria-labelledby="proyecto-titulo">
     <div class="proyecto-foto">
-      <Figura imagen={imagenProyecto} proporcion="4 / 5" tamanos="(max-width: 48rem) 100vw, 22rem" anchos={[400, 480]} />
+      <Figura imagen={{ src: fotoProyecto, alt: 'Galletas de nata caseras apiladas sobre un paño de arpillera', provisional: false }} proporcion="4 / 5" tamanos="(max-width: 62rem) 18rem, 22rem" anchos={[400, 640]} />
     </div>
     <div>
       <p class="antetitulo">El proyecto</p>
-      <h2 id="proyecto-titulo">Hecho por alguien que las fabricó</h2>
+      <h2 id="proyecto-titulo">Contado por alguien que las fabricó</h2>
     </div>
     <div class="proyecto-texto">
       <p>
@@ -129,33 +208,60 @@ const esquemas = [
 </Base>
 
 <style>
-  .heroe {
+  /* 1. Apertura */
+  .apertura {
+    position: relative;
+    min-height: min(86vh, 52rem);
     display: grid;
-    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-    gap: var(--e-5);
     align-items: end;
+    color: var(--marfil);
+    overflow: hidden;
+    background: var(--tinta);
+  }
+  .apertura :global(.apertura-foto) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .apertura::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgb(27 25 22 / 25%) 0%, rgb(27 25 22 / 55%) 45%, rgb(27 25 22 / 90%) 100%);
+  }
+  .apertura-texto {
+    position: relative;
+    z-index: 1;
     padding: var(--e-5) 0;
   }
-  .heroe h1 {
-    font-size: clamp(2.9rem, 1.4rem + 5.4vw, 6.2rem);
-    font-weight: 350;
-    line-height: 0.98;
-    letter-spacing: -0.03em;
-    max-width: 12ch;
-    margin: 0 0 var(--e-4);
+  .apertura .antetitulo {
+    color: var(--galleta-claro);
   }
-  .heroe h1 em {
+  .apertura h1 {
+    font-size: clamp(2.6rem, 1.3rem + 5vw, 5.8rem);
+    font-weight: 350;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    max-width: 16ch;
+    margin: 0 0 var(--e-3);
+    color: var(--marfil);
+  }
+  .apertura h1 em {
+    display: block;
     font-style: italic;
     font-weight: 300;
-    color: var(--tostado);
+    color: var(--galleta-claro);
   }
-  .heroe-pie {
-    padding-top: var(--e-3);
-    border-top: 1px solid var(--tinta);
-  }
-  .heroe .entradilla {
-    margin: 0 0 var(--e-3);
+  .apertura-entradilla {
+    font-family: var(--f-titulo);
+    font-size: var(--t-l);
+    font-weight: 350;
+    line-height: 1.45;
     max-width: 34rem;
+    color: rgb(246 243 236 / 88%);
+    margin: 0 0 var(--e-4);
   }
   .acciones {
     display: flex;
@@ -163,35 +269,153 @@ const esquemas = [
     align-items: center;
     gap: var(--e-3);
   }
-  .heroe-imagen :global(img) {
-    box-shadow: 24px 24px 0 var(--marfil-hondo);
+  .boton--claro-sobre-oscuro {
+    background: var(--marfil);
+    border-color: var(--marfil);
+    color: var(--tinta);
   }
-  @media (max-width: 62rem) {
-    .heroe {
-      grid-template-columns: 1fr;
-      gap: var(--e-4);
-      padding-top: var(--e-4);
-    }
-    .heroe-imagen {
-      max-width: 30rem;
-    }
-    .heroe-imagen :global(img) {
-      aspect-ratio: 4 / 3;
-      box-shadow: 12px 12px 0 var(--marfil-hondo);
-    }
+  .boton--claro-sobre-oscuro:hover {
+    background: transparent;
+    color: var(--marfil);
+    border-color: var(--marfil);
+  }
+  .apertura .enlace-flecha {
+    color: var(--marfil);
+    border-color: var(--marfil);
   }
 
-  .datos {
-    padding: var(--e-5) 0;
+  /* Bloques comunes */
+  .bloque {
+    padding-block: var(--e-5);
   }
+  .bloque-cabecera {
+    margin-bottom: var(--e-4);
+  }
+  .bloque-cabecera h2,
+  .tierra h2,
+  .proyecto h2 {
+    margin: 0;
+    font-size: clamp(2rem, 1.5rem + 1.8vw, 3rem);
+    font-weight: 400;
+  }
+  .mas {
+    margin: var(--e-4) 0 0;
+  }
+
+  /* 2. Tierra de vacas */
+  .tierra {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: var(--e-4) var(--e-5);
+    align-items: center;
+    padding-block: var(--e-5);
+  }
+  .tierra-texto p:last-child {
+    font-family: var(--f-titulo);
+    font-size: 1.3rem;
+    font-weight: 350;
+    line-height: 1.55;
+    margin: var(--e-3) 0 0;
+    max-width: 34rem;
+  }
+  .tierra-cifra {
+    border-left: 1px solid var(--tinta);
+    padding-left: var(--e-4);
+  }
+  .cifra {
+    font-family: var(--f-titulo);
+    font-size: clamp(4rem, 2.5rem + 6vw, 8rem);
+    font-weight: 300;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: var(--oliva);
+    margin: 0 0 var(--e-2);
+  }
+  .cifra-texto {
+    font-size: var(--t-s);
+    color: var(--tinta-suave);
+    max-width: 16rem;
+    margin: 0;
+  }
+  .tierra-foto {
+    grid-column: 1 / -1;
+  }
+  .tierra-foto :global(img) {
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    object-fit: cover;
+  }
+
+  /* 3. Del cazo a la lata */
+  .pasos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--e-3);
+    counter-reset: paso;
+  }
+  .paso-num {
+    font-family: var(--f-titulo);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--tostado);
+    margin: var(--e-2) 0 0.2rem;
+    padding-top: var(--e-1);
+    border-top: 1px solid var(--tinta);
+  }
+  .pasos h3 {
+    font-size: 1.4rem;
+    font-weight: 450;
+    margin: 0 0 var(--e-1);
+  }
+  .pasos li > p:last-child {
+    font-size: var(--t-s);
+    color: var(--tinta-suave);
+    margin: 0;
+  }
+
+  /* 4. Aprovechamiento */
+  .aprovechamiento {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: var(--e-5);
+    align-items: end;
+    padding-block: calc(var(--e-5) * 1.3);
+  }
+  .cita {
+    font-size: clamp(2rem, 1.3rem + 2.6vw, 3.6rem);
+    font-weight: 300;
+    line-height: 1.12;
+    margin: 0;
+    color: var(--marfil);
+  }
+  .cita em {
+    font-style: italic;
+    color: var(--galleta-claro);
+  }
+  .aprov-texto {
+    border-left: 1px solid rgb(246 243 236 / 25%);
+    padding-left: var(--e-3);
+    color: rgb(246 243 236 / 82%);
+    font-size: var(--t-s);
+  }
+  .aprov-texto p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* 5. La nata de antes */
   .datos dl {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     margin: 0;
+    border-top: 1px solid var(--tinta);
+    padding-top: var(--e-3);
   }
   .datos dl > div {
     padding: 0 var(--e-3);
-    border-left: 1px solid rgb(246 243 236 / 22%);
+    border-left: 1px solid var(--linea);
   }
   .datos dl > div:first-child {
     padding-left: 0;
@@ -202,136 +426,35 @@ const esquemas = [
     font-size: clamp(2.6rem, 1.8rem + 2.4vw, 3.8rem);
     font-weight: 300;
     line-height: 1;
-    color: var(--galleta-claro);
     letter-spacing: -0.03em;
     margin-bottom: var(--e-2);
   }
   .datos dd {
     margin: 0;
-    color: rgb(246 243 236 / 75%);
+    color: var(--tinta-suave);
     font-size: var(--t-s);
     max-width: 18rem;
   }
   .datos dd strong {
-    color: var(--marfil);
+    color: var(--tinta);
     font-weight: 600;
-  }
-  .datos-mas {
-    margin: var(--e-4) 0 0;
-  }
-  @media (max-width: 48rem) {
-    .datos dl {
-      grid-template-columns: 1fr;
-      gap: var(--e-3);
-    }
-    .datos dl > div {
-      padding: var(--e-3) 0 0;
-      border-left: 0;
-      border-top: 1px solid rgb(246 243 236 / 22%);
-    }
-    .datos dl > div:first-child {
-      padding-top: 0;
-      border-top: 0;
-    }
   }
 
-  .bloque {
-    margin-top: var(--e-5);
-  }
-  .secciones-bloque,
-  .proyecto {
+  /* 6. Hazlas tú */
+  .guias {
     padding-block: var(--e-5);
   }
-  .secciones-bloque {
-    margin-top: calc(var(--e-5) * 1.5);
-  }
-  .secciones-bloque + .proyecto {
-    margin-top: 0;
-  }
-  .bloque-cabecera {
-    margin-bottom: var(--e-3);
-  }
-  .bloque-cabecera h2 {
-    margin: 0;
-    font-size: clamp(2rem, 1.5rem + 1.6vw, 2.8rem);
-    font-weight: 400;
-  }
-  .ver-todo {
-    margin-top: var(--e-4);
-  }
-  .secciones {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: var(--e-4);
-  }
-  @media (max-width: 48rem) {
-    .secciones {
-      grid-template-columns: 1fr;
-    }
-  }
-  .secciones a {
-    display: grid;
-    grid-template-columns: 3rem 1fr;
-    grid-template-areas: 'num nombre' '. desc' '. cuenta';
-    row-gap: 0.4rem;
-    height: 100%;
-    padding: var(--e-3) 0;
-    border-top: 1px solid color-mix(in srgb, var(--tinta) 30%, transparent);
-    color: var(--tinta);
-    text-decoration: none;
-  }
-  .secciones a:hover .nombre {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.18em;
-    text-decoration-color: var(--galleta);
-  }
-  .num {
-    grid-area: num;
-    font-family: var(--f-titulo);
-    font-style: italic;
-    font-size: 1.1rem;
-    color: var(--tostado);
-    padding-top: 0.35rem;
-  }
-  .nombre {
-    grid-area: nombre;
-    font-family: var(--f-titulo);
-    font-size: 1.7rem;
-    font-weight: 400;
-    line-height: 1.2;
-  }
-  .desc {
-    grid-area: desc;
-    font-size: var(--t-s);
-    color: var(--tinta-suave);
-    max-width: 30rem;
-  }
-  .cuenta {
-    grid-area: cuenta;
-    padding-top: var(--e-1);
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--tinta-suave);
-  }
+
+  /* 7. El proyecto */
   .proyecto {
     display: grid;
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr) minmax(0, 1.2fr);
     gap: var(--e-4);
     align-items: center;
+    padding-block: var(--e-5);
   }
   .proyecto-foto :global(img) {
     box-shadow: 14px 14px 0 rgb(246 243 236 / 14%);
-  }
-  .proyecto h2 {
-    margin: 0;
-    font-size: clamp(2rem, 1.5rem + 1.6vw, 2.8rem);
-    font-weight: 400;
   }
   .proyecto-texto p {
     font-family: var(--f-titulo);
@@ -340,13 +463,46 @@ const esquemas = [
     line-height: 1.55;
     margin-bottom: var(--e-3);
   }
+
   @media (max-width: 62rem) {
+    .tierra,
+    .aprovechamiento,
     .proyecto {
       grid-template-columns: 1fr;
       gap: var(--e-3);
     }
+    .tierra-cifra {
+      border-left: 0;
+      border-top: 1px solid var(--tinta);
+      padding: var(--e-3) 0 0;
+    }
+    .pasos {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      row-gap: var(--e-4);
+    }
     .proyecto-foto {
       max-width: 18rem;
+    }
+  }
+  @media (max-width: 40rem) {
+    .apertura {
+      min-height: 80vh;
+    }
+    .pasos {
+      grid-template-columns: 1fr;
+    }
+    .datos dl {
+      grid-template-columns: 1fr;
+      gap: var(--e-3);
+    }
+    .datos dl > div {
+      padding: var(--e-3) 0 0;
+      border-left: 0;
+      border-top: 1px solid var(--linea);
+    }
+    .datos dl > div:first-child {
+      padding-top: 0;
+      border-top: 0;
     }
   }
 </style>
