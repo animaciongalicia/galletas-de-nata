@@ -1,10 +1,10 @@
 ---
-titulo: 'Cómo se hacían las galletas de nata gallegas en casa'
+titulo: 'Galletas de nata de la abuela: cómo se hacían en Galicia'
 descripcion: 'La receta de aprovechamiento de las abuelas gallegas: leche recién ordeñada, hervida, y la nata de la superficie guardada día a día hasta tener para hornear.'
 seccion: galletas
 estado: aprobado
 fechaPublicacion: 2026-10-14
-intencion: 'Informativa-tradición: "cómo se hacían las galletas de nata", "galletas de nata de la abuela", "historia galletas de nata gallegas".'
+intencion: '«galletas de nata de la abuela» (210/mes). Informativa-tradición: "cómo se hacían las galletas de nata", "galletas de nata de la abuela", "historia galletas de nata gallegas".'
 destacado: true
 imagen:
   src: ../../assets/provisional/como-se-hacian-las-galletas-de-nata.jpg

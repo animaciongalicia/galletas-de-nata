@@ -35,7 +35,28 @@ Cada búsqueda tiene una sola página responsable, para que no compitan entre s�
 | cómo hacer nata casera, nata de leche hervida | `/como-hacer-nata-casera/` |
 | qué nata da mejor resultado (comparativa) | `/pruebas-nata-en-galletas/` |
 
-## Reserva (después de las 13)
+## Prospección de palabras clave (Semrush, España, 14-10-2026)
+
+Volumen mensual estimado y dificultad (0-100). Las búsquedas de «galletas de nata» tienen dificultad muy baja: hay hueco real para posicionar.
+
+| Búsqueda | Volumen | Dificultad | Página |
+| --- | --- | --- | --- |
+| galletas de nata | 1.300 | 9 | Portada y sección |
+| galletas de nata de la abuela | 210 | 11 | `/como-se-hacian-las-galletas-de-nata/` (publicada; título ajustado) |
+| galletas de mantequilla y nata / de nata y mantequilla | 170 + 170 | 13 | **`/galletas-de-nata-o-de-mantequilla/` (nueva, publicada)** |
+| galletas de nata gallegas / gallegas de nata | 170 + 70 | 8-9 | `/galletas-de-nata-autenticas/` y sección |
+| receta (de) galletas de nata | 140 + 140 + 70 | 6-10 | `/como-hacer-las-mejores-galletas-de-nata/` (falta la receta) |
+| tarta de nata con galletas / tarta de galletas y nata | 140 + 110 + 110 | 7-13 | `/tarta-de-galletas-de-nata/` (título ajustado) |
+| como hacer nata casera / nata de leche | 480 + 260 | 22-23 | `/como-hacer-nata-casera/` |
+| diferencia entre nata para montar y para cocinar | 210 | 13 | **`/nata-para-montar-o-para-cocinar/` (nuevo borrador)** |
+| leche cruda / leche cruda comprar / desnatadora | 1.900 + 170 + 50 | 11-26 | **`/leche-cruda-para-hacer-nata/` (nuevo borrador)** |
+| helado de nata / casero | 720 + 140 | 7-12 | **`/helado-de-nata-con-galletas/` (nuevo borrador)** |
+| galletas de nata thermomix | 50 | 9 | Futuro: variante de la receta |
+| bica gallega / torta de nata / postres gallegos | 2.900 / 590 / 390 | 11-12 | Fuera del foco; posible pieza «Repostería gallega con nata» si se decide ampliar |
+
+No se trabajan: «maruxas de nata» (marca) ni búsquedas de marcas industriales.
+
+## Reserva
 
 Ideas que encajan sin canibalizar: helado con galletas de nata, crumble con galletas de nata, galletas de nata bañadas en chocolate (receta casera), cómo leer la etiqueta de unas galletas de nata. Requieren revisión antes de planificarse.
 

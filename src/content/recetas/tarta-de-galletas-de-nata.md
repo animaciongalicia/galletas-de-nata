@@ -1,5 +1,5 @@
 ---
-titulo: 'Tarta de galletas de nata: receta fácil con base de galletas'
+titulo: 'Tarta de galletas y nata: receta fácil con galletas de nata'
 descripcion: 'Tarta con base de galletas de nata trituradas, pensada para hacerse sin experiencia: cantidades, tiempos, molde y cómo desmoldarla.'
 seccion: postres
 estado: borrador

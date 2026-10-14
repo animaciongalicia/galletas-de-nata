@@ -23,6 +23,10 @@ const PIEZAS = [
   ['copa-de-yogur-fruta-y-galletas-de-nata', 'Copa de yogur'],
   ['postre-de-limon-con-galletas-de-nata', 'Postre de limón'],
   ['chocolate-caliente-con-galletas-de-nata', 'Chocolate caliente'],
+  ['galletas-de-nata-o-de-mantequilla', 'Nata o mantequilla'],
+  ['nata-para-montar-o-para-cocinar', 'Montar o cocinar'],
+  ['leche-cruda-para-hacer-nata', 'Leche cruda'],
+  ['helado-de-nata-con-galletas', 'Helado de nata'],
 ];
 
 const TONOS = ['#E4BD84', '#D6A15F', '#C98B4A', '#EBCB98', '#B97A3D'];
