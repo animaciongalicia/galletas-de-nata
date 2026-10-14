@@ -21,6 +21,8 @@ fuentes:
   - titulo: 'Trendencias: receta tradicional de la galleta de nata gallega'
     url: 'https://www.trendencias.com/gourmet/receta-maruxas-nata-galleta-tradicional-gallega-que-se-hace-solo-cuatro-ingredientes'
     nota: 'Origen como receta de aprovechamiento y desaparición con la leche pasteurizada.'
+  - titulo: 'EFSA: Raw drinking milk, what are the risks?'
+    url: 'https://www.efsa.europa.eu/en/press/news/150113'
   - titulo: 'EY: informe del sector lácteo en Galicia 2026'
     url: 'https://www.ey.com/content/dam/ey-unified-site/ey-com/es-es/insights/government-public-sector/documents/ey-informe-sector-lacteo-galicia2026.pdf'
     nota: 'Galicia, el 41 % de la leche de vaca de España en 2024.'
@@ -42,7 +44,7 @@ Al cabo de una semana o diez días ya había 200, 500 gramos o más. Entonces to
 
 ## Cada abuela, su receta
 
-No había una receta única. Se medía a ojo o por vasos, y cada casa tenía su punto: en unas salían más duras y en otras, más tiernas.
+No había una receta única ni un único origen. Se medía a ojo o por vasos, cada casa recogía y juntaba la nata a su manera y cada una tenía su punto: en unas salían más duras y en otras, más tiernas.
 
 Lo que no cambiaba era la grasa. Era solo nata: ni mantequilla ni aceite. Con ella se mezclaban azúcar y harina, a veces una pizca de sal, y al horno.
 
@@ -61,6 +63,8 @@ Ya no hacía falta hervir la leche. Y sin leche hervida, no había capa de nata 
 ## Si quieres hacerlas como antes
 
 Compra leche cruda del día, que la hay a la venta, y sácale la nata: hirviéndola, como las abuelas, o con una desnatadora, que saca más grasa y de mejor calidad. Tienes el paso a paso en [cómo hacer nata casera a partir de leche](/como-hacer-nata-casera/).
+
+Ten en cuenta que la leche cruda puede contener microorganismos que causan enfermedades: guárdala siempre en frío y no la consumas sin tratar.
 
 Si prefieres comprar la nata hecha, busca la que más materia grasa tenga. Con las natas habituales del 35 %, la galleta sale más parecida a una de mantequilla que a la de siempre.
 

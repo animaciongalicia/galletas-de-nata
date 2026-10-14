@@ -12,9 +12,14 @@ relacionados:
   - como-hacer-nata-casera
   - autentica-nata-de-vaca
   - como-se-hacian-las-galletas-de-nata
+fuentes:
+  - titulo: 'EFSA: Raw drinking milk, what are the risks?'
+    url: 'https://www.efsa.europa.eu/en/press/news/150113'
+  - titulo: 'Tetra Pak Dairy Processing Handbook: Centrifugal separators and milk standardization'
+    url: 'https://dairyprocessinghandbook.tetrapak.com/chapter/centrifugal-separators-and-milk-standardization'
+    nota: 'La grasa que se obtiene depende del equipo; los separadores herméticos pueden superar el 72 %.'
 pendientes:
   - 'Dónde se puede comprar leche cruda del día (tipo de establecimiento, sin nombrar marcas si no se quiere).'
-  - 'Recomendaciones de seguridad alimentaria con fuente oficial (AESAN o Consellería de Sanidade).'
   - 'Qué tipo de desnatadora usar en casa y qué resultado da, según la experiencia del autor.'
 ---
 
@@ -29,4 +34,10 @@ La leche envasada del supermercado ya está tratada y, en muchos casos, desnatad
 - **Con desnatadora.** Centrifuga la leche en frío y separa la nata sin cocerla. Es un desnatado natural: se saca más materia grasa y de mejor calidad. Con una desnatadora especial de alta velocidad, el proyecto llegó a una nata del 70-75 % de materia grasa.
 - **Hirviéndola.** Es el método de las abuelas: se hierve la leche y se recoge la capa de nata al enfriarse. Es más sencillo, pero con la cocción se pierde materia grasa.
 
-<div class="pendiente">Dónde comprar leche cruda y recomendaciones de seguridad con fuente oficial.</div>
+Hervir una nata hasta que espese no equivale a centrifugarla: se evapora agua, pero también cambia el resto de su composición.
+
+## Seguridad
+
+La leche cruda puede contener microorganismos que causan enfermedades, según la Autoridad Europea de Seguridad Alimentaria. Guárdala siempre en frío, no la bebas ni consumas la nata cruda sin tratar, y úsala en elaboraciones que se cocinen.
+
+<div class="pendiente">Dónde comprar leche cruda del día (tipo de establecimiento).</div>

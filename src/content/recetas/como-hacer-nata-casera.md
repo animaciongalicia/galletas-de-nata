@@ -20,6 +20,12 @@ pasos:
   - 'Recoge la capa de nata con una cuchara o espumadera y guárdala en un recipiente cerrado en el frigorífico.'
   - 'Si quieres aprovechar más, vuelve a hervir la misma leche y recoge una segunda capa, más fina. La buena es la de la primera cocción.'
   - 'Repite con la leche de cada día y ve juntando la nata en frío hasta tener suficiente para una hornada.'
+fuentes:
+  - titulo: 'Evans AA y col. Wrinkling of milk skin is mediated by evaporation. Soft Matter, 2017'
+    url: 'https://pubmed.ncbi.nlm.nih.gov/28085169/'
+    nota: 'La película de la leche calentada: proteínas alteradas y glóbulos de grasa.'
+  - titulo: 'EFSA: Raw drinking milk, what are the risks?'
+    url: 'https://www.efsa.europa.eu/en/press/news/150113'
 relacionados:
   - autentica-nata-de-vaca
   - como-hacer-las-mejores-galletas-de-nata
@@ -27,7 +33,6 @@ pendientes:
   - 'Rendimiento real: cuánta nata se obtiene de 10 litros de leche.'
   - 'Tiempos: cuánto hervir y cuánto dejar enfriar cada vez.'
   - 'Cuántos días como máximo se puede guardar la nata en el frigorífico (confirmar con una fuente sanitaria).'
-  - 'Indicaciones de seguridad alimentaria sobre la leche cruda (consultar fuente oficial antes de publicar).'
   - 'Fotos propias del proceso.'
   - 'Hacer la receta completa y anotar la fecha de la prueba (campo verificacion).'
 
@@ -60,4 +65,10 @@ La nata de leche hervida es la de la receta tradicional. Si quieres comparar, en
 
 La leche cruda debe hervirse siempre antes de consumirla o de usar su nata. Guarda la nata en un recipiente cerrado, en el frigorífico.
 
-<div class="pendiente">Confirmar con una fuente oficial (AESAN o Consellería de Sanidade) las recomendaciones sobre leche cruda y conservación antes de publicar.</div>
+La leche cruda puede contener microorganismos que causan enfermedades, según la Autoridad Europea de Seguridad Alimentaria. No dejes nunca la nata a temperatura ambiente mientras la vas juntando.
+
+<div class="pendiente">Cuántos días como máximo se guarda la nata en el frigorífico según la experiencia del autor.</div>
+
+## Qué es esa capa de nata
+
+La capa que se forma al calentar la leche no es grasa pura: es una película de proteínas de la leche alteradas por el calor que atrapa glóbulos de grasa. Por eso su composición varía de una cocción a otra y no se le puede poner un porcentaje sin medirlo.

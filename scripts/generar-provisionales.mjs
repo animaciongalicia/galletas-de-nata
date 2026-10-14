@@ -27,6 +27,8 @@ const PIEZAS = [
   ['nata-para-montar-o-para-cocinar', 'Montar o cocinar'],
   ['leche-cruda-para-hacer-nata', 'Leche cruda'],
   ['helado-de-nata-con-galletas', 'Helado de nata'],
+  ['como-leer-la-etiqueta-de-una-nata', 'Etiqueta de la nata'],
+  ['galletas-de-nata-ecologicas', 'Ecológicas'],
 ];
 
 const TONOS = ['#E4BD84', '#D6A15F', '#C98B4A', '#EBCB98', '#B97A3D'];

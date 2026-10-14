@@ -54,6 +54,16 @@ Volumen mensual estimado y dificultad (0-100). Las búsquedas de «galletas de n
 | galletas de nata thermomix | 50 | 9 | Futuro: variante de la receta |
 | bica gallega / torta de nata / postres gallegos | 2.900 / 590 / 390 | 11-12 | Fuera del foco; posible pieza «Repostería gallega con nata» si se decide ampliar |
 
+## Piezas añadidas a partir del estudio técnico (14-10-2026)
+
+| Página | Estado |
+| --- | --- |
+| `/nata-para-montar-o-para-cocinar/` | Publicada, con datos de fichas de natas gallegas |
+| `/como-leer-la-etiqueta-de-una-nata/` | Publicada (prioridad 2 del estudio) |
+| `/galletas-de-nata-ecologicas/` | Borrador: revisar antes de publicar |
+| `/autentica-nata-de-vaca/` | Ampliada: tablas de balance por peso, Codex, película de la leche, centrifugado y seguridad |
+| `/galletas-de-nata-o-de-mantequilla/` | Ampliada: por qué la nata no es mantequilla |
+
 No se trabajan: «maruxas de nata» (marca) ni búsquedas de marcas industriales.
 
 ## Reserva

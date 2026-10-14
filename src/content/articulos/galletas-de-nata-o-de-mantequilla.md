@@ -9,6 +9,13 @@ imagen:
   src: ../../assets/provisional/galletas-de-nata-o-de-mantequilla.jpg
   alt: 'Dos montones de galletas doradas, unas de nata y otras de mantequilla'
   provisional: true
+fuentes:
+  - titulo: 'Codex Alimentarius CXS 279-1971, Standard for Butter (FAO/OMS)'
+    url: 'https://www.fao.org/input/download/standards/170/CXS_279e.pdf'
+    nota: 'Mantequilla: emulsión de agua en grasa con al menos un 80 % de grasa láctea.'
+  - titulo: 'Tetra Pak Dairy Processing Handbook: Butter'
+    url: 'https://dairyprocessinghandbook.tetrapak.com/chapter/butter'
+    nota: 'Proceso de batido y formación de la fase grasa continua.'
 relacionados:
   - galletas-de-nata-autenticas
   - autentica-nata-de-vaca
@@ -31,6 +38,16 @@ En las pruebas del proyecto se horneó la misma galleta con natas de distinta gr
 | 70-75 % de materia grasa | en torno al 50 % | La galleta de nata de siempre |
 
 Es decir: con una nata normal, la galleta acaba pareciéndose a una de mantequilla aunque no lleve mantequilla. La diferencia de sabor y textura la marca la cantidad de grasa que aporta la nata.
+
+## La nata no es mantequilla, aunque tenga mucha grasa
+
+Podría parecer que una nata del 70 % es «casi mantequilla». No lo es. La mantequilla tiene al menos un 80 % de grasa láctea, pero sobre todo tiene **otra estructura**: se obtiene batiendo la nata hasta que se separan los granos de grasa del suero, y queda una masa de grasa con gotitas de agua dentro. En la nata es al revés: gotitas de grasa repartidas en un líquido.
+
+Por eso:
+
+- Una nata al 70 % sigue siendo nata.
+- Una nata al 35 % no es mantequilla, aunque con ella se pueda fabricar.
+- Nata concentrada y mantequilla no se sustituyen sin más en una receta: cambian la masa de forma distinta.
 
 ## Cómo reconocerlas en la tienda
 

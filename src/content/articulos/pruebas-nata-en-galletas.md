@@ -32,6 +32,8 @@ Después se probaron natas de distinto contenido graso, compradas o servidas por
 | Nata comercial o de lechera | 30-40 % | en torno al 20 % | Sabor a galleta de mantequilla; no llegaba al punto buscado |
 | Nata de desnatadora especial (medida) | 70-75 % | en torno al 50 % | La galleta de nata tradicional |
 
+La tabla recoge dos de los tres porcentajes que conviene no confundir: la grasa de la nata y la grasa de la galleta horneada. El tercero, cuánta nata lleva la masa, forma parte de la receta y no se publica aquí.
+
 ## Qué conclusiones se pueden sacar
 
 - La cantidad de grasa de la nata es la variable que más cambia el resultado: la galleta pasa de tener en torno a un 20 % de grasa a tener en torno a un 50 %.

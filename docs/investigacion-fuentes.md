@@ -144,3 +144,40 @@ Confirmado por el propietario, que es de Ferrol. Se publica como **experiencia p
 - Divulgación sobre la nata de la leche hervida: https://todosloshechos.es/por-que-se-genera-la-nata-en-la-leche
 - Repostería, grasa y agua: https://www.thekitchn.com/shortening-vs-butter-in-cookies-whats-the-difference-213812 · https://handletheheat.com/butter-vs-shortening-which-is-better/ · https://taylorchip.com/blogs/news/melted-butter-vs-softened-butter-in-cookies
 - Bica: https://cocina.facilisimo.com/bica-tradicional-gallega_2589545.html · Torta de nata: https://www.eldebate.com/espana/galicia/20250525/especialidad-local-simbolo-reposteria-gallega-secreto-detras-este-emblematico-postre_298881.html
+
+
+## 9. Estudio técnico «Nata en Galicia y su uso en las galletas de nata» (14-10-2026)
+
+Estudio aportado por el propietario. Resumen de lo incorporado al portal y de lo que queda como referencia interna.
+
+### Incorporado (con fuente)
+
+- Clasificación legal (Orden 1983): ligera 12-<30 %, nata 30-<50 %, doble nata ≥50 %. **No existe categoría legal por encima del 70 %**: sigue siendo doble nata.
+- Codex CXS 288-1976: mínimo internacional del 10 % de grasa; no sustituye a la norma española.
+- Tablas de balance por peso (grasa y fracción no grasa por 100 g; peso necesario para 70 g de grasa). Son **cálculos por definición**, no análisis de marcas.
+- Tres porcentajes que no se confunden: grasa de la nata, proporción de nata en la masa y grasa de la galleta terminada.
+- Película de la leche hervida: proteínas desnaturalizadas y glóbulos de grasa (Evans y col., Soft Matter 2017). No es grasa pura.
+- Centrifugación (Tetra Pak): la grasa obtenida depende del equipo; los separadores herméticos pueden superar el 72 %. Evaporar no equivale a centrifugar.
+- Mantequilla (Codex CXS 279): al menos un 80 % de grasa y estructura de agua en grasa. Una nata al 70 % sigue siendo nata.
+- Nata para montar: 35-40 % según la industria; «montar» es un uso, no una fórmula.
+- Fichas de natas gallegas: cocinar 18 %, montar 35-35,1 %, con estabilizantes. Se publican **sin nombrar la marca en el texto**; la ficha va en fuentes.
+- Ecológico (Reglamento 2018/848): ≥95 % de ingredientes agrarios ecológicos; CRAEGA en Galicia; «ecológico» no es «sin aditivos».
+- Leche cruda (EFSA): riesgo de patógenos. Se mantiene el consejo del autor de comprar leche cruda del día y se añade la advertencia de mantenerla en frío, no consumirla sin tratar y usarla en elaboraciones cocinadas.
+
+### Solo referencia interna (no publicar)
+
+- Información pública de obradores de galletas de nata: un obrador declara harina, nata cruda y azúcar de caña ecológicos; otro, receta familiar desde A Coruña; un tercero vincula sus galletas con la nata de la primera ebullición de la leche y declara mantequilla y huevo además de nata. **No se conoce la concentración de nata de ninguno.** No se nombran en el portal.
+- Ninguna fuente acredita un inventor, una localidad de origen exclusiva ni una fórmula histórica única.
+
+### Preguntas abiertas que señala el estudio
+
+| Pregunta | Qué la resolvería |
+| --- | --- |
+| ¿Ficha o análisis del 70-75 %? | Ficha del proveedor o analítica del lote. El autor afirma que se midió; el método no consta |
+| ¿Nata cruda, pasteurizada u homogeneizada? | Documentación del proveedor |
+| ¿Qué característica de la desnatadora fue decisiva? | Especificaciones y pruebas comparativas |
+| ¿Qué cambia exactamente del 35 % al 70 % en la receta? | Pruebas controladas: ver `docs/protocolo-pruebas.md` |
+
+### Diferencia con el estudio
+
+El estudio aconseja usar nata comercial en las recetas domésticas. El autor ha decidido mantener el consejo de comprar leche cruda del día; se publica con la advertencia de seguridad de la EFSA.
