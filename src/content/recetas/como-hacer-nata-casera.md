@@ -20,13 +20,6 @@ pasos:
   - 'Recoge la capa de nata con una cuchara o espumadera y guárdala en un recipiente cerrado en el frigorífico.'
   - 'Si quieres aprovechar más, vuelve a hervir la misma leche y recoge una segunda capa, más fina. La buena es la de la primera cocción.'
   - 'Repite con la leche de cada día y ve juntando la nata en frío hasta tener suficiente para una hornada.'
-fuentes:
-  - titulo: 'Real Decreto 1086/2020, venta directa de leche cruda al consumidor (BOE)'
-    url: 'https://www.boe.es/diario_boe/txt.php?id=BOE-A-2020-15872'
-    nota: 'Permite la venta directa con requisitos (registro sanitario, envasado, etiquetado de tratamiento térmico).'
-  - titulo: 'Hipertextual: Galicia no permite la venta directa de leche cruda (2021)'
-    url: 'https://hipertextual.com/ciencia/leche-cruda-venta-directa-galicia/'
-    nota: 'Según la Consellería do Medio Rural. Verificar la situación actual.'
 relacionados:
   - autentica-nata-de-vaca
   - como-hacer-las-mejores-galletas-de-nata
@@ -35,7 +28,6 @@ pendientes:
   - 'Tiempos: cuánto hervir y cuánto dejar enfriar cada vez.'
   - 'Cuántos días como máximo se puede guardar la nata en el frigorífico (confirmar con una fuente sanitaria).'
   - 'Indicaciones de seguridad alimentaria sobre la leche cruda (consultar fuente oficial antes de publicar).'
-  - 'Confirmar con la Consellería do Medio Rural si la venta directa de leche cruda sigue sin estar permitida en Galicia.'
   - 'Fotos propias del proceso.'
   - 'Hacer la receta completa y anotar la fecha de la prueba (campo verificacion).'
 
@@ -49,7 +41,12 @@ Así se hacía: se ordeñaba la vaca, la leche se hervía y, al enfriarse, se fo
 
 Necesitas **leche lo más entera y fresca posible**: leche cruda del día, sin pasteurizar ni desnatar. La leche envasada del supermercado ya está tratada y, en muchos casos, desnatada en parte, así que apenas forma nata.
 
-Conseguirla no es fácil. La norma estatal permite vender leche cruda al consumidor con requisitos (envasada, etiquetada y con aviso de que hay que hervirla), pero en Galicia, según la Consellería do Medio Rural, la venta directa no está permitida. Hoy este método queda, sobre todo, para quien tiene vacas y usa la leche de su propio ordeño.
+**Compra leche cruda del día.** Hay leche cruda a la venta que sirve perfectamente para desnatarla y conseguir nata.
+
+## Dos formas de sacar la nata
+
+- **Con desnatadora (centrifugado).** La desnatadora separa la nata de la leche cruda sin cocerla. Es un desnatado natural y es la forma de sacar más materia grasa y de mejor calidad.
+- **Hirviendo la leche (método de las abuelas).** Es el método tradicional y el que se explica en los pasos de esta receta. Con la cocción se pierde algo de materia grasa, así que se saca menos nata.
 
 Como referencia, en las primeras pruebas del proyecto se usaban unos 10 litros de leche cruda en 3 o 4 días para reunir nata suficiente. La nata buena es la de la primera cocción; una segunda cocción da algo más, pero poca.
 

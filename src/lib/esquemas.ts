@@ -22,9 +22,10 @@ export async function esquemaPieza(pieza: Pieza, site: URL, ruta: string): Promi
     mainEntityOfPage: new URL(ruta, site).href,
     ...(data.fechaPublicacion && { datePublished: fechaIso(data.fechaPublicacion) }),
     ...(data.fechaActualizacion && { dateModified: fechaIso(data.fechaActualizacion) }),
-    ...(AUTOR.nombre && {
-      author: { '@type': 'Person', name: AUTOR.nombre, ...(AUTOR.url && { url: AUTOR.url }) },
-    }),
+    // Sin nombre de autor, la autoría se atribuye al propio portal.
+    author: AUTOR.nombre
+      ? { '@type': 'Person', name: AUTOR.nombre, ...(AUTOR.url && { url: AUTOR.url }) }
+      : { '@type': 'Organization', name: SITIO.nombre, url: site.href },
     publisher: { '@type': 'Organization', name: SITIO.nombre, url: site.href },
   };
 

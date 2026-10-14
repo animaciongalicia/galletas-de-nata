@@ -1,6 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { SECCIONES, type SeccionId } from '../data/secciones';
-import { AUTOR } from '../data/sitio';
 
 /**
  * Entorno de la build.
@@ -25,8 +24,6 @@ function validarAprobado(e: Pieza | Pagina) {
   if (!esAprobado(e)) return;
   if (MARCA_PENDIENTE.test(e.body ?? ''))
     throw new Error(`"${e.id}" está aprobado pero su texto aún contiene marcas PENDIENTE.`);
-  if (e.collection !== 'paginas' && !AUTOR.nombre)
-    throw new Error(`"${e.id}" está aprobado pero falta el nombre del autor en src/data/sitio.ts.`);
 }
 
 let cache: Promise<{ piezas: Pieza[]; paginas: Pagina[] }> | undefined;

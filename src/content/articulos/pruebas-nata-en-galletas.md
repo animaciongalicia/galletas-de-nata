@@ -17,7 +17,7 @@ pendientes:
   - 'Conclusiones limitadas a lo probado. Sin afirmar que otras recetas o métodos sean falsos.'
 ---
 
-La forma más honesta de saber qué nata funciona es probarla. Este proyecto pasó más de dos años probando ingredientes y procesos para recuperar la galleta de nata que se hacía en las casas gallegas. Esta es la parte de esas pruebas que tiene que ver con la nata.
+La forma más honesta de saber qué nata funciona es probarla. Desde 2012-2013, este proyecto ha probado muchos tipos de nata, ingredientes y procesos para recuperar la galleta de nata que se hacía en las casas gallegas. Esta es la parte de esas pruebas que tiene que ver con la nata.
 
 La conclusión principal: **cuanta más grasa tiene la nata, mejor sale la galleta**. Las natas del 30 al 40 % no llegaron al resultado buscado; la nata de un 70-75 % de materia grasa, sí.
 

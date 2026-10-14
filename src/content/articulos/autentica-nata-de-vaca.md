@@ -20,17 +20,10 @@ fuentes:
   - titulo: 'Real Decreto 176/2013, que deroga parcialmente normas de calidad de productos alimenticios'
     url: 'https://www.iberley.es/legislacion/real-decreto-176-2013-8-mar-deroga-total-parcialmente-reglamentaciones-tecnico-sanitarias-normas-calidad-referidas-productos-alimenticios-10889215'
     nota: 'Deroga otros apartados de la Orden de 1983; la clasificación por materia grasa no figura entre ellos.'
-  - titulo: 'Real Decreto 1086/2020, venta directa de leche cruda al consumidor (BOE)'
-    url: 'https://www.boe.es/diario_boe/txt.php?id=BOE-A-2020-15872'
-    nota: 'Permite la venta directa con requisitos (registro sanitario, envasado, etiquetado de tratamiento térmico).'
-  - titulo: 'Hipertextual: Galicia no permite la venta directa de leche cruda (2021)'
-    url: 'https://hipertextual.com/ciencia/leche-cruda-venta-directa-galicia/'
-    nota: 'Según la Consellería do Medio Rural. Verificar la situación actual.'
   - titulo: 'Codex Alimentarius CXS 288-1976, norma para las natas (FAO/OMS)'
     url: 'https://www.fao.org/fao-who-codexalimentarius/codex-texts/list-standards/es/'
 pendientes:
   - 'Abrir el texto consolidado del BOE y confirmar el apartado 5.2 del anejo 1 (los datos vienen de extractos; el BOE no era accesible desde el entorno de trabajo).'
-  - 'Confirmar con la Consellería do Medio Rural si la venta directa de leche cruda sigue sin estar permitida en Galicia.'
   - 'Fotografía propia de la nata usada en las pruebas.'
 ---
 
@@ -90,12 +83,18 @@ Por eso mucha gente acaba haciendo «galletas de nata» con mantequilla buena: l
 - La nata del supermercado suele rondar el 35 %.
 - Una nata del 70 % no sale de una desnatadora corriente.
 - La mayor parte de la grasa de la leche la aprovecha la propia industria láctea para mantequillas, quesos y otros productos.
-- La vía tradicional, hervir la leche cruda en casa, está hoy muy limitada. La norma estatal permite vender leche cruda al consumidor con requisitos, pero en Galicia, según la Consellería do Medio Rural, la venta directa de leche cruda no está permitida. En la práctica, solo quien tiene vacas y usa la leche de su propio ordeño puede hacer estas galletas como se hacían antes.
+
+## Centrifugar o hervir: dos formas de sacar la nata
+
+- **Centrifugado (desnatadora).** Separa la nata de la leche cruda en frío, sin cocerla. Es un desnatado natural: se saca mucha más materia grasa y de mejor calidad. Con una desnatadora especial de alta velocidad se llega al 70-75 %.
+- **Cocción (método de las abuelas).** Se hierve la leche y se recoge la capa de la superficie. Es la forma tradicional, pero con la cocción se pierde materia grasa: se saca menos nata que centrifugando.
 
 ## Si quieres acercarte en casa
 
-- **Busca la nata con más grasa que encuentres.** Lee la etiqueta: cuanto más alto el porcentaje, más cerca estarás. Una doble nata (50 % o más) es mejor punto de partida que una nata para montar del 35 %.
-- **Si tienes acceso legal a leche cruda**, con el envase y el etiquetado que exige la norma, puedes sacar tú la nata con el método de las abuelas. Tienes el paso a paso en [cómo hacer nata casera a partir de leche](/como-hacer-nata-casera/).
-- **Asume la diferencia.** Con una nata del 35 % la galleta se parecerá más a una de mantequilla que a la tradicional.
+- **Compra leche cruda del día.** Hay leche cruda a la venta que sirve perfectamente para desnatarla y conseguir nata. Cuanto más fresca y entera, mejor.
+- **Sácale la nata.** Con una desnatadora obtendrás más nata y más grasa; si no tienes, puedes hervirla como hacían las abuelas. Tienes el paso a paso en [cómo hacer nata casera a partir de leche](/como-hacer-nata-casera/).
+- **Si compras la nata hecha, busca la que más grasa tenga.** Lee la etiqueta: una doble nata (50 % o más) es mejor punto de partida que una nata para montar del 35 %, que dará una galleta más parecida a una de mantequilla.
+
+<div class="pendiente">Recomendaciones concretas de natas probadas (el autor las publicará más adelante).</div>
 
 Los resultados de cada prueba están en [pruebas con distintas natas](/pruebas-nata-en-galletas/).

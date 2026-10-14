@@ -28,13 +28,9 @@ const actualizada =
     <p class="entradilla">{data.descripcion}</p>
     <p class="firma">
       {
-        AUTOR.nombre ? (
-          <span>
-            Por {sobre ? <a href={sobre}>{AUTOR.nombre}</a> : AUTOR.nombre}
-          </span>
-        ) : (
-          !ES_PRODUCCION && <span class="falta">Autor: pendiente</span>
-        )
+        <span>
+          Por {sobre ? <a href={sobre}>{AUTOR.nombre ?? 'el autor de Galletas de Nata'}</a> : (AUTOR.nombre ?? 'el autor de Galletas de Nata')}
+        </span>
       }
       {
         data.fechaPublicacion ? (

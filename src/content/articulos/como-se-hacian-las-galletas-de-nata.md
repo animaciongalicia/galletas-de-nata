@@ -23,12 +23,8 @@ fuentes:
   - titulo: 'EY: informe del sector lácteo en Galicia 2026'
     url: 'https://www.ey.com/content/dam/ey-unified-site/ey-com/es-es/insights/government-public-sector/documents/ey-informe-sector-lacteo-galicia2026.pdf'
     nota: 'Galicia, el 41 % de la leche de vaca de España en 2024.'
-  - titulo: 'Hipertextual: Galicia no permite la venta directa de leche cruda (2021)'
-    url: 'https://hipertextual.com/ciencia/leche-cruda-venta-directa-galicia/'
-    nota: 'Según la Consellería do Medio Rural. Verificar la situación actual.'
 pendientes:
   - 'Fotografías antiguas o actuales del proceso (cazo, leche, capa de nata, lata de galletas), si las hay.'
-  - 'Confirmar con la Consellería do Medio Rural si la venta directa de leche cruda sigue sin estar permitida en Galicia.'
 ---
 
 Antes de que existiera la leche en cartón, la galleta de nata gallega no se compraba: salía de la propia leche de casa. Era una receta de aprovechamiento, hecha por las abuelas para los niños con lo que sobraba de la leche.
@@ -65,8 +61,8 @@ Ya no hacía falta hervir la leche. Y sin leche hervida, no había capa de nata 
 
 ## Si quieres hacerlas como antes
 
-Hoy es difícil. En Galicia la venta directa de leche cruda al consumidor no está permitida, así que el método de las abuelas queda para quien tiene vacas y usa la leche de su propio ordeño. Si tienes ese acceso, aquí está el paso a paso: [cómo hacer nata casera a partir de leche](/como-hacer-nata-casera/).
+Compra leche cruda del día, que la hay a la venta, y sácale la nata: hirviéndola, como las abuelas, o con una desnatadora, que saca más grasa y de mejor calidad. Tienes el paso a paso en [cómo hacer nata casera a partir de leche](/como-hacer-nata-casera/).
 
-Si no, el camino es buscar la nata con más materia grasa posible. Con las natas habituales del 35 %, la galleta sale más parecida a una de mantequilla que a la de siempre.
+Si prefieres comprar la nata hecha, busca la que más materia grasa tenga. Con las natas habituales del 35 %, la galleta sale más parecida a una de mantequilla que a la de siempre.
 
 Y si quieres saber qué nata da mejor resultado, lee [la guía sobre la nata de vaca](/autentica-nata-de-vaca/): la cantidad de grasa lo cambia todo.

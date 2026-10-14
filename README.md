@@ -35,7 +35,6 @@ El nombre del archivo es la URL: `src/content/recetas/tarta-de-galletas-de-nata.
 3. Deja `estado: borrador` mientras trabajas, o `revision` cuando esté listo para revisar. Se ve en la preview con su etiqueta, nunca en producción.
 4. Para **aprobar**, cambia a `estado: aprobado`. La build **falla a propósito** si falta algo:
    - `fechaPublicacion` real, imagen no provisional, lista `pendientes` vacía y ninguna marca `PENDIENTE` en el texto.
-   - Nombre del autor en `src/data/sitio.ts`.
    - En recetas: rendimiento, tiempo total, todas las cantidades, pasos y `verificacion.fecha` (el día en que la hiciste entera).
 5. Al aprobar, la pieza entra en producción, en el sitemap, en el RSS y en el marcado `Article`/`Recipe`.
 

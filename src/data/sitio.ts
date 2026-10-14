@@ -13,7 +13,7 @@ export const SITIO = {
 };
 
 export const AUTOR = {
-  /** Nombre con el que firma el autor. null = pendiente. */
+  /** Nombre con el que firma el autor. null = firma «el autor de Galletas de Nata». */
   nombre: null as string | null,
   /** Una o dos frases verificables sobre su experiencia. */
   bio: null as string | null,
