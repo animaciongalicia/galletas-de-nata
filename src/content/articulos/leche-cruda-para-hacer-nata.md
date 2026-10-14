@@ -31,7 +31,7 @@ La leche envasada del supermercado ya está tratada y, en muchos casos, desnatad
 
 ## Dos formas de sacarle la nata
 
-- **Con desnatadora.** Centrifuga la leche en frío y separa la nata sin cocerla. Es un desnatado natural: se saca más materia grasa y de mejor calidad. Con una desnatadora especial de alta velocidad, el proyecto llegó a una nata del 70-75 % de materia grasa.
+- **Con desnatadora.** Centrifuga la leche en frío y separa la nata sin cocerla. Es un desnatado natural: se saca más materia grasa y de mejor calidad. Con una desnatadora especial de alta velocidad, el proyecto llegó a una nata del 70-80 % de materia grasa.
 - **Hirviéndola.** Es el método de las abuelas: se hierve la leche y se recoge la capa de nata al enfriarse. Es más sencillo, pero con la cocción se pierde materia grasa.
 
 Hervir una nata hasta que espese no equivale a centrifugarla: se evapora agua, pero también cambia el resto de su composición.

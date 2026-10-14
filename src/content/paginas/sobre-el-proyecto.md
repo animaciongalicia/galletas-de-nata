@@ -10,7 +10,7 @@ enPie: true
 
 Este portal lo escribe un antiguo fabricante de galletas de nata de la comarca de Ferrol. Creció con las galletas que hacían sus abuelas con la nata de la leche hervida, y quiso recuperarlas.
 
-Lleva con ello desde principios de la década de 2010. Hacia 2012 y 2013 se propuso en serio hacer las galletas de nata como las hacían las abuelas, y desde entonces ha probado muchos tipos de nata, ingredientes y procesos. Empezó como se hacía en casa: comprando leche cruda del día, hirviéndola y juntando la nata durante días. Después probó natas comerciales y de lechera del 30, 35 y 40 % de materia grasa: las galletas salían con sabor a galleta de mantequilla. La galleta que recordaba llegó con una nata de un 70-75 % de materia grasa, obtenida con una desnatadora especial.
+Lleva con ello desde principios de la década de 2010. Hacia 2012 y 2013 se propuso en serio hacer las galletas de nata como las hacían las abuelas, y desde entonces ha probado muchos tipos de nata, ingredientes y procesos. Empezó como se hacía en casa: comprando leche cruda del día, hirviéndola y juntando la nata durante días. Después probó natas comerciales y de lechera del 30, 35 y 40 % de materia grasa: las galletas salían con sabor a galleta de mantequilla. La galleta que recordaba llegó con una nata de un 70-80 % de materia grasa, obtenida con una desnatadora especial.
 
 Todo lo que se publica aquí sale de esa experiencia.
 

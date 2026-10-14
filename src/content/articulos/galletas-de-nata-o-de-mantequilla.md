@@ -35,7 +35,7 @@ En las pruebas del proyecto se horneó la misma galleta con natas de distinta gr
 | Nata usada | Grasa aproximada en la galleta horneada | Cómo sabe |
 | --- | --- | --- |
 | 30-40 % de materia grasa | en torno al 20 % | Como una galleta de mantequilla |
-| 70-75 % de materia grasa | en torno al 50 % | La galleta de nata de siempre |
+| 70-80 % de materia grasa | en torno al 50 % | La galleta de nata de siempre |
 
 Es decir: con una nata normal, la galleta acaba pareciéndose a una de mantequilla aunque no lleve mantequilla. La diferencia de sabor y textura la marca la cantidad de grasa que aporta la nata.
 

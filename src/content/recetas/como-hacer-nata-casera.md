@@ -59,7 +59,7 @@ Como referencia, en las primeras pruebas del proyecto se usaban unos 10 litros d
 
 La nata de leche hervida es la de la receta tradicional. Si quieres comparar, en [la guía sobre la nata de vaca](/autentica-nata-de-vaca/) se explica por qué la cantidad de grasa cambia tanto el resultado.
 
-<div class="pendiente">Qué diferencias tiene la galleta hecha con esta nata frente a la hecha con nata de desnatadora del 70-75 %.</div>
+<div class="pendiente">Qué diferencias tiene la galleta hecha con esta nata frente a la hecha con nata de desnatadora del 70-80 %.</div>
 
 ## Seguridad
 

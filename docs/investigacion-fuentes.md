@@ -173,7 +173,7 @@ Estudio aportado por el propietario. Resumen de lo incorporado al portal y de lo
 
 | Pregunta | Qué la resolvería |
 | --- | --- |
-| ¿Ficha o análisis del 70-75 %? | Ficha del proveedor o analítica del lote. El autor afirma que se midió; el método no consta |
+| ¿Ficha o análisis del 70-80 %? | **Resuelto:** el porcentaje figuraba en el envase de la nata que vendía la lechería que la desnataba. Conviene guardar una foto de un envase |
 | ¿Nata cruda, pasteurizada u homogeneizada? | Documentación del proveedor |
 | ¿Qué característica de la desnatadora fue decisiva? | Especificaciones y pruebas comparativas |
 | ¿Qué cambia exactamente del 35 % al 70 % en la receta? | Pruebas controladas: ver `docs/protocolo-pruebas.md` |
@@ -181,3 +181,5 @@ Estudio aportado por el propietario. Resumen de lo incorporado al portal y de lo
 ### Diferencia con el estudio
 
 El estudio aconseja usar nata comercial en las recetas domésticas. El autor ha decidido mantener el consejo de comprar leche cruda del día; se publica con la advertencia de seguridad de la EFSA.
+
+- **Porcentaje (aclaración del autor):** la nata de las pruebas indicaba en su envase un 70-80 % de materia grasa; la vendía una lechería que la desnataba con una desnatadora especial. Las tablas de cálculo del 70 % y el 75 % se mantienen como ejemplos.

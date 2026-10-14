@@ -50,6 +50,6 @@ Dos detalles curiosos:
 
 ## Cuál usar para galletas de nata
 
-Para la galleta de nata tradicional, **ninguna de las dos se acerca a lo que hace falta**. En las pruebas del proyecto, las natas del 30 al 40 % daban una galleta de en torno a un 20 % de grasa, con sabor a galleta de mantequilla. El punto llegó con nata de un 70-75 %.
+Para la galleta de nata tradicional, **ninguna de las dos se acerca a lo que hace falta**. En las pruebas del proyecto, las natas del 30 al 40 % daban una galleta de en torno a un 20 % de grasa, con sabor a galleta de mantequilla. El punto llegó con nata de un 70-80 %.
 
 Si tienes que elegir entre las dos, la de montar es mejor punto de partida porque tiene casi el doble de grasa. La de cocinar, con menos grasa y más agua, se aleja todavía más. Lo ideal es una doble nata o sacar tú la nata de leche cruda del día: lo explicamos en [la guía sobre la nata de vaca](/autentica-nata-de-vaca/).

@@ -37,7 +37,7 @@ fuentes:
     url: 'https://www.efsa.europa.eu/en/press/news/150113'
 ---
 
-La nata es la parte grasa de la leche. El porcentaje que aparece en su etiqueta indica **cuánta grasa tiene**, no su pureza ni su calidad. Y para la galleta de nata ese número lo cambia todo: en las pruebas del proyecto, las natas del 30 al 40 % no dieron el resultado buscado; el punto llegó con nata de un 70-75 % de materia grasa.
+La nata es la parte grasa de la leche. El porcentaje que aparece en su etiqueta indica **cuánta grasa tiene**, no su pureza ni su calidad. Y para la galleta de nata ese número lo cambia todo: en las pruebas del proyecto, las natas del 30 al 40 % no dieron el resultado buscado; el punto llegó con nata de un 70-80 % de materia grasa.
 
 ## Qué significa el porcentaje de materia grasa
 
@@ -64,7 +64,7 @@ En España, la norma de calidad de la nata es la Orden de 12 de julio de 1983. C
 
 Dos aclaraciones:
 
-- **No existe una categoría legal por encima del 70 %.** Una nata del 70-75 % sigue siendo, legalmente, doble nata. Es un producto muy concentrado que pocas veces se ve en tienda.
+- **No existe una categoría legal por encima del 70 %.** Una nata del 70-80 % sigue siendo, legalmente, doble nata. Es un producto muy concentrado que pocas veces se ve en tienda.
 - **La referencia internacional es distinta.** La norma del Codex Alimentarius fija un mínimo del 10 % de grasa para llamarse nata. Por eso fuentes de otros países usan otras categorías; en España manda la Orden de 1983.
 
 ## Por qué una nata del 35 % no sustituye a una del 70 %
@@ -87,7 +87,7 @@ Hay tres porcentajes que no conviene mezclar: la grasa de la nata, la cantidad d
 | Nata usada | Grasa aproximada en la galleta horneada | Resultado |
 | --- | --- | --- |
 | 30-40 % de materia grasa | en torno al 20 % | Sabe como una galleta de mantequilla |
-| 70-75 % de materia grasa | en torno al 50 % | La galleta de nata de siempre |
+| 70-80 % de materia grasa | en torno al 50 % | La galleta de nata de siempre |
 
 Por eso mucha gente acaba haciendo «galletas de nata» con mantequilla buena: la nata tan grasa es muy difícil de conseguir. El resultado puede estar rico, pero es otra galleta. Lo explicamos en [galletas de nata o de mantequilla](/galletas-de-nata-o-de-mantequilla/).
 
@@ -99,14 +99,14 @@ Es la nata con la que se hacían las galletas en muchas casas gallegas, y cada c
 
 ## Centrifugar o hervir: dos formas de sacar la nata
 
-- **Centrifugado (desnatadora).** Separa la nata de la leche en frío, sin cocerla. Es un desnatado natural y saca más materia grasa. Cuánta, depende del equipo: la documentación técnica de la industria láctea indica que los separadores herméticos pueden superar el 72 % de grasa. Con una desnatadora especial de alta velocidad, el proyecto llegó a una nata del 70-75 %, medida.
+- **Centrifugado (desnatadora).** Separa la nata de la leche en frío, sin cocerla. Es un desnatado natural y saca más materia grasa. Cuánta, depende del equipo: la documentación técnica de la industria láctea indica que los separadores herméticos pueden superar el 72 % de grasa. Con una desnatadora especial de alta velocidad, el proyecto trabajó con una nata del 70-80 %, según el envase de la lechería.
 - **Cocción (método de las abuelas).** Se hierve la leche y se recoge la capa de la superficie. Es la forma tradicional, pero con la cocción se pierde materia grasa y se saca menos nata.
 
 Hervir una nata hasta que espese tampoco la convierte en una nata centrifugada del 70 %: cambia también el resto de su composición.
 
 ## Cuál usar para hacer galletas
 
-El proyecto probó primero las natas que se encuentran en la tienda o que venden las lecheras: del 30 %, del 35 % y del 40 % de materia grasa, algunas ya desnatadas de fábrica. Ninguna llegaba al punto buscado. El resultado cambió con una nata de **entre un 70 y un 75 % de materia grasa**, obtenida con una desnatadora especial.
+El proyecto probó primero las natas que se encuentran en la tienda o que venden las lecheras: del 30 %, del 35 % y del 40 % de materia grasa, algunas ya desnatadas de fábrica. Ninguna llegaba al punto buscado. El resultado cambió con una nata de **entre un 70 y un 80 % de materia grasa**, obtenida con una desnatadora especial.
 
 «Más grasa» no es mejor para todo: es lo que funcionó para esta galleta en concreto. Una receta casera pensada para nata del supermercado puede salir bien, aunque no sea la galleta tradicional.
 
