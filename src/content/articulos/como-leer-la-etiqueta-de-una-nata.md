@@ -29,6 +29,8 @@ Dos natas con el mismo porcentaje pueden ser ingredientes muy distintos. Para ha
 
 Es el porcentaje de grasa por peso: una nata al 35 % tiene unos 35 g de grasa por cada 100 g. No mide pureza ni calidad. Según la norma española:
 
+![Tarrina de nata espesa con una cuchara de madera](../../assets/fotos/tarrina-de-nata.jpg)
+
 - **Nata ligera:** del 12 % a menos del 30 %.
 - **Nata:** del 30 % a menos del 50 %.
 - **Doble nata:** 50 % o más.

@@ -6,9 +6,9 @@ estado: aprobado
 fechaPublicacion: 2026-10-14
 intencion: 'Comparativa: "qué nata usar para galletas", "nata para montar o para cocinar en galletas".'
 imagen:
-  src: ../../assets/provisional/pruebas-nata-en-galletas.jpg
-  alt: 'Galletas de nata horneadas con natas distintas, colocadas en fila para compararlas'
-  provisional: true
+  src: ../../assets/fotos/taza-de-nata-espesa.jpg
+  alt: 'Taza llena de nata espesa'
+  provisional: false
 relacionados:
   - autentica-nata-de-vaca
   - errores-textura-galletas-de-nata
@@ -26,6 +26,8 @@ Las primeras pruebas siguieron el método de las abuelas: leche cruda del día, 
 ## Segunda etapa: natas comerciales y de lechera
 
 Después se probaron natas de distinto contenido graso, compradas o servidas por lecheras, algunas ya desnatadas de fábrica.
+
+![Nata espesa sobre una cuchara de madera](../../assets/fotos/nata-espesa-en-cuchara-de-madera.jpg)
 
 | Nata | Materia grasa de la nata (% en masa) | Grasa aproximada en la galleta horneada | Resultado |
 | --- | --- | --- | --- |

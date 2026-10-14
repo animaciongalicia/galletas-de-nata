@@ -16,7 +16,13 @@ const total = esReceta(pieza) ? pieza.data.tiempos.total : undefined;
 ---
 
 <article class="tarjeta" data-seccion={data.seccion} data-titulo={data.titulo.toLowerCase()}>
+  {data.imagen.provisional ? (
+    <div class="sin-foto" aria-hidden="true">
+      <span>{SECCIONES[data.seccion].corto}</span>
+    </div>
+  ) : (
   <Figura imagen={data.imagen} proporcion="3 / 2" anchos={[400, 640, 800]} tamanos="(max-width: 40rem) 100vw, (max-width: 72rem) 50vw, 23rem" />
+  )}
   <div class="cuerpo">
     <p class="antetitulo">
       {SECCIONES[data.seccion].corto}{esReceta(pieza) && ' · Receta'}{total && ` · ${duracion(total)}`}
@@ -36,8 +42,25 @@ const total = esReceta(pieza) ? pieza.data.tiempos.total : undefined;
     padding-top: var(--e-2);
     border-top: 1px solid var(--tinta);
   }
-  .tarjeta :global(.hueco) {
-    max-height: 7rem;
+  /* Sin foto todavía: un panel tipográfico del mismo tamaño, nunca un falso retrato. */
+  .sin-foto {
+    aspect-ratio: 3 / 2;
+    display: grid;
+    place-items: center;
+    background: var(--marfil-hondo);
+    border: 1px solid color-mix(in srgb, var(--tinta) 10%, transparent);
+  }
+  .sin-foto span {
+    font-family: var(--f-titulo);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.9rem;
+    color: var(--tostado);
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--galleta);
+  }
+  :global(.banda--crema) .sin-foto {
+    background: var(--papel);
   }
   .cuerpo {
     display: flex;

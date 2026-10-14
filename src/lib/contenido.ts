@@ -1,5 +1,7 @@
 import type { MarkdownHeading } from 'astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import { SECCIONES, type SeccionId } from '../data/secciones';
 import { tipografia } from './formato';
 
@@ -105,8 +107,32 @@ export const ETIQUETA_ESTADO = {
  * que aún no se han publicado se convierten en texto normal: así cada pieza se puede
  * publicar sola sin dejar enlaces rotos. Cuando la otra pieza se publique, el enlace vuelve.
  */
+// Fotos que pueden aparecer dentro del texto de un contenido (![alt](../../assets/fotos/…)).
+const FOTOS = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpg,jpeg,png,webp}', { eager: true });
+
+/** Sustituye los marcadores de imagen del Markdown por <img> optimizadas (WebP, srcset, dimensiones). */
+async function resolverImagenes(html: string) {
+  const marcas = [...html.matchAll(/<img __ASTRO_IMAGE_="([^"]+)">/g)];
+  for (const [todo, json] of marcas) {
+    const datos = JSON.parse(json.replace(/&quot;/g, '"')) as { src: string; alt: string };
+    const ruta = '/src/' + datos.src.replace(/^(\.\.\/)+/, '');
+    const foto = FOTOS[ruta]?.default;
+    if (!foto) throw new Error(`Imagen no encontrada en el texto: ${datos.src}`);
+    const anchos = [480, 800, 1200].filter((w) => w < foto.width).concat(Math.min(foto.width, 1200));
+    const img = await getImage({ src: foto, widths: [...new Set(anchos)], format: 'webp', sizes: '(max-width: 42rem) 100vw, 42rem' });
+    const ancho = Math.min(foto.width, 1200);
+    const alto = Math.round((ancho * foto.height) / foto.width);
+    const alt = datos.alt.replace(/"/g, '&quot;');
+    html = html.replace(
+      todo,
+      `<img src="${img.src}" srcset="${img.srcSet.attribute}" sizes="(max-width: 42rem) 100vw, 42rem" width="${ancho}" height="${alto}" alt="${alt}" loading="lazy" decoding="async">`,
+    );
+  }
+  return html;
+}
+
 export async function htmlPublicable(e: Pieza | Pagina) {
-  const html = tipografia(e.rendered?.html ?? '');
+  const html = tipografia(await resolverImagenes(e.rendered?.html ?? ''));
   const titulos = (e.rendered?.metadata?.headings ?? []) as MarkdownHeading[];
   if (!ES_PRODUCCION) return { html, titulos };
   const { piezas, paginas } = await cargarTodo();

@@ -17,8 +17,8 @@ const indexable = piezas.some(esAprobado);
 
 <Base titulo={seccion.tituloSeo} descripcion={seccion.descripcion} indexable={indexable}>
   <div class="envoltorio">
-    <Migas items={[{ nombre: seccion.nombre, href: `/${seccion.slug}/` }]} />
-    <header class="cabecera-seccion">
+    <header class="cabecera-seccion banda banda--crema">
+      <Migas items={[{ nombre: seccion.nombre, href: `/${seccion.slug}/` }]} />
       <h1>{seccion.nombre}</h1>
       <p class="entradilla">{seccion.descripcion}</p>
     </header>
@@ -28,8 +28,8 @@ const indexable = piezas.some(esAprobado);
 
 <style>
   .cabecera-seccion {
+    display: flow-root; /* evita que el margen de las migas se salga de la banda */
     margin-bottom: var(--e-4);
-    padding-bottom: var(--e-3);
-    border-bottom: 1px solid var(--linea);
+    padding-bottom: var(--e-4);
   }
 </style>

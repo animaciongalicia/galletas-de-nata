@@ -43,6 +43,8 @@ Es decir: con una nata normal, la galleta acaba pareciéndose a una de mantequil
 
 Podría parecer que una nata del 70 % es «casi mantequilla». No lo es. La mantequilla tiene al menos un 80 % de grasa láctea, pero sobre todo tiene **otra estructura**: se obtiene batiendo la nata hasta que se separan los granos de grasa del suero, y queda una masa de grasa con gotitas de agua dentro. En la nata es al revés: gotitas de grasa repartidas en un líquido.
 
+![Nata espesa en un plato y untada sobre una rebanada de pan](../../assets/fotos/nata-untada-en-pan.jpg)
+
 Por eso:
 
 - Una nata al 70 % sigue siendo nata.

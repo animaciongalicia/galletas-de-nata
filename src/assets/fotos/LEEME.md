@@ -58,3 +58,22 @@ Sube aquí tus fotografías (solo fotos propias o con derechos comprobados).
 | `copa-de-fresas-con-nata-y-galletas-de-nata` | la copa montada |
 
 No subas fotos de la fabricación industrial, equipos o proveedores que quieras mantener en reserva: todo lo que se sube a esta carpeta es público.
+
+## Fotos ya colocadas (14-10-2026)
+
+| Foto | Dónde |
+| --- | --- |
+| `nata-espesa-en-cuchara-de-madera.jpg` | Portada; pruebas de nata (en el texto) |
+| `leche-recien-ordenada-en-el-fuego.jpg` | Portada (bloque del proyecto); cómo se hacían |
+| `nata-casera-con-pan.jpg` | Imagen principal de «Cómo se hacían» |
+| `capa-de-nata-sobre-la-leche-hervida.jpg` | Cómo se hacían; nata de vaca |
+| `sacar-la-nata-de-la-leche-cocida.jpg` | Cómo se hacían |
+| `nata-de-vaca-en-cuchara.jpg` | Imagen principal de «Nata de vaca» |
+| `desnatadora-centrifuga-domestica.jpg` | Nata de vaca; principal de «Leche cruda» (borrador) |
+| `taza-de-nata-espesa.jpg` | Imagen principal de «Pruebas con distintas natas» |
+| `nata-untada-en-pan.jpg` | Nata o mantequilla |
+| `nata-batida-en-batidora.jpg`, `cuenco-de-nata-espesa.jpg` | Nata para montar o para cocinar |
+| `tarrina-de-nata.jpg` | Cómo leer la etiqueta |
+| `galletas-de-nata-en-forma-de-corazon.jpg` | Tipos de galletas |
+
+Siguen faltando fotos de **galletas horneadas** con buena resolución (mínimo 1600 px): son las que más necesita la web, sobre todo para la receta principal.

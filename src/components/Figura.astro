@@ -25,7 +25,7 @@ const {
 } = Astro.props;
 // Una imagen provisional nunca se publica. En producción no se muestra nada;
 // en la previsualización queda un hueco discreto que recuerda que falta la foto.
-const disponibles = anchos.filter((w) => w <= imagen.src.width);
+const disponibles = [...new Set([...anchos.filter((w) => w < imagen.src.width), Math.min(imagen.src.width, Math.max(...anchos))])];
 const ancho = Math.max(...disponibles);
 const alto = Math.round((ancho * imagen.src.height) / imagen.src.width);
 ---

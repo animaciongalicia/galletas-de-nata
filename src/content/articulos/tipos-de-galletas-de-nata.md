@@ -55,6 +55,8 @@ Si pruebas esta familia, **no cambies huevo y levadura a la vez**: si lo haces, 
 
 La misma receta de tres ingredientes, pero estirada muy fina y recortada con un vaso o un cortapastas. Sale una galleta delgada y crujiente. Se mide por vasos, con la harina «que admita» la masa, y suele reposar en frío antes de estirarla.
 
+![Galletas de nata recortadas en forma de corazón](../../assets/fotos/galletas-de-nata-en-forma-de-corazon.jpg)
+
 ## 5. Sin lactosa
 
 Se hacen con nata sin lactosa y suelen llevar huevo y otros aromas, como el anís. Ojo: **sin lactosa no significa sin leche**. No sirven para personas con alergia a las proteínas de la leche.

@@ -6,7 +6,7 @@
 :root {
   /* Color: marfil, tinta y un verde hondo. Sobrio, sin colores de golosina. */
   --marfil: #f6f3ec;
-  --marfil-hondo: #ece6da;
+  --marfil-hondo: #e9e1d0;
   --papel: #fbf9f4;
   --tinta: #1b1916;
   --tinta-suave: #5a554d;
@@ -167,6 +167,44 @@ img {
   max-width: 38rem;
 }
 
+/* ===== Bandas a todo el ancho =====
+   Dan contraste entre zonas sin cambiar el marcado: el fondo se extiende
+   hasta los bordes de la ventana aunque el contenido siga en su columna. */
+.banda {
+  position: relative;
+  background: var(--banda);
+  box-shadow: 0 0 0 100vmax var(--banda);
+  clip-path: inset(0 -100vmax);
+}
+.banda--crema {
+  --banda: var(--marfil-hondo);
+}
+.banda--tinta {
+  --banda: var(--tinta);
+  color: var(--marfil);
+}
+.banda--verde {
+  --banda: var(--oliva);
+  color: var(--marfil);
+}
+.banda--tinta .antetitulo,
+.banda--verde .antetitulo {
+  color: var(--galleta-claro);
+}
+.banda--tinta a,
+.banda--verde a {
+  color: var(--marfil);
+}
+.banda--tinta .enlace-flecha,
+.banda--verde .enlace-flecha {
+  border-color: var(--marfil);
+}
+.banda--tinta .boton--claro,
+.banda--verde .boton--claro {
+  border-color: var(--marfil);
+  color: var(--marfil);
+}
+
 /* ===== Botones ===== */
 .boton {
   display: inline-flex;
@@ -324,7 +362,11 @@ img {
 }
 .prosa img {
   border-radius: var(--radio);
-  margin: var(--e-3) 0;
+  margin: var(--e-4) auto;
+  max-height: 34rem;
+  width: auto;
+  object-fit: cover;
+  box-shadow: 0 18px 40px -24px rgb(27 25 22 / 45%);
 }
 .prosa hr {
   border: 0;

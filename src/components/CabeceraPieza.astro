@@ -23,7 +23,7 @@ const actualizada =
     : undefined;
 ---
 
-<header class="envoltorio cabecera-pieza">
+<header class="envoltorio cabecera-pieza banda banda--crema">
   <Migas items={[{ nombre: seccion.nombre, href: urlSeccion(data.seccion) }, { nombre: data.titulo, href: url(pieza.id) }]} />
   <div class="texto">
     <p class="antetitulo">{seccion.nombre}{esReceta(pieza) && ' · Receta casera'}</p>
@@ -66,7 +66,9 @@ const actualizada =
     margin-bottom: var(--e-2);
   }
   .cabecera-pieza {
-    padding-bottom: var(--e-3);
+    display: flow-root; /* evita que el margen de las migas se salga de la banda */
+    padding-bottom: var(--e-4);
+    margin-bottom: var(--e-4);
   }
   .firma {
     display: flex;
@@ -78,7 +80,7 @@ const actualizada =
     color: var(--tinta-suave);
     margin: var(--e-3) 0;
     padding-top: var(--e-2);
-    border-top: 1px solid var(--linea);
+    border-top: 1px solid color-mix(in srgb, var(--tinta) 25%, transparent);
   }
   .falta {
     color: var(--aviso);

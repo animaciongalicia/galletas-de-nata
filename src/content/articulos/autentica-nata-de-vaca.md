@@ -7,9 +7,9 @@ fechaPublicacion: 2026-10-14
 intencion: 'Informativa: "nata de vaca", "tipos de nata" (70/mes), "materia grasa de la nata". Página central de la sección Nata.'
 destacado: true
 imagen:
-  src: ../../assets/provisional/autentica-nata-de-vaca.jpg
-  alt: 'Nata de vaca espesa en un cuenco'
-  provisional: true
+  src: ../../assets/fotos/nata-de-vaca-en-cuchara.jpg
+  alt: 'Cucharada de nata de vaca espesa'
+  provisional: false
 relacionados:
   - pruebas-nata-en-galletas
   - nata-para-montar-o-para-cocinar
@@ -95,12 +95,16 @@ Por eso mucha gente acaba haciendo «galletas de nata» con mantequilla buena: l
 
 En casa se llama «nata» a cosas distintas. La capa que aparece al calentar la leche no es grasa pura: un estudio científico sobre esa película describe una estructura de **proteínas de la leche alteradas por el calor y glóbulos de grasa** atrapados en la superficie. Su composición varía, y no se le puede asignar un porcentaje sin medirlo.
 
+![Capa de nata formada sobre la leche hervida](../../assets/fotos/capa-de-nata-sobre-la-leche-hervida.jpg)
+
 Es la nata con la que se hacían las galletas en muchas casas gallegas, y cada casa la recogía y la juntaba a su manera. Lo contamos en [galletas de nata de la abuela](/como-se-hacian-las-galletas-de-nata/).
 
 ## Centrifugar o hervir: dos formas de sacar la nata
 
 - **Centrifugado (desnatadora).** Separa la nata de la leche en frío, sin cocerla. Es un desnatado natural y saca más materia grasa. Cuánta, depende del equipo: la documentación técnica de la industria láctea indica que los separadores herméticos pueden superar el 72 % de grasa. Con una desnatadora especial de alta velocidad, el proyecto trabajó con una nata del 70-80 %, según el envase de la lechería.
 - **Cocción (método de las abuelas).** Se hierve la leche y se recoge la capa de la superficie. Es la forma tradicional, pero con la cocción se pierde materia grasa y se saca menos nata.
+
+![Desnatadora centrífuga doméstica de acero con base roja](../../assets/fotos/desnatadora-centrifuga-domestica.jpg)
 
 Hervir una nata hasta que espese tampoco la convierte en una nata centrifugada del 70 %: cambia también el resto de su composición.
 

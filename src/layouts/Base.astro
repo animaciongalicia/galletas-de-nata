@@ -110,4 +110,11 @@ const verificacionGoogle = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
   main:focus {
     outline: none;
   }
+  main {
+    padding-bottom: var(--e-5);
+  }
+  /* Si la página termina en una banda de color, enlaza directamente con el pie. */
+  main:has(.banda:last-child) {
+    padding-bottom: 0;
+  }
 </style>

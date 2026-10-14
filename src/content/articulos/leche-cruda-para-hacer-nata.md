@@ -5,9 +5,9 @@ seccion: nata
 estado: borrador
 intencion: 'Informativa-transaccional: «leche cruda» (1.900/mes), «leche cruda comprar» (170/mes), «desnatadora» (50/mes).'
 imagen:
-  src: ../../assets/provisional/leche-cruda-para-hacer-nata.jpg
-  alt: 'Botella de leche cruda del día junto a un cuenco de nata'
-  provisional: true
+  src: ../../assets/fotos/desnatadora-centrifuga-domestica.jpg
+  alt: 'Desnatadora centrífuga doméstica de acero con base roja'
+  provisional: false
 relacionados:
   - como-hacer-nata-casera
   - autentica-nata-de-vaca

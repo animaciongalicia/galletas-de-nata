@@ -36,6 +36,8 @@ La diferencia principal es la grasa. La nata para montar ronda el 35-40 % de mat
 
 Datos de fichas de natas gallegas consultadas en octubre de 2026. Cada marca y cada formato pueden variar: mira siempre la etiqueta de la que compras.
 
+![Nata batiéndose en el bol de una batidora con varillas](../../assets/fotos/nata-batida-en-batidora.jpg)
+
 | | Nata para montar | Nata para cocinar |
 | --- | --- | --- |
 | Materia grasa | 35-35,1 % en las fichas consultadas (35-40 % según la industria) | 18 % en la ficha consultada |
@@ -51,5 +53,7 @@ Dos detalles curiosos:
 ## Cuál usar para galletas de nata
 
 Para la galleta de nata tradicional, **ninguna de las dos se acerca a lo que hace falta**. En las pruebas del proyecto, las natas del 30 al 40 % daban una galleta de en torno a un 20 % de grasa, con sabor a galleta de mantequilla. El punto llegó con nata de un 70-80 %.
+
+![Cuenco con nata espesa](../../assets/fotos/cuenco-de-nata-espesa.jpg)
 
 Si tienes que elegir entre las dos, la de montar es mejor punto de partida porque tiene casi el doble de grasa. La de cocinar, con menos grasa y más agua, se aleja todavía más. Lo ideal es una doble nata o sacar tú la nata de leche cruda del día: tienes la explicación en [la guía sobre la nata de vaca](/autentica-nata-de-vaca/).

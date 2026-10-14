@@ -7,9 +7,9 @@ fechaPublicacion: 2026-10-14
 intencion: '«galletas de nata de la abuela» (210/mes). Informativa-tradición: "cómo se hacían las galletas de nata", "galletas de nata de la abuela", "historia galletas de nata gallegas".'
 destacado: true
 imagen:
-  src: ../../assets/provisional/como-se-hacian-las-galletas-de-nata.jpg
-  alt: 'Cazo con leche hervida y una capa de nata en la superficie'
-  provisional: true
+  src: ../../assets/fotos/nata-casera-con-pan.jpg
+  alt: 'Tarrinas de nata casera junto a un pan con nata untada'
+  provisional: false
 relacionados:
   - galletas-de-nata-autenticas
   - como-hacer-nata-casera
@@ -34,11 +34,15 @@ Antes de que existiera la leche en cartón, la galleta de nata gallega no se com
 
 Se ordeñaba la vaca y la leche se hervía. Hervirla tenía una razón práctica: así duraba más.
 
+![Cazos con leche recién ordeñada calentándose en la cocina](../../assets/fotos/leche-recien-ordenada-en-el-fuego.jpg)
+
 Al dejarla enfriar, en la superficie se formaba una capa de nata. Esa capa se recogía con cuidado y se apartaba. La leche se tomaba; la nata se guardaba.
 
 ## Una semana juntando nata
 
 Con la leche de un día no daba para una hornada. Por eso la nata se iba guardando en el frigorífico o, antes, en el rincón más fresco de la casa, para que no se perdiera.
+
+![Capa de nata sobre la leche hervida, separada con un cuchillo](../../assets/fotos/capa-de-nata-sobre-la-leche-hervida.jpg)
 
 Al cabo de una semana o diez días ya había 200, 500 gramos o más. Entonces tocaba hacer galletas.
 
@@ -63,6 +67,8 @@ Ya no hacía falta hervir la leche. Y sin leche hervida, no había capa de nata 
 ## Si quieres hacerlas como antes
 
 Compra leche cruda del día, que la hay a la venta, y sácale la nata: hirviéndola, como las abuelas, o con una desnatadora, que saca más grasa y de mejor calidad. Tienes el paso a paso en [cómo hacer nata casera a partir de leche](/como-hacer-nata-casera/).
+
+![Nata recogida con un cucharón de la leche cocida](../../assets/fotos/sacar-la-nata-de-la-leche-cocida.jpg)
 
 > **Seguridad.** La leche cruda puede contener microorganismos que causan enfermedades: guárdala siempre en frío y no la consumas sin tratar.
 

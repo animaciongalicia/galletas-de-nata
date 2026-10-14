@@ -6,7 +6,8 @@ import Vacio from '../components/Vacio.astro';
 import { LISTA_SECCIONES } from '../data/secciones';
 import { SITIO } from '../data/sitio';
 import { getPiezas, urlPaginaVisible, url } from '../lib/contenido';
-import portada from '../assets/provisional/portada.jpg';
+import portada from '../assets/fotos/nata-espesa-en-cuchara-de-madera.jpg';
+import fotoProyecto from '../assets/fotos/leche-recien-ordenada-en-el-fuego.jpg';
 
 const piezas = await getPiezas();
 const destacadas = [...piezas.filter((p) => p.data.destacado), ...piezas.filter((p) => !p.data.destacado)].slice(0, 6);
@@ -14,11 +15,15 @@ const sobre = await urlPaginaVisible('sobre-el-proyecto');
 const guiaNata = piezas.find((p) => p.id === 'autentica-nata-de-vaca');
 const cuenta = (id: string) => piezas.filter((p) => p.data.seccion === id).length;
 
-// Sustituye por una fotografía propia: importa el archivo de src/assets/fotos/ y pon provisional: false.
 const imagenPortada = {
   src: portada,
-  alt: 'Galletas de nata redondas sobre un fondo claro',
-  provisional: true,
+  alt: 'Nata espesa sobre una cuchara de madera',
+  provisional: false,
+};
+const imagenProyecto = {
+  src: fotoProyecto,
+  alt: 'Cazos con leche recién ordeñada calentándose en la cocina',
+  provisional: false,
 };
 
 const site = Astro.site!;
@@ -34,6 +39,7 @@ const esquemas = [
   esquemas={esquemas}
 >
   <section class="envoltorio heroe">
+    <div class="heroe-texto">
     <p class="antetitulo">Historia, recetas y técnica</p>
     <h1>La galleta <em>de nata</em> gallega</h1>
     <div class="heroe-pie">
@@ -46,15 +52,13 @@ const esquemas = [
         <a class="enlace-flecha" href="/nata-y-elaboracion/">Entender la nata →</a>
       </div>
     </div>
+    </div>
+    <div class="heroe-imagen">
+      <Figura imagen={imagenPortada} prioridad proporcion="4 / 5" tamanos="(max-width: 62rem) 100vw, 30rem" anchos={[480, 800, 1200]} />
+    </div>
   </section>
 
-  {!imagenPortada.provisional && (
-    <div class="envoltorio heroe-imagen">
-      <Figura imagen={imagenPortada} prioridad proporcion="21 / 9" tamanos="(max-width: 72rem) 100vw, 72rem" anchos={[640, 1000, 1400, 2000]} />
-    </div>
-  )}
-
-  <section class="envoltorio datos" aria-labelledby="datos-titulo">
+  <section class="envoltorio datos banda banda--tinta" aria-labelledby="datos-titulo">
     <h2 id="datos-titulo" class="sr-only">La galleta de nata en tres datos</h2>
     <dl>
       <div>
@@ -82,7 +86,7 @@ const esquemas = [
     <p class="ver-todo"><a class="enlace-flecha" href="/buscar/">Ver todos los contenidos →</a></p>
   </section>
 
-  <section class="envoltorio bloque" aria-labelledby="secciones-titulo">
+  <section class="envoltorio bloque secciones-bloque banda banda--crema" aria-labelledby="secciones-titulo">
     <div class="bloque-cabecera">
       <p class="antetitulo">Índice</p>
       <h2 id="secciones-titulo">Secciones</h2>
@@ -105,7 +109,10 @@ const esquemas = [
     </ul>
   </section>
 
-  <section class="envoltorio bloque proyecto" aria-labelledby="proyecto-titulo">
+  <section class="envoltorio bloque proyecto banda banda--verde" aria-labelledby="proyecto-titulo">
+    <div class="proyecto-foto">
+      <Figura imagen={imagenProyecto} proporcion="4 / 5" tamanos="(max-width: 48rem) 100vw, 22rem" anchos={[400, 480]} />
+    </div>
     <div>
       <p class="antetitulo">El proyecto</p>
       <h2 id="proyecto-titulo">Hecho por alguien que las fabricó</h2>
@@ -123,14 +130,18 @@ const esquemas = [
 
 <style>
   .heroe {
-    padding: var(--e-5) 0 var(--e-4);
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: var(--e-5);
+    align-items: end;
+    padding: var(--e-5) 0;
   }
   .heroe h1 {
-    font-size: clamp(2.9rem, 1.4rem + 6vw, 6.6rem);
+    font-size: clamp(2.9rem, 1.4rem + 5.4vw, 6.2rem);
     font-weight: 350;
     line-height: 0.98;
     letter-spacing: -0.03em;
-    max-width: 14ch;
+    max-width: 12ch;
     margin: 0 0 var(--e-4);
   }
   .heroe h1 em {
@@ -139,43 +150,39 @@ const esquemas = [
     color: var(--tostado);
   }
   .heroe-pie {
-    display: grid;
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-    gap: var(--e-4);
-    align-items: end;
     padding-top: var(--e-3);
     border-top: 1px solid var(--tinta);
   }
   .heroe .entradilla {
-    margin: 0;
-    max-width: 36rem;
+    margin: 0 0 var(--e-3);
+    max-width: 34rem;
   }
   .acciones {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: var(--e-3);
-    justify-self: end;
   }
-  @media (max-width: 48rem) {
+  .heroe-imagen :global(img) {
+    box-shadow: 24px 24px 0 var(--marfil-hondo);
+  }
+  @media (max-width: 62rem) {
     .heroe {
+      grid-template-columns: 1fr;
+      gap: var(--e-4);
       padding-top: var(--e-4);
     }
-    .heroe-pie {
-      grid-template-columns: 1fr;
-      gap: var(--e-3);
+    .heroe-imagen {
+      max-width: 30rem;
     }
-    .acciones {
-      justify-self: start;
+    .heroe-imagen :global(img) {
+      aspect-ratio: 4 / 3;
+      box-shadow: 12px 12px 0 var(--marfil-hondo);
     }
-  }
-  .heroe-imagen {
-    margin-bottom: var(--e-4);
   }
 
   .datos {
-    padding: var(--e-4) 0;
-    border-block: 1px solid var(--linea);
+    padding: var(--e-5) 0;
   }
   .datos dl {
     display: grid;
@@ -184,7 +191,7 @@ const esquemas = [
   }
   .datos dl > div {
     padding: 0 var(--e-3);
-    border-left: 1px solid var(--linea);
+    border-left: 1px solid rgb(246 243 236 / 22%);
   }
   .datos dl > div:first-child {
     padding-left: 0;
@@ -195,18 +202,18 @@ const esquemas = [
     font-size: clamp(2.6rem, 1.8rem + 2.4vw, 3.8rem);
     font-weight: 300;
     line-height: 1;
-    color: var(--tinta);
+    color: var(--galleta-claro);
     letter-spacing: -0.03em;
     margin-bottom: var(--e-2);
   }
   .datos dd {
     margin: 0;
-    color: var(--tinta-suave);
+    color: rgb(246 243 236 / 75%);
     font-size: var(--t-s);
     max-width: 18rem;
   }
   .datos dd strong {
-    color: var(--tinta);
+    color: var(--marfil);
     font-weight: 600;
   }
   .datos-mas {
@@ -220,7 +227,7 @@ const esquemas = [
     .datos dl > div {
       padding: var(--e-3) 0 0;
       border-left: 0;
-      border-top: 1px solid var(--linea);
+      border-top: 1px solid rgb(246 243 236 / 22%);
     }
     .datos dl > div:first-child {
       padding-top: 0;
@@ -230,6 +237,16 @@ const esquemas = [
 
   .bloque {
     margin-top: var(--e-5);
+  }
+  .secciones-bloque,
+  .proyecto {
+    padding-block: var(--e-5);
+  }
+  .secciones-bloque {
+    margin-top: calc(var(--e-5) * 1.5);
+  }
+  .secciones-bloque + .proyecto {
+    margin-top: 0;
   }
   .bloque-cabecera {
     margin-bottom: var(--e-3);
@@ -262,7 +279,7 @@ const esquemas = [
     row-gap: 0.4rem;
     height: 100%;
     padding: var(--e-3) 0;
-    border-top: 1px solid var(--linea);
+    border-top: 1px solid color-mix(in srgb, var(--tinta) 30%, transparent);
     color: var(--tinta);
     text-decoration: none;
   }
@@ -304,11 +321,12 @@ const esquemas = [
   }
   .proyecto {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr) minmax(0, 1.2fr);
     gap: var(--e-4);
-    padding: var(--e-4) 0;
-    border-top: 1px solid var(--tinta);
-    border-bottom: 1px solid var(--linea);
+    align-items: center;
+  }
+  .proyecto-foto :global(img) {
+    box-shadow: 14px 14px 0 rgb(246 243 236 / 14%);
   }
   .proyecto h2 {
     margin: 0;
@@ -322,10 +340,13 @@ const esquemas = [
     line-height: 1.55;
     margin-bottom: var(--e-3);
   }
-  @media (max-width: 48rem) {
+  @media (max-width: 62rem) {
     .proyecto {
       grid-template-columns: 1fr;
-      gap: var(--e-2);
+      gap: var(--e-3);
+    }
+    .proyecto-foto {
+      max-width: 18rem;
     }
   }
 </style>
