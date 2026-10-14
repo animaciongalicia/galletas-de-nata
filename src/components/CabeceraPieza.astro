@@ -5,7 +5,7 @@ import PanelEditorial from './PanelEditorial.astro';
 import { SECCIONES } from '../data/secciones';
 import { AUTOR } from '../data/sitio';
 import { ES_PRODUCCION, url, urlSeccion, esReceta, urlPaginaVisible, type Pieza } from '../lib/contenido';
-import { fecha, fechaIso } from '../lib/formato';
+import { fecha, fechaIso, tipografia } from '../lib/formato';
 
 interface Props {
   pieza: Pieza;
@@ -14,6 +14,10 @@ const { pieza } = Astro.props;
 const { data } = pieza;
 const seccion = SECCIONES[data.seccion];
 const sobre = await urlPaginaVisible('sobre-el-proyecto');
+const TONOS = { galletas: 'galleta', recetas: 'tostado', postres: 'crema', nata: 'oliva' } as const;
+// Minutos de lectura, calculados a partir del texto (unas 200 palabras por minuto).
+const palabras = (pieza.body ?? '').replace(/<[^>]+>|[#*|>\-`\[\]()]/g, ' ').split(/\s+/).filter(Boolean).length;
+const lectura = Math.max(1, Math.round(palabras / 200));
 const actualizada =
   data.fechaActualizacion && data.fechaPublicacion && data.fechaActualizacion > data.fechaPublicacion
     ? data.fechaActualizacion
@@ -25,7 +29,7 @@ const actualizada =
   <div class="texto">
     <p class="antetitulo">{seccion.nombre}{esReceta(pieza) && ' · Receta casera'}</p>
     <h1>{data.titulo}</h1>
-    <p class="entradilla">{data.descripcion}</p>
+    <p class="entradilla">{tipografia(data.descripcion)}</p>
     <p class="firma">
       {
         <span>
@@ -41,6 +45,7 @@ const actualizada =
           !ES_PRODUCCION && <span class="falta">Fecha de publicación: pendiente</span>
         )
       }
+      {!esReceta(pieza) && <span>{lectura} min de lectura</span>}
       {
         actualizada && (
           <span>
@@ -51,7 +56,7 @@ const actualizada =
     </p>
     <PanelEditorial estado={data.estado} pendientes={data.pendientes} intencion={data.intencion} />
   </div>
-  <Figura imagen={data.imagen} prioridad pie proporcion="16 / 9" clase="principal" />
+  <Figura imagen={data.imagen} prioridad pie proporcion={data.imagen.provisional ? '16 / 5' : '16 / 9'} clase="principal" semilla={pieza.id} tono={TONOS[data.seccion]} densidad={7} />
 </header>
 
 <style>

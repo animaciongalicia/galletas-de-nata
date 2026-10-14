@@ -89,7 +89,7 @@ Hay tres porcentajes que no conviene mezclar: la grasa de la nata, la cantidad d
 | 30-40 % de materia grasa | en torno al 20 % | Sabe como una galleta de mantequilla |
 | 70-80 % de materia grasa | en torno al 50 % | La galleta de nata de siempre |
 
-Por eso mucha gente acaba haciendo «galletas de nata» con mantequilla buena: la nata tan grasa es muy difícil de conseguir. El resultado puede estar rico, pero es otra galleta. Lo explicamos en [galletas de nata o de mantequilla](/galletas-de-nata-o-de-mantequilla/).
+Por eso mucha gente acaba haciendo «galletas de nata» con mantequilla buena: la nata tan grasa es muy difícil de conseguir. El resultado puede estar rico, pero es otra galleta. Tienes la explicación en [galletas de nata o de mantequilla](/galletas-de-nata-o-de-mantequilla/).
 
 ## La nata de la leche hervida
 
@@ -122,6 +122,6 @@ El proyecto probó primero las natas que se encuentran en la tienda o que venden
 - **Sácale la nata.** Con una desnatadora obtendrás más nata y más grasa; si no tienes, puedes hervirla como hacían las abuelas. Tienes el paso a paso en [cómo hacer nata casera a partir de leche](/como-hacer-nata-casera/).
 - **Si compras la nata hecha, busca la que más grasa tenga.** Una doble nata (50 % o más) es mejor punto de partida que una nata para montar del 35 %. Aprende a leer la etiqueta en [cómo leer la etiqueta de una nata](/como-leer-la-etiqueta-de-una-nata/).
 
-**Seguridad:** la leche cruda puede contener microorganismos que causan enfermedades, según la Autoridad Europea de Seguridad Alimentaria. Mantenla siempre en frío, no la consumas ni la nata cruda sin tratar, y úsala en elaboraciones que se cocinen.
+> **Seguridad.** La leche cruda puede contener microorganismos que causan enfermedades, según la Autoridad Europea de Seguridad Alimentaria. Mantenla siempre en frío, no la consumas ni la nata cruda sin tratar, y úsala en elaboraciones que se cocinen.
 
 Los resultados de cada prueba están en [pruebas con distintas natas](/pruebas-nata-en-galletas/).

@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import { ES_PRODUCCION } from '../lib/contenido';
+import Ilustracion from './Ilustracion.astro';
 
 interface Props {
   imagen: { src: ImageMetadata; alt: string; provisional: boolean; credito?: string };
@@ -12,6 +13,10 @@ interface Props {
   proporcion?: string;
   clase?: string;
   pie?: boolean;
+  /** Para la ilustración que sustituye a la foto mientras no hay una propia. */
+  semilla?: string;
+  tono?: 'galleta' | 'oliva' | 'crema' | 'tostado';
+  densidad?: number;
 }
 
 const {
@@ -22,14 +27,23 @@ const {
   proporcion = '3 / 2',
   clase,
   pie = false,
+  semilla = imagen.alt,
+  tono = 'galleta',
+  densidad,
 } = Astro.props;
-// En producción una imagen provisional no se muestra (los aprobados no pueden tenerla).
-const mostrar = !(ES_PRODUCCION && imagen.provisional);
+// Una imagen provisional nunca se muestra: en su lugar va una ilustración de marca.
+const mostrar = !imagen.provisional;
 const disponibles = anchos.filter((w) => w <= imagen.src.width);
 const ancho = Math.max(...disponibles);
 const alto = Math.round((ancho * imagen.src.height) / imagen.src.width);
 ---
 
+{!mostrar && (
+  <div class:list={['figura', clase]}>
+    <Ilustracion semilla={semilla} tono={tono} proporcion={proporcion} densidad={densidad} />
+    {!ES_PRODUCCION && <span class="sello">Foto pendiente</span>}
+  </div>
+)}
 {mostrar && (
 <figure class:list={['figura', clase]} style={`--proporcion: ${proporcion}`}>
   <Image

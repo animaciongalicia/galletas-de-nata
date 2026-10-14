@@ -21,3 +21,7 @@ export function textoIngrediente(i: { nombre: string; cantidad: number | string 
   const cantidad = i.cantidad === null ? '' : `${i.cantidad}${i.unidad ? ` ${i.unidad}` : ''} `;
   return `${cantidad}${i.nombre}${i.nota ? ` (${i.nota})` : ''}`.trim();
 }
+
+/** Evita que «35 %», «200 g» o «180 °C» se partan en dos líneas. */
+export const tipografia = (texto: string) =>
+  texto.replace(/(\d) (%|g|kg|ml|l|°C|min|h)(?=[\s.,;:)<]|$)/g, '$1\u00a0$2');

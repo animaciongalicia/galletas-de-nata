@@ -3,7 +3,7 @@ import Figura from './Figura.astro';
 import Estado from './Estado.astro';
 import { SECCIONES } from '../data/secciones';
 import { url, esReceta, type Pieza } from '../lib/contenido';
-import { duracion } from '../lib/formato';
+import { duracion, tipografia } from '../lib/formato';
 
 interface Props {
   pieza: Pieza;
@@ -12,17 +12,18 @@ interface Props {
 const { pieza, nivel = 'h3' } = Astro.props;
 const { data } = pieza;
 const Titulo = nivel;
+const TONOS = { galletas: 'galleta', recetas: 'tostado', postres: 'crema', nata: 'oliva' } as const;
 const total = esReceta(pieza) ? pieza.data.tiempos.total : undefined;
 ---
 
 <article class="tarjeta" data-seccion={data.seccion} data-titulo={data.titulo.toLowerCase()}>
-  <Figura imagen={data.imagen} anchos={[400, 640, 800]} tamanos="(max-width: 40rem) 100vw, (max-width: 72rem) 50vw, 23rem" />
+  <Figura imagen={data.imagen} semilla={pieza.id} tono={TONOS[data.seccion]} densidad={4} anchos={[400, 640, 800]} tamanos="(max-width: 40rem) 100vw, (max-width: 72rem) 50vw, 23rem" />
   <div class="cuerpo">
     <p class="antetitulo">
       {SECCIONES[data.seccion].corto}{esReceta(pieza) && ' · Receta'}{total && ` · ${duracion(total)}`}
     </p>
     <Titulo class="titulo"><a href={url(pieza.id)}>{data.titulo}</a></Titulo>
-    <p class="descripcion">{data.descripcion}</p>
+    <p class="descripcion">{tipografia(data.descripcion)}</p>
     <Estado estado={data.estado} />
   </div>
 </article>
@@ -34,22 +35,32 @@ const total = esReceta(pieza) ? pieza.data.tiempos.total : undefined;
     flex-direction: column;
     background: var(--papel);
     border: 1px solid var(--linea);
-    border-radius: calc(var(--radio) + 4px);
-    padding: 0.5rem;
-    transition: box-shadow 0.15s ease;
+    border-radius: calc(var(--radio) + 2px);
+    overflow: hidden;
+    transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
   }
   .tarjeta:hover {
     box-shadow: var(--sombra);
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--galleta) 45%, var(--linea));
   }
-  .tarjeta :global(.figura img) {
-    border-radius: var(--radio);
+  .tarjeta :global(.figura img),
+  .tarjeta :global(.ilustracion) {
+    border-radius: 0;
   }
   .cuerpo {
-    padding: var(--e-2) 0.6rem 0.6rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: var(--e-3) var(--e-3) var(--e-3);
+  }
+  .antetitulo {
+    font-size: 0.75rem;
   }
   .titulo {
-    font-size: 1.3rem;
-    margin: 0 0 0.5rem;
+    font-size: 1.32rem;
+    line-height: 1.22;
+    margin: 0 0 0.6rem;
   }
   .titulo a {
     color: var(--tinta);
@@ -75,6 +86,12 @@ const total = esReceta(pieza) ? pieza.data.tiempos.total : undefined;
   .descripcion {
     color: var(--tinta-suave);
     font-size: var(--t-s);
+    line-height: 1.55;
     margin: 0;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tarjeta:hover {
+      transform: none;
+    }
   }
 </style>

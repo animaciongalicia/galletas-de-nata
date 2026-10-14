@@ -29,6 +29,7 @@ const PIEZAS = [
   ['helado-de-nata-con-galletas', 'Helado de nata'],
   ['como-leer-la-etiqueta-de-una-nata', 'Etiqueta de la nata'],
   ['galletas-de-nata-ecologicas', 'Ecológicas'],
+  ['tipos-de-galletas-de-nata', 'Tipos de galletas'],
 ];
 
 const TONOS = ['#E4BD84', '#D6A15F', '#C98B4A', '#EBCB98', '#B97A3D'];

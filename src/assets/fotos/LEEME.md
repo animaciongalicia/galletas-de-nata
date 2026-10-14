@@ -44,5 +44,17 @@ Sube aquí tus fotografías (solo fotos propias o con derechos comprobados).
 | `copa-de-yogur-fruta-y-galletas-de-nata` | la copa montada |
 | `pruebas-nata-en-galletas` | cada prueba, con la misma luz y encuadre |
 | `postre-de-limon-con-galletas-de-nata` | el postre servido |
+| `tipos-de-galletas-de-nata` | varias galletas de familias distintas juntas (gruesa, fina, con yema) |
+| `galletas-de-nata-o-de-mantequilla` | una galleta de nata y una de mantequilla, lado a lado y partidas |
+| `nata-para-montar-o-para-cocinar` | los dos briks y la nata en un bol |
+| `como-leer-la-etiqueta-de-una-nata` | detalle de la etiqueta (sin marca visible) |
+| `leche-cruda-para-hacer-nata` | leche en cazo, nata separándose en frío |
+| `helado-de-nata-con-galletas` | bola de helado con galleta desmigada |
+| `vasitos-de-queso-con-galletas-de-nata` | vasitos servidos, capa de galleta visible |
+| `trufas-de-chocolate-y-galletas-de-nata` | trufas en plato y una partida |
+| `tarta-de-requeixo-y-miel-con-galletas-de-nata` | tarta entera y porción |
+| `sandwich-helado-de-galletas-de-nata` | sándwich montado y mordido |
+| `tarta-de-cafe-con-base-de-galletas-de-nata` | tarta entera y corte de la base |
+| `copa-de-fresas-con-nata-y-galletas-de-nata` | la copa montada |
 
 No subas fotos de la fabricación industrial, equipos o proveedores que quieras mantener en reserva: todo lo que se sube a esta carpeta es público.

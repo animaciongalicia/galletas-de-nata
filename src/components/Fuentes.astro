@@ -1,60 +1,71 @@
 ---
+// Fuentes consultadas: solo el nombre y la nota, sin enlaces de salida.
+// La URL se conserva en el contenido como registro interno, pero no se publica.
 import type { Pieza } from '../lib/contenido';
 
 interface Props {
   pieza: Pieza;
 }
-const { fuentes, enlacesCompra } = Astro.props.pieza.data;
+const { fuentes } = Astro.props.pieza.data;
 ---
 
 {
   fuentes.length > 0 && (
-    <section class="bloque" aria-labelledby="fuentes-titulo">
-      <h2 id="fuentes-titulo">Fuentes</h2>
-      <ul>
+    <aside class="fuentes" aria-labelledby="fuentes-titulo">
+      <h2 id="fuentes-titulo">Fuentes consultadas</h2>
+      <ol>
         {fuentes.map((f) => (
           <li>
-            {f.url ? (
-              <a href={f.url} rel="noopener">
-                {f.titulo}
-              </a>
-            ) : (
-              f.titulo
-            )}
-            {f.nota && <span class="nota"> — {f.nota}</span>}
+            <span class="titulo">{f.titulo}</span>
+            {f.nota && <span class="nota">{f.nota}</span>}
           </li>
         ))}
-      </ul>
-    </section>
-  )
-}
-{
-  enlacesCompra.length > 0 && (
-    <section class="bloque" aria-labelledby="compra-titulo">
-      <h2 id="compra-titulo">Dónde encontrarlas</h2>
-      <ul>
-        {enlacesCompra.map((e) => (
-          // data-evento: punto de medición de clics hacia puntos de compra (ver README, "Analítica").
-          <li>
-            <a href={e.url} rel="noopener" data-evento="clic-compra" data-destino={e.nombre}>
-              {e.nombre}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </section>
+      </ol>
+    </aside>
   )
 }
 
 <style>
-  .bloque {
-    margin-top: var(--e-4);
-    font-size: var(--t-s);
+  .fuentes {
+    margin-top: var(--e-5);
+    padding-top: var(--e-3);
+    border-top: 1px solid var(--linea);
+    font-size: var(--t-xs);
+    line-height: 1.5;
+    color: var(--tinta-suave);
+  }
+  :global(.prosa) .fuentes h2 {
+    border-top: 0;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  :global(.prosa) .fuentes h2::before {
+    content: none;
   }
   h2 {
-    font-size: var(--t-l);
+    font-family: var(--f-texto);
+    font-size: var(--t-xs);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--oliva);
+    margin: 0 0 var(--e-2);
+  }
+  ol {
+    margin: 0;
+    padding-left: 1.4rem;
+    display: grid;
+    gap: 0.45rem;
+  }
+  li::marker {
+    color: var(--galleta);
+    font-weight: 700;
+  }
+  .titulo {
+    color: var(--tinta);
   }
   .nota {
+    display: block;
     color: var(--tinta-suave);
   }
 </style>

@@ -33,7 +33,7 @@ Es el porcentaje de grasa por peso: una nata al 35 % tiene unos 35 g de grasa po
 - **Nata:** del 30 % a menos del 50 %.
 - **Doble nata:** 50 % o más.
 
-Para la galleta de nata tradicional, cuanto más alto, mejor: en las pruebas del proyecto, el punto llegó con nata de un 70-80 %. Lo explicamos en [la guía sobre la nata de vaca](/autentica-nata-de-vaca/).
+Para la galleta de nata tradicional, cuanto más alto, mejor: en las pruebas del proyecto, el punto llegó con nata de un 70-80 %. Tienes la explicación en [la guía sobre la nata de vaca](/autentica-nata-de-vaca/).
 
 ## 2. El tratamiento
 

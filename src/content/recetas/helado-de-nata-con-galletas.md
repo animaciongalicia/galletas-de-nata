@@ -17,13 +17,19 @@ ingredientes:
   - grupo: 'Para acompañar'
     items:
       - nombre: 'galletas de nata'
+fuentes:
+  - titulo: 'La tía Berechiña: helado de galletas de nata (2012)'
+    nota: 'Referencia directa: helado con galletas de nata, leche, nata, azúcar y yemas.'
+  - titulo: 'Bon Viveur: helado de nata'
+    nota: 'Otra base, con nata para montar, claras pasteurizadas y azúcar; con o sin heladera.'
 relacionados:
   - tarta-de-galletas-de-nata
   - copa-de-yogur-fruta-y-galletas-de-nata
 pendientes:
   - 'Receta completa del helado: ingredientes, cantidades, con o sin heladera.'
   - 'Tiempos reales (preparación, congelación) y rendimiento.'
-  - 'Forma de servirlo con las galletas (trozos, sándwich, base).'
+  - 'Elegir la base: con yemas (cocida y enfriada) o con claras pasteurizadas.'
+  - 'Qué parte de la galleta se integra en la mezcla y qué parte va en trozos.'
   - 'Hacer la receta completa y anotar la fecha de la prueba.'
 ---
 

@@ -94,6 +94,9 @@ for (const archivo of htmls) {
     }
   }
 
+  const salientes = [...html.matchAll(/<a\s[^>]*href="(https?:)?\/\/[^"]*"/g)].length;
+  if (salientes) error(rel, `${salientes} enlace(s) de salida (la web no enlaza fuera)`);
+
   if (PROD) {
     if (/class="aviso-preview"|class="pendiente"|class="[^"]*estado--|class="panel/.test(html))
       error(rel, 'restos de preview o borrador en producción');

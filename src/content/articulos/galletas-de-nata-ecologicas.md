@@ -41,4 +41,4 @@ En Galicia, la certificación y el control de los operadores ecológicos los ges
 
 ## Qué mirar
 
-Si buscas una galleta de nata ecológica, comprueba el sello en el envase y la lista de ingredientes. Para saber si es una galleta de nata tradicional, mira además que la nata sea la única grasa: lo explicamos en [qué caracteriza a una galleta de nata auténtica](/galletas-de-nata-autenticas/).
+Si buscas una galleta de nata ecológica, comprueba el sello en el envase y la lista de ingredientes. Para saber si es una galleta de nata tradicional, mira además que la nata sea la única grasa: tienes la explicación en [qué caracteriza a una galleta de nata auténtica](/galletas-de-nata-autenticas/).

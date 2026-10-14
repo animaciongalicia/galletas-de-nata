@@ -1,6 +1,7 @@
 import type { MarkdownHeading } from 'astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { SECCIONES, type SeccionId } from '../data/secciones';
+import { tipografia } from './formato';
 
 /**
  * Entorno de la build.
@@ -105,7 +106,7 @@ export const ETIQUETA_ESTADO = {
  * publicar sola sin dejar enlaces rotos. Cuando la otra pieza se publique, el enlace vuelve.
  */
 export async function htmlPublicable(e: Pieza | Pagina) {
-  const html = e.rendered?.html ?? '';
+  const html = tipografia(e.rendered?.html ?? '');
   const titulos = (e.rendered?.metadata?.headings ?? []) as MarkdownHeading[];
   if (!ES_PRODUCCION) return { html, titulos };
   const { piezas, paginas } = await cargarTodo();

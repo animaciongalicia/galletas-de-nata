@@ -79,3 +79,18 @@ Ideas que encajan sin canibalizar: helado con galletas de nata, crumble con gall
 | Aviso legal | Titular, NIF/CIF, domicilio, correo (LSSI art. 10) |
 | Privacidad | Responsable, proveedor de alojamiento, analítica si se activa |
 | Cookies | Confirmar que no se ha activado nada que instale cookies |
+
+## Piezas añadidas a partir del banco de recetas (14-10-2026)
+
+| Página | Estado |
+| --- | --- |
+| `/tipos-de-galletas-de-nata/` | Publicada: las cinco familias de recetas y cuál elegir |
+| `/vasitos-de-queso-con-galletas-de-nata/` | Borrador: probar y medir |
+| `/trufas-de-chocolate-y-galletas-de-nata/` | Borrador: probar y medir |
+| `/tarta-de-requeixo-y-miel-con-galletas-de-nata/` | Borrador: probar y medir |
+| `/sandwich-helado-de-galletas-de-nata/` | Borrador: probar y medir |
+| `/tarta-de-cafe-con-base-de-galletas-de-nata/` | Borrador: probar y medir |
+| `/copa-de-fresas-con-nata-y-galletas-de-nata/` | Borrador: probar y medir |
+| `/helado-de-nata-con-galletas/` | Borrador ampliado: falta decidir base (yema cocinada o clara pasteurizada) |
+
+Plan completo de oleadas en `docs/plan-web.md`.

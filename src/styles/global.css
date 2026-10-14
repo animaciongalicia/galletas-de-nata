@@ -38,7 +38,7 @@
   --ancho: 72rem;
   --ancho-texto: 42rem;
   --radio: 14px;
-  --sombra: 0 1px 2px rgb(60 40 20 / 6%), 0 8px 24px rgb(60 40 20 / 7%);
+  --sombra: 0 1px 2px rgb(60 40 20 / 5%), 0 10px 30px -8px rgb(60 40 20 / 14%);
 }
 
 /* ===== Base ===== */
@@ -75,7 +75,7 @@ h4 {
   margin: 0 0 var(--e-2);
   text-wrap: balance;
 }
-h1 { font-size: var(--t-xxl); font-weight: 650; }
+h1 { font-size: var(--t-xxl); font-weight: 650; letter-spacing: -0.02em; }
 h2 { font-size: var(--t-xl); margin-top: var(--e-4); }
 h3 { font-size: var(--t-l); margin-top: var(--e-3); }
 
@@ -195,47 +195,135 @@ img {
 }
 
 /* ===== Prosa de artículos ===== */
-.prosa > * + * {
-  margin-top: 0;
+.prosa {
+  font-size: 1.15rem;
+  line-height: 1.72;
+}
+.prosa > p:first-child {
+  font-size: 1.28rem;
+  line-height: 1.6;
+  color: var(--tinta);
 }
 .prosa h2 {
   scroll-margin-top: var(--e-3);
+  margin-top: var(--e-5);
+  padding-top: var(--e-3);
+  border-top: 1px solid var(--linea);
+  position: relative;
+}
+.prosa h2::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 3rem;
+  height: 2px;
+  background: var(--galleta);
 }
 .prosa h3 {
   scroll-margin-top: var(--e-3);
+  font-size: 1.3rem;
+}
+.prosa strong {
+  font-weight: 650;
+  color: var(--tinta);
+}
+.prosa a {
+  color: var(--oliva-hondo);
+  text-decoration-color: color-mix(in srgb, var(--galleta) 70%, transparent);
+  text-decoration-thickness: 2px;
+}
+.prosa a:hover {
+  color: var(--tostado);
+}
+.prosa ul {
+  list-style: none;
+  padding-left: 1.4rem;
+}
+.prosa ul > li {
+  position: relative;
+}
+.prosa ul > li::before {
+  content: '';
+  position: absolute;
+  left: -1.15rem;
+  top: 0.68em;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--galleta);
+}
+.prosa ol {
+  padding-left: 1.4rem;
+}
+.prosa ol > li::marker {
+  color: var(--tostado);
+  font-weight: 700;
+  font-family: var(--f-titulo);
 }
 .prosa li + li {
-  margin-top: 0.35em;
+  margin-top: 0.45em;
 }
+/* Nota destacada: en Markdown, un párrafo que empieza por «>» */
 .prosa blockquote {
   margin: var(--e-3) 0;
-  padding: var(--e-1) var(--e-3);
-  border-left: 4px solid var(--galleta);
-  font-family: var(--f-titulo);
-  font-size: var(--t-l);
-  color: var(--tinta-suave);
+  padding: var(--e-2) var(--e-3);
+  border-left: 4px solid var(--oliva);
+  border-radius: 0 var(--radio) var(--radio) 0;
+  background: var(--oliva-claro);
+  font-size: var(--t-m);
+  color: var(--tinta);
+}
+.prosa blockquote p:last-child {
+  margin-bottom: 0;
 }
 .prosa table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   margin: var(--e-3) 0;
   font-size: var(--t-s);
   display: block;
   overflow-x: auto;
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  background: var(--papel);
+}
+.prosa thead th {
+  background: var(--marfil-hondo);
+  font-weight: 700;
+  font-size: var(--t-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
 }
 .prosa th,
 .prosa td {
   text-align: left;
-  padding: 0.55rem 0.75rem;
+  padding: 0.7rem 0.9rem;
   border-bottom: 1px solid var(--linea);
   vertical-align: top;
 }
-.prosa th {
-  background: var(--marfil-hondo);
+.prosa tbody tr:last-child td {
+  border-bottom: 0;
+}
+.prosa tbody tr:nth-child(even) td {
+  background: color-mix(in srgb, var(--marfil) 55%, transparent);
+}
+.prosa td[align='right'],
+.prosa th[align='right'] {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
 }
 .prosa img {
   border-radius: var(--radio);
   margin: var(--e-3) 0;
+}
+.prosa hr {
+  border: 0;
+  height: 1px;
+  background: var(--linea);
+  margin: var(--e-4) 0;
 }
 
 /* Marca de dato pendiente en borradores (nunca llega a producción). */

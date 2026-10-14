@@ -64,7 +64,7 @@ Ya no hacía falta hervir la leche. Y sin leche hervida, no había capa de nata 
 
 Compra leche cruda del día, que la hay a la venta, y sácale la nata: hirviéndola, como las abuelas, o con una desnatadora, que saca más grasa y de mejor calidad. Tienes el paso a paso en [cómo hacer nata casera a partir de leche](/como-hacer-nata-casera/).
 
-Ten en cuenta que la leche cruda puede contener microorganismos que causan enfermedades: guárdala siempre en frío y no la consumas sin tratar.
+> **Seguridad.** La leche cruda puede contener microorganismos que causan enfermedades: guárdala siempre en frío y no la consumas sin tratar.
 
 Si prefieres comprar la nata hecha, busca la que más materia grasa tenga. Con las natas habituales del 35 %, la galleta sale más parecida a una de mantequilla que a la de siempre.
 
