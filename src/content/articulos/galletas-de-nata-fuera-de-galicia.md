@@ -3,11 +3,13 @@ titulo: 'Galletas de nata fuera de Galicia: del País Vasco a Brasil'
 descripcion: 'El País Vasco, El Bierzo, Portugal, Brasil y México también tienen galletas o dulces de nata. Qué está documentado en cada sitio y qué no se puede afirmar.'
 seccion: galletas
 estado: aprobado
-fechaPublicacion: 2026-10-15
+fechaPublicacion: 2026-10-14
 intencion: 'Informativa: «galletas de nata en otros países», «biscoito de nata», «bolachas de nata».'
 imagen:
   src: ../../assets/fotos/galletas-de-nata-con-vaso-de-leche.jpg
   alt: 'Galletas de nata caseras en un plato y en la rejilla, junto a un vaso de leche'
+etiquetas:
+  - historia
 relacionados:
   - historia-de-las-galletas-de-nata
   - como-se-hacian-las-galletas-de-nata

@@ -3,12 +3,14 @@ titulo: 'Historia de las galletas de nata: lo que se sabe y lo que falta'
 descripcion: 'Qué está documentado sobre el origen de la galleta de nata, qué no se ha podido probar todavía y dónde seguir buscando: una historia con sus fuentes y sus huecos.'
 seccion: galletas
 estado: aprobado
-fechaPublicacion: 2026-10-15
+fechaPublicacion: 2026-10-14
 intencion: 'Informativa-histórica: «historia de las galletas de nata», «origen de las galletas de nata».'
 destacado: true
 imagen:
   src: ../../assets/fotos/galletas-de-nata-finas-en-lata-antigua.jpg
   alt: 'Galletas de nata finas y doradas en una lata, junto a un molinillo antiguo'
+etiquetas:
+  - historia
 relacionados:
   - como-se-hacian-las-galletas-de-nata
   - galletas-de-nata-fuera-de-galicia

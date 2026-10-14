@@ -3,12 +3,14 @@ titulo: 'La leche en Galicia: de la cuadra a la central lechera'
 descripcion: 'Cómo pasó la leche gallega de ordeñarse y hervirse en casa a llegar envasada, y por qué ese cambio casi hizo desaparecer la galleta de nata.'
 seccion: galletas
 estado: aprobado
-fechaPublicacion: 2026-10-15
+fechaPublicacion: 2026-10-14
 intencion: 'Informativa-histórica: «leche en Galicia», «historia de la leche», «centrales lecheras», «vacas gallegas».'
 destacado: true
 imagen:
   src: ../../assets/fotos/prado-gallego-con-vacas-rubias.jpg
   alt: 'Vacas rubias y pintas pastando en un prado verde'
+etiquetas:
+  - historia
 relacionados:
   - como-se-hacian-las-galletas-de-nata
   - autentica-nata-de-vaca

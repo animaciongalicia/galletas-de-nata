@@ -17,6 +17,9 @@ ingredientes:
   - grupo: 'Para acompañar'
     items:
       - nombre: 'galletas de nata'
+etiquetas:
+  - merienda
+  - navidad
 relacionados:
   - galletas-de-nata-autenticas
   - como-conservar-galletas-de-nata

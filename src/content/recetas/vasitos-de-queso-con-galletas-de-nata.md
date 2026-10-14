@@ -20,6 +20,8 @@ ingredientes:
   - grupo: 'Para terminar'
     items:
       - nombre: 'fruta o mermelada'
+etiquetas:
+  - sin-horno
 relacionados:
   - tarta-de-galletas-de-nata
   - helado-de-nata-con-galletas

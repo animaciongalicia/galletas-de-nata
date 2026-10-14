@@ -1,6 +1,7 @@
 import type { APIContext } from 'astro';
 import { getCollection } from 'astro:content';
 import { LISTA_SECCIONES } from '../data/secciones';
+import { ETIQUETA_IDS } from '../data/etiquetas';
 import { esAprobado, getPaginas, getPiezas, getPublicadas, url } from '../lib/contenido';
 import { fechaIso } from '../lib/formato';
 
@@ -14,6 +15,8 @@ export async function GET({ site }: APIContext) {
     { loc: '/' },
     ...LISTA_SECCIONES.filter((s) => conContenido.has(s.id) || textos.has(s.id)).map((s) => ({ loc: `/${s.slug}/` })),
     { loc: '/historias-de-casa/' },
+    { loc: '/diario/', lastmod: publicadas[0]?.data.fechaPublicacion },
+    ...ETIQUETA_IDS.filter((e) => publicadas.some((p) => (p.data.etiquetas as string[]).includes(e))).map((e) => ({ loc: `/diario/${e}/` })),
     ...publicadas.map((p) => ({ loc: url(p.id), lastmod: p.data.fechaActualizacion ?? p.data.fechaPublicacion })),
     ...paginas.filter(esAprobado).map((p) => ({ loc: url(p.id), lastmod: p.data.fechaActualizacion })),
   ];

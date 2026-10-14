@@ -3,7 +3,7 @@ titulo: 'Galletas de nata ecológicas: qué garantiza el sello'
 descripcion: 'Qué significa que una galleta o una nata sean ecológicas, quién lo certifica en Galicia y por qué ecológico no es lo mismo que gallego, artesano o sin aditivos.'
 seccion: galletas
 estado: aprobado
-fechaPublicacion: 2026-10-15
+fechaPublicacion: 2026-10-14
 intencion: 'Informativa: «galletas de nata ecológicas», «nata ecológica», «qué significa ecológico».'
 imagen:
   src: ../../assets/fotos/galletas-de-nata-en-cesta.jpg

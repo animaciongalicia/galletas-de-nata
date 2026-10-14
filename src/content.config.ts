@@ -2,6 +2,7 @@ import { defineCollection, type SchemaContext } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { SECCION_IDS } from './data/secciones';
+import { ETIQUETA_IDS } from './data/etiquetas';
 
 /**
  * Estados editoriales.
@@ -38,6 +39,8 @@ const comunes = (ctx: SchemaContext) => ({
   destacado: z.boolean().default(false),
   /** Ids de otros contenidos relacionados (nombre del archivo sin .md). */
   relacionados: z.array(z.string()).default([]),
+  /** Etiquetas de ocasión para el Diario (con niños, Navidad, sin horno…). Ver src/data/etiquetas.ts. */
+  etiquetas: z.array(z.enum(ETIQUETA_IDS)).default([]),
   /** Tareas o datos que debe aportar el propietario. Solo se muestran en la preview. */
   pendientes: z.array(z.string()).default([]),
   /** Fuentes primarias que respaldan afirmaciones técnicas. */

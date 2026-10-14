@@ -1,0 +1,17 @@
+---
+import VistaDiario from '../../components/VistaDiario.astro';
+import { ETIQUETA_IDS, type EtiquetaId } from '../../data/etiquetas';
+import { getPorEtiqueta } from '../../lib/contenido';
+
+// Una página por etiqueta, solo si tiene piezas en este entorno.
+export async function getStaticPaths() {
+  const rutas = [];
+  for (const etiqueta of ETIQUETA_IDS) {
+    if ((await getPorEtiqueta(etiqueta)).length > 0) rutas.push({ params: { etiqueta } });
+  }
+  return rutas;
+}
+const etiqueta = Astro.params.etiqueta as EtiquetaId;
+---
+
+<VistaDiario etiqueta={etiqueta} />

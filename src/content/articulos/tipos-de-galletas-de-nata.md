@@ -3,7 +3,7 @@ titulo: 'Tipos de galletas de nata: las cinco familias de recetas'
 descripcion: 'Con tres ingredientes, con yema, con levadura, finas de las abuelas o sin lactosa: qué cambia en cada familia de galletas de nata y cuál es la tradicional.'
 seccion: recetas
 estado: aprobado
-fechaPublicacion: 2026-10-15
+fechaPublicacion: 2026-10-14
 intencion: 'Informativa-comparativa: «galletas de nata con huevo», «galletas de nata con levadura», «galletas de nata sin lactosa», «tipos de galletas de nata».'
 destacado: true
 imagen:

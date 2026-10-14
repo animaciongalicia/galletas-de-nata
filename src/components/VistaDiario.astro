@@ -1,0 +1,103 @@
+---
+import Base from '../layouts/Base.astro';
+import CabeceraPagina from './CabeceraPagina.astro';
+import EntradaDiario from './EntradaDiario.astro';
+import HistoriasCasa from './HistoriasCasa.astro';
+import Vacio from './Vacio.astro';
+import { LISTA_ETIQUETAS, ETIQUETAS, type EtiquetaId } from '../data/etiquetas';
+import { getPiezas, getPorEtiqueta } from '../lib/contenido';
+
+interface Props {
+  etiqueta?: EtiquetaId;
+}
+const { etiqueta } = Astro.props;
+const todas = await getPiezas();
+const piezas = etiqueta ? await getPorEtiqueta(etiqueta) : todas;
+// Solo se ofrecen las etiquetas que tienen piezas en este entorno.
+const filtros = LISTA_ETIQUETAS.filter((e) => todas.some((p) => (p.data.etiquetas as string[]).includes(e.id)));
+const [primera, ...resto] = piezas;
+const info = etiqueta ? ETIQUETAS[etiqueta] : undefined;
+const migas = [{ nombre: 'Diario', href: '/diario/' }, ...(info ? [{ nombre: info.nombre, href: `/diario/${etiqueta}/` }] : [])];
+---
+
+<Base
+  titulo={info ? `${info.nombre}: galletas de nata y postres` : 'Diario: lo último sobre galletas de nata'}
+  descripcion={info?.descripcion ?? 'Todo lo publicado sobre la galleta de nata gallega, del más reciente al más antiguo: recetas, postres, historia y nata.'}
+>
+  <CabeceraPagina
+    migas={migas}
+    antetitulo="Diario"
+    titulo={info ? info.nombre : 'Lo último,'}
+    cursiva={info ? undefined : 'día a día'}
+    entradilla={info?.descripcion ?? 'Recetas, postres, historia y nata: todo lo publicado, del más reciente al más antiguo.'}
+  >
+    {
+      filtros.length > 0 && (
+        <nav class="filtros" aria-label="Filtrar el diario">
+          <a href="/diario/" aria-current={!etiqueta ? 'page' : undefined}>Todo</a>
+          {filtros.map((e) => (
+            <a href={`/diario/${e.id}/`} aria-current={etiqueta === e.id ? 'page' : undefined}>
+              {e.nombre}
+            </a>
+          ))}
+        </nav>
+      )
+    }
+  </CabeceraPagina>
+
+  <div class="envoltorio diario">
+    {
+      primera ? (
+        <>
+          <EntradaDiario pieza={primera} destacada />
+          {resto.length > 0 && (
+            <div class="lista">
+              {resto.map((p) => (
+                <EntradaDiario pieza={p} />
+              ))}
+            </div>
+          )}
+        </>
+      ) : (
+        <Vacio mensaje="Todavía no hay nada publicado aquí." />
+      )
+    }
+  </div>
+
+  <HistoriasCasa />
+</Base>
+
+<style>
+  .filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: var(--e-3);
+  }
+  .filtros a {
+    padding: 0.4rem 0.9rem;
+    border: 1px solid color-mix(in srgb, var(--tinta) 30%, transparent);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--tinta);
+    text-decoration: none;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .filtros a:hover {
+    border-color: var(--tinta);
+  }
+  .filtros a[aria-current='page'] {
+    background: var(--tinta);
+    border-color: var(--tinta);
+    color: var(--marfil);
+  }
+  .diario {
+    padding-bottom: var(--e-5);
+  }
+  .lista {
+    border-bottom: 1px solid var(--linea);
+  }
+</style>

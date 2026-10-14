@@ -14,7 +14,8 @@ import fotoGuardar from '../assets/fotos/sacar-la-nata-de-la-leche-cocida.jpg';
 import fotoHorno from '../assets/fotos/galletas-de-nata-en-la-rejilla.jpg';
 
 const piezas = await getPiezas();
-const destacadas = [...piezas.filter((p) => p.data.destacado), ...piezas.filter((p) => !p.data.destacado)].slice(0, 8);
+// Las piezas ya vienen ordenadas de la más reciente a la más antigua.
+const destacadas = piezas.slice(0, 4);
 const historia = piezas.find((p) => p.id === 'como-se-hacian-las-galletas-de-nata');
 const guiaNata = piezas.find((p) => p.id === 'autentica-nata-de-vaca');
 
@@ -182,14 +183,14 @@ const esquemas = [
     {guiaNata && <p class="mas"><a class="enlace-flecha" href={url(guiaNata.id)}>Por qué la nata lo cambia todo →</a></p>}
   </section>
 
-  <!-- 6. Hazlas tú -->
+  <!-- 6. Lo último del Diario -->
   <section class="envoltorio banda banda--crema guias" aria-labelledby="guias-titulo">
     <div class="bloque-cabecera">
-      <p class="antetitulo">Hazlas tú</p>
-      <h2 id="guias-titulo">Recetas, nata y postres</h2>
+      <p class="antetitulo">Diario</p>
+      <h2 id="guias-titulo">Lo último del Diario</h2>
     </div>
     {destacadas.length > 0 ? <Rejilla piezas={destacadas} /> : <Vacio mensaje="Los primeros contenidos se publicarán muy pronto." />}
-    <p class="mas"><a class="enlace-flecha" href="/buscar/">Ver todos los contenidos →</a></p>
+    <p class="mas"><a class="enlace-flecha" href="/diario/">Ver el diario completo →</a></p>
   </section>
 
   <!-- 7. Historias de casa -->

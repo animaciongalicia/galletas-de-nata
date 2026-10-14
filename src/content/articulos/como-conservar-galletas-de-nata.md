@@ -8,6 +8,8 @@ imagen:
   src: ../../assets/fotos/galletas-de-nata-en-cesta.jpg
   alt: 'Galletas de nata en una cesta de mimbre forrada con papel'
   provisional: false
+etiquetas:
+  - para-regalar
 relacionados:
   - errores-textura-galletas-de-nata
   - galletas-de-nata-autenticas

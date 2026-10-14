@@ -22,8 +22,9 @@ const paginas = (await getPaginas()).filter((p) => p.data.enPie);
     <nav aria-label="Participa">
       <h2>Participa</h2>
       <ul>
+        <li><a href="/diario/">Diario</a></li>
         <li><a href="/historias-de-casa/">Historias de casa</a></li>
-        <li><a href="/buscar/">Todos los contenidos</a></li>
+        <li><a href="/buscar/">Buscar</a></li>
         <li><a href="/rss.xml">RSS</a></li>
         {SITIO.correoEditorial && <li><a href={`mailto:${SITIO.correoEditorial}`}>{SITIO.correoEditorial}</a></li>}
       </ul>

@@ -1,0 +1,154 @@
+---
+// Fila del Diario: fecha, sección, título, entradilla y miniatura.
+import Figura from './Figura.astro';
+import { SECCIONES } from '../data/secciones';
+import { ETIQUETAS } from '../data/etiquetas';
+import { url, esReceta, type Pieza } from '../lib/contenido';
+import { fecha, fechaIso, tipografia } from '../lib/formato';
+
+interface Props {
+  pieza: Pieza;
+  destacada?: boolean;
+}
+const { pieza, destacada = false } = Astro.props;
+const { data } = pieza;
+const Titulo = destacada ? 'h2' : 'h3';
+---
+
+<article class:list={['entrada', { 'entrada--destacada': destacada }]}>
+  <div class="texto">
+    <p class="meta">
+      {data.fechaPublicacion && <time datetime={fechaIso(data.fechaPublicacion)}>{fecha(data.fechaPublicacion)}</time>}
+      <span>{SECCIONES[data.seccion].corto}{esReceta(pieza) && ' · Receta'}</span>
+    </p>
+    <Titulo class="titulo"><a href={url(pieza.id)}>{data.titulo}</a></Titulo>
+    <p class="descripcion">{tipografia(data.descripcion)}</p>
+    {data.etiquetas.length > 0 && (
+      <ul class="etiquetas" aria-label="Etiquetas">
+        {data.etiquetas.map((e) => <li>{ETIQUETAS[e].nombre}</li>)}
+      </ul>
+    )}
+  </div>
+  <div class="miniatura">
+    {data.imagen.provisional ? (
+      <div class="sin-foto" aria-hidden="true"><span>{SECCIONES[data.seccion].corto}</span></div>
+    ) : (
+      <Figura imagen={data.imagen} proporcion={destacada ? '4 / 3' : '3 / 2'} anchos={destacada ? [480, 800] : [320, 480]} tamanos={destacada ? '(max-width: 48rem) 100vw, 30rem' : '(max-width: 48rem) 40vw, 14rem'} />
+    )}
+  </div>
+</article>
+
+<style>
+  .entrada {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 14rem;
+    gap: var(--e-4);
+    align-items: center;
+    padding: var(--e-3) 0;
+    border-top: 1px solid var(--linea);
+  }
+  .entrada--destacada {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 30rem);
+    padding: 0 0 var(--e-4);
+    border-top: 0;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    margin: 0 0 var(--e-1);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--tostado);
+  }
+  .meta time {
+    color: var(--tinta-suave);
+  }
+  .titulo {
+    margin: 0 0 var(--e-1);
+    font-size: 1.45rem;
+    font-weight: 450;
+    line-height: 1.2;
+  }
+  .entrada--destacada .titulo {
+    font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1.1;
+  }
+  .titulo a {
+    color: var(--tinta);
+    text-decoration: none;
+  }
+  .titulo a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+  .entrada:hover .titulo a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--galleta);
+    text-underline-offset: 0.18em;
+  }
+  .entrada:has(a:focus-visible) {
+    outline: 2px solid var(--oliva);
+    outline-offset: 6px;
+  }
+  .titulo a:focus-visible {
+    outline: none;
+  }
+  .descripcion {
+    margin: 0;
+    color: var(--tinta-suave);
+    font-size: var(--t-s);
+    max-width: 40rem;
+  }
+  .entrada--destacada .descripcion {
+    font-family: var(--f-titulo);
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  .etiquetas {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: var(--e-2) 0 0;
+    padding: 0;
+  }
+  .etiquetas li {
+    font-size: 0.72rem;
+    padding: 0.15rem 0.55rem;
+    border: 1px solid var(--linea);
+    color: var(--tinta-suave);
+  }
+  .sin-foto {
+    aspect-ratio: 3 / 2;
+    display: grid;
+    place-items: center;
+    background: var(--marfil-hondo);
+    font-family: var(--f-titulo);
+    font-style: italic;
+    color: var(--tostado);
+    font-size: 1.3rem;
+  }
+  @media (max-width: 48rem) {
+    .entrada {
+      grid-template-columns: minmax(0, 1fr) 7rem;
+      gap: var(--e-2);
+      align-items: start;
+    }
+    .entrada--destacada {
+      grid-template-columns: 1fr;
+    }
+    .entrada--destacada .miniatura {
+      order: -1;
+    }
+    .entrada:not(.entrada--destacada) .descripcion {
+      display: none;
+    }
+  }
+</style>

@@ -2,6 +2,7 @@
 import CabeceraPagina from './CabeceraPagina.astro';
 import PanelEditorial from './PanelEditorial.astro';
 import { SECCIONES } from '../data/secciones';
+import { ETIQUETAS } from '../data/etiquetas';
 import { ES_PRODUCCION, url, urlSeccion, esReceta, imagenPublicable, type Pieza } from '../lib/contenido';
 import { fecha, fechaIso } from '../lib/formato';
 
@@ -40,6 +41,7 @@ const imagen = imagenPublicable(data.imagen);
       )
     }
     {!esReceta(pieza) && <span>{lectura} min de lectura</span>}
+    {data.etiquetas.map((e) => <a class="etiqueta" href={`/diario/${e}/`}>{ETIQUETAS[e].nombre}</a>)}
     {
       actualizada && (
         <span>
@@ -63,6 +65,14 @@ const imagen = imagenPublicable(data.imagen);
     margin: var(--e-3) 0 0;
     padding-top: var(--e-2);
     border-top: 1px solid color-mix(in srgb, var(--tinta) 25%, transparent);
+  }
+  .etiqueta {
+    color: var(--tostado);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+  .etiqueta:hover {
+    color: var(--tinta);
   }
   .falta {
     color: var(--aviso);

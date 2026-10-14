@@ -1,0 +1,24 @@
+# Publicación programada: redespliega la web cada mañana para que salgan las piezas
+# aprobadas cuya fechaPublicacion es la de ese día.
+# Necesita el secreto VERCEL_DEPLOY_HOOK (Vercel → proyecto → Settings → Git → Deploy Hooks).
+# Sin el secreto, no hace nada.
+name: Publicación diaria
+
+on:
+  schedule:
+    - cron: '7 5 * * *' # 05:07 UTC, 07:07 en Galicia en horario de verano
+  workflow_dispatch:
+
+jobs:
+  redesplegar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Llamar al deploy hook de Vercel
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "Falta el secreto VERCEL_DEPLOY_HOOK: no se redespliega."
+            exit 0
+          fi
+          curl -fsS -X POST "$HOOK"

@@ -4,6 +4,7 @@ import Marca from './Marca.astro';
 
 const enlaces = [
   ...LISTA_SECCIONES.map((s) => ({ href: `/${s.slug}/`, texto: s.nombre })),
+  { href: '/diario/', texto: 'Diario' },
   { href: '/historias-de-casa/', texto: 'Historias de casa' },
 ];
 const ruta = Astro.url.pathname;

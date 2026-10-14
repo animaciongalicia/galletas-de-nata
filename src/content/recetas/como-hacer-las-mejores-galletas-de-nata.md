@@ -44,6 +44,9 @@ consejos:
   - 'Pesa en gramos. Las recetas de las abuelas iban por vasos: un vaso de nata, uno de azúcar y unos tres de harina. Con báscula la galleta sale igual cada vez.'
   - 'Si la masa queda muy pegajosa, añade un poco más de harina, poco a poco.'
   - 'Guárdalas, una vez frías, en una lata o un tarro bien cerrado para que no cojan humedad.'
+etiquetas:
+  - con-ninos
+  - merienda
 relacionados:
   - autentica-nata-de-vaca
   - galletas-de-nata-o-de-mantequilla

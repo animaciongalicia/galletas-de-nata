@@ -20,7 +20,13 @@ export type Pieza = Articulo | Receta;
 /** Marca que deja un texto en el cuerpo cuando falta un dato real. */
 const MARCA_PENDIENTE = /PENDIENTE|class="pendiente"/;
 
-const visible = (e: { data: { estado: string } }) => !ES_PRODUCCION || e.data.estado === 'aprobado';
+/**
+ * En producción solo se ve lo aprobado y, si tiene fecha de publicación, cuando esa fecha ha llegado.
+ * Así se pueden dejar piezas aprobadas con fecha futura: salen solas en el primer despliegue de ese día.
+ */
+const AHORA = new Date();
+const visible = (e: { data: { estado: string; fechaPublicacion?: Date } }) =>
+  !ES_PRODUCCION || (e.data.estado === 'aprobado' && (!e.data.fechaPublicacion || e.data.fechaPublicacion <= AHORA));
 
 export const esAprobado = (e: { data: { estado: string } }) => e.data.estado === 'aprobado';
 
@@ -43,7 +49,7 @@ async function cargar() {
 
   // Todas las URL cuelgan de la raíz: un id no puede repetirse ni chocar con una sección.
   const usados = new Set<string>(Object.values(SECCIONES).map((s) => s.slug));
-  ['buscar', 'rss.xml', 'sitemap.xml', 'robots.txt', '404'].forEach((s) => usados.add(s));
+  ['buscar', 'diario', 'historias-de-casa', 'rss.xml', 'sitemap.xml', 'robots.txt', '404'].forEach((s) => usados.add(s));
   for (const e of [...piezas, ...paginas]) {
     if (usados.has(e.id)) throw new Error(`URL duplicada: /${e.id}/. Cambia el nombre del archivo.`);
     usados.add(e.id);
@@ -93,6 +99,11 @@ export async function getRelacionadas(pieza: Pieza, max = 3) {
 }
 
 export const url = (id: string) => `/${id}/`;
+
+/** Piezas de una etiqueta de ocasión, más recientes primero. */
+export async function getPorEtiqueta(etiqueta: string) {
+  return (await getPiezas()).filter((p) => (p.data.etiquetas as string[]).includes(etiqueta));
+}
 export const urlSeccion = (id: SeccionId) => `/${SECCIONES[id].slug}/`;
 export const esReceta = (p: Pieza): p is Receta => p.collection === 'recetas';
 

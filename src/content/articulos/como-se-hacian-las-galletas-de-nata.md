@@ -10,6 +10,8 @@ imagen:
   src: ../../assets/fotos/nata-casera-con-pan.jpg
   alt: 'Tarrinas de nata casera junto a un pan con nata untada'
   provisional: false
+etiquetas:
+  - historia
 relacionados:
   - galletas-de-nata-autenticas
   - como-hacer-nata-casera

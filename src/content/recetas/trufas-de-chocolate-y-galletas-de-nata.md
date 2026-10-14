@@ -14,6 +14,9 @@ ingredientes:
       - nombre: 'galletas de nata'
       - nombre: 'chocolate negro'
       - nombre: 'nata'
+etiquetas:
+  - con-ninos
+  - navidad
 relacionados:
   - tarta-de-galletas-de-nata
   - helado-de-nata-con-galletas

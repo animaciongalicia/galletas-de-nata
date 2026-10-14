@@ -3,7 +3,7 @@ titulo: 'Preguntas frecuentes sobre las galletas de nata'
 descripcion: 'Qué llevan, qué nata usar, por qué a veces saben a mantequilla, si son solo gallegas y cómo se guardan: respuestas cortas a las dudas más comunes.'
 seccion: galletas
 estado: aprobado
-fechaPublicacion: 2026-10-15
+fechaPublicacion: 2026-10-14
 intencion: 'Informativa: dudas frecuentes sobre «galletas de nata».'
 imagen:
   src: ../../assets/fotos/galletas-de-nata-en-la-rejilla.jpg

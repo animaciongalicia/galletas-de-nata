@@ -3,7 +3,7 @@ titulo: 'Glosario de la nata: palabras para entender la galleta'
 descripcion: 'Materia grasa, doble nata, nata para montar, desnatadora, leche cruda: qué significa cada palabra y qué cambia en una galleta de nata.'
 seccion: nata
 estado: aprobado
-fechaPublicacion: 2026-10-15
+fechaPublicacion: 2026-10-14
 intencion: 'Informativa: «doble nata», «qué es la materia grasa», «tipos de nata», «nata para montar porcentaje».'
 imagen:
   src: ../../assets/fotos/nata-en-cazo-de-cobre.jpg

@@ -14,6 +14,10 @@ ingredientes:
         nota: 'tipo por confirmar'
       - nombre: 'fruta de temporada'
       - nombre: 'galletas de nata'
+etiquetas:
+  - sin-horno
+  - con-ninos
+  - merienda
 relacionados:
   - tarta-de-galletas-de-nata
   - postre-de-limon-con-galletas-de-nata

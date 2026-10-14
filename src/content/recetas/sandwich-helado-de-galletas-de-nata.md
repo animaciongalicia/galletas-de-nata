@@ -14,6 +14,8 @@ ingredientes:
       - nombre: 'galletas de nata'
       - nombre: 'nata para montar'
       - nombre: 'leche condensada'
+etiquetas:
+  - con-ninos
 relacionados:
   - tarta-de-galletas-de-nata
   - helado-de-nata-con-galletas
