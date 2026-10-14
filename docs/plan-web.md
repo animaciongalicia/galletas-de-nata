@@ -60,12 +60,13 @@ Probar y medir, uno por fin de semana, de más fácil a más difícil:
 
 ## 4. Diseño y acabados
 
-**Hecho en esta ronda:**
-- Ilustración de marca (galletas dibujadas, un tono por sección) en lugar de imágenes de relleno.
-- Portada: franja de datos clave (3 ingredientes · 70-80 % · ≈ 50 %), secciones numeradas, bloque del proyecto.
-- Tarjetas con imagen a sangre y elevación al pasar el ratón.
-- Prosa: tipografía mayor, entradilla destacada, h2 con filete, viñetas propias, tablas con cabecera y filas alternas, avisos en recuadro.
-- Fuentes en pequeño, sin enlaces. Tiempo de lectura en artículos. Espacio fijo entre número y unidad («35 %» no se parte).
+**Identidad (revisada el 14-10-2026):** sobria y editorial, sin dibujos infantiles.
+- Tipografía de títulos: Newsreader (serif de prensa, pesos finos). Texto: Source Sans 3.
+- Color: marfil, tinta casi negra, un verde hondo y un bronce apagado para detalles.
+- Formas: esquinas rectas, filetes finos, botones rectangulares en versalitas.
+- Símbolo: sello de línea fina con las iniciales «GN». Favicon e imagen para redes en la misma línea.
+- Sin foto, no se muestra nada (en producción). La foto propia aparece sola cuando se sube.
+- Tablas tipo libro (filetes arriba y abajo), avisos con filete lateral, pasos de receta con numeral en cursiva.
 
 **Siguiente:**
 - Cuando lleguen fotos: portada con foto real a toda anchura y galería de pasos en la receta.

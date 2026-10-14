@@ -1,26 +1,27 @@
-@import '@fontsource-variable/fraunces';
+@import '@fontsource-variable/newsreader/opsz.css';
+@import '@fontsource-variable/newsreader/opsz-italic.css';
 @import '@fontsource-variable/source-sans-3';
 
 /* ===== Variables de diseño ===== */
 :root {
-  /* Color */
-  --marfil: #f8f3e8;
-  --marfil-hondo: #efe6d3;
-  --papel: #fffcf5;
-  --tinta: #2a2219;
-  --tinta-suave: #5b4e40;
-  --oliva: #56632c;
-  --oliva-hondo: #3f4a1f;
-  --oliva-claro: #e5e8d2;
-  --galleta: #c98b4a;
-  --galleta-claro: #ecd3a8;
-  --tostado: #8a5526;
-  --linea: #ddd0b8;
+  /* Color: marfil, tinta y un verde hondo. Sobrio, sin colores de golosina. */
+  --marfil: #f6f3ec;
+  --marfil-hondo: #ece6da;
+  --papel: #fbf9f4;
+  --tinta: #1b1916;
+  --tinta-suave: #5a554d;
+  --oliva: #34402c;
+  --oliva-hondo: #232b1d;
+  --oliva-claro: #e8e8de;
+  --galleta: #9c7647;
+  --galleta-claro: #d9c7a6;
+  --tostado: #7a5631;
+  --linea: #d9d2c4;
   --aviso: #8a3d12;
   --aviso-fondo: #fbe9d7;
 
   /* Tipografía */
-  --f-titulo: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
+  --f-titulo: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
   --f-texto: 'Source Sans 3 Variable', 'Segoe UI', system-ui, sans-serif;
   --t-xs: 0.85rem;
   --t-s: 0.95rem;
@@ -37,8 +38,8 @@
   --e-5: 4rem;
   --ancho: 72rem;
   --ancho-texto: 42rem;
-  --radio: 14px;
-  --sombra: 0 1px 2px rgb(60 40 20 / 5%), 0 10px 30px -8px rgb(60 40 20 / 14%);
+  --radio: 2px;
+  --sombra: 0 1px 2px rgb(27 25 22 / 6%);
 }
 
 /* ===== Base ===== */
@@ -69,13 +70,13 @@ h3,
 h4 {
   font-family: var(--f-titulo);
   font-optical-sizing: auto;
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
+  font-weight: 450;
+  line-height: 1.12;
+  letter-spacing: -0.012em;
   margin: 0 0 var(--e-2);
   text-wrap: balance;
 }
-h1 { font-size: var(--t-xxl); font-weight: 650; letter-spacing: -0.02em; }
+h1 { font-size: var(--t-xxl); font-weight: 400; letter-spacing: -0.02em; line-height: 1.05; }
 h2 { font-size: var(--t-xl); margin-top: var(--e-4); }
 h3 { font-size: var(--t-l); margin-top: var(--e-3); }
 
@@ -95,9 +96,8 @@ a:hover {
 }
 
 :focus-visible {
-  outline: 3px solid var(--galleta);
+  outline: 2px solid var(--oliva);
   outline-offset: 3px;
-  border-radius: 4px;
 }
 
 /* "hidden" siempre gana: los controles que dependen de JavaScript nacen ocultos. */
@@ -150,17 +150,19 @@ img {
 
 .antetitulo {
   font-family: var(--f-texto);
-  font-size: var(--t-xs);
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--oliva);
-  margin: 0 0 var(--e-1);
+  color: var(--tostado);
+  margin: 0 0 var(--e-2);
 }
 
 .entradilla {
+  font-family: var(--f-titulo);
   font-size: var(--t-l);
-  line-height: 1.5;
+  font-weight: 350;
+  line-height: 1.45;
   color: var(--tinta-suave);
   max-width: 38rem;
 }
@@ -169,29 +171,49 @@ img {
 .boton {
   display: inline-flex;
   align-items: center;
-  gap: 0.5em;
+  gap: 0.6em;
   min-height: 48px;
-  padding: 0.7rem 1.3rem;
-  border-radius: 999px;
-  border: 2px solid var(--oliva);
-  background: var(--oliva);
-  color: #fff;
-  font: 600 var(--t-s) / 1.2 var(--f-texto);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0;
+  border: 1px solid var(--tinta);
+  background: var(--tinta);
+  color: var(--papel);
+  font: 600 0.78rem / 1.2 var(--f-texto);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 .boton:hover {
-  background: var(--oliva-hondo);
-  border-color: var(--oliva-hondo);
-  color: #fff;
+  background: var(--oliva);
+  border-color: var(--oliva);
+  color: var(--papel);
 }
 .boton--claro {
   background: transparent;
-  color: var(--oliva-hondo);
+  color: var(--tinta);
 }
 .boton--claro:hover {
-  background: var(--oliva-claro);
-  color: var(--oliva-hondo);
+  background: var(--tinta);
+  border-color: var(--tinta);
+  color: var(--papel);
+}
+
+/* Enlace de texto con flecha, para llamadas secundarias. */
+.enlace-flecha {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tinta);
+  text-decoration: none;
+  border-bottom: 1px solid var(--tinta);
+  padding-bottom: 0.2rem;
+}
+.enlace-flecha:hover {
+  color: var(--oliva);
+  border-color: var(--oliva);
 }
 
 /* ===== Prosa de artículos ===== */
@@ -200,38 +222,30 @@ img {
   line-height: 1.72;
 }
 .prosa > p:first-child {
-  font-size: 1.28rem;
-  line-height: 1.6;
+  font-family: var(--f-titulo);
+  font-size: 1.42rem;
+  font-weight: 380;
+  line-height: 1.5;
   color: var(--tinta);
 }
 .prosa h2 {
   scroll-margin-top: var(--e-3);
   margin-top: var(--e-5);
-  padding-top: var(--e-3);
-  border-top: 1px solid var(--linea);
-  position: relative;
-}
-.prosa h2::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: 0;
-  width: 3rem;
-  height: 2px;
-  background: var(--galleta);
+  font-size: clamp(1.6rem, 1.3rem + 1.1vw, 2.1rem);
 }
 .prosa h3 {
   scroll-margin-top: var(--e-3);
   font-size: 1.3rem;
+  font-weight: 500;
 }
 .prosa strong {
-  font-weight: 650;
+  font-weight: 620;
   color: var(--tinta);
 }
 .prosa a {
   color: var(--oliva-hondo);
-  text-decoration-color: color-mix(in srgb, var(--galleta) 70%, transparent);
-  text-decoration-thickness: 2px;
+  text-decoration-color: var(--galleta-claro);
+  text-decoration-thickness: 1px;
 }
 .prosa a:hover {
   color: var(--tostado);
@@ -246,11 +260,10 @@ img {
 .prosa ul > li::before {
   content: '';
   position: absolute;
-  left: -1.15rem;
-  top: 0.68em;
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 50%;
+  left: -1.2rem;
+  top: 0.82em;
+  width: 0.6rem;
+  height: 1px;
   background: var(--galleta);
 }
 .prosa ol {
@@ -258,7 +271,7 @@ img {
 }
 .prosa ol > li::marker {
   color: var(--tostado);
-  font-weight: 700;
+  font-weight: 500;
   font-family: var(--f-titulo);
 }
 .prosa li + li {
@@ -268,9 +281,8 @@ img {
 .prosa blockquote {
   margin: var(--e-3) 0;
   padding: var(--e-2) var(--e-3);
-  border-left: 4px solid var(--oliva);
-  border-radius: 0 var(--radio) var(--radio) 0;
-  background: var(--oliva-claro);
+  border-left: 2px solid var(--oliva);
+  background: var(--marfil-hondo);
   font-size: var(--t-m);
   color: var(--tinta);
 }
@@ -279,36 +291,31 @@ img {
 }
 .prosa table {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
+  border-collapse: collapse;
   margin: var(--e-3) 0;
   font-size: var(--t-s);
   display: block;
   overflow-x: auto;
-  border: 1px solid var(--linea);
-  border-radius: var(--radio);
-  background: var(--papel);
+  border-top: 2px solid var(--tinta);
+  border-bottom: 1px solid var(--tinta);
 }
 .prosa thead th {
-  background: var(--marfil-hondo);
-  font-weight: 700;
-  font-size: var(--t-xs);
-  letter-spacing: 0.04em;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--tinta-suave);
+  border-bottom: 1px solid var(--tinta);
 }
 .prosa th,
 .prosa td {
   text-align: left;
-  padding: 0.7rem 0.9rem;
+  padding: 0.7rem 0.9rem 0.7rem 0;
   border-bottom: 1px solid var(--linea);
   vertical-align: top;
 }
 .prosa tbody tr:last-child td {
   border-bottom: 0;
-}
-.prosa tbody tr:nth-child(even) td {
-  background: color-mix(in srgb, var(--marfil) 55%, transparent);
 }
 .prosa td[align='right'],
 .prosa th[align='right'] {

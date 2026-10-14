@@ -169,8 +169,8 @@ const visibles = esAprobado(pieza) ? datos.filter((d) => d.valor) : datos;
     font-size: var(--t-xs);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--oliva);
-    font-weight: 700;
+    color: var(--tostado);
+    font-weight: 600;
   }
   dd {
     margin: 0;
@@ -232,20 +232,16 @@ const visibles = esAprobado(pieza) ? datos.filter((d) => d.valor) : datos;
     content: counter(paso);
     position: absolute;
     left: 0;
-    top: 0.1rem;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background: var(--oliva);
-    color: #fff;
-    font-weight: 700;
-    display: grid;
-    place-items: center;
-    font-size: var(--t-s);
+    top: -0.15rem;
+    font-family: var(--f-titulo);
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--tostado);
   }
   .consejos {
-    background: var(--oliva-claro);
-    border-radius: var(--radio);
+    background: var(--marfil-hondo);
+    border-left: 2px solid var(--oliva);
     padding: var(--e-2) var(--e-3);
   }
   .consejos h3 {
@@ -263,9 +259,7 @@ const visibles = esAprobado(pieza) ? datos.filter((d) => d.valor) : datos;
       display: none;
     }
     .pasos li::before {
-      background: none;
       color: #000;
-      border: 1px solid #000;
     }
   }
 </style>

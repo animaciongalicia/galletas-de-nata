@@ -14,7 +14,6 @@ const { pieza } = Astro.props;
 const { data } = pieza;
 const seccion = SECCIONES[data.seccion];
 const sobre = await urlPaginaVisible('sobre-el-proyecto');
-const TONOS = { galletas: 'galleta', recetas: 'tostado', postres: 'crema', nata: 'oliva' } as const;
 // Minutos de lectura, calculados a partir del texto (unas 200 palabras por minuto).
 const palabras = (pieza.body ?? '').replace(/<[^>]+>|[#*|>\-`\[\]()]/g, ' ').split(/\s+/).filter(Boolean).length;
 const lectura = Math.max(1, Math.round(palabras / 200));
@@ -56,7 +55,7 @@ const actualizada =
     </p>
     <PanelEditorial estado={data.estado} pendientes={data.pendientes} intencion={data.intencion} />
   </div>
-  <Figura imagen={data.imagen} prioridad pie proporcion={data.imagen.provisional ? '16 / 5' : '16 / 9'} clase="principal" semilla={pieza.id} tono={TONOS[data.seccion]} densidad={7} />
+  <Figura imagen={data.imagen} prioridad pie proporcion="16 / 9" clase="principal" />
 </header>
 
 <style>
@@ -66,13 +65,20 @@ const actualizada =
   h1 {
     margin-bottom: var(--e-2);
   }
+  .cabecera-pieza {
+    padding-bottom: var(--e-3);
+  }
   .firma {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.25rem 1.25rem;
-    font-size: var(--t-s);
+    gap: 0.25rem 1.5rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--tinta-suave);
-    margin: var(--e-2) 0 var(--e-3);
+    margin: var(--e-3) 0;
+    padding-top: var(--e-2);
+    border-top: 1px solid var(--linea);
   }
   .falta {
     color: var(--aviso);

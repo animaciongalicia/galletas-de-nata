@@ -68,16 +68,14 @@ function svg(id, etiqueta, w, h) {
 // No es una fotografía: solo el nombre y el símbolo del portal.
 const MARCA = new URL('../src/assets/marca/', import.meta.url);
 const marca = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="100%" height="100%" fill="#F8F3E8"/>
-  <rect x="0" y="560" width="1200" height="70" fill="#56632C"/>
-  <g transform="translate(110 150) scale(5)">
-    <path d="M32 3c3 0 4 3 7 3.6 3 .6 5.3-1.6 8-.2 2.6 1.4 2.4 4.6 4.6 6.6 2.2 2 5.4 1.6 6.8 4.2 1.4 2.6-.8 5-.2 8 .6 3 3.6 4 3.6 7s-3 4-3.6 7c-.6 3 1.6 5.3.2 8-1.4 2.6-4.6 2.4-6.6 4.6-2 2.2-1.6 5.4-4.2 6.8-2.6 1.4-5-.8-8-.2-3 .6-4 3.6-7 3.6s-4-3-7-3.6c-3-.6-5.3 1.6-8 .2-2.6-1.4-2.4-4.6-4.6-6.6-2.2-2-5.4-1.6-6.8-4.2-1.4-2.6.8-5 .2-8C5.8 36 3 35 3 32s3-4 3.6-7c.6-3-1.6-5.3-.2-8 1.4-2.6 4.6-2.4 6.6-4.6 2-2.2 1.6-5.4 4.2-6.8 2.6-1.4 5 .8 8 .2C28 5.8 29 3 32 3Z" fill="#D9A35E"/>
-    <circle cx="32" cy="32" r="19" fill="none" stroke="#FFF3DC" stroke-width="2" stroke-dasharray="3 4"/>
-    <g fill="#8A5526"><circle cx="25" cy="26" r="1.8"/><circle cx="39" cy="26" r="1.8"/><circle cx="32" cy="32" r="1.8"/><circle cx="25" cy="38" r="1.8"/><circle cx="39" cy="38" r="1.8"/></g>
-  </g>
-  <text x="510" y="300" font-family="Georgia, DejaVu Serif, serif" font-weight="700" font-size="92" fill="#2A2219">Galletas</text>
-  <text x="510" y="400" font-family="Georgia, DejaVu Serif, serif" font-weight="700" font-size="92" fill="#2A2219">de Nata</text>
-  <text x="512" y="460" font-family="Inter, DejaVu Sans, sans-serif" font-size="30" fill="#5B4E40">Recetas caseras, postres y nata</text>
+  <rect width="100%" height="100%" fill="#F6F3EC"/>
+  <rect x="40" y="40" width="1120" height="550" fill="none" stroke="#1B1916" stroke-width="1.5"/>
+  <circle cx="600" cy="165" r="46" fill="none" stroke="#1B1916" stroke-width="2"/>
+  <circle cx="600" cy="165" r="39" fill="none" stroke="#1B1916" stroke-width="1"/>
+  <text x="600" y="178" text-anchor="middle" font-family="Georgia, DejaVu Serif, serif" font-style="italic" font-size="36" fill="#1B1916">GN</text>
+  <text x="600" y="330" text-anchor="middle" font-family="Georgia, DejaVu Serif, serif" font-size="96" fill="#1B1916">Galletas de Nata</text>
+  <line x1="520" y1="380" x2="680" y2="380" stroke="#9C7647" stroke-width="1.5"/>
+  <text x="600" y="440" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="22" letter-spacing="7" fill="#5A554D">LA GALLETA DE NATA GALLEGA</text>
 </svg>`;
 await mkdir(MARCA, { recursive: true });
 await sharp(Buffer.from(marca)).jpeg({ quality: 88, mozjpeg: true }).toFile(new URL('og-galletas-de-nata.jpg', MARCA).pathname);

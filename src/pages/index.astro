@@ -1,7 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
 import Figura from '../components/Figura.astro';
-import Ilustracion from '../components/Ilustracion.astro';
 import Rejilla from '../components/Rejilla.astro';
 import Vacio from '../components/Vacio.astro';
 import { LISTA_SECCIONES } from '../data/secciones';
@@ -35,23 +34,25 @@ const esquemas = [
   esquemas={esquemas}
 >
   <section class="envoltorio heroe">
-    <div class="heroe-texto">
-      <p class="antetitulo">Galicia · horno · nata</p>
-      <h1>Galletas de <em>Nata</em></h1>
+    <p class="antetitulo">Historia, recetas y técnica</p>
+    <h1>La galleta <em>de nata</em> gallega</h1>
+    <div class="heroe-pie">
       <p class="entradilla">
-        Las galletas de nata gallegas de siempre: cómo se hacían en casa, qué nata necesitan y todo lo que puedes
-        preparar con ellas. Explicado por un antiguo fabricante de galletas de nata.
+        Cómo se hacía en casa, qué nata necesita y todo lo que puedes preparar con ella. Explicado por un antiguo
+        fabricante de galletas de nata.
       </p>
       <div class="acciones">
         <a class="boton" href="/recetas/">Ver recetas</a>
-        <a class="boton boton--claro" href="/postres-con-galletas/">Descubrir postres</a>
-        <a class="boton boton--claro" href="/nata-y-elaboracion/">Aprender sobre la nata</a>
+        <a class="enlace-flecha" href="/nata-y-elaboracion/">Entender la nata →</a>
       </div>
     </div>
-    <div class="heroe-imagen">
-      <Figura imagen={imagenPortada} prioridad proporcion="4 / 3" semilla="portada-galletas" densidad={5} tamanos="(max-width: 62rem) 100vw, 40rem" anchos={[480, 800, 1200, 1600]} />
-    </div>
   </section>
+
+  {!imagenPortada.provisional && (
+    <div class="envoltorio heroe-imagen">
+      <Figura imagen={imagenPortada} prioridad proporcion="21 / 9" tamanos="(max-width: 72rem) 100vw, 72rem" anchos={[640, 1000, 1400, 2000]} />
+    </div>
+  )}
 
   <section class="envoltorio datos" aria-labelledby="datos-titulo">
     <h2 id="datos-titulo" class="sr-only">La galleta de nata en tres datos</h2>
@@ -61,15 +62,15 @@ const esquemas = [
         <dd><strong>ingredientes</strong> en la receta tradicional: nata, azúcar y harina.</dd>
       </div>
       <div>
-        <dt>70-80 %</dt>
+        <dt>70-80&nbsp;%</dt>
         <dd>de <strong>materia grasa</strong> en la nata que dio la galleta de siempre en las pruebas del proyecto.</dd>
       </div>
       <div>
-        <dt>≈ 50 %</dt>
-        <dd>de <strong>grasa en la galleta horneada</strong> con esa nata, frente al ≈ 20 % con una nata del 35 %.</dd>
+        <dt>≈&nbsp;50&nbsp;%</dt>
+        <dd>de <strong>grasa en la galleta horneada</strong> con esa nata, frente al ≈&nbsp;20&nbsp;% con una nata del 35&nbsp;%.</dd>
       </div>
     </dl>
-    {guiaNata && <p class="datos-mas"><a href={url(guiaNata.id)}>Por qué la nata lo cambia todo →</a></p>}
+    {guiaNata && <p class="datos-mas"><a class="enlace-flecha" href={url(guiaNata.id)}>Por qué la nata lo cambia todo →</a></p>}
   </section>
 
   <section class="envoltorio bloque" aria-labelledby="destacado-titulo">
@@ -78,12 +79,12 @@ const esquemas = [
       <h2 id="destacado-titulo">Para empezar</h2>
     </div>
     {destacadas.length > 0 ? <Rejilla piezas={destacadas} /> : <Vacio mensaje="Los primeros contenidos se publicarán muy pronto." />}
-    <p class="ver-todo"><a href="/buscar/">Ver todos los contenidos →</a></p>
+    <p class="ver-todo"><a class="enlace-flecha" href="/buscar/">Ver todos los contenidos →</a></p>
   </section>
 
   <section class="envoltorio bloque" aria-labelledby="secciones-titulo">
     <div class="bloque-cabecera">
-      <p class="antetitulo">Explora</p>
+      <p class="antetitulo">Índice</p>
       <h2 id="secciones-titulo">Secciones</h2>
     </div>
     <ul class="secciones">
@@ -105,85 +106,98 @@ const esquemas = [
   </section>
 
   <section class="envoltorio bloque proyecto" aria-labelledby="proyecto-titulo">
-    <div class="proyecto-texto">
+    <div>
       <p class="antetitulo">El proyecto</p>
       <h2 id="proyecto-titulo">Hecho por alguien que las fabricó</h2>
+    </div>
+    <div class="proyecto-texto">
       <p>
         Detrás de este portal hay un antiguo fabricante de galletas de nata que lleva desde 2012 probando
         ingredientes, procesos y resultados. Aquí comparte lo que funciona en una cocina normal: recetas caseras
         completas, explicaciones claras y solo resultados que se han comprobado.
       </p>
-      {sobre && <a class="boton boton--claro" href={sobre}>Conoce el proyecto</a>}
-    </div>
-    <div class="proyecto-ilus">
-      <Ilustracion semilla="proyecto" tono="oliva" proporcion="1 / 1" densidad={3} />
+      {sobre && <a class="enlace-flecha" href={sobre}>Conoce el proyecto →</a>}
     </div>
   </section>
 </Base>
 
 <style>
   .heroe {
-    display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-    gap: var(--e-5);
-    align-items: center;
     padding: var(--e-5) 0 var(--e-4);
   }
   .heroe h1 {
-    font-size: clamp(3rem, 1.6rem + 5.2vw, 5.8rem);
-    line-height: 0.95;
-    letter-spacing: -0.025em;
-    margin-bottom: var(--e-3);
+    font-size: clamp(2.9rem, 1.4rem + 6vw, 6.6rem);
+    font-weight: 350;
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+    max-width: 14ch;
+    margin: 0 0 var(--e-4);
   }
   .heroe h1 em {
     font-style: italic;
-    font-weight: 500;
+    font-weight: 300;
     color: var(--tostado);
   }
+  .heroe-pie {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: var(--e-4);
+    align-items: end;
+    padding-top: var(--e-3);
+    border-top: 1px solid var(--tinta);
+  }
   .heroe .entradilla {
-    max-width: 34rem;
+    margin: 0;
+    max-width: 36rem;
   }
   .acciones {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--e-1);
-    margin-top: var(--e-4);
+    align-items: center;
+    gap: var(--e-3);
+    justify-self: end;
   }
-  .heroe-imagen :global(.ilustracion),
-  .heroe-imagen :global(img) {
-    border-radius: calc(var(--radio) * 2);
-    box-shadow: var(--sombra);
-  }
-  @media (max-width: 62rem) {
+  @media (max-width: 48rem) {
     .heroe {
-      grid-template-columns: 1fr;
-      gap: var(--e-4);
       padding-top: var(--e-4);
     }
-    .heroe-imagen :global(.ilustracion) {
-      aspect-ratio: 16 / 9 !important;
+    .heroe-pie {
+      grid-template-columns: 1fr;
+      gap: var(--e-3);
     }
+    .acciones {
+      justify-self: start;
+    }
+  }
+  .heroe-imagen {
+    margin-bottom: var(--e-4);
   }
 
   .datos {
-    margin-top: var(--e-2);
     padding: var(--e-4) 0;
     border-block: 1px solid var(--linea);
   }
   .datos dl {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--e-4);
     margin: 0;
+  }
+  .datos dl > div {
+    padding: 0 var(--e-3);
+    border-left: 1px solid var(--linea);
+  }
+  .datos dl > div:first-child {
+    padding-left: 0;
+    border-left: 0;
   }
   .datos dt {
     font-family: var(--f-titulo);
-    font-size: clamp(2.4rem, 1.8rem + 2vw, 3.4rem);
-    font-weight: 600;
+    font-size: clamp(2.6rem, 1.8rem + 2.4vw, 3.8rem);
+    font-weight: 300;
     line-height: 1;
-    color: var(--oliva-hondo);
-    letter-spacing: -0.02em;
-    margin-bottom: var(--e-1);
+    color: var(--tinta);
+    letter-spacing: -0.03em;
+    margin-bottom: var(--e-2);
   }
   .datos dd {
     margin: 0;
@@ -193,15 +207,24 @@ const esquemas = [
   }
   .datos dd strong {
     color: var(--tinta);
+    font-weight: 600;
   }
   .datos-mas {
-    margin: var(--e-3) 0 0;
-    font-weight: 600;
+    margin: var(--e-4) 0 0;
   }
   @media (max-width: 48rem) {
     .datos dl {
       grid-template-columns: 1fr;
       gap: var(--e-3);
+    }
+    .datos dl > div {
+      padding: var(--e-3) 0 0;
+      border-left: 0;
+      border-top: 1px solid var(--linea);
+    }
+    .datos dl > div:first-child {
+      padding-top: 0;
+      border-top: 0;
     }
   }
 
@@ -213,86 +236,96 @@ const esquemas = [
   }
   .bloque-cabecera h2 {
     margin: 0;
+    font-size: clamp(2rem, 1.5rem + 1.6vw, 2.8rem);
+    font-weight: 400;
   }
   .ver-todo {
-    margin-top: var(--e-3);
-    font-weight: 600;
+    margin-top: var(--e-4);
   }
   .secciones {
     list-style: none;
     padding: 0;
     margin: 0;
     display: grid;
-    gap: var(--e-2);
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--e-4);
+  }
+  @media (max-width: 48rem) {
+    .secciones {
+      grid-template-columns: 1fr;
+    }
   }
   .secciones a {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    grid-template-areas: 'num nombre' '. desc' '. cuenta';
+    row-gap: 0.4rem;
     height: 100%;
-    padding: var(--e-3);
-    background: var(--papel);
-    border: 1px solid var(--linea);
-    border-radius: var(--radio);
+    padding: var(--e-3) 0;
+    border-top: 1px solid var(--linea);
     color: var(--tinta);
     text-decoration: none;
-    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   }
-  .secciones a:hover {
-    border-color: var(--galleta);
-    box-shadow: var(--sombra);
-    transform: translateY(-2px);
+  .secciones a:hover .nombre {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+    text-decoration-color: var(--galleta);
   }
   .num {
+    grid-area: num;
     font-family: var(--f-titulo);
-    font-size: var(--t-s);
-    color: var(--galleta);
-    font-weight: 600;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--tostado);
+    padding-top: 0.35rem;
   }
   .nombre {
+    grid-area: nombre;
     font-family: var(--f-titulo);
-    font-size: var(--t-l);
-    font-weight: 600;
+    font-size: 1.7rem;
+    font-weight: 400;
     line-height: 1.2;
   }
   .desc {
+    grid-area: desc;
     font-size: var(--t-s);
     color: var(--tinta-suave);
+    max-width: 30rem;
   }
   .cuenta {
-    margin-top: auto;
+    grid-area: cuenta;
     padding-top: var(--e-1);
-    font-size: var(--t-xs);
-    font-weight: 700;
-    letter-spacing: 0.06em;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--oliva);
+    color: var(--tinta-suave);
   }
   .proyecto {
     display: grid;
-    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
     gap: var(--e-4);
-    align-items: center;
-    background: var(--oliva-claro);
-    border-radius: calc(var(--radio) * 2);
-    padding: var(--e-4);
+    padding: var(--e-4) 0;
+    border-top: 1px solid var(--tinta);
+    border-bottom: 1px solid var(--linea);
   }
   .proyecto h2 {
-    margin-top: 0;
+    margin: 0;
+    font-size: clamp(2rem, 1.5rem + 1.6vw, 2.8rem);
+    font-weight: 400;
   }
-  .proyecto-ilus {
-    max-width: 16rem;
-    justify-self: end;
-    width: 100%;
+  .proyecto-texto p {
+    font-family: var(--f-titulo);
+    font-size: 1.3rem;
+    font-weight: 350;
+    line-height: 1.55;
+    margin-bottom: var(--e-3);
   }
   @media (max-width: 48rem) {
     .proyecto {
       grid-template-columns: 1fr;
-      padding: var(--e-3);
-    }
-    .proyecto-ilus {
-      display: none;
+      gap: var(--e-2);
     }
   }
 </style>
