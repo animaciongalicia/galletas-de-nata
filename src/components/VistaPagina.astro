@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import CabeceraPagina from './CabeceraPagina.astro';
 import PanelEditorial from './PanelEditorial.astro';
+import Columnas from './Columnas.astro';
 import { esAprobado, htmlPublicable, type Pagina } from '../lib/contenido';
 import { fecha, fechaIso } from '../lib/formato';
 
@@ -17,8 +18,8 @@ const { html } = await htmlPublicable(pagina);
   <CabeceraPagina migas={[{ nombre: data.titulo, href: `/${pagina.id}/` }]} titulo={data.titulo} entradilla={data.descripcion}>
     <PanelEditorial estado={data.estado} pendientes={data.pendientes} />
   </CabeceraPagina>
-  <div class="ancho-pieza">
-    <div class="prosa texto">
+  <Columnas>
+    <div class="prosa">
       <Fragment set:html={html} />
     </div>
     {
@@ -28,13 +29,10 @@ const { html } = await htmlPublicable(pagina);
         </p>
       )
     }
-  </div>
+  </Columnas>
 </Base>
 
 <style>
-  .texto {
-    max-width: var(--ancho-texto);
-  }
   .actualizado {
     margin-top: var(--e-4);
     font-size: var(--t-s);

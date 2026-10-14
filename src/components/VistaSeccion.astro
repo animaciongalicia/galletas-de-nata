@@ -5,8 +5,9 @@ import Rejilla from './Rejilla.astro';
 import Vacio from './Vacio.astro';
 import Fuentes from './Fuentes.astro';
 import HistoriasCasa from './HistoriasCasa.astro';
+import Columnas from './Columnas.astro';
 import type { Seccion } from '../data/secciones';
-import { getPiezas, esAprobado, getTextoSeccion, htmlPublicable } from '../lib/contenido';
+import { getPiezas, esAprobado, getTextoSeccion, htmlPublicable, url } from '../lib/contenido';
 import { tipografia } from '../lib/formato';
 
 interface Props {
@@ -35,11 +36,28 @@ const [citaA, citaB] = (texto?.data.cita ?? '').split(/:\s/);
 
   {
     historia && (
-      <div class="ancho-pieza">
+      <Columnas>
         <div class="prosa historia">
           <Fragment set:html={historia.html} />
         </div>
-      </div>
+        <Fragment slot="lateral">
+          {piezas.length > 0 && (
+            <nav class="caja" aria-labelledby="lista-titulo">
+              <p id="lista-titulo" class="antetitulo">En esta sección</p>
+              <ol>
+                {piezas.map((p) => (
+                  <li><a href={url(p.id)}>{p.data.titulo}</a></li>
+                ))}
+              </ol>
+            </nav>
+          )}
+          <div class="caja caja--verde">
+            <p class="antetitulo">Historias de casa</p>
+            <p>¿Cómo se hacían en tu casa? Cuéntalo y forma parte de esta historia.</p>
+            <a class="enlace-flecha" href="/historias-de-casa/">Cuéntala →</a>
+          </div>
+        </Fragment>
+      </Columnas>
     )
   }
 
@@ -53,7 +71,7 @@ const [citaA, citaB] = (texto?.data.cita ?? '').split(/:\s/);
     )
   }
 
-  <section class="ancho-pieza piezas" aria-labelledby="piezas-titulo">
+  <section class="envoltorio piezas" aria-labelledby="piezas-titulo">
     <p class="antetitulo">Para leer</p>
     <h2 id="piezas-titulo">En esta sección</h2>
     {piezas.length > 0 ? <Rejilla piezas={piezas} nivel="h3" /> : <Vacio mensaje={seccion.vacio} excluir={seccion.id} />}
@@ -64,9 +82,48 @@ const [citaA, citaB] = (texto?.data.cita ?? '').split(/:\s/);
 </Base>
 
 <style>
-  .historia {
-    max-width: var(--ancho-texto);
-    padding-bottom: var(--e-5);
+  .caja {
+    padding: var(--e-3);
+    background: var(--papel);
+    border: 1px solid var(--linea);
+    border-top: 2px solid var(--tinta);
+    font-size: var(--t-s);
+  }
+  .caja ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.6rem;
+  }
+  .caja li a {
+    color: var(--tinta);
+    text-decoration: none;
+    font-family: var(--f-titulo);
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+  .caja li a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--galleta);
+  }
+  .caja--verde {
+    background: var(--oliva);
+    border-color: var(--oliva);
+    border-top-color: var(--galleta-claro);
+    color: var(--marfil);
+  }
+  .caja--verde .antetitulo {
+    color: var(--galleta-claro);
+  }
+  .caja--verde p:not(.antetitulo) {
+    font-family: var(--f-titulo);
+    font-size: 1.15rem;
+    line-height: 1.45;
+  }
+  .caja--verde .enlace-flecha {
+    color: var(--marfil);
+    border-color: var(--marfil);
   }
   /* Letra capital en el primer párrafo de la historia. */
   .historia :global(> p:first-child::first-letter) {

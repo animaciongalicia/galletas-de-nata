@@ -1,10 +1,9 @@
 ---
-import Migas from './Migas.astro';
-import Figura from './Figura.astro';
+import CabeceraPagina from './CabeceraPagina.astro';
 import PanelEditorial from './PanelEditorial.astro';
 import { SECCIONES } from '../data/secciones';
-import { ES_PRODUCCION, url, urlSeccion, esReceta, type Pieza } from '../lib/contenido';
-import { fecha, fechaIso, tipografia } from '../lib/formato';
+import { ES_PRODUCCION, url, urlSeccion, esReceta, imagenPublicable, type Pieza } from '../lib/contenido';
+import { fecha, fechaIso } from '../lib/formato';
 
 interface Props {
   pieza: Pieza;
@@ -19,57 +18,40 @@ const actualizada =
   data.fechaActualizacion && data.fechaPublicacion && data.fechaActualizacion > data.fechaPublicacion
     ? data.fechaActualizacion
     : undefined;
+// En producción, una foto provisional no se muestra: la cabecera queda solo con texto.
+const imagen = imagenPublicable(data.imagen);
 ---
 
-<header class="cabecera-pieza banda banda--crema">
-  <div class="ancho-pieza">
-  <Migas items={[{ nombre: seccion.nombre, href: urlSeccion(data.seccion) }, { nombre: data.titulo, href: url(pieza.id) }]} />
-  <div class="texto">
-    <p class="antetitulo">{seccion.nombre}{esReceta(pieza) && ' · Receta casera'}</p>
-    <h1>{data.titulo}</h1>
-    <p class="entradilla">{tipografia(data.descripcion)}</p>
-    <p class="firma">
-      {
-        data.fechaPublicacion ? (
-          <span>
-            Publicado el <time datetime={fechaIso(data.fechaPublicacion)}>{fecha(data.fechaPublicacion)}</time>
-          </span>
-        ) : (
-          !ES_PRODUCCION && <span class="falta">Fecha de publicación: pendiente</span>
-        )
-      }
-      {!esReceta(pieza) && <span>{lectura} min de lectura</span>}
-      {
-        actualizada && (
-          <span>
-            Actualizado el <time datetime={fechaIso(actualizada)}>{fecha(actualizada)}</time>
-          </span>
-        )
-      }
-    </p>
-    <PanelEditorial estado={data.estado} pendientes={data.pendientes} intencion={data.intencion} />
-  </div>
-  <Figura imagen={data.imagen} prioridad pie proporcion="2 / 1" clase="principal" tamanos="(max-width: 62rem) 100vw, 60rem" />
-  </div>
-</header>
+<CabeceraPagina
+  migas={[{ nombre: seccion.nombre, href: urlSeccion(data.seccion) }, { nombre: data.titulo, href: url(pieza.id) }]}
+  antetitulo={`${seccion.nombre}${esReceta(pieza) ? ' · Receta casera' : ''}`}
+  titulo={data.titulo}
+  entradilla={data.descripcion}
+  imagen={imagen}
+>
+  <p class="firma">
+    {
+      data.fechaPublicacion ? (
+        <span>
+          Publicado el <time datetime={fechaIso(data.fechaPublicacion)}>{fecha(data.fechaPublicacion)}</time>
+        </span>
+      ) : (
+        !ES_PRODUCCION && <span class="falta">Fecha de publicación: pendiente</span>
+      )
+    }
+    {!esReceta(pieza) && <span>{lectura} min de lectura</span>}
+    {
+      actualizada && (
+        <span>
+          Actualizado el <time datetime={fechaIso(actualizada)}>{fecha(actualizada)}</time>
+        </span>
+      )
+    }
+  </p>
+  <PanelEditorial estado={data.estado} pendientes={data.pendientes} intencion={data.intencion} />
+</CabeceraPagina>
 
 <style>
-  .texto {
-    max-width: var(--ancho-texto);
-  }
-  h1 {
-    font-size: clamp(2.2rem, 1.3rem + 3vw, 3.8rem);
-    font-weight: 350;
-    line-height: 1.06;
-    letter-spacing: -0.025em;
-    max-width: 20ch;
-    margin-bottom: var(--e-2);
-  }
-  .cabecera-pieza {
-    display: flow-root; /* evita que el margen de las migas se salga de la banda */
-    padding-bottom: var(--e-4);
-    margin-bottom: var(--e-4);
-  }
   .firma {
     display: flex;
     flex-wrap: wrap;
@@ -78,15 +60,12 @@ const actualizada =
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--tinta-suave);
-    margin: var(--e-3) 0;
+    margin: var(--e-3) 0 0;
     padding-top: var(--e-2);
     border-top: 1px solid color-mix(in srgb, var(--tinta) 25%, transparent);
   }
   .falta {
     color: var(--aviso);
     font-weight: 600;
-  }
-  .cabecera-pieza :global(.principal) {
-    margin-top: var(--e-2);
   }
 </style>

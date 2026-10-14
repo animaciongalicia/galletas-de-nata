@@ -15,7 +15,7 @@ import { LISTA_SECCIONES } from '../data/secciones';
     cursiva="en la lata"
     entradilla="La página que buscas no existe o ha cambiado de dirección. Si llegaste desde un enlace antiguo, es posible que el contenido esté en una de estas secciones:"
   />
-  <div class="ancho-pieza error">
+  <div class="envoltorio error">
     <ul class="destinos">
       {LISTA_SECCIONES.map((s) => <li><a href={`/${s.slug}/`}><strong>{s.nombre}</strong><span>{s.descripcion}</span></a></li>)}
     </ul>

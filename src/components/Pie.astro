@@ -9,28 +9,34 @@ const paginas = (await getPaginas()).filter((p) => p.data.enPie);
 
 <footer class="pie">
   <div class="envoltorio rejilla">
-    <div>
+    <div class="marca-pie">
       <p class="nombre"><Marca tam={28} /> {SITIO.nombre}</p>
-      <p class="lema">{SITIO.lema}</p>
-      <p class="independiente">
-        Portal editorial independiente. No vende galletas ni representa a ninguna marca o fabricante.
-      </p>
+      <p class="lema">La galleta de nata gallega: su historia, la nata que necesita y cómo volver a hacerla en casa.</p>
     </div>
     <nav aria-label="Secciones">
       <h2>Secciones</h2>
       <ul>
         {LISTA_SECCIONES.map((s) => <li><a href={`/${s.slug}/`}>{s.nombre}</a></li>)}
+      </ul>
+    </nav>
+    <nav aria-label="Participa">
+      <h2>Participa</h2>
+      <ul>
+        <li><a href="/historias-de-casa/">Historias de casa</a></li>
         <li><a href="/buscar/">Todos los contenidos</a></li>
+        <li><a href="/rss.xml">RSS</a></li>
+        {SITIO.correoEditorial && <li><a href={`mailto:${SITIO.correoEditorial}`}>{SITIO.correoEditorial}</a></li>}
       </ul>
     </nav>
     <nav aria-label="La web">
       <h2>La web</h2>
       <ul>
-        <li><a href="/historias-de-casa/">Historias de casa</a></li>
         {paginas.map((p) => <li><a href={`/${p.id}/`}>{p.data.titulo}</a></li>)}
-        <li><a href="/rss.xml">RSS</a></li>
       </ul>
     </nav>
+  </div>
+  <div class="envoltorio legal">
+    <p>Portal editorial independiente. No vende galletas ni representa a ninguna marca o fabricante.</p>
   </div>
 </footer>
 
@@ -45,13 +51,31 @@ const paginas = (await getPaginas()).filter((p) => p.data.enPie);
   .rejilla {
     display: grid;
     gap: var(--e-4);
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr));
   }
-  @media (max-width: 48rem) {
+  @media (max-width: 62rem) {
+    .rejilla {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--e-4) var(--e-3);
+    }
+    .marca-pie {
+      grid-column: 1 / -1;
+    }
+  }
+  @media (max-width: 30rem) {
     .rejilla {
       grid-template-columns: 1fr;
-      gap: var(--e-3);
     }
+  }
+  .legal {
+    margin-top: var(--e-4);
+    padding-top: var(--e-3);
+    border-top: 1px solid rgb(234 223 202 / 18%);
+    color: #bfb39c;
+    font-size: var(--t-xs);
+  }
+  .legal p {
+    margin: 0;
   }
   .nombre {
     display: flex;
@@ -64,10 +88,6 @@ const paginas = (await getPaginas()).filter((p) => p.data.enPie);
   }
   .lema {
     max-width: 28rem;
-  }
-  .independiente {
-    color: #bfb39c;
-    font-size: var(--t-xs);
   }
   h2 {
     font-family: var(--f-texto);

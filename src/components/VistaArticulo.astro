@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import CabeceraPieza from './CabeceraPieza.astro';
 import Indice from './Indice.astro';
+import Columnas from './Columnas.astro';
 import Fuentes from './Fuentes.astro';
 import Relacionados from './Relacionados.astro';
 import { esAprobado, htmlPublicable, imagenPublicable, type Articulo } from '../lib/contenido';
@@ -26,25 +27,18 @@ const esquemas = await esquemaPieza(pieza, Astro.site!, Astro.url.pathname);
 >
   <article>
     <CabeceraPieza pieza={pieza} />
-    <div class="ancho-pieza cuerpo">
-      <aside class="lateral"><Indice titulos={headings} /></aside>
+    <Columnas>
       <div class="prosa">
         <Fragment set:html={html} />
         <Fuentes pieza={pieza} />
       </div>
-    </div>
+      {headings.filter((t) => t.depth === 2).length >= 2 && <Indice titulos={headings} slot="lateral" />}
+    </Columnas>
   </article>
   <Relacionados pieza={pieza} />
 </Base>
 
 <style>
-  .cuerpo {
-    display: grid;
-    gap: var(--e-4);
-    grid-template-columns: minmax(0, var(--ancho-texto)) 14rem;
-    justify-content: space-between;
-    margin-top: var(--e-4);
-  }
   /* Letra capital al empezar el texto. */
   .prosa :global(> p:first-child::first-letter) {
     float: left;
@@ -54,21 +48,5 @@ const esquemas = await esquemaPieza(pieza, Astro.site!, Astro.url.pathname);
     font-weight: 400;
     padding: 0.08em 0.1em 0 0;
     color: var(--tostado);
-  }
-  .lateral {
-    order: 2;
-  }
-  .lateral :global(.indice) {
-    position: sticky;
-    top: var(--e-3);
-  }
-  @media (max-width: 62rem) {
-    .cuerpo {
-      grid-template-columns: minmax(0, 1fr);
-      gap: var(--e-3);
-    }
-    .lateral {
-      order: 0;
-    }
   }
 </style>

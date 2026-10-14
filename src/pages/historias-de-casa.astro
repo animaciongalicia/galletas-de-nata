@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import CabeceraPagina from '../components/CabeceraPagina.astro';
+import Columnas from '../components/Columnas.astro';
 import { SITIO } from '../data/sitio';
 import { ES_PRODUCCION } from '../lib/contenido';
 import fotoCabecera from '../assets/fotos/ordeno-de-la-vaca-y-ninos-bebiendo-leche.jpg';
@@ -26,7 +27,7 @@ const mailto = correo ? `mailto:${correo}?subject=${asunto}&body=${cuerpo}` : un
     imagen={{ src: fotoCabecera, alt: 'Foto antigua en blanco y negro: una mujer ordeña una vaca mientras unos niños beben leche', provisional: false }}
   />
 
-  <div class="ancho-pieza"><div class="prosa cuerpo">
+  <Columnas><div class="prosa cuerpo">
     <h2>Por qué en Galicia se sabe tanto de esto</h2>
     <p>
       No hace falta haber trabajado en un obrador para saber de galletas de nata. En Galicia basta con haber crecido
@@ -41,13 +42,19 @@ const mailto = correo ? `mailto:${correo}?subject=${asunto}&body=${cuerpo}` : un
       Ese saber casi nunca se escribió. Se medía a ojo o por vasos y pasaba de unas manos a otras. Por eso vale tanto
       contarlo.
     </p>
-  </div></div>
+  </div>
+    <div class="caja" slot="lateral">
+      <p class="antetitulo">Tu historia</p>
+      <p>Escribe a <strong>{correo}</strong> o usa el botón: el correo se abre con un guion para que no se te olvide nada.</p>
+      {mailto && <a class="boton" href={mailto}>Enviar mi historia</a>}
+    </div>
+  </Columnas>
 
   <section class="envoltorio banda banda--tinta cita-banda" aria-label="Cita">
     <p class="cita">«Un vaso de nata, uno de azúcar <em>y la harina que admita.</em>»</p>
   </section>
 
-  <div class="ancho-pieza"><div class="prosa cuerpo">
+  <Columnas><div class="prosa cuerpo">
     <h2>Qué puedes contar</h2>
     <ul>
       <li><strong>Cómo se hacían en tu casa:</strong> de dónde salía la nata, cuántos días se juntaba, dónde se horneaban.</li>
@@ -81,13 +88,22 @@ const mailto = correo ? `mailto:${correo}?subject=${asunto}&body=${cuerpo}` : un
         )
       }
     </div>
-  </div></div>
+  </div></Columnas>
 </Base>
 
 <style>
   .cuerpo {
-    max-width: var(--ancho-texto);
-    padding-block: var(--e-2) var(--e-5);
+    padding-top: var(--e-2);
+  }
+  .caja {
+    padding: var(--e-3);
+    background: var(--papel);
+    border: 1px solid var(--linea);
+    border-top: 2px solid var(--tinta);
+    font-size: var(--t-s);
+  }
+  .caja .boton {
+    margin-top: var(--e-1);
   }
   .cuerpo > h2:first-child {
     margin-top: 0;

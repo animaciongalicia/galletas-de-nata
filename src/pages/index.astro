@@ -14,7 +14,7 @@ import fotoGuardar from '../assets/fotos/sacar-la-nata-de-la-leche-cocida.jpg';
 import fotoHorno from '../assets/fotos/galletas-de-nata-en-la-rejilla.jpg';
 
 const piezas = await getPiezas();
-const destacadas = [...piezas.filter((p) => p.data.destacado), ...piezas.filter((p) => !p.data.destacado)].slice(0, 6);
+const destacadas = [...piezas.filter((p) => p.data.destacado), ...piezas.filter((p) => !p.data.destacado)].slice(0, 8);
 const historia = piezas.find((p) => p.id === 'como-se-hacian-las-galletas-de-nata');
 const guiaNata = piezas.find((p) => p.id === 'autentica-nata-de-vaca');
 

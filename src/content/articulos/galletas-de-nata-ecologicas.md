@@ -2,12 +2,13 @@
 titulo: 'Galletas de nata ecológicas: qué garantiza el sello'
 descripcion: 'Qué significa que una galleta o una nata sean ecológicas, quién lo certifica en Galicia y por qué ecológico no es lo mismo que gallego, artesano o sin aditivos.'
 seccion: galletas
-estado: borrador
+estado: aprobado
+fechaPublicacion: 2026-10-15
 intencion: 'Informativa: «galletas de nata ecológicas», «nata ecológica», «qué significa ecológico».'
 imagen:
-  src: ../../assets/provisional/galletas-de-nata-ecologicas.jpg
-  alt: 'Galletas de nata junto a un envase con sello ecológico'
-  provisional: true
+  src: ../../assets/fotos/galletas-de-nata-en-cesta.jpg
+  alt: 'Galletas de nata en una cesta de mimbre forrada con papel'
+  provisional: false
 relacionados:
   - como-leer-la-etiqueta-de-una-nata
   - galletas-de-nata-autenticas
@@ -19,8 +20,6 @@ fuentes:
     url: 'https://www.craega.es/es/a-certificacion/'
   - titulo: 'Reglamento de Ejecución (UE) 2021/1165, productos y sustancias autorizados en producción ecológica'
     url: 'https://www.boe.es/buscar/doc.php?id=DOUE-L-2021-80977'
-pendientes:
-  - 'Revisar el texto y decidir si se publica (no menciona marcas).'
 ---
 
 Que una galleta de nata sea ecológica no dice nada de cuánta grasa tiene su nata ni de cómo está hecha. Dice que sus ingredientes se producen y se controlan según la normativa europea de producción ecológica.

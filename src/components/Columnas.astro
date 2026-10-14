@@ -1,0 +1,46 @@
+---
+/**
+ * Cuerpo común de las páginas de lectura, dentro del marco de 72rem:
+ * columna de texto (46rem) a la izquierda y columna lateral (18rem) a la derecha.
+ * Sin lateral, el texto queda solo, alineado a la izquierda con la cabecera.
+ */
+const conLateral = Astro.slots.has('lateral');
+---
+
+<div class:list={['envoltorio', 'columnas', { 'con-lateral': conLateral }]}>
+  <div class="principal"><slot /></div>
+  {conLateral && <aside class="lateral"><div class="lateral-fijo"><slot name="lateral" /></div></aside>}
+</div>
+
+<style>
+  .columnas {
+    padding-bottom: var(--e-5);
+  }
+  .principal {
+    max-width: 46rem;
+    min-width: 0;
+  }
+  .con-lateral {
+    display: grid;
+    grid-template-columns: minmax(0, 46rem) 18rem;
+    justify-content: space-between;
+    gap: var(--e-4);
+  }
+  .lateral-fijo {
+    position: sticky;
+    top: var(--e-3);
+    display: grid;
+    gap: var(--e-3);
+  }
+  @media (max-width: 62rem) {
+    .con-lateral {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .lateral {
+      order: -1;
+    }
+    .lateral-fijo {
+      position: static;
+    }
+  }
+</style>

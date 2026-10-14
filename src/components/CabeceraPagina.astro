@@ -1,7 +1,7 @@
 ---
 /**
  * Cabecera común de las páginas de lectura (secciones, historias, páginas, buscar, 404):
- * banda crema a todo el ancho y contenido en la columna de 60rem, con foto opcional contenida.
+ * banda crema a todo el ancho, contenido en el marco de 72rem y foto opcional contenida a la derecha.
  */
 import type { ImageMetadata } from 'astro';
 import Migas from './Migas.astro';
@@ -21,7 +21,7 @@ const { migas, antetitulo, titulo, cursiva, entradilla, imagen } = Astro.props;
 ---
 
 <header class="cabecera-pagina banda banda--crema">
-  <div class="ancho-pieza">
+  <div class="envoltorio">
     {migas && <Migas items={migas} />}
     <div class:list={['rejilla', { 'con-foto': imagen }]}>
       <div>
@@ -30,7 +30,7 @@ const { migas, antetitulo, titulo, cursiva, entradilla, imagen } = Astro.props;
         {entradilla && <p class="entradilla">{tipografia(entradilla)}</p>}
         <slot />
       </div>
-      {imagen && <Figura imagen={imagen} prioridad proporcion="4 / 3" tamanos="(max-width: 48rem) 100vw, 22rem" anchos={[400, 640, 800]} />}
+      {imagen && <Figura imagen={imagen} prioridad proporcion="4 / 3" tamanos="(max-width: 48rem) 100vw, 26rem" anchos={[400, 640, 800]} />}
     </div>
   </div>
 </header>
@@ -46,7 +46,8 @@ const { migas, antetitulo, titulo, cursiva, entradilla, imagen } = Astro.props;
   }
   .rejilla.con-foto {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 22rem;
+    grid-template-columns: minmax(0, 46rem) 26rem;
+    justify-content: space-between;
     gap: var(--e-4);
     align-items: end;
   }
@@ -55,7 +56,7 @@ const { migas, antetitulo, titulo, cursiva, entradilla, imagen } = Astro.props;
     font-weight: 350;
     line-height: 1.06;
     letter-spacing: -0.025em;
-    max-width: 20ch;
+    max-width: 22ch;
   }
   h1 em {
     font-style: italic;
@@ -64,6 +65,7 @@ const { migas, antetitulo, titulo, cursiva, entradilla, imagen } = Astro.props;
   }
   .entradilla {
     margin-bottom: 0;
+    max-width: 40rem;
   }
   @media (max-width: 48rem) {
     .rejilla.con-foto {
