@@ -43,7 +43,7 @@ Las recetas publicadas son siempre **caseras y reproducibles**. La formulación 
 
 ## 2. Incorporar fotografías y actualizar contenidos con Claude Code
 
-**Fotos:** guarda la foto propia (JPG o PNG, 1600 px de ancho o más) en `src/assets/fotos/` y apúntala en la cabecera:
+**Fotos:** súbelas a `src/assets/fotos/` (instrucciones, formato y lista de fotos por contenido en `src/assets/fotos/LEEME.md`) y apúntalas en la cabecera:
 
 ```yaml
 imagen:
