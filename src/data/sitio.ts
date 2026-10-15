@@ -10,6 +10,11 @@ export const SITIO = {
   locale: 'es_ES',
   /** Correo editorial público. null hasta que el propietario lo confirme. */
   correoEditorial: 'info@galletasdenata.com' as string | null,
+  /**
+   * Google Analytics 4. Solo se carga en producción, si el visitante lo acepta en el aviso de cookies
+   * y cuando las páginas de cookies y privacidad están aprobadas.
+   */
+  analiticaId: 'G-5WHY80TLKX' as string | null,
 };
 
 export const AUTOR = {

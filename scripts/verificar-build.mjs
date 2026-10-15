@@ -144,6 +144,14 @@ for (const archivo of archivos.filter((a) => /\.(html|xml|txt|js|json)$/.test(a)
     error(relative(DIST, archivo), 'posible credencial en la salida');
 }
 
+// Redirecciones temporales de URL antiguas: hay que quitarlas cuando la pieza se publica,
+// porque en Vercel una redirección tapa a la página.
+const vercel = JSON.parse(await readFile(new URL('../vercel.json', import.meta.url), 'utf8'));
+for (const r of vercel.redirects ?? []) {
+  if (r.permanent !== false) continue;
+  const id = r.source.replaceAll('/', '');
+  if (estados.get(id) === 'aprobado') error('vercel.json', `quita la redirección temporal de ${r.source}: la pieza ya está aprobada`);
+}
 for (const a of avisos) console.log(`· Aviso: ${a}`);
 console.log(`Modo: ${MODO} · ${htmls.length} páginas HTML · ${noAprobados.length} contenidos no aprobados`);
 if (errores.length) {

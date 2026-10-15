@@ -1,30 +1,52 @@
 ---
 titulo: 'Política de privacidad'
-descripcion: 'Qué datos personales trata Galletas de Nata, con qué finalidad y cómo ejercer tus derechos. Ahora mismo, el sitio no recoge datos de los lectores.'
+descripcion: 'Qué datos personales trata Galletas de Nata, con qué finalidad, durante cuánto tiempo y cómo ejercer tus derechos sobre ellos.'
 estado: borrador
 enPie: true
 pendientes:
-  - 'Responsable del tratamiento (mismos datos que el aviso legal).'
-  - 'Datos del proveedor de alojamiento (Vercel) y de cualquier servicio de analítica, si se activa.'
+  - 'Responsable del tratamiento: nombre o razón social, NIF/CIF y domicilio (mismos datos que el aviso legal).'
   - 'Revisión del texto por el propietario o su asesor antes de aprobar.'
 ---
 
 ## Responsable
 
-<div class="pendiente">Datos del responsable del tratamiento.</div>
+<div class="pendiente">Nombre o razón social, NIF/CIF y domicilio del responsable del tratamiento.</div>
 
-## Qué datos se recogen
+Correo de contacto: [info@galletasdenata.com](mailto:info@galletasdenata.com).
 
-Este sitio no tiene formularios, registro de usuarios ni comentarios. No recoge datos personales de los lectores de forma directa.
+## Qué datos se tratan y para qué
 
-El proveedor de alojamiento puede registrar datos técnicos de acceso (como la dirección IP) por motivos de seguridad y funcionamiento.
+**Navegación.** Este sitio no tiene registro de usuarios ni comentarios. El proveedor de alojamiento registra datos técnicos de acceso, como la dirección IP, por motivos de seguridad y funcionamiento.
 
-<div class="pendiente">Completar con el proveedor de alojamiento y, si se activa, el servicio de analítica.</div>
+**Analítica.** Si lo aceptas en el aviso de cookies, se usa Google Analytics para saber cuántas personas visitan la web y qué páginas leen. Sirve para decidir qué contenidos preparar. Si no lo aceptas, no se activa. Tienes el detalle en la [política de cookies](/cookies/).
 
-## Correo electrónico
+**Correo electrónico.** Si escribes a info@galletasdenata.com, tus datos se usan solo para responderte.
 
-Si escribes al correo editorial, tus datos se usarán solo para responderte.
+**Historias de casa.** Si envías una historia o una receta de familia, se usa para leerla y, si das tu permiso, publicarla con tu nombre, tus iniciales o sin nombre, como prefieras. Nada se publica sin tu permiso.
+
+## Base legal
+
+- Analítica: tu consentimiento, que puedes retirar en cualquier momento.
+- Correo e historias: tu consentimiento al escribir y, para publicar, tu autorización expresa.
+- Datos técnicos de acceso: el interés legítimo en mantener el sitio seguro y en funcionamiento.
+
+## Con quién se comparten
+
+- **Vercel**, proveedor de alojamiento de la web.
+- **Google**, si aceptas la analítica.
+
+Algunos de estos proveedores pueden tratar datos fuera del Espacio Económico Europeo, con las garantías que exige la normativa.
+
+No se venden ni se ceden datos a terceros con fines comerciales.
+
+## Cuánto tiempo se guardan
+
+- Correos: el tiempo necesario para responderte y gestionar tu historia.
+- Historias publicadas: mientras sigan publicadas, o hasta que pidas retirarlas.
+- Analítica: según la configuración de conservación de Google Analytics.
 
 ## Tus derechos
 
-<div class="pendiente">Cómo ejercer los derechos de acceso, rectificación, supresión y demás, y referencia a la Agencia Española de Protección de Datos.</div>
+Puedes pedir acceso a tus datos, su rectificación o supresión, oponerte a su uso o limitarlo, y solicitar su portabilidad. Escribe a [info@galletasdenata.com](mailto:info@galletasdenata.com).
+
+Si crees que no se han respetado tus derechos, puedes reclamar ante la Agencia Española de Protección de Datos.

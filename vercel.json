@@ -8,25 +8,99 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "galletasdenata.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "galletasdenata.com"
+        }
+      ],
       "destination": "https://www.galletasdenata.com/:path*",
       "permanent": true
     },
-    { "source": "/feed", "destination": "/rss.xml", "permanent": true },
-    { "source": "/feed/", "destination": "/rss.xml", "permanent": true }
+    {
+      "source": "/feed",
+      "destination": "/rss.xml",
+      "permanent": true
+    },
+    {
+      "source": "/feed/",
+      "destination": "/rss.xml",
+      "permanent": true
+    },
+    {
+      "source": "/galletas-de-nata-autenticas/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.galletasdenata.com"
+        }
+      ],
+      "destination": "/galletas-de-nata/",
+      "permanent": false
+    },
+    {
+      "source": "/como-hacer-las-mejores-galletas-de-nata/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.galletasdenata.com"
+        }
+      ],
+      "destination": "/recetas/",
+      "permanent": false
+    },
+    {
+      "source": "/chocolate-caliente-con-galletas-de-nata/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.galletasdenata.com"
+        }
+      ],
+      "destination": "/postres-con-galletas/",
+      "permanent": false
+    },
+    {
+      "source": "/como-hacer-nata-casera/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.galletasdenata.com"
+        }
+      ],
+      "destination": "/nata-y-elaboracion/",
+      "permanent": false
+    }
   ],
   "headers": [
     {
       "source": "/_astro/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        }
       ]
     }
   ]

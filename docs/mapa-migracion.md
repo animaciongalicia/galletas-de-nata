@@ -28,6 +28,8 @@ Las cinco se **conservan en la misma dirección** (URL planas, con barra final).
 - **Opción A (recomendada):** no cambiar el DNS hasta que las cinco estén aprobadas.
 - **Opción B:** cambiar antes y añadir en `vercel.json` redirecciones **temporales** (`"permanent": false`) de cada URL a su sección equivalente, y retirarlas al aprobar la pieza. Nunca a la portada.
 
+**Decisión (15-10-2026): opción B.** Las cuatro URL históricas aún en borrador tienen una redirección temporal (302) a su sección, solo en `www.galletasdenata.com`. `/autentica-nata-de-vaca/` ya está publicada. Lista de comprobación completa en `docs/cambio-dominio.md`.
+
 ## Redirecciones configuradas (vercel.json)
 
 | Origen | Destino | Tipo | Motivo |

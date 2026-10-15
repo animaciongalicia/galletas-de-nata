@@ -3,8 +3,10 @@ import { LISTA_SECCIONES } from '../data/secciones';
 import { SITIO } from '../data/sitio';
 import { getPaginas } from '../lib/contenido';
 import Marca from './Marca.astro';
+import { analiticaActiva } from '../lib/analitica';
 
 const paginas = (await getPaginas()).filter((p) => p.data.enPie);
+const analitica = await analiticaActiva();
 ---
 
 <footer class="pie">
@@ -33,6 +35,7 @@ const paginas = (await getPaginas()).filter((p) => p.data.enPie);
       <h2>La web</h2>
       <ul>
         {paginas.map((p) => <li><a href={`/${p.id}/`}>{p.data.titulo}</a></li>)}
+        {analitica && <li><a href={analitica.cookies} data-configurar-cookies>Configurar cookies</a></li>}
       </ul>
     </nav>
   </div>

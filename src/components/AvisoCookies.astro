@@ -1,0 +1,110 @@
+---
+// Aviso de consentimiento. Google Analytics no se carga hasta que el visitante acepta.
+interface Props {
+  id: string;
+  cookies: string;
+}
+const { id, cookies } = Astro.props;
+---
+
+<div class="aviso-cookies" data-aviso-cookies hidden role="dialog" aria-labelledby="aviso-cookies-titulo" aria-live="polite">
+  <div class="envoltorio interior">
+    <p id="aviso-cookies-titulo">
+      Esta web usa cookies de analítica (Google Analytics) para saber qué se lee y preparar mejores contenidos.
+      Solo se activan si las aceptas. <a href={cookies}>Más información</a>.
+    </p>
+    <div class="botones">
+      <button type="button" class="boton" data-cookies-si>Aceptar</button>
+      <button type="button" class="boton boton--claro" data-cookies-no>Rechazar</button>
+    </div>
+  </div>
+</div>
+
+<script is:inline define:vars={{ id }}>
+  (function () {
+    var CLAVE = 'consentimiento-analitica';
+    var aviso = document.querySelector('[data-aviso-cookies]');
+    function leer() {
+      try { return localStorage.getItem(CLAVE); } catch (e) { return null; }
+    }
+    function guardar(valor) {
+      try { localStorage.setItem(CLAVE, valor); } catch (e) {}
+    }
+    function cargar() {
+      if (window.__analiticaCargada) return;
+      window.__analiticaCargada = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', id);
+    }
+    function borrarCookies() {
+      document.cookie.split(';').forEach(function (c) {
+        var nombre = c.split('=')[0].trim();
+        if (nombre.indexOf('_ga') === 0) {
+          var dominio = location.hostname.replace(/^www\./, '');
+          document.cookie = nombre + '=; Max-Age=0; path=/; domain=.' + dominio;
+          document.cookie = nombre + '=; Max-Age=0; path=/';
+        }
+      });
+    }
+    function mostrar() { if (aviso) aviso.hidden = false; }
+    function ocultar() { if (aviso) aviso.hidden = true; }
+
+    var eleccion = leer();
+    if (eleccion === 'si') cargar();
+    else if (eleccion !== 'no') mostrar();
+
+    document.addEventListener('click', function (e) {
+      var t = e.target;
+      if (!(t instanceof Element)) return;
+      if (t.closest('[data-cookies-si]')) { guardar('si'); ocultar(); cargar(); }
+      else if (t.closest('[data-cookies-no]')) { guardar('no'); ocultar(); borrarCookies(); }
+      else if (t.closest('[data-configurar-cookies]')) { e.preventDefault(); mostrar(); }
+    });
+  })();
+</script>
+
+<style>
+  .aviso-cookies {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 20;
+    background: var(--tinta);
+    color: var(--marfil);
+    padding: var(--e-3) 0;
+    box-shadow: 0 -8px 30px rgb(0 0 0 / 18%);
+  }
+  .interior {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--e-2) var(--e-4);
+  }
+  p {
+    margin: 0;
+    max-width: 46rem;
+    font-size: var(--t-s);
+  }
+  a {
+    color: var(--marfil);
+  }
+  .botones {
+    display: flex;
+    gap: var(--e-1);
+  }
+  .boton {
+    background: var(--marfil);
+    border-color: var(--marfil);
+    color: var(--tinta);
+  }
+  .boton--claro {
+    background: transparent;
+    color: var(--marfil);
+  }
+</style>

@@ -7,6 +7,8 @@ import Pie from '../components/Pie.astro';
 import JsonLd from '../components/JsonLd.astro';
 import { SITIO } from '../data/sitio';
 import { ES_PRODUCCION } from '../lib/contenido';
+import { analiticaActiva } from '../lib/analitica';
+import AvisoCookies from '../components/AvisoCookies.astro';
 import imagenPorDefecto from '../assets/marca/og-galletas-de-nata.jpg';
 // Precarga de las fuentes (subconjunto latino) para evitar saltos de diseño al cargar.
 import fuenteTitulo from '@fontsource-variable/newsreader/files/newsreader-latin-opsz-normal.woff2?url';
@@ -44,6 +46,7 @@ const tituloFinal = tituloCompleto ? titulo : `${titulo} | ${SITIO.nombre}`;
 const og = await getImage({ src: imagen, width: 1200, height: 630, fit: 'cover', format: 'jpg' });
 const ogUrl = new URL(og.src, site).href;
 // La preview nunca se indexa. En producción, solo las páginas indexables.
+const analitica = await analiticaActiva();
 const robots = ES_PRODUCCION && indexable ? 'index, follow, max-image-preview:large' : 'noindex, nofollow';
 const verificacionGoogle = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 ---
@@ -95,6 +98,7 @@ const verificacionGoogle = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
       <slot />
     </main>
     <Pie />
+    {analitica && <AvisoCookies id={analitica.id} cookies={analitica.cookies} />}
   </body>
 </html>
 
