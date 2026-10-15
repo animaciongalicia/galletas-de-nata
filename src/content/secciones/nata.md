@@ -82,7 +82,7 @@ La nata de antes no se encuentra en el supermercado. Lo que sí se encuentra:
 - **Nata para montar**, del 35 % o algo más: la que usa la receta típica.
 - **Evita** la nata para cocinar, la ligera, la montada en spray y los preparados vegetales.
 
-Elegir bien es leer la etiqueta por este orden: materia grasa, ingredientes y tratamiento. Lo explica paso a paso [qué nata comprar para hacer galletas de nata](/como-elegir-nata-para-galletas/).
+Elegir bien es leer la etiqueta por este orden: materia grasa, ingredientes y tratamiento. Lo explica paso a paso la guía [Qué nata comprar para hacer galletas de nata](/como-elegir-nata-para-galletas/).
 
 ## Si quieres acercarte a la nata de antes
 

@@ -161,6 +161,9 @@ export async function htmlPublicable(e: Pieza | Pagina | TextoSeccion) {
   const { piezas, paginas } = await cargarTodo();
   const publicadas = new Set<string>([...piezas, ...paginas].map((p) => `/${p.id}/`));
   Object.values(SECCIONES).forEach((s) => publicadas.add(`/${s.slug}/`));
+  // Páginas fijas del sitio y etiquetas del Diario con piezas publicadas.
+  ['/diario/', '/historias-de-casa/', '/buscar/'].forEach((r) => publicadas.add(r));
+  piezas.forEach((p) => (p.data.etiquetas as string[]).forEach((e) => publicadas.add(`/diario/${e}/`)));
   const limpio = html.replace(/<a href="(\/[^"#?]*)"[^>]*>(.*?)<\/a>/gs, (todo, ruta: string, texto: string) =>
     ruta === '/' || publicadas.has(ruta) || ruta.includes('.') ? todo : texto,
   );

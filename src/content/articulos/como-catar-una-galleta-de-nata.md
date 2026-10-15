@@ -84,4 +84,6 @@ La diferencia más clara está en el sabor y en el final. La galleta de nata tie
 
 Catar te ayuda a elegir. Si haces galletas en casa, sabrás qué nata, qué grosor o qué tiempo de horno te gusta más. Si las compras, sabrás distinguir una galleta de nata de verdad de una que solo lleva el nombre.
 
+Un consejo práctico: cata siempre en las mismas condiciones. Galletas ya frías, a temperatura ambiente, con agua entre una y otra y sin café ni dulces justo antes. Si comparas varias, pruébalas el mismo día y en el mismo orden, de la más suave a la más intensa. Así la diferencia que notes será la de la galleta, no la del momento.
+
 Y si catas varias, cuenta tus conclusiones en [Historias de casa](/historias-de-casa/).

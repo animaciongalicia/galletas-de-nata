@@ -2,6 +2,8 @@
 
 Revisión del 15-10-2026. ✅ = listo · ⏳ = pendiente del propietario · ⚠️ = cuidado.
 
+> **Cambio hecho el 15-10-2026.** DNS en Piensa Solutions (ns97/ns98, sin cambiar *nameservers*): A de `@` → `216.150.1.1` y CNAME de `www` → registro propio de Vercel. Vercel marca los dos dominios como verificados y bien configurados. `galletas-de-nata.vercel.app` también redirige (308) a www.
+
 ## 1. Antes de tocar el DNS
 
 | | Punto | Estado |
@@ -50,22 +52,24 @@ Antes de tocar nada, **haz una captura de todos los registros DNS actuales**.
    | CNAME | `www` | `cname.vercel-dns.com` |
 
    **Usa siempre los valores que te muestre Vercel**: a veces asigna unos propios del proyecto.
-3. **En el panel DNS de tu proveedor (Pinensa Solutions)**, en el área de cliente, entra en el dominio y abre la gestión de DNS o zona DNS:
+3. **En el panel DNS de tu proveedor (Piensa Solutions)**, en el área de cliente, entra en el dominio y abre la gestión de DNS o zona DNS:
    - cambia el registro **A** de `@` por el de Vercel;
    - cambia o crea el **CNAME** de `www` con el de Vercel;
    - **no toques** los registros MX, TXT (SPF, DKIM, verificación de Google) ni ningún otro.
 4. **Espera la propagación:** de unos minutos a unas horas. Vercel marca el dominio como válido y genera el certificado HTTPS solo.
 5. **No borres el WordPress todavía:** déjalo accesible unas semanas por si hay que recuperar algo.
 
-## 4. Justo después del cambio
+## 4. Justo después del cambio (comprobado el 15-10-2026)
 
-- [ ] `https://www.galletasdenata.com` carga la web nueva con candado HTTPS.
-- [ ] `https://galletasdenata.com` redirige a `https://www.galletasdenata.com`.
-- [ ] `https://www.galletasdenata.com/feed` lleva al RSS.
-- [ ] Las cuatro URL antiguas en borrador llevan a su sección.
+- [x] `https://www.galletasdenata.com` sirve la web nueva con HTTPS (HSTS activo).
+- [x] `galletasdenata.com` y `galletas-de-nata.vercel.app` redirigen (308) a www, conservando la ruta.
+- [x] `/feed` lleva al RSS; `robots.txt` y `sitemap.xml` correctos (26 URL).
+- [x] Las URL antiguas en borrador llevan a su sección; `/autentica-nata-de-vaca/` sigue en su sitio.
+- [x] Las páginas indexables llevan `index, follow` y canónica en www; la 404 da 404 con `noindex`.
+- [x] Aviso de cookies y Analytics `G-5WHY80TLKX` presentes.
 - [ ] El correo a info@galletasdenata.com sigue llegando: mándate uno de prueba.
 - [ ] En **Search Console**: envía `https://www.galletasdenata.com/sitemap.xml` e inspecciona la portada y dos o tres páginas.
-- [ ] En **Analytics** (cuando estén publicadas las páginas legales): abre la web, acepta las cookies y comprueba que apareces en «Tiempo real».
+- [ ] En **Analytics**: abre la web, acepta las cookies y comprueba que apareces en «Tiempo real».
 
 ## 5. Las semanas siguientes
 
@@ -73,7 +77,6 @@ Antes de tocar nada, **haz una captura de todos los registros DNS actuales**.
 - Al publicar cada pieza histórica, **quitar su redirección temporal** de `vercel.json`. El verificador lo recuerda.
 - Cuando todo esté estable, dar de baja el hosting del WordPress.
 
-## 6. Lo que falta para dar luz verde
+## 6. Pendiente
 
-1. **Captura de la zona DNS actual** en Pinensa Solutions, para cambiar solo lo necesario.
-2. **Recomendable:** NIF y domicilio de AVOAS GALICIA SL en el aviso legal (lo pide la LSSI).
+1. **Recomendable:** NIF y domicilio de AVOAS GALICIA SL en el aviso legal (lo pide la LSSI).

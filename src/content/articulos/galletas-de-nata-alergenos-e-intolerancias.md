@@ -72,4 +72,6 @@ Las galletas de nata no llevan huevo crudo ni ingredientes difíciles, pero sí 
 - **Sin gluten** necesita otra harina y mucho cuidado con la contaminación cruzada.
 - Si las compartes, **avisa siempre** de lo que llevan.
 
+Ante cualquier duda sobre una alergia o una intolerancia concreta, la última palabra la tiene siempre el médico o el alergólogo, no una receta. Esta guía explica qué lleva la galleta; no sustituye a un consejo médico.
+
 Las diferentes recetas de galletas de nata, y lo que añade cada una, están en [tipos de galletas de nata](/tipos-de-galletas-de-nata/).
