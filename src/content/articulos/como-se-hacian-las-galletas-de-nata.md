@@ -77,3 +77,13 @@ Compra leche cruda del día, que la hay a la venta, y sácale la nata: hirviénd
 Si prefieres comprar la nata hecha, busca la que más materia grasa tenga. Con las natas habituales del 35 %, la galleta sale más parecida a una de mantequilla que a la de siempre.
 
 Y si quieres saber qué nata da mejor resultado, lee [la guía sobre la nata de vaca](/autentica-nata-de-vaca/): la cantidad de grasa lo cambia todo.
+
+## Para seguir la historia
+
+Esta es la historia que se cuenta en las casas. Si quieres ir más allá:
+
+- [Historia de las galletas de nata: lo que se sabe y lo que falta](/historia-de-las-galletas-de-nata/), con sus fuentes y sus huecos.
+- [La leche en Galicia: de la cuadra a la central lechera](/historia-de-la-leche-en-galicia/), para entender por qué cambió todo.
+- [Galletas de nata fuera de Galicia](/galletas-de-nata-fuera-de-galicia/), del País Vasco a Brasil.
+
+Y si en tu casa se hacían de otra manera, esa versión también cuenta. Escríbela en [Historias de casa](/historias-de-casa/).

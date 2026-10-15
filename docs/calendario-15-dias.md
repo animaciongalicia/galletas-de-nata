@@ -87,3 +87,21 @@ Leyenda de «qué falta»:
 - Las fotos son propias o se tienen derechos para usarlas.
 - Nada de marcas ni nombres propios sin permiso.
 - La leche cruda siempre va con su advertencia de seguridad.
+
+## Programado (15-10-2026)
+
+Piezas ya escritas y aprobadas con fecha. Salen solas en el despliegue de ese día. Para que salgan sin subir nada, hace falta el secreto `VERCEL_DEPLOY_HOOK` en GitHub.
+
+| Fecha | Pieza |
+| --- | --- |
+| 16-10 | Galletas de nata para hacer con niños |
+| 17-10 | Qué nata comprar para hacer galletas de nata |
+| 18-10 | Galletas de nata para regalar |
+| 19-10 | Las vacas de Galicia: razas autóctonas y frisonas |
+| 20-10 | Cómo leer una receta antigua: vasos, tazas y «la harina que admita» |
+| 21-10 | Cómo catar una galleta de nata |
+| 22-10 | Galletas de nata para Navidad |
+
+**Siguientes, cuando lleguen los datos del horno o del autor:** receta tradicional, tarta de galletas, copa de yogur, trufas, galletas decoradas, vasitos de queso, buena galleta, conservación, errores, ingredientes, nata casera.
+
+Todas las piezas publicadas tienen ya **600 palabras o más**. El verificador avisa si alguna baja de esa cifra.

@@ -44,7 +44,7 @@ const [citaA, citaB] = (texto?.data.cita ?? '').split(/:\s/);
           {piezas.length > 0 && (
             <nav class="caja" aria-labelledby="lista-titulo">
               <p id="lista-titulo" class="antetitulo">En esta sección</p>
-              <ol>
+              <ol class="caja-lista">
                 {piezas.map((p) => (
                   <li><a href={url(p.id)}>{p.data.titulo}</a></li>
                 ))}
@@ -82,49 +82,6 @@ const [citaA, citaB] = (texto?.data.cita ?? '').split(/:\s/);
 </Base>
 
 <style>
-  .caja {
-    padding: var(--e-3);
-    background: var(--papel);
-    border: 1px solid var(--linea);
-    border-top: 2px solid var(--tinta);
-    font-size: var(--t-s);
-  }
-  .caja ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 0.6rem;
-  }
-  .caja li a {
-    color: var(--tinta);
-    text-decoration: none;
-    font-family: var(--f-titulo);
-    font-size: 1.05rem;
-    line-height: 1.3;
-  }
-  .caja li a:hover {
-    text-decoration: underline;
-    text-decoration-color: var(--galleta);
-  }
-  .caja--verde {
-    background: var(--oliva);
-    border-color: var(--oliva);
-    border-top-color: var(--galleta-claro);
-    color: var(--marfil);
-  }
-  .caja--verde .antetitulo {
-    color: var(--galleta-claro);
-  }
-  .caja--verde p:not(.antetitulo) {
-    font-family: var(--f-titulo);
-    font-size: 1.15rem;
-    line-height: 1.45;
-  }
-  .caja--verde .enlace-flecha {
-    color: var(--marfil);
-    border-color: var(--marfil);
-  }
   /* Letra capital en el primer párrafo de la historia. */
   .historia :global(> p:first-child::first-letter) {
     float: left;

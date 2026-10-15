@@ -48,3 +48,32 @@ El diccionario de cocina de Larousse menciona las galletas de nata al hablar del
 En todos los casos se repite la misma lógica: **una nata que había que aprovechar**. No hace falta una historia de viajes para explicarlo. Basta una casa con leche.
 
 Lo que hace especial a la galleta gallega no es haber sido la primera, sino lo que significó: en una tierra de vacas, durante generaciones, fue el dulce de casa. Tienes la historia en [cómo se hacían las galletas de nata en Galicia](/como-se-hacian-las-galletas-de-nata/), y lo que se sabe y lo que no en [la historia de las galletas de nata](/historia-de-las-galletas-de-nata/).
+
+## Palabras para buscar
+
+Si quieres seguir la pista a estas galletas en otros sitios, estas son las palabras que más aparecen:
+
+| Dónde | Cómo se llaman |
+| --- | --- |
+| Galicia, País Vasco, El Bierzo | galletas de nata, pastas de nata |
+| Portugal | bolachas de nata, biscoitos de nata |
+| Brasil | biscoitos de nata, a veces «de nata do leite» |
+| México | galletas de nata, junto al pan de nata |
+
+Muchas recetas antiguas no usan un nombre fijo. A veces hablan de «pastas» o de «galletas» sin más, y la nata aparece solo en los ingredientes.
+
+## Lo que estas fuentes no dicen
+
+Ninguna de estas referencias cuenta de dónde salió la primera galleta de nata. Tampoco prueban que una receta viajara de un lugar a otro: ni de Galicia a América, ni al revés. Cada una documenta lo que se hacía en un sitio concreto.
+
+Por eso aquí no se habla de un origen común. Se habla de una costumbre que aparece allí donde había leche y nata que aprovechar.
+
+## Por qué la gallega es distinta
+
+Galicia no tiene la exclusiva, pero tiene algo que pocos sitios reúnen. Es la primera comunidad productora de leche de vaca de España, en torno al 41 %. Ha tenido durante generaciones una vida rural con vacas en casa. Y la costumbre de juntar la nata de la leche hervida ha llegado viva hasta hoy.
+
+A eso se suma la recuperación de los últimos años: pequeños obradores gallegos han vuelto a hacer galletas de nata con nata de mucha grasa y pocos ingredientes.
+
+## Si conoces otra versión
+
+Si en tu familia se hacían galletas de nata en otra región o en otro país, esa historia también suma. Cuéntala en [Historias de casa](/historias-de-casa/): de dónde eran, cómo llamaban a la nata y cómo las hacían.

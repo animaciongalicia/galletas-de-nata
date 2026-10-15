@@ -1,0 +1,55 @@
+---
+// Columna lateral de una pieza: índice, más de la sección, etiquetas e invitación a contar historias.
+import type { MarkdownHeading } from 'astro';
+import Indice from './Indice.astro';
+import { SECCIONES } from '../data/secciones';
+import { ETIQUETAS } from '../data/etiquetas';
+import { getPiezas, url, urlSeccion, type Pieza } from '../lib/contenido';
+
+interface Props {
+  pieza: Pieza;
+  titulos?: MarkdownHeading[];
+}
+const { pieza, titulos = [] } = Astro.props;
+const seccion = SECCIONES[pieza.data.seccion];
+const mas = (await getPiezas(pieza.data.seccion)).filter((p) => p.id !== pieza.id).slice(0, 4);
+---
+
+{titulos.filter((t) => t.depth === 2).length >= 2 && <Indice titulos={titulos} />}
+
+{
+  mas.length > 0 && (
+    <nav class="caja" aria-labelledby={`mas-${pieza.id}`}>
+      <p id={`mas-${pieza.id}`} class="antetitulo">Más en {seccion.nombre}</p>
+      <ol class="caja-lista">
+        {mas.map((p) => (
+          <li>
+            <a href={url(p.id)}>{p.data.titulo}</a>
+          </li>
+        ))}
+      </ol>
+      <a class="enlace-flecha" href={urlSeccion(pieza.data.seccion)}>Ver la sección →</a>
+    </nav>
+  )
+}
+
+{
+  pieza.data.etiquetas.length > 0 && (
+    <div class="caja">
+      <p class="antetitulo">En el diario</p>
+      <ul class="caja-etiquetas">
+        {pieza.data.etiquetas.map((e) => (
+          <li>
+            <a href={`/diario/${e}/`}>{ETIQUETAS[e].nombre}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+<div class="caja caja--verde">
+  <p class="antetitulo">Historias de casa</p>
+  <p>¿Cómo se hacían en tu casa? Cuéntalo y forma parte de esta historia.</p>
+  <a class="enlace-flecha" href="/historias-de-casa/">Cuéntala →</a>
+</div>

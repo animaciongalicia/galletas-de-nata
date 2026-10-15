@@ -3,7 +3,7 @@
 import Figura from './Figura.astro';
 import { SECCIONES } from '../data/secciones';
 import { ETIQUETAS } from '../data/etiquetas';
-import { url, esReceta, type Pieza } from '../lib/contenido';
+import { url, esReceta, ES_PRODUCCION, type Pieza } from '../lib/contenido';
 import { fecha, fechaIso, tipografia } from '../lib/formato';
 
 interface Props {
@@ -13,6 +13,8 @@ interface Props {
 const { pieza, destacada = false } = Astro.props;
 const { data } = pieza;
 const Titulo = destacada ? 'h2' : 'h3';
+// Solo en la previsualización: aviso de las piezas que aún no han llegado a su fecha.
+const programada = !ES_PRODUCCION && data.estado === 'aprobado' && data.fechaPublicacion && data.fechaPublicacion > new Date();
 ---
 
 <article class:list={['entrada', { 'entrada--destacada': destacada }]}>
@@ -20,6 +22,8 @@ const Titulo = destacada ? 'h2' : 'h3';
     <p class="meta">
       {data.fechaPublicacion && <time datetime={fechaIso(data.fechaPublicacion)}>{fecha(data.fechaPublicacion)}</time>}
       <span>{SECCIONES[data.seccion].corto}{esReceta(pieza) && ' · Receta'}</span>
+      {programada && <span class="programada">Programado</span>}
+      {!ES_PRODUCCION && data.estado !== 'aprobado' && <span class="programada">{data.estado === 'revision' ? 'En revisión' : 'Borrador'}</span>}
     </p>
     <Titulo class="titulo"><a href={url(pieza.id)}>{data.titulo}</a></Titulo>
     <p class="descripcion">{tipografia(data.descripcion)}</p>
@@ -63,6 +67,9 @@ const Titulo = destacada ? 'h2' : 'h3';
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--tostado);
+  }
+  .programada {
+    color: var(--aviso);
   }
   .meta time {
     color: var(--tinta-suave);

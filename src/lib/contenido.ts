@@ -123,20 +123,25 @@ const FOTOS = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jp
 
 /** Sustituye los marcadores de imagen del Markdown por <img> optimizadas (WebP, srcset, dimensiones). */
 async function resolverImagenes(html: string) {
-  const marcas = [...html.matchAll(/<img __ASTRO_IMAGE_="([^"]+)">/g)];
+  // El Markdown deja cada imagen sola en un párrafo: se sustituye el párrafo entero por una <figure>.
+  const marcas = [...html.matchAll(/(?:<p>)?<img __ASTRO_IMAGE_="([^"]+)">(?:<\/p>)?/g)];
   for (const [todo, json] of marcas) {
     const datos = JSON.parse(json.replace(/&quot;/g, '"')) as { src: string; alt: string };
     const ruta = '/src/' + datos.src.replace(/^(\.\.\/)+/, '');
     const foto = FOTOS[ruta]?.default;
     if (!foto) throw new Error(`Imagen no encontrada en el texto: ${datos.src}`);
-    const anchos = [480, 800, 1200].filter((w) => w < foto.width).concat(Math.min(foto.width, 1200));
-    const img = await getImage({ src: foto, widths: [...new Set(anchos)], format: 'webp', sizes: '(max-width: 42rem) 100vw, 42rem' });
-    const ancho = Math.min(foto.width, 1200);
+    // Verticales y cuadradas van al lado del texto; las horizontales, a lo ancho de la línea.
+    const lateral = foto.height / foto.width > 0.9;
+    const maximo = lateral ? 640 : 1200;
+    const anchos = [400, 640, 900, 1200].filter((w) => w < Math.min(foto.width, maximo)).concat(Math.min(foto.width, maximo));
+    const sizes = lateral ? '(max-width: 40rem) 80vw, 20rem' : '(max-width: 48rem) 100vw, 46rem';
+    const img = await getImage({ src: foto, widths: [...new Set(anchos)], format: 'webp', sizes });
+    const ancho = Math.min(foto.width, maximo);
     const alto = Math.round((ancho * foto.height) / foto.width);
     const alt = datos.alt.replace(/"/g, '&quot;');
     html = html.replace(
       todo,
-      `<img src="${img.src}" srcset="${img.srcSet.attribute}" sizes="(max-width: 42rem) 100vw, 42rem" width="${ancho}" height="${alto}" alt="${alt}" loading="lazy" decoding="async">`,
+      `<figure class="foto foto--${lateral ? 'lateral' : 'ancha'}"><img src="${img.src}" srcset="${img.srcSet.attribute}" sizes="${sizes}" width="${ancho}" height="${alto}" alt="${alt}" loading="lazy" decoding="async"><figcaption aria-hidden="true">${datos.alt}</figcaption></figure>`,
     );
   }
   return html;

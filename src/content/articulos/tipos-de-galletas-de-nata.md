@@ -72,3 +72,17 @@ Se hacen con nata sin lactosa y suelen llevar huevo y otros aromas, como el aní
 | Evitar la lactosa | Sin lactosa (no apta para alérgicos a la leche) |
 
 Sea cual sea la familia, la diferencia de fondo la marca la nata. Tienes la explicación en [galletas de nata o de mantequilla](/galletas-de-nata-o-de-mantequilla/).
+
+## Lo que tienen en común
+
+Todas las familias comparten lo esencial: nata, azúcar y harina, y un horno caliente. Cambia lo que se añade y cómo se trabaja la masa. Por eso, antes de probar una variante, conviene hacer al menos una vez la de tres ingredientes: así sabrás qué aporta cada cambio.
+
+## Tres preguntas antes de elegir
+
+- **¿Qué nata tienes?** Si es una nata de montar del 35 %, cualquier familia saldrá bien, pero ninguna sabrá como la de antes. Si consigues una nata mucho más grasa, la tradicional es la que más la aprovecha.
+- **¿Para quién son?** Para hacerlas con niños, la de tres ingredientes es la más sencilla: pocos pasos y una masa que se puede cortar con moldes.
+- **¿Qué textura buscas?** Fina y crujiente, tierna y alta, o la de siempre, que está entre las dos.
+
+## Un consejo para comparar
+
+Si quieres probar varias familias, haz media receta de cada una el mismo día, con la misma nata y el mismo horno. Así la diferencia que notes será la de la receta, no la del día.

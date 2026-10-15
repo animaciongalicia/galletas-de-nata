@@ -62,3 +62,27 @@ Una vez frías, en una lata o un tarro bien cerrado, para que no cojan humedad.
 ## ¿Puedo contar cómo se hacían en mi casa?
 
 Sí, y es lo que más vale. Escríbelo en [Historias de casa](/historias-de-casa/).
+
+## ¿Qué harina se usa?
+
+Harina de trigo. En la receta típica, la que tengas en casa, mejor si es ecológica. Se añade poco a poco y se deja de amasar cuando la masa ya no se pega a las manos.
+
+## ¿Azúcar blanco o moreno?
+
+Valen los dos. El azúcar moreno de caña da un color más tostado y un punto de caramelo. Muchas recetas gallegas actuales lo usan.
+
+## ¿Qué diferencia hay entre la nata de la leche hervida y la nata de brik?
+
+La de la leche hervida es la capa que se formaba al enfriar la leche en casa: no es grasa pura, también lleva proteínas de la leche. La de brik es nata separada en fábrica, con un porcentaje de grasa fijo, normalmente en torno al 35 %. Lo explica el [glosario de la nata](/glosario-de-la-nata/).
+
+## ¿Dónde se hacían más?
+
+En casi toda la Galicia rural, y mucho en la comarca de Ferrol. Donde había vacas, había leche que hervir y nata que guardar.
+
+## ¿Por qué casi dejaron de hacerse?
+
+Porque dejó de hervirse la leche en casa. Desde 1952, con las centrales lecheras, la leche tratada y envasada llegó a casi todos los hogares, y sin leche hervida no había nata. La historia completa está en [la leche en Galicia](/historia-de-la-leche-en-galicia/).
+
+## ¿Hay galletas de nata en las tiendas?
+
+Sí. En los últimos años, varios obradores gallegos han recuperado la galleta de nata. Para saber si es la tradicional, mira la lista de ingredientes: la nata debe ser la única grasa.

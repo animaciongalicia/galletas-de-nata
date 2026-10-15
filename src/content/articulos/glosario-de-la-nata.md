@@ -78,3 +78,27 @@ Leche que no se ha tratado con calor tras el ordeño. Es la que se hervía en ca
 Un alimento elaborado es ecológico cuando al menos el 95 % de sus ingredientes agrarios lo son, y lo controla un organismo certificador. Ecológico no quiere decir más grasa, ni artesano, ni sin aditivos.
 
 Para ver cómo encaja todo esto en una galleta, lee [la guía sobre la nata de vaca](/autentica-nata-de-vaca/).
+
+## Nata pasteurizada
+
+Nata calentada lo justo para eliminar microorganismos. Suele venderse en refrigerado y durar menos que la UHT.
+
+## Nata UHT
+
+Nata calentada a muy alta temperatura durante unos segundos. Aguanta sin frío hasta que se abre; después, a la nevera.
+
+## Nata homogeneizada
+
+Nata en la que los glóbulos de grasa se han partido y repartido para que no se separen. Es un proceso, no un porcentaje de grasa.
+
+## Nata montada
+
+Nata batida con aire, a menudo con azúcar. No se puede usar en la masa como si fuera nata líquida: el volumen engaña.
+
+## Nata sin lactosa
+
+Nata a la que se le ha quitado la lactosa. Sigue teniendo las proteínas de la leche, así que no sirve para personas con alergia a la leche.
+
+## Preparado vegetal
+
+Producto que se parece a la nata, pero hecho con grasas vegetales. No es nata láctea y no da el sabor de una galleta de nata.

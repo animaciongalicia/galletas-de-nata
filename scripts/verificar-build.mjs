@@ -36,12 +36,19 @@ async function rutaExiste(pathname) {
 
 // Estado editorial de cada contenido según su frontmatter.
 const estados = new Map();
+const avisos = [];
 for (const archivo of await recorrer(CONTENIDO)) {
   // Los textos de sección (src/content/secciones) no son piezas con estado editorial.
   if (!archivo.endsWith('.md') || archivo.includes('/content/secciones/')) continue;
   const texto = await readFile(archivo, 'utf8');
   const id = archivo.split('/').pop().replace(/\.md$/, '');
   estados.set(id, texto.match(/^estado:\s*(\w+)/m)?.[1] ?? 'borrador');
+  // Aviso (no bloquea): artículos publicados con menos de 600 palabras de texto.
+  if (archivo.includes('/content/articulos/') && estados.get(id) === 'aprobado') {
+    const cuerpo = texto.split(/^---$/m).slice(2).join('---').replace(/!\[[^\]]*\]\([^)]*\)/g, '');
+    const palabras = cuerpo.split(/\s+/).filter(Boolean).length;
+    if (palabras < 600) avisos.push(`${id}: ${palabras} palabras (mínimo recomendado: 600)`);
+  }
 }
 const noAprobados = [...estados].filter(([, e]) => e !== 'aprobado').map(([id]) => id);
 
@@ -137,6 +144,7 @@ for (const archivo of archivos.filter((a) => /\.(html|xml|txt|js|json)$/.test(a)
     error(relative(DIST, archivo), 'posible credencial en la salida');
 }
 
+for (const a of avisos) console.log(`· Aviso: ${a}`);
 console.log(`Modo: ${MODO} · ${htmls.length} páginas HTML · ${noAprobados.length} contenidos no aprobados`);
 if (errores.length) {
   console.error(`\n✗ ${errores.length} problema(s):\n- ${errores.join('\n- ')}`);

@@ -67,3 +67,26 @@ Hoy la nata se compra en brik y la galleta de nata se hace, casi siempre, con na
 > **Seguridad.** La leche cruda puede contener microorganismos que causan enfermedades: guárdala siempre en frío, no la consumas sin tratar y úsala en elaboraciones cocinadas.
 
 Si quieres saber cómo se hacían las galletas con aquella nata, lee [cómo se hacían las galletas de nata en Galicia](/como-se-hacian-las-galletas-de-nata/).
+
+## Lo que cambió en las casas
+
+| Antes | Después |
+| --- | --- |
+| Leche de la propia cuadra, ordeñada cada día | Leche tratada y envasada, comprada en la tienda |
+| Se hervía en la cocina para que durase | Ya no hacía falta hervirla |
+| Al enfriar, dejaba una capa de nata | La nata se compra aparte, en brik |
+| Con esa nata se hacían galletas | Las galletas se compran hechas |
+
+El cambio no fue de un día para otro. En las ciudades llegó antes; en muchas aldeas, la leche de casa siguió hirviéndose durante años.
+
+## Por qué importa para la galleta
+
+La galleta de nata de siempre no se entiende sin esa leche. Su nata no era una nata comprada: era la que salía de hervir la leche del día y se juntaba poco a poco. Cuando la leche dejó de hervirse en casa, la galleta se quedó sin su ingrediente.
+
+Por eso hoy, con nata de brik, la galleta sale distinta. La explicación está en [galletas de nata o de mantequilla](/galletas-de-nata-o-de-mantequilla/): con una nata del 35 %, la galleta se parece más a una de mantequilla que a la de antes.
+
+## Lo que todavía se puede contar
+
+Las cifras explican el cambio, pero no cuentan cómo se vivía. Cómo se ordeñaba, quién hervía la leche, dónde se guardaba la nata, cuándo se hacían las galletas: eso solo lo saben quienes lo vivieron.
+
+Si lo recuerdas, o te lo contaron en casa, escríbelo en [Historias de casa](/historias-de-casa/).

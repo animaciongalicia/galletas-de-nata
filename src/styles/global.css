@@ -214,6 +214,73 @@ img {
   color: var(--marfil);
 }
 
+/* ===== Cajas de la columna lateral ===== */
+.caja {
+  padding: var(--e-3);
+  background: var(--papel);
+  border: 1px solid var(--linea);
+  border-top: 2px solid var(--tinta);
+  font-size: var(--t-s);
+}
+.caja > :last-child {
+  margin-bottom: 0;
+}
+.caja-lista {
+  list-style: none;
+  margin: 0 0 var(--e-2);
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+.caja-lista a {
+  color: var(--tinta);
+  text-decoration: none;
+  font-family: var(--f-titulo);
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+.caja-lista a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--galleta);
+}
+.caja-etiquetas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.caja-etiquetas a {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--linea);
+  color: var(--tinta);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+.caja-etiquetas a:hover {
+  border-color: var(--tinta);
+}
+.caja--verde {
+  background: var(--oliva);
+  border-color: var(--oliva);
+  border-top-color: var(--galleta-claro);
+  color: var(--marfil);
+}
+.caja--verde .antetitulo {
+  color: var(--galleta-claro);
+}
+.caja--verde p:not(.antetitulo) {
+  font-family: var(--f-titulo);
+  font-size: 1.15rem;
+  line-height: 1.45;
+}
+.caja--verde .enlace-flecha {
+  color: var(--marfil);
+  border-color: var(--marfil);
+}
+
 /* ===== Botones ===== */
 .boton {
   display: inline-flex;
@@ -326,6 +393,7 @@ img {
 }
 /* Nota destacada: en Markdown, un párrafo que empieza por «>» */
 .prosa blockquote {
+  overflow: hidden; /* no se monta sobre una foto flotante */
   margin: var(--e-3) 0;
   padding: var(--e-2) var(--e-3);
   border-left: 2px solid var(--oliva);
@@ -376,6 +444,47 @@ img {
   width: auto;
   object-fit: cover;
   box-shadow: 0 18px 40px -24px rgb(27 25 22 / 45%);
+}
+.prosa h2,
+.prosa h3 {
+  clear: both;
+}
+/* Fotos dentro del texto: integradas, con pie. */
+.prosa .foto {
+  margin: var(--e-4) 0;
+}
+.prosa .foto img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  margin: 0;
+  object-fit: cover;
+  box-shadow: 0 18px 40px -26px rgb(27 25 22 / 50%);
+}
+.prosa .foto figcaption {
+  margin-top: 0.6rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--galleta);
+  font-family: var(--f-titulo);
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--tinta-suave);
+}
+.prosa .foto--lateral {
+  float: right;
+  width: 42%;
+  margin: 0.4rem 0 var(--e-3) var(--e-4);
+}
+.prosa .foto--ancha {
+  clear: both;
+}
+@media (max-width: 40rem) {
+  .prosa .foto--lateral {
+    float: none;
+    width: 78%;
+    margin: var(--e-3) 0;
+  }
 }
 .prosa hr {
   border: 0;

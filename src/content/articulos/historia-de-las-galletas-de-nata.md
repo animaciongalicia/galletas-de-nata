@@ -70,3 +70,15 @@ La historia que falta está en dos sitios.
 - **Las casas.** Los cuadernos de recetas, las latas y los recuerdos de quien las hacía. Un testimonio no fija una fecha exacta, pero cuenta cómo se hacía de verdad.
 
 Si en tu familia se hacían, tu recuerdo también es historia. Cuéntalo en [Historias de casa](/historias-de-casa/).
+
+## Cómo leer lo que se cuenta
+
+Cuando leas una historia sobre el origen de las galletas de nata, hazte tres preguntas:
+
+1. **¿De dónde sale el dato?** Un documento fechado, un recetario, un testimonio o un artículo que lo repite.
+2. **¿Es un recuerdo o un documento?** Los dos valen, pero no dicen lo mismo. Un recuerdo cuenta cómo se hacía en una casa; un documento puede fechar una receta.
+3. **¿Habla de la galleta o de una marca?** La historia de una empresa no es la historia de la costumbre.
+
+Con esas tres preguntas, la mayoría de las leyendas se ordenan solas.
+
+Y si tienes en casa un cuaderno de recetas antiguo, una lata o una foto de la cocina de entonces, guárdalo bien: puede ser la pieza que falta.

@@ -57,3 +57,25 @@ Para la galleta de nata tradicional, **ninguna de las dos se acerca a lo que hac
 ![Cuenco con nata espesa](../../assets/fotos/cuenco-de-nata-espesa.jpg)
 
 Si tienes que elegir entre las dos, la de montar es mejor punto de partida porque tiene casi el doble de grasa. La de cocinar, con menos grasa y más agua, se aleja todavía más. Lo ideal es una doble nata o sacar tú la nata de leche cruda del día: tienes la explicación en [la guía sobre la nata de vaca](/autentica-nata-de-vaca/).
+
+## Por qué la grasa importa tanto en una galleta
+
+Una nata lleva grasa y, sobre todo, agua. Cuanta menos grasa tiene, más agua lleva. En repostería se sabe que el agua, al mezclarse con la harina, hace la masa más elástica y la galleta más dura. La grasa hace lo contrario: la vuelve tierna y le da sabor.
+
+Por eso se nota tanto pasar de un 18 % a un 35 %, y todavía más pasar de un 35 % a una nata mucho más grasa. En la galleta de nata no hay otra grasa: todo depende de la nata.
+
+## Otros usos de cada una
+
+- **Nata para montar:** nata montada para postres, rellenos y copas. Es la que necesitas para muchos de los [postres con galletas de nata](/postres-con-galletas/).
+- **Nata para cocinar:** salsas, cremas y guisos. Está pensada para calentarse sin cortarse, no para hornear masas.
+
+## Cómo guardarlas
+
+Antes de abrirla, sigue lo que diga el envase: unas van en la nevera y otras, las UHT, aguantan fuera. Una vez abierta, siempre en la nevera, bien cerrada, y úsala en el plazo que indique la etiqueta.
+
+## Preguntas rápidas
+
+- **¿Puedo montar la nata para cocinar?** Con tan poca grasa, es difícil que monte.
+- **¿La nata para montar sirve para hacer galletas?** Sí: es la que usa la receta típica. Sale una galleta rica, aunque más parecida a una de mantequilla. La tienes en [cómo hacer galletas de nata caseras](/como-hacer-las-mejores-galletas-de-nata/).
+- **¿Y la doble nata?** Si la encuentras, es la mejor opción de tienda: tiene un 50 % de materia grasa o más.
+- **¿Sirve la nata en spray?** No para la masa. Lleva aire, gas y a menudo azúcar.

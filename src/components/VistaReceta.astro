@@ -3,6 +3,8 @@ import Base from '../layouts/Base.astro';
 import CabeceraPieza from './CabeceraPieza.astro';
 import Fuentes from './Fuentes.astro';
 import Relacionados from './Relacionados.astro';
+import Columnas from './Columnas.astro';
+import LateralPieza from './LateralPieza.astro';
 import { esAprobado, htmlPublicable, imagenPublicable, type Receta } from '../lib/contenido';
 import { esquemaPieza } from '../lib/esquemas';
 import { duracion, fecha } from '../lib/formato';
@@ -12,7 +14,7 @@ interface Props {
 }
 const { pieza } = Astro.props;
 const r = pieza.data;
-const { html } = await htmlPublicable(pieza);
+const { html, titulos } = await htmlPublicable(pieza);
 const esquemas = await esquemaPieza(pieza, Astro.site!, Astro.url.pathname);
 
 const datos = [
@@ -122,11 +124,14 @@ const visibles = esAprobado(pieza) ? datos.filter((d) => d.valor) : datos;
         }
       </section>
 
+    </div>
+    <Columnas>
       <div class="prosa explicacion">
         <Fragment set:html={html} />
         <Fuentes pieza={pieza} />
       </div>
-    </div>
+      <Fragment slot="lateral"><LateralPieza pieza={pieza} titulos={titulos} /></Fragment>
+    </Columnas>
   </article>
   <Relacionados pieza={pieza} />
 </Base>
@@ -249,9 +254,7 @@ const visibles = esAprobado(pieza) ? datos.filter((d) => d.valor) : datos;
     margin-top: 0;
   }
   .explicacion {
-    margin-top: var(--e-5);
-    padding-bottom: var(--e-5);
-    max-width: 46rem;
+    margin-top: var(--e-2);
   }
   @media print {
     .ficha {

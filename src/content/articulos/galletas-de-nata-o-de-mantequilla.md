@@ -66,3 +66,10 @@ La lista de ingredientes va ordenada de mayor a menor cantidad.
 - Si te gustan las de mantequilla, perfecto: son otra galleta, igual de válida, pero no la misma.
 
 Para entender por qué la grasa de la nata lo cambia todo, lee [la guía sobre la nata de vaca](/autentica-nata-de-vaca/) y los resultados de [las pruebas con distintas natas](/pruebas-nata-en-galletas/).
+
+## Preguntas rápidas
+
+- **¿Llevaban mantequilla las galletas de las abuelas?** No. Se hacían con la nata que se juntaba de la leche hervida, sin otra grasa.
+- **¿Por qué es más fácil encontrar galletas de mantequilla?** Porque la mantequilla se consigue en cualquier sitio y se conserva bien, y una nata con mucha grasa es difícil de encontrar.
+- **¿Se pueden mezclar nata y mantequilla?** Muchas recetas lo hacen y salen buenas galletas. Pero ya no es la galleta de nata tradicional.
+- **¿Cuál aguanta mejor el café o la leche?** Depende del grosor y de la textura de cada galleta más que de la grasa. Pruébalas y quédate con la tuya.

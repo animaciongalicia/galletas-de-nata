@@ -43,3 +43,27 @@ La tabla recoge dos de los tres porcentajes que conviene no confundir: la grasa 
 - Una nata de un 70-80 % no es fácil de conseguir: hace falta una desnatadora especial o sacar la nata en casa a partir de leche cruda.
 
 Estas conclusiones se limitan a las pruebas descritas. Otras recetas pueden buscar texturas distintas y funcionar con otras natas.
+
+## Cómo hacer tu propia prueba en casa
+
+Si quieres comparar natas, cambia solo una cosa cada vez. Si cambias dos a la vez, no sabrás cuál ha cambiado la galleta.
+
+1. Usa la misma receta, la misma harina y el mismo azúcar en las dos tandas.
+2. Pesa la nata en gramos. Apunta el envase exacto y su materia grasa.
+3. Haz las galletas del mismo tamaño y grosor.
+4. Hornéalas en el mismo horno, a la misma temperatura y durante el mismo tiempo.
+5. Déjalas enfriar del todo antes de probarlas.
+6. Pruébalas otra vez al día siguiente: la textura cambia al enfriarse y al reposar.
+
+## Qué mirar al probarlas
+
+- **Sabor:** ¿sabe a nata o a mantequilla?
+- **Textura:** ¿se deshace en la boca, cruje o está dura?
+- **Rotura:** ¿se parte limpia o se desmiga?
+- **Color:** ¿el dorado es igual en el borde y en el centro?
+
+Apuntarlo todo, aunque parezca poca cosa, es lo que permite repetir la que mejor sale.
+
+## Si haces la prueba
+
+Si comparas natas en tu cocina, cuéntalo en [Historias de casa](/historias-de-casa/): qué natas usaste, cómo salieron y cuál te gustó más.

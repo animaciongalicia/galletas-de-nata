@@ -76,3 +76,16 @@ Antes de comprar nata para galletas, mira por este orden:
 2. **Ingredientes:** cuantos menos, mejor.
 3. **Tratamiento y conservación:** para saber cómo guardarla.
 4. **Pesa en gramos**, nunca en mililitros, y apunta el envase exacto si vas a comparar.
+
+## Un ejemplo para practicar
+
+Imagina una etiqueta así. Es un ejemplo, no un producto concreto:
+
+> **Nata para montar.** Materia grasa: 35 %. Ingredientes: nata, estabilizante (carragenano). UHT. Una vez abierto, conservar en frío y consumir en pocos días.
+
+Así se lee:
+
+- **35 % de materia grasa:** es «nata» según la norma. Sirve para la receta típica, pero dará una galleta más parecida a una de mantequilla.
+- **Estabilizante:** lleva un ingrediente añadido. No es un problema, pero no es una nata sola.
+- **UHT:** aguanta sin frío hasta abrirla. Después, a la nevera.
+- **«Para montar»:** describe un uso, no la calidad.
