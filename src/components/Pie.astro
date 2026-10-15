@@ -1,120 +1,219 @@
 ---
+/**
+ * Pie editorial en cuatro columnas:
+ * 1. Marca, lema y contacto · 2. Secciones · 3. Lo último del Diario · 4. Recetas y postres.
+ * Debajo, en una línea discreta: páginas legales, configuración de cookies y titular.
+ */
 import { LISTA_SECCIONES } from '../data/secciones';
 import { SITIO } from '../data/sitio';
-import { getPaginas } from '../lib/contenido';
+import { getPaginas, getPiezas, url } from '../lib/contenido';
+import { fecha, fechaIso } from '../lib/formato';
 import Marca from './Marca.astro';
 import { analiticaActiva } from '../lib/analitica';
 
-const paginas = (await getPaginas()).filter((p) => p.data.enPie);
+const paginas = (await getPaginas()).filter((p) => p.data.enPie && p.id !== 'contacto');
+const contacto = (await getPaginas()).find((p) => p.id === 'contacto');
 const analitica = await analiticaActiva();
+const piezas = await getPiezas();
+const ultimas = piezas.slice(0, 4);
+const recetas = piezas.filter((p) => p.data.seccion === 'recetas' || p.data.seccion === 'postres').slice(0, 4);
+const correo = SITIO.correoEditorial;
 ---
 
 <footer class="pie">
   <div class="envoltorio rejilla">
-    <div class="marca-pie">
-      <p class="nombre"><Marca tam={28} /> {SITIO.nombre}</p>
+    <section class="col col-marca" aria-labelledby="pie-marca">
+      <p id="pie-marca" class="nombre"><Marca tam={30} /> {SITIO.nombre}</p>
       <p class="lema">La galleta de nata gallega: su historia, la nata que necesita y cómo volver a hacerla en casa.</p>
-    </div>
-    <nav aria-label="Secciones">
-      <h2>Secciones</h2>
-      <ul>
-        {LISTA_SECCIONES.map((s) => <li><a href={`/${s.slug}/`}>{s.nombre}</a></li>)}
+      <ul class="contacto">
+        {correo && (
+          <li>
+            <span class="etiqueta">Escribe</span>
+            <a href={`mailto:${correo}`}>{correo}</a>
+          </li>
+        )}
+        <li>
+          <span class="etiqueta">Cuenta tu historia</span>
+          <a href="/historias-de-casa/">Historias de casa</a>
+        </li>
+        {contacto && (
+          <li>
+            <span class="etiqueta">Correcciones y sugerencias</span>
+            <a href={url(contacto.id)}>Contacto editorial</a>
+          </li>
+        )}
       </ul>
-    </nav>
-    <nav aria-label="Participa">
-      <h2>Participa</h2>
-      <ul>
+    </section>
+
+    <nav class="col" aria-labelledby="pie-secciones">
+      <h2 id="pie-secciones">Secciones</h2>
+      <ul class="lista">
+        {LISTA_SECCIONES.map((s) => <li><a href={`/${s.slug}/`}>{s.nombre}</a></li>)}
         <li><a href="/diario/">Diario</a></li>
         <li><a href="/historias-de-casa/">Historias de casa</a></li>
-        <li><a href="/buscar/">Buscar</a></li>
-        <li><a href="/rss.xml">RSS</a></li>
-        {SITIO.correoEditorial && <li><a href={`mailto:${SITIO.correoEditorial}`}>{SITIO.correoEditorial}</a></li>}
       </ul>
     </nav>
-    <nav aria-label="La web">
-      <h2>La web</h2>
-      <ul>
-        {paginas.map((p) => <li><a href={`/${p.id}/`}>{p.data.titulo}</a></li>)}
-        {analitica && <li><a href={analitica.cookies} data-configurar-cookies>Configurar cookies</a></li>}
+
+    <nav class="col" aria-labelledby="pie-diario">
+      <h2 id="pie-diario">Lo último del Diario</h2>
+      <ul class="lista lista--piezas">
+        {
+          ultimas.map((p) => (
+            <li>
+              <a href={url(p.id)}>{p.data.titulo}</a>
+              {p.data.fechaPublicacion && <time datetime={fechaIso(p.data.fechaPublicacion)}>{fecha(p.data.fechaPublicacion)}</time>}
+            </li>
+          ))
+        }
       </ul>
+      <a class="mas" href="/diario/">Todo el diario →</a>
+    </nav>
+
+    <nav class="col" aria-labelledby="pie-recetas">
+      <h2 id="pie-recetas">Recetas y postres</h2>
+      <ul class="lista lista--piezas">
+        {recetas.map((p) => <li><a href={url(p.id)}>{p.data.titulo}</a></li>)}
+      </ul>
+      <a class="mas" href="/recetas/">Todas las recetas →</a>
     </nav>
   </div>
+
   <div class="envoltorio legal">
-    <p>Portal editorial independiente. No vende galletas ni representa a ninguna marca o fabricante.</p>
+    <p class="titular">© {new Date().getFullYear()} AVOAS GALICIA SL · Portal editorial independiente. No vende galletas ni representa a ninguna marca.</p>
+    <ul class="legal-enlaces">
+      {paginas.map((p) => <li><a href={url(p.id)}>{p.data.titulo}</a></li>)}
+      {analitica && <li><a href={analitica.cookies} data-configurar-cookies>Configurar cookies</a></li>}
+    </ul>
   </div>
 </footer>
 
 <style>
   .pie {
-    margin-top: 0;
     background: var(--tinta);
-    color: #eadfca;
-    padding: var(--e-4) 0 var(--e-5);
+    color: rgb(246 243 236 / 78%);
+    padding: var(--e-5) 0 var(--e-3);
     font-size: var(--t-s);
+  }
+  .pie a {
+    color: var(--marfil);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .pie a:hover {
+    color: var(--galleta-claro);
+  }
+  .pie a:focus-visible {
+    outline-color: var(--galleta-claro);
   }
   .rejilla {
     display: grid;
-    gap: var(--e-4);
-    grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 1fr));
+    gap: var(--e-5);
   }
-  @media (max-width: 62rem) {
-    .rejilla {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: var(--e-4) var(--e-3);
-    }
-    .marca-pie {
-      grid-column: 1 / -1;
-    }
+  .col {
+    min-width: 0;
   }
-  @media (max-width: 30rem) {
-    .rejilla {
-      grid-template-columns: 1fr;
-    }
+  h2,
+  .etiqueta {
+    font-family: var(--f-texto);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--galleta-claro);
   }
-  .legal {
-    margin-top: var(--e-4);
-    padding-top: var(--e-3);
-    border-top: 1px solid rgb(234 223 202 / 18%);
-    color: #bfb39c;
-    font-size: var(--t-xs);
-  }
-  .legal p {
-    margin: 0;
+  h2 {
+    margin: 0 0 var(--e-3);
+    padding-bottom: var(--e-1);
+    border-bottom: 1px solid rgb(246 243 236 / 14%);
   }
   .nombre {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
+    margin: 0 0 var(--e-2);
     font-family: var(--f-titulo);
-    font-size: 1.3rem;
-    color: #fff;
-    margin-bottom: var(--e-1);
+    font-size: 1.45rem;
+    color: var(--marfil);
   }
   .lema {
-    max-width: 28rem;
-  }
-  h2 {
-    font-family: var(--f-texto);
-    font-size: var(--t-xs);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--galleta-claro);
-    margin: 0 0 var(--e-1);
+    margin: 0 0 var(--e-4);
+    max-width: 22rem;
+    font-family: var(--f-titulo);
+    font-size: 1.05rem;
+    line-height: 1.5;
   }
   ul {
     list-style: none;
+    margin: 0;
     padding: 0;
+  }
+  .contacto {
+    display: grid;
+    gap: var(--e-2);
+  }
+  .contacto li {
+    display: grid;
+    gap: 0.15rem;
+  }
+  .contacto a {
+    font-size: 1rem;
+  }
+  .lista {
+    display: grid;
+    gap: 0.7rem;
+  }
+  .lista--piezas a {
+    display: block;
+    font-family: var(--f-titulo);
+    font-size: 1.02rem;
+    line-height: 1.3;
+  }
+  .lista time {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.75rem;
+    color: rgb(246 243 236 / 55%);
+  }
+  .mas {
+    display: inline-block;
+    margin-top: var(--e-3);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .legal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--e-1) var(--e-3);
+    margin-top: var(--e-5);
+    padding-top: var(--e-3);
+    border-top: 1px solid rgb(246 243 236 / 14%);
+    font-size: 0.75rem;
+    color: rgb(246 243 236 / 55%);
+  }
+  .titular {
     margin: 0;
   }
-  li {
-    margin: 0.25rem 0;
+  .legal-enlaces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem 1.2rem;
   }
-  a {
-    color: #fff;
-    display: inline-block;
-    padding: 0.2rem 0;
+  .legal-enlaces a {
+    color: rgb(246 243 236 / 70%);
   }
-  a:hover {
-    color: var(--galleta-claro);
+  @media (max-width: 62rem) {
+    .rejilla {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--e-4);
+    }
+  }
+  @media (max-width: 36rem) {
+    .rejilla {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
