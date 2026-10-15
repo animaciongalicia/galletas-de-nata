@@ -1,18 +1,15 @@
 ---
 titulo: 'Política de privacidad'
 descripcion: 'Qué datos personales trata Galletas de Nata, con qué finalidad, durante cuánto tiempo y cómo ejercer tus derechos sobre ellos.'
-estado: borrador
+estado: aprobado
+fechaActualizacion: 2026-10-15
 enPie: true
-pendientes:
-  - 'Responsable del tratamiento: nombre o razón social, NIF/CIF y domicilio (mismos datos que el aviso legal).'
-  - 'Revisión del texto por el propietario o su asesor antes de aprobar.'
 ---
 
 ## Responsable
 
-<div class="pendiente">Nombre o razón social, NIF/CIF y domicilio del responsable del tratamiento.</div>
-
-Correo de contacto: [info@galletasdenata.com](mailto:info@galletasdenata.com).
+- **Responsable:** AVOAS GALICIA SL, Ferrol (A Coruña).
+- **Correo de contacto:** [info@galletasdenata.com](mailto:info@galletasdenata.com).
 
 ## Qué datos se tratan y para qué
 

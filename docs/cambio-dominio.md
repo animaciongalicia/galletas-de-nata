@@ -15,9 +15,9 @@ Revisión del 15-10-2026. ✅ = listo · ⏳ = pendiente del propietario · ⚠�
 | ✅ | URL antiguas aún en borrador: redirección **temporal** a su sección, solo en el dominio real | En `vercel.json` |
 | ✅ | El verificador avisa si una pieza se aprueba con su redirección temporal todavía puesta | Activo |
 | ✅ | Publicación diaria programada (deploy hook y GitHub) | Activa |
-| ✅ | Google Analytics `G-5WHY80TLKX` con aviso de consentimiento | Preparado; se activa al publicar las páginas legales |
-| ⏳ | **Datos del titular** para el aviso legal, la privacidad y las cookies | Faltan nombre o razón social, NIF/CIF y domicilio |
-| ⏳ | Inventario de URL del WordPress (sitemap o exportación) | Ver `docs/mapa-migracion.md` |
+| ✅ | Google Analytics `G-5WHY80TLKX` con aviso de consentimiento | Activo en producción |
+| ✅ | Aviso legal, privacidad y cookies publicados (titular: AVOAS GALICIA SL, Ferrol) | Publicados. La LSSI pide además NIF y domicilio: añadirlos cuando se pueda |
+| ✅ | Inventario del WordPress: solo 5 entradas, todas ya mapeadas | Ver `docs/mapa-migracion.md` |
 | ⏳ | Copia de seguridad del WordPress y de sus imágenes | Hacerla antes del cambio |
 
 ### Redirecciones temporales (302) mientras la pieza no se publica
@@ -50,7 +50,7 @@ Antes de tocar nada, **haz una captura de todos los registros DNS actuales**.
    | CNAME | `www` | `cname.vercel-dns.com` |
 
    **Usa siempre los valores que te muestre Vercel**: a veces asigna unos propios del proyecto.
-3. **En el panel DNS de tu proveedor** (donde compraste el dominio o donde está el hosting del WordPress):
+3. **En el panel DNS de tu proveedor (Pinensa Solutions)**, en el área de cliente, entra en el dominio y abre la gestión de DNS o zona DNS:
    - cambia el registro **A** de `@` por el de Vercel;
    - cambia o crea el **CNAME** de `www` con el de Vercel;
    - **no toques** los registros MX, TXT (SPF, DKIM, verificación de Google) ni ningún otro.
@@ -75,6 +75,5 @@ Antes de tocar nada, **haz una captura de todos los registros DNS actuales**.
 
 ## 6. Lo que falta para dar luz verde
 
-1. **Datos del titular.** Con ellos se publican el aviso legal, la privacidad y las cookies, y se activa Analytics automáticamente.
-2. **Inventario del WordPress**, para no perder ninguna URL con visitas.
-3. **Captura del DNS actual**, para cambiar solo lo necesario.
+1. **Captura de la zona DNS actual** en Pinensa Solutions, para cambiar solo lo necesario.
+2. **Recomendable:** NIF y domicilio de AVOAS GALICIA SL en el aviso legal (lo pide la LSSI).

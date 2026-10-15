@@ -1,10 +1,9 @@
 ---
 titulo: 'Política de cookies'
 descripcion: 'Qué cookies usa Galletas de Nata: solo las de analítica de Google Analytics, y únicamente si las aceptas. Cómo cambiar tu elección cuando quieras.'
-estado: borrador
+estado: aprobado
+fechaActualizacion: 2026-10-15
 enPie: true
-pendientes:
-  - 'Aprobar junto con la política de privacidad y el aviso legal (necesitan los datos del titular). Hasta entonces la analítica no se activa.'
 ---
 
 ## Qué son las cookies

@@ -1,10 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
-import CabeceraPagina from '../components/CabeceraPagina.astro';
-import Columnas from '../components/Columnas.astro';
+import Migas from '../components/Migas.astro';
+import Figura from '../components/Figura.astro';
 import { SITIO } from '../data/sitio';
 import { ES_PRODUCCION } from '../lib/contenido';
-import fotoCabecera from '../assets/fotos/ordeno-de-la-vaca-y-ninos-bebiendo-leche.jpg';
+import fotoOrdeno from '../assets/fotos/ordeno-de-la-vaca-y-ninos-bebiendo-leche.jpg';
+import fotoLeche from '../assets/fotos/leche-recien-ordenada-en-el-fuego.jpg';
+import fotoCapa from '../assets/fotos/capa-de-nata-sobre-la-leche-hervida.jpg';
+import fotoLata from '../assets/fotos/galletas-de-nata-finas-en-lata-antigua.jpg';
 
 const correo = SITIO.correoEditorial;
 const asunto = encodeURIComponent('Mi historia de galletas de nata');
@@ -12,127 +15,445 @@ const cuerpo = encodeURIComponent(
   'Cómo se hacían en mi casa:\n\nQuién las hacía:\n\nDe dónde (pueblo, parroquia o comarca):\n\nLa receta tal como la recuerdo:\n\nUn recuerdo:\n\n¿Puede publicarse con mi nombre? (sí / no / solo las iniciales):\n',
 );
 const mailto = correo ? `mailto:${correo}?subject=${asunto}&body=${cuerpo}` : undefined;
+
+const preguntas = [
+  { n: 'I', titulo: 'La nata', texto: '¿De dónde salía? ¿De hervir la leche, de una lechería, de la vaca de casa? ¿Cuántos días se tardaba en juntarla?' },
+  { n: 'II', titulo: 'Quién las hacía', texto: 'Tu madre, tu abuela, una tía, una vecina. ¿Cómo se llamaba? ¿De quién lo aprendió?' },
+  { n: 'III', titulo: 'Dónde', texto: 'El pueblo, la parroquia o la comarca. La cocina de leña o el horno de casa.' },
+  { n: 'IV', titulo: 'La receta', texto: 'Tal como la recuerdas: por vasos, a ojo o con «la harina que admita». No hace falta que sea exacta.' },
+  { n: 'V', titulo: 'Cuándo', texto: '¿Para la merienda, para una fiesta, para los domingos? ¿Quién se las comía primero?' },
+  { n: 'VI', titulo: 'Una foto', texto: 'De las galletas, de la lata, del cazo o de la cocina de entonces. Solo si es tuya o tienes permiso.' },
+];
 ---
 
 <Base
   titulo="Historias de casa: cómo se hacían las galletas de nata en cada familia"
   descripcion="En Galicia casi cada familia tiene su manera de hacer galletas de nata. Cuenta cómo se hacían en tu casa: la nata, la receta, quién las hacía."
 >
-  <CabeceraPagina
-    migas={[{ nombre: 'Historias de casa', href: '/historias-de-casa/' }]}
-    antetitulo="Historias de casa"
-    titulo="Cada casa,"
-    cursiva="su receta"
-    entradilla="En Galicia casi cada familia tiene su manera de hacer galletas de nata. Aquí caben todas: la de tu madre, la de tu abuela, la de tu pueblo."
-    imagen={{ src: fotoCabecera, alt: 'Foto antigua en blanco y negro: una mujer ordeña una vaca mientras unos niños beben leche', provisional: false }}
-  />
-
-  <Columnas><div class="prosa cuerpo">
-    <h2>Por qué en Galicia se sabe tanto de esto</h2>
-    <p>
-      No hace falta haber trabajado en un obrador para saber de galletas de nata. En Galicia basta con haber crecido
-      cerca de una cocina con leche de la cuadra.
-    </p>
-    <p>
-      Galicia reúne más de la mitad de las explotaciones lecheras de España. Durante generaciones, en muchas casas se
-      ordeñaba, se hervía la leche y se guardaba la nata que flotaba encima. Quien lo vio de niño sabe cuántos días
-      tardaba en juntarse, cómo se trabajaba la masa y en qué lata se guardaban las galletas.
-    </p>
-    <p>
-      Ese saber casi nunca se escribió. Se medía a ojo o por vasos y pasaba de unas manos a otras. Por eso vale tanto
-      contarlo.
-    </p>
-  </div>
-    <div class="caja" slot="lateral">
-      <p class="antetitulo">Tu historia</p>
-      <p>Escribe a <strong>{correo}</strong> o usa el botón: el correo se abre con un guion para que no se te olvide nada.</p>
-      {mailto && <a class="boton" href={mailto}>Enviar mi historia</a>}
+  <!-- Apertura en oscuro, con la foto antigua -->
+  <section class="banda banda--tinta envoltorio apertura" aria-labelledby="historias-h1">
+    <Migas items={[{ nombre: 'Historias de casa', href: '/historias-de-casa/' }]} />
+    <div class="apertura-rejilla">
+      <div>
+        <p class="antetitulo">Historias de casa</p>
+        <h1 id="historias-h1">Cada casa, <em>su receta.</em></h1>
+        <p class="apertura-texto">
+          En Galicia casi cada familia tiene su manera de hacer galletas de nata. La nata que se juntaba, el vaso que
+          servía de medida, la lata donde se guardaban. Esa memoria no está en ningún libro: está en las casas.
+        </p>
+        <div class="acciones">
+          {mailto && <a class="boton boton--marfil" href={mailto}>Envía tu historia</a>}
+          <a class="enlace-flecha" href="#como-funciona">Cómo funciona →</a>
+        </div>
+      </div>
+      <figure class="apertura-foto">
+        <Figura imagen={{ src: fotoOrdeno, alt: 'Foto antigua en blanco y negro: una mujer ordeña una vaca mientras unos niños beben leche', provisional: false }} prioridad proporcion="4 / 3" tamanos="(max-width: 62rem) 100vw, 30rem" anchos={[480, 676]} />
+      </figure>
     </div>
-  </Columnas>
-
-  <section class="envoltorio banda banda--tinta cita-banda" aria-label="Cita">
-    <p class="cita">«Un vaso de nata, uno de azúcar <em>y la harina que admita.</em>»</p>
   </section>
 
-  <Columnas><div class="prosa cuerpo">
-    <h2>Qué puedes contar</h2>
-    <ul>
-      <li><strong>Cómo se hacían en tu casa:</strong> de dónde salía la nata, cuántos días se juntaba, dónde se horneaban.</li>
-      <li><strong>Quién las hacía:</strong> tu madre, tu abuela, una tía, una vecina.</li>
-      <li><strong>De dónde:</strong> el pueblo, la parroquia o la comarca.</li>
-      <li><strong>La receta tal como la recuerdas.</strong> Vale por vasos, a ojo o con «la harina que admita».</li>
-      <li><strong>Una foto, si la tienes:</strong> de las galletas, de la lata, del cazo o de la cocina de entonces.</li>
-      <li><strong>Un recuerdo:</strong> cuándo se hacían, para quién, cómo se comían.</li>
-    </ul>
+  <!-- Por qué en Galicia se sabe tanto -->
+  <section class="envoltorio porque" aria-labelledby="porque-titulo">
+    <div class="porque-texto prosa">
+      <p class="antetitulo">Por qué en Galicia se sabe tanto de esto</p>
+      <h2 id="porque-titulo">Un saber que nunca se escribió</h2>
+      <p class="primero">
+        No hace falta haber trabajado en un obrador para saber de galletas de nata. En Galicia basta con haber crecido
+        cerca de una cocina con leche de la cuadra.
+      </p>
+      <p>
+        Galicia reúne más de la mitad de las explotaciones lecheras de España. Durante generaciones, en muchas casas se
+        ordeñaba, se hervía la leche y se guardaba la nata que flotaba encima. Quien lo vio de niño sabe cuántos días
+        tardaba en juntarse, cómo se trabajaba la masa y en qué lata se guardaban las galletas.
+      </p>
+      <p>
+        Ese saber casi nunca se escribió. Se medía a ojo o por vasos y pasaba de unas manos a otras. Cuando se pierde
+        quien lo sabía, se pierde la receta. Por eso vale tanto contarlo.
+      </p>
+    </div>
+    <div class="mosaico">
+      <Figura imagen={{ src: fotoLeche, alt: 'Cazos con leche recién ordeñada calentándose en la cocina', provisional: false }} proporcion="3 / 4" tamanos="14rem" anchos={[320, 480]} clase="m1" />
+      <Figura imagen={{ src: fotoCapa, alt: 'Capa de nata sobre la leche hervida, separada con un cuchillo', provisional: false }} proporcion="4 / 3" tamanos="18rem" anchos={[400, 640]} clase="m2" />
+      <Figura imagen={{ src: fotoLata, alt: 'Galletas de nata finas en una lata antigua', provisional: false }} proporcion="4 / 3" tamanos="18rem" anchos={[400, 640]} clase="m3" />
+    </div>
+  </section>
 
+  <!-- Qué contar -->
+  <section class="banda banda--crema envoltorio contar" aria-labelledby="contar-titulo">
+    <div class="cabecera-bloque">
+      <p class="antetitulo">Qué puedes contar</p>
+      <h2 id="contar-titulo">Seis preguntas para empezar</h2>
+      <p>No hace falta responderlas todas. Basta con una buena memoria y ganas de contarla.</p>
+    </div>
+    <ol class="preguntas">
+      {
+        preguntas.map((p) => (
+          <li>
+            <span class="num">{p.n}</span>
+            <h3>{p.titulo}</h3>
+            <p>{p.texto}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
 
-    <h2>Cómo se publican</h2>
-    <ul>
-      <li>Se leen todas. Nada se publica sin tu permiso.</li>
-      <li>Van con tu nombre, con tus iniciales o sin nombre, como prefieras, y con el lugar.</li>
+  <!-- Cita -->
+  <section class="banda banda--tinta envoltorio cita-banda" aria-label="Cita">
+    <p class="cita">«Un vaso de nata, uno de azúcar <em>y la harina que admita.</em>»</p>
+    <p class="cita-pie">Así empezaban muchas recetas de galletas de nata. La tuya puede seguir.</p>
+  </section>
+
+  <!-- Cómo funciona -->
+  <section class="envoltorio funciona" id="como-funciona" aria-labelledby="funciona-titulo">
+    <div class="cabecera-bloque">
+      <p class="antetitulo">Cómo funciona</p>
+      <h2 id="funciona-titulo">De tu cocina a esta página</h2>
+    </div>
+    <ol class="pasos">
       <li>
-        Las recetas de familia se publican como lo que son: el recuerdo de una casa, contado tal cual. Se distinguen
-        de las recetas probadas de la web.
+        <span class="num">1</span>
+        <h3>Escríbela</h3>
+        <p>
+          Manda tu historia a <strong>{correo}</strong>. El botón abre el correo con un guion ya preparado para que no
+          se te olvide nada. Puedes añadir fotos.
+        </p>
       </li>
-      <li>Las fotos, solo si son tuyas o tienes permiso para compartirlas.</li>
-    </ul>
+      <li>
+        <span class="num">2</span>
+        <h3>Se lee con cuidado</h3>
+        <p>Se leen todas. Si falta algo o surge una duda, se te responde antes de hacer nada.</p>
+      </li>
+      <li>
+        <span class="num">3</span>
+        <h3>Se publica con tu permiso</h3>
+        <p>
+          Con tu nombre, con tus iniciales o sin nombre, como prefieras, y con el lugar. Nada se publica sin tu
+          permiso.
+        </p>
+      </li>
+    </ol>
 
-    <div class="enviar">
+    <div class="garantias">
+      <h3>Lo que se respeta siempre</h3>
+      <ul>
+        <li>Tu historia se publica como la cuentas, sin inventar ni adornar.</li>
+        <li>Las recetas de familia se publican como lo que son: el recuerdo de una casa. Se distinguen de las recetas probadas de la web.</li>
+        <li>Las fotos, solo si son tuyas o tienes permiso para compartirlas.</li>
+        <li>Puedes pedir que se retire tu historia cuando quieras.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Envío -->
+  <section class="banda banda--verde envoltorio enviar" aria-labelledby="enviar-titulo">
+    <div>
+      <p class="antetitulo">Tu historia</p>
+      <h2 id="enviar-titulo">La primera puede ser la tuya</h2>
+      <p class="enviar-texto">
+        Todavía no hay historias publicadas. Las primeras que lleguen abrirán esta sección. Si en tu casa se hacían
+        galletas de nata, este es el sitio para que no se pierdan.
+      </p>
+    </div>
+    <div class="enviar-caja">
       {
         mailto ? (
-          <a class="boton" href={mailto}>Enviar mi historia</a>
+          <>
+            <a class="boton boton--marfil" href={mailto}>Envía tu historia</a>
+            <p>
+              O escribe directamente a <a href={`mailto:${correo}`}>{correo}</a>
+            </p>
+          </>
         ) : ES_PRODUCCION ? (
-          <p class="pronto">El buzón para enviar historias se abrirá muy pronto.</p>
+          <p>El buzón para enviar historias se abrirá muy pronto.</p>
         ) : (
-          <div class="pendiente">Correo editorial para recibir las historias (SITIO.correoEditorial en src/data/sitio.ts).</div>
+          <div class="pendiente">Correo editorial (SITIO.correoEditorial en src/data/sitio.ts).</div>
         )
       }
     </div>
-  </div></Columnas>
+  </section>
 </Base>
 
 <style>
-  .cuerpo {
-    padding-top: var(--e-2);
+  /* Apertura */
+  .apertura {
+    display: flow-root;
+    padding-bottom: var(--e-5);
   }
-  .caja {
-    padding: var(--e-3);
-    background: var(--papel);
-    border: 1px solid var(--linea);
-    border-top: 2px solid var(--tinta);
-    font-size: var(--t-s);
+  .apertura :global(.migas a),
+  .apertura :global(.migas ol) {
+    color: rgb(246 243 236 / 70%);
   }
-  .caja .boton {
-    margin-top: var(--e-1);
+  .apertura-rejilla {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: var(--e-5);
+    align-items: center;
+    margin-top: var(--e-3);
   }
-  .cuerpo > h2:first-child {
+  h1 {
+    font-size: clamp(2.8rem, 1.4rem + 5vw, 5.6rem);
+    font-weight: 350;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--marfil);
+    margin: 0 0 var(--e-3);
+  }
+  h1 em {
+    display: block;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--galleta-claro);
+  }
+  .apertura-texto {
+    font-family: var(--f-titulo);
+    font-size: var(--t-l);
+    font-weight: 350;
+    line-height: 1.5;
+    color: rgb(246 243 236 / 85%);
+    max-width: 34rem;
+    margin: 0 0 var(--e-4);
+  }
+  .acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--e-3);
+    align-items: center;
+  }
+  .boton--marfil {
+    background: var(--marfil);
+    border-color: var(--marfil);
+    color: var(--tinta);
+  }
+  .boton--marfil:hover {
+    background: transparent;
+    color: var(--marfil);
+    border-color: var(--marfil);
+  }
+  .apertura-foto {
+    margin: 0;
+  }
+  .apertura-foto :global(img) {
+    box-shadow: 18px 18px 0 rgb(246 243 236 / 12%);
+  }
+
+  /* Por qué */
+  .porque {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--e-5);
+    align-items: center;
+    padding-block: var(--e-5);
+  }
+  .porque-texto h2 {
     margin-top: 0;
+    font-size: clamp(2rem, 1.5rem + 1.8vw, 3rem);
+    font-weight: 400;
   }
+  .porque-texto .antetitulo {
+    font-family: var(--f-texto);
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--tostado);
+  }
+  .porque-texto .primero {
+    font-family: var(--f-titulo);
+    font-size: 1.3rem;
+    font-weight: 380;
+    line-height: 1.55;
+  }
+  .porque-texto .primero::first-letter {
+    float: left;
+    font-family: var(--f-titulo);
+    font-size: 4.2em;
+    line-height: 0.82;
+    padding: 0.08em 0.1em 0 0;
+    color: var(--tostado);
+  }
+  .mosaico {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    grid-template-rows: auto auto;
+    gap: var(--e-2);
+    align-items: end;
+  }
+  .mosaico :global(.m1) {
+    grid-row: span 2;
+  }
+  .mosaico :global(img) {
+    box-shadow: 0 18px 40px -26px rgb(27 25 22 / 50%);
+  }
+
+  /* Qué contar */
+  .contar {
+    padding-block: var(--e-5);
+  }
+  .cabecera-bloque {
+    max-width: 40rem;
+    margin-bottom: var(--e-4);
+  }
+  .cabecera-bloque h2 {
+    margin: 0 0 var(--e-2);
+    font-size: clamp(2rem, 1.5rem + 1.8vw, 3rem);
+    font-weight: 400;
+  }
+  .cabecera-bloque p:not(.antetitulo) {
+    margin: 0;
+    color: var(--tinta-suave);
+  }
+  .preguntas {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--e-3);
+  }
+  .preguntas li {
+    background: var(--papel);
+    padding: var(--e-3);
+    border-top: 2px solid var(--tinta);
+  }
+  .num {
+    display: block;
+    font-family: var(--f-titulo);
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--tostado);
+    margin-bottom: var(--e-1);
+  }
+  .preguntas h3,
+  .pasos h3 {
+    font-size: 1.45rem;
+    font-weight: 450;
+    margin: 0 0 var(--e-1);
+  }
+  .preguntas p,
+  .pasos p {
+    margin: 0;
+    font-size: var(--t-s);
+    color: var(--tinta-suave);
+  }
+
+  /* Cita */
   .cita-banda {
     padding-block: var(--e-5);
+    text-align: center;
   }
   .cita {
     font-family: var(--f-titulo);
-    font-size: clamp(1.8rem, 1.2rem + 2.4vw, 3.2rem);
+    font-size: clamp(1.9rem, 1.2rem + 2.6vw, 3.4rem);
     font-weight: 300;
     line-height: 1.15;
     max-width: 24ch;
-    margin: 0 auto;
-    text-align: center;
+    margin: 0 auto var(--e-2);
+    color: var(--marfil);
   }
   .cita em {
     color: var(--galleta-claro);
   }
-  .enviar {
-    margin-top: var(--e-4);
-    padding-top: var(--e-3);
+  .cita-pie {
+    margin: 0;
+    color: rgb(246 243 236 / 70%);
+    font-size: var(--t-s);
+  }
+
+  /* Cómo funciona */
+  .funciona {
+    padding-block: var(--e-5);
+  }
+  .pasos {
+    list-style: none;
+    margin: 0 0 var(--e-5);
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--e-4);
+    counter-reset: paso;
+  }
+  .pasos li {
+    padding-top: var(--e-2);
     border-top: 1px solid var(--tinta);
   }
-  .pronto {
-    font-family: var(--f-titulo);
-    font-style: italic;
+  .pasos .num {
+    font-size: 2.6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1;
+  }
+  .garantias {
+    max-width: 46rem;
+    padding: var(--e-3) var(--e-4);
+    border-left: 2px solid var(--oliva);
+    background: var(--marfil-hondo);
+  }
+  .garantias h3 {
+    margin: 0 0 var(--e-2);
     font-size: 1.3rem;
-    color: var(--tinta-suave);
+    font-weight: 450;
+  }
+  .garantias ul {
     margin: 0;
+    padding-left: 1.2rem;
+    display: grid;
+    gap: 0.5rem;
+    font-size: var(--t-s);
+  }
+
+  /* Envío */
+  .enviar {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: var(--e-5);
+    align-items: center;
+    padding-block: var(--e-5);
+  }
+  .enviar h2 {
+    margin: 0 0 var(--e-2);
+    font-size: clamp(2rem, 1.5rem + 1.8vw, 3rem);
+    font-weight: 400;
+    color: var(--marfil);
+  }
+  .enviar-texto {
+    margin: 0;
+    font-family: var(--f-titulo);
+    font-size: 1.25rem;
+    font-weight: 350;
+    line-height: 1.5;
+    max-width: 36rem;
+  }
+  .enviar-caja {
+    display: grid;
+    gap: var(--e-2);
+    justify-items: start;
+  }
+  .enviar-caja p {
+    margin: 0;
+    font-size: var(--t-s);
+  }
+
+  @media (max-width: 62rem) {
+    .apertura-rejilla,
+    .porque,
+    .enviar {
+      grid-template-columns: 1fr;
+      gap: var(--e-4);
+    }
+    .apertura-foto {
+      max-width: 30rem;
+    }
+    .preguntas {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .pasos {
+      grid-template-columns: 1fr;
+      gap: var(--e-3);
+    }
+  }
+  @media (max-width: 40rem) {
+    .preguntas {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
